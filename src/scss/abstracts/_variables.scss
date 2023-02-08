@@ -1,0 +1,16 @@
+:root {
+  /** FONTS **/
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: serif;
+
+  --text-base-size: 1.6rem;
+
+  /** CONTAINER **/
+  --container: 120rem;
+
+  /** SPACING - Use for paddings, margins, gaps **/
+  --spacing-xs: .5rem;
+
+  /** BOX SHADOW **/
+  --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
