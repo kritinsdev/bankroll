@@ -1,8 +1,15 @@
 .siteLogo {
-    max-width: 20rem;
-    max-height: 6rem;
+    max-width: 16rem;
+    max-height: 5rem;
 }
 
 ul {
     list-style: none;
+}
+
+.container {
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-default);
 }
