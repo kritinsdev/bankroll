@@ -29,7 +29,15 @@ class Slot
         $this->maxMultiplier = $maxMultiplier;
     }
 
-    public function getMaxMultiplier(): float {
-        return $this->maxMultiplier;
+    public function getMaxMultiplier(): string {
+        return $this->maxMultiplier . "X";
+    }
+
+    public function setProvider($termId): void {
+        $this->provider = new Provider($termId);
+    }
+
+    public function getProvider($termId): string {
+        return '123';
     }
 }

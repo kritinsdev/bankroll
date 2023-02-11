@@ -13,7 +13,7 @@ class Taxonomies
             'slug' => 'provider',
             'supports' => ['slot'],
             'publicly_queryable' => true,
-            'hierarchical' => true
+            'hierarchical' => false
         ]
     ];
 
@@ -46,6 +46,9 @@ class Taxonomies
                     'menu_name' => $taxonomyData['plural'],
                 ],
                 'publicly_queryable' => $taxonomyData['publicly_queryable'],
+                'show_ui' => true,
+                'show_admin_column' => true,
+                'query_var' => true,
                 'show_in_rest' => false,
                 'rewrite' => [
                     'slug' => $taxonomyData['slug'],
