@@ -6,7 +6,16 @@ class Taxonomies
 {
     use Singleton;
 
-    protected array $taxonomies = [];
+    protected array $taxonomies = [
+        'provider' => [
+            'singular' => 'Provider',
+            'plural' => 'Providers',
+            'slug' => 'provider',
+            'supports' => ['slot'],
+            'publicly_queryable' => true,
+            'hierarchical' => true
+        ]
+    ];
 
     protected function __construct()
     {
