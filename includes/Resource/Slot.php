@@ -7,7 +7,7 @@ class Slot
     private string $name;
     private float $rtp;
     private int $maxMultiplier;
-    private Provider $provider;
+    private mixed $provider;
 
     public function setName(string $name): void {
         $this->name = $name;
@@ -33,11 +33,11 @@ class Slot
         return $this->maxMultiplier . "X";
     }
 
-    public function setProvider($termId): void {
-        $this->provider = new Provider($termId);
+    public function setProvider(int $termId): void {
+        $this->provider = get_term($termId, 'provider');
     }
 
-    public function getProvider($termId): string {
-        return '123';
+    public function getProvider(): \WP_Term {
+        return $this->provider;
     }
 }

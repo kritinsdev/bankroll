@@ -13,7 +13,7 @@ class CustomPostTypes
             'slug'        => 'casino',
             'has_archive' => false,
             'supports'    => ['title', 'thumbnail'],
-            'taxonomies'  => ['author'],
+            'taxonomies' => ['asscrako']
         ],
         'slot'       => [
             'singular'    => 'Slot',
@@ -21,7 +21,7 @@ class CustomPostTypes
             'slug'        => 'slot',
             'has_archive' => false,
             'supports'    => ['title', 'thumbnail'],
-            'taxonomies'  => ['author'],
+            'taxonomies'  => ['provider', 'theme', 'feature'],
         ],
     ];
 

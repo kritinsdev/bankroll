@@ -10,12 +10,12 @@ class Init
     
     protected function __construct()
     {
+        ACF::get_instance();
         CustomPostTypes::get_instance();
         Taxonomies::get_instance();
         Menu::get_instance();
         Enqueue::get_instance();
         AjaxFunctions::get_instance();
-        ACF::get_instance();
 
         $this->setupHooks();
     }
