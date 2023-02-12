@@ -18,18 +18,25 @@
 
 }
 
-.header__siteNav {
+.header__siteNavWrap {
     display: none;
     position: absolute;
     top:var(--header-height);
+    background-color: rgba(0,0,0,0.5);
     left:0;
-    background-color: var(--color-primary);
+    
     width: 100%;
+    height: 100vh;
 
     &.show {
         display: block;
     }
+}
 
+.header__siteNav {
+    width:70%;
+    height: 100%;
+    background-color: var(--color-primary);
     ul {
 
     }
@@ -66,10 +73,27 @@
     padding: 0;
     height: 100%;
     width: 100%;
-    border: none;
+    background-color: var(--color-primary);
 
     &.show {
-        display: block;
+        display: flex;
+    }
+
+    input {
+        flex:1;
+        padding-left: var(--spacing-default);
+        border:none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    > div {
+        flex-basis: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

@@ -2,14 +2,14 @@ class MobileMenu {
     constructor() {
         this.header = document.querySelector('#header');
         this.menuBtn = header.querySelector('#mobileMenu');
-        this.navigation = header.querySelector('#nav');
+        this.navigation = header.querySelector('#navWrap');
         this.searchBtn = header.querySelector('#siteSearch');
         this.searchInput = header.querySelector('#siteSearchInput');
         this.events();
     }
 
     events() {
-        this.searchBtn.addEventListener('click', this.toggleSiteSearch.bind(this));
+        this.header.addEventListener('click', this.toggleSiteSearch.bind(this));
         this.menuBtn.addEventListener('click', this.toggleMobileMenu.bind(this));
     }
 
@@ -27,10 +27,12 @@ class MobileMenu {
         }
     }
 
-    toggleSiteSearch() {
-        if(!this.searchInput.classList.contains('show')) {
+    toggleSiteSearch(e) {
+        if(e.target.closest('#siteSearch')) {
             this.searchInput.classList.add('show');
-        } else {
+        }
+
+        if(e.target.closest('#closeSearchInput')) {
             this.searchInput.classList.remove('show');
         }
     }

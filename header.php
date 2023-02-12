@@ -18,3 +18,5 @@ use Bankroll\Core\View\Parts;
 <?php include_once BANKROLL_DIR . '/svg.php'; ?>
 
 <?php Parts::navigation(); ?>
+
+<?php Parts::hero(); ?>
