@@ -26,6 +26,10 @@
     background-color: var(--color-primary);
     width: 100%;
 
+    &.show {
+        display: block;
+    }
+
     ul {
 
     }
@@ -35,7 +39,7 @@
         padding:var(--spacing-default);
 
         &:not(:last-child) {
-            border-bottom: 1px solid lighten($color: #7796CB, $amount: 5%);
+            // border-bottom: 1px solid lighten($color: #7796CB, $amount: 5%);
         }
 
         a {
@@ -51,6 +55,21 @@
     i {
         font-size: var(--font-size-xl);
         color:var(--color-white);
+    }
+}
+
+.header__searchInput {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+
+    &.show {
+        display: block;
     }
 }
 

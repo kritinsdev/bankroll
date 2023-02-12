@@ -1,4 +1,4 @@
 import '../scss/main.scss';
-import './MobileMenu';
+import { MobileMenu } from './MobileMenu';
 
 new MobileMenu();

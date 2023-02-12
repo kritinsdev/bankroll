@@ -40,8 +40,6 @@ class MenuWalker extends \Walker_Nav_Menu
         $indent  = ($depth) ? str_repeat($t, $depth) : '';
         $classes = empty($menu_item->classes) ? [] : (array)$menu_item->classes;
 
-        $classes[] = 'menu-item-' . $menu_item->ID;
-
         $args = apply_filters('nav_menu_item_args', $args, $menu_item, $depth);
 
         $class_names = implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $menu_item, $args, $depth));

@@ -4,7 +4,7 @@ use Bankroll\Core\View\Parts;
 
 ?>
 
-<header class="header">
+<header id="header" class="header">
     <div class="container">
         <div class="header__wrap">
             <div class="header__siteLogo">
@@ -21,6 +21,10 @@ use Bankroll\Core\View\Parts;
             ]);
             ?>
             <div class="header__controls">
+                <div id="siteSearchInput" class="header__searchInput">
+                    <input id="s" name="s" type="text" />
+                    <div>X</div>
+                </div>
                 <div id="siteSearch" class="header__search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
