@@ -1,27 +1,16 @@
-<?php get_header(); ?>
+<?php 
+
+use Bankroll\Core\Blocks\Controller;
+
+get_header(); ?>
 
 <main>
    <div class="container">
-      <?php /** Blocks::displayAll(); */  ?>
 <?php
 
-// Check value exists.
-if( have_rows('blocks') ):
-    // Loop through rows.
-    while ( have_rows('blocks') ) : var_dump( the_row( true));
+BlocksView::show();
 
-        // Case: Paragraph layout.
-        if( get_row_layout() == 'block_content' ):
-
-        endif;
-
-    // End loop.
-    endwhile;
-
-// No value.
-else :
-    // Do something...
-endif; ?>
+?>
    </div>
 </main>
 
