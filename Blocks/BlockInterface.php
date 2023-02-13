@@ -3,5 +3,5 @@
 namespace Bankroll\Core\Blocks;
 
 interface BlockInterface {
-    public function registerFields();
+    public static function registerFields(): array;
 }

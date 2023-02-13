@@ -6,11 +6,7 @@ get_header(); ?>
 
 <main>
    <div class="container">
-<?php
-
-BlocksView::show();
-
-?>
+        MAIN CONTENT
    </div>
 </main>
 
