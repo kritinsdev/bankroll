@@ -1,8 +1,9 @@
 <?php
 
-namespace Bankroll\Core;
+namespace Bankroll\Includes;
 
-use Bankroll\Core\Ajax\AjaxFunctions;
+use Bankroll\Includes\Ajax\AjaxFunctions;
+
 
 class Init
 {
@@ -15,7 +16,7 @@ class Init
         Taxonomies::get_instance();
         Menu::get_instance();
         Enqueue::get_instance();
-        AjaxFunctions::get_instance();
+        // AjaxFunctions::get_instance();
 
         $this->setupHooks();
     }

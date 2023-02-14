@@ -1,6 +1,6 @@
 <?php
 
-namespace Bankroll\Core;
+namespace Bankroll\Includes;
 
 class CustomPostTypes
 {

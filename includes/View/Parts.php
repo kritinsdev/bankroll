@@ -1,6 +1,6 @@
 <?php
 
-namespace Bankroll\Core\View;
+namespace Bankroll\Includes\View;
 
 class Parts {
     public static function navigation($args = []): void {

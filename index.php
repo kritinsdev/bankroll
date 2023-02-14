@@ -1,13 +1,13 @@
-<?php 
+   <?php 
 
-use Bankroll\Core\Blocks\Controller;
+   use Bankroll\Blocks\BlocksController;
 
-get_header(); ?>
+   get_header(); ?>
 
-<main>
-   <div class="container">
-        MAIN CONTENT
-   </div>
-</main>
+   <main>
+      <div class="container">
+         <?php BlocksController::show(); ?>
+      </div>
+   </main>
 
-<?php get_footer(); ?>
+   <?php get_footer(); ?>

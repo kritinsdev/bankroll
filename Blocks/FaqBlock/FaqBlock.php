@@ -1,8 +1,8 @@
 <?php
 
-namespace Bankroll\Core\Blocks;
+namespace Bankroll\Includes\Blocks;
 
-use Bankroll\Core\Blocks\BlockInterface;
+use Bankroll\Blocks\BlockInterface;
 
 class FaqBlock implements BlockInterface {
     public function __construct() {
@@ -86,7 +86,7 @@ class FaqBlock implements BlockInterface {
             'max' => '',
         );
     }
-
+    
     public function show() {
         echo 'faq block';
     }

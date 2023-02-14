@@ -1,6 +1,6 @@
 <?php
 
-namespace Bankroll\Core\Blocks;
+namespace Bankroll\Includes\Blocks;
 
 class ContentBlock {
     public function __construct() {

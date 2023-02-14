@@ -1,6 +1,6 @@
 <?php
 
-namespace Bankroll\Core\Resource;
+namespace Bankroll\Includes\Resource;
 
 class Slot
 {

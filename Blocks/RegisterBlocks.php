@@ -1,8 +1,8 @@
 <?php 
 
-namespace Bankroll\Core\Blocks;
+namespace Bankroll\Blocks;
 
-use Bankroll\Core\Blocks\FaqBlock;
+use Bankroll\Blocks\FaqBlock;
 
 class RegisterBlocks {
     public function __construct() {

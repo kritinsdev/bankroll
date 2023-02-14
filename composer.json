@@ -8,7 +8,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Bankroll\\Core\\": "includes/"
+            "Bankroll\\Includes\\": "Includes/",
+            "Bankroll\\Blocks\\": "Blocks/"
         }
     }
 }

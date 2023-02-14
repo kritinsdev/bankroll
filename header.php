@@ -1,5 +1,5 @@
 <?php
-use Bankroll\Core\View\Parts;
+use Bankroll\Includes\View\Parts;
 ?>
 
 <!DOCTYPE html>

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bankroll\Core\Ajax;
+namespace Bankroll\Includes\Ajax;
 
-use Bankroll\Core\Singleton;
+use Bankroll\Includes\Singleton;
 
 class AjaxFunctions
 {

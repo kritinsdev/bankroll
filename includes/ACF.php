@@ -1,8 +1,6 @@
 <?php
 
-namespace Bankroll\Core;
-
-use Bankroll\Core\Singleton;
+namespace Bankroll\Includes;
 
 class ACF {
     use Singleton;

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Bankroll\Core\Factory;
+namespace Bankroll\Includes\Factory;
 
 use Bankroll\Core\Resource\Slot;
 

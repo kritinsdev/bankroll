@@ -1,6 +1,6 @@
 <?php
-use Bankroll\Core\MenuWalker;
-use Bankroll\Core\View\Parts;
+use Bankroll\Includes\MenuWalker;
+use Bankroll\Includes\View\Parts;
 
 ?>
 
