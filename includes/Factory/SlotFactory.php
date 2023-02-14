@@ -2,7 +2,7 @@
 
 namespace Bankroll\Includes\Factory;
 
-use Bankroll\Core\Resource\Slot;
+use Bankroll\Includes\Resource\Slot;
 
 class SlotFactory {
     public static function create($post): Slot  {

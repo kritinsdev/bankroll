@@ -1,5 +1,5 @@
 <?php
-use Bankroll\Core\Factory\SlotFactory;
+use Bankroll\Includes\Factory\SlotFactory;
 
 $slot = SlotFactory::create(get_the_ID());
 $provider = $slot->getProvider();
