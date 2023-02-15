@@ -17,7 +17,7 @@ class MenuWalker extends \Walker_Nav_Menu
         $indent = str_repeat($t, $depth);
 
         // Default class.
-        $classes = ['dropdown__submenu'];
+        $classes = ['submenu', 'show'];
 
 
         $class_names = implode(' ', $classes);
@@ -47,13 +47,10 @@ class MenuWalker extends \Walker_Nav_Menu
         $class_names = '';
 
         if ( ! empty($args->walker->has_children)) {
-            $class_names = ' class="dropdown"';
+            $class_names = ' class="has-submenu"';
         }
 
-        $id = apply_filters('nav_menu_item_id', 'menu-item-' . $menu_item->ID, $menu_item, $args, $depth);
-        $id = $id ? ' id="' . esc_attr($id) . '"' : '';
-
-        $output .= $indent . '<li' . $id . $class_names . '>';
+        $output .= $indent . '<li'. $class_names . '>';
 
         $atts           = [];
         $atts['title']  = ! empty($menu_item->attr_title) ? $menu_item->attr_title : '';
@@ -86,7 +83,7 @@ class MenuWalker extends \Walker_Nav_Menu
         }
 
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '<div class="dropdown__trigger js-dropdown-trigger"><a' . $attributes . '>';
+            $item_output .= '<div class="trigger js-open-submenu"><a' . $attributes . '>';
         } else {
             $item_output .= '<a' . $attributes . '>';
         }
@@ -102,7 +99,7 @@ class MenuWalker extends \Walker_Nav_Menu
         }
 
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '</a><svg width="8" height="5" fill="white"><use xlink:href="#chevron-down"></use></svg></div>';
+            $item_output .= '</a><i class="fa-solid fa-caret-down"></i></div>';
         } else {
             $item_output .= '</a>';
         }
