@@ -17,7 +17,7 @@ class MenuWalker extends \Walker_Nav_Menu
         $indent = str_repeat($t, $depth);
 
         // Default class.
-        $classes = ['submenu', 'show'];
+        $classes = ['submenu'];
 
 
         $class_names = implode(' ', $classes);
@@ -83,7 +83,7 @@ class MenuWalker extends \Walker_Nav_Menu
         }
 
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '<div class="trigger js-open-submenu"><a' . $attributes . '>';
+            $item_output .= '<div class="trigger js-open-submenu"><i class="menu-item-icon fa-solid fa-star"></i><a' . $attributes . '>';
         } else {
             $item_output .= '<a' . $attributes . '>';
         }
@@ -99,7 +99,7 @@ class MenuWalker extends \Walker_Nav_Menu
         }
 
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '</a><i class="fa-solid fa-caret-down"></i></div>';
+            $item_output .= '</a><i class="submenu-icon fa-solid fa-angle-down"></i></div>';
         } else {
             $item_output .= '</a>';
         }

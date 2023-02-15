@@ -5,12 +5,34 @@ class MobileMenu {
         this.navigation = header.querySelector('#navWrap');
         this.searchBtn = header.querySelector('#siteSearch');
         this.searchInput = header.querySelector('#siteSearchInput');
+        this.submenuParentItem = header.querySelectorAll('.has-submenu');
         this.events();
     }
 
     events() {
         this.header.addEventListener('click', this.toggleSiteSearch.bind(this));
         this.menuBtn.addEventListener('click', this.toggleMobileMenu.bind(this));
+        this.submenuParentItem.forEach(item => item.addEventListener('click', this.toggleSubmenu.bind(this)));
+    }
+
+    toggleSubmenu(e) {
+        if(e.target.closest('.has-submenu')) {
+            const submenuParent = e.target.closest('.has-submenu');
+            const icon = submenuParent.querySelector('i');
+            const submenu = submenuParent.querySelector('.submenu');
+    
+            if(!submenu.classList.contains('show')) {
+                icon.classList.remove('fa-caret-down');
+                icon.classList.add('fa-caret-up');
+                submenu.classList.add('show');
+            } else {
+                icon.classList.remove('fa-caret-up');
+                icon.classList.add('fa-caret-down');
+                submenu.classList.remove('show');
+            }
+        }
+        
+
     }
 
     toggleMobileMenu() {
