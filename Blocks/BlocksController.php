@@ -4,37 +4,28 @@ namespace Bankroll\Blocks;
 
 class BlocksController {
 
+    public static array $defaultBlockSettings = [
+        'block_title' => null,
+        'block_subtitle' => null,
+        'block_mode' => null
+    ];
+
     public static function show() {
         global $post;
 
         $blocks = get_field('blocks', $post->ID);
 
         foreach($blocks as $block) {
-            self::resolveBlocks($block['acf_fc_layout'], $block);
+            self::resolveBlocks($block['acf_fc_layout'], $block['block_data'], $block['block_settings']);
         }
     }
 
-    public static function resolveBlocks(string $key, array $data) {
-        echo '<div>';
-        switch ($key) {
-            case 'block_board':
-                self::boardBlock($data);
-                break;
-            case 'block_content':
-                echo 'CONTENT BLOCK';
-                break;
-            case 'block_faq':
-                echo 'FAQ BLOCK';
-                break;
-            default:
-                echo 'NOT SET';
-                break;
-        }
-        echo '</div>';
+    public static function resolveBlocks(string $key, array $data, array $settings) {
+        unset($settings['block_subtitle']);
+        $block = ltrim(strstr($key, '_'), '_');
 
-    }
+        $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 
-    public static function boardBlock(array $data) {
-        get_template_part('parts/blocks/board', null, ['data' => $data]);
+        get_template_part("parts/blocks/$block", null, ['data' => $data, 'settings' => $settings]);
     }
 }

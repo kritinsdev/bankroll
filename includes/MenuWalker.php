@@ -82,8 +82,9 @@ class MenuWalker extends \Walker_Nav_Menu
             $item_output = $args->before;
         }
 
+        // TODO : add menu icons here
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '<div class="trigger js-open-submenu"><i class="menu-item-icon fa-solid fa-star"></i><a' . $attributes . '>';
+            $item_output .= '<div class="trigger js-open-submenu"><a' . $attributes . '>';
         } else {
             $item_output .= '<a' . $attributes . '>';
         }
