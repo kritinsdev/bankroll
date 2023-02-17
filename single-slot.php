@@ -24,6 +24,9 @@ get_header(); ?>
       </div>
    </div>
    <div class="container">
+      <pre>
+         <?php var_dump($slot->getImage()['url']); ?>
+      </pre>
       <h1>
          <?php echo $slot->getName(); ?>
       </h1>
