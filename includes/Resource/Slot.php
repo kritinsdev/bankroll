@@ -8,6 +8,7 @@ class Slot
     private float $rtp;
     private int $maxMultiplier;
     private mixed $provider;
+    private array $image;
 
     public function setName(string $name): void {
         $this->name = $name;
@@ -15,6 +16,14 @@ class Slot
 
     public function getName(): string {
         return $this->name;
+    }
+
+    public function setImage(array $image): void {
+        $this->image = $image;
+    }
+
+    public function getImage(): array {
+        return $this->image;
     }
 
     public function setRtp(float $rtp): void {

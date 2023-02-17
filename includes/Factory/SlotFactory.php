@@ -12,6 +12,7 @@ class SlotFactory {
         $slot->setRtp(get_field('slot_rtp', $post));
         $slot->setMaxMultiplier(get_field('slot_max_multiplier', $post));
         $slot->setProvider(get_field('slot_provider', $post));
+        $slot->setImage(get_field('slot_image', $post));
 
         return $slot;
     }
