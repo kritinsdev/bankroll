@@ -1,15 +1,13 @@
 <?php
-$postType = ucfirst($args['data']['block_board_post_type']);
-$className = 'Bankroll\Includes\Factory\\' . $postType . 'Factory';
+$postType = $args['data']['block_board_post_type'];
+$postIds = $args['data']['block_board_' . $postType];
+$typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst($postType) . 'Factory';
 
 ?>
 
-<div>
-    <?php foreach ($args['data'] as $postItem):
-    var_dump($postItem);
-        $item = $className::create($postItem); ?>
-        <div>
-            <?php var_dump($item->getName()); ?>
-        </div>
+<div class="board">
+    <?php foreach ($postIds as $id):
+        $post = $typeFactory::create($id); ?>
+        <?php get_template_part('parts/blocks/board/board-' . $postType, null, ['data' => $post]); ?>
     <?php endforeach; ?>
 </div>
