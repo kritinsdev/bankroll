@@ -21,11 +21,17 @@ class BlocksController {
     }
 
     public static function resolveBlocks(string $key, array $data, array $settings) {
-        unset($settings['block_subtitle']);
         $block = ltrim(strstr($key, '_'), '_');
-
         $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 
-        get_template_part("parts/blocks/$block", null, ['data' => $data, 'settings' => $settings]);
+        ob_start();
+        get_template_part("parts/blocks/$block", null, ['data' => $data]);
+        $template = ob_get_clean();
+
+        self::blockWrapper($template, $settings);
+    }
+
+    public static function blockWrapper(string $template, array $settings) {
+        get_template_part('parts/blocks/wrapper', null, ['template' => $template, 'settings' => $settings]);
     }
 }
