@@ -5,9 +5,10 @@ namespace Bankroll\Blocks;
 class BlocksController {
 
     public static array $defaultBlockSettings = [
+        'block_mode' => null,
         'block_title' => null,
-        'block_subtitle' => null,
-        'block_mode' => null
+        'block_content_pre' => null,
+        'block_content_after' => null,
     ];
 
     public static function show() {

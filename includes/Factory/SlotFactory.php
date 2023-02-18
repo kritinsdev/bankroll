@@ -8,6 +8,8 @@ class SlotFactory {
     public static function create($post): Slot  {
         $slot = new Slot();
 
+        $slot->setId(get_the_ID());
+        $slot->setPermalink(get_the_permalink($post));
         $slot->setName(get_the_title($post));
         $slot->setRtp(get_field('slot_rtp', $post));
         $slot->setMaxMultiplier(get_field('slot_max_multiplier', $post));

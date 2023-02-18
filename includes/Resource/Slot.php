@@ -4,11 +4,29 @@ namespace Bankroll\Includes\Resource;
 
 class Slot
 {
+    private int $id;
+    private string $permalink;
     private string $name;
     private float $rtp;
     private int $maxMultiplier;
     private mixed $provider;
     private array $image;
+
+    public function setId(int $id): void {
+        $this->id = $id;
+    }
+
+    public function getId(): int {
+        return $this->id;
+    }
+
+    public function setPermalink(string $permalink): void {
+        $this->permalink = $permalink;
+    }
+
+    public function getPermalink(): string {
+        return $this->permalink;
+    }
 
     public function setName(string $name): void {
         $this->name = $name;
@@ -39,7 +57,7 @@ class Slot
     }
 
     public function getMaxMultiplier(): string {
-        return $this->maxMultiplier . "X";
+        return $this->maxMultiplier;
     }
 
     public function setProvider(int $termId): void {

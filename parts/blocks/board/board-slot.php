@@ -9,9 +9,9 @@ $image = $slot->getImage();
         <img src="<?php echo $image['url']; ?>" alt="">
     </div>
     <div class="boardSlot__details">
-        <span>
+        <a href="<?php echo $slot->getPermalink(); ?>">
             <?php echo $slot->getName(); ?>
-        </span>
+        </a>
         <p>
             <?php echo $provider->name; ?>
         </p>
