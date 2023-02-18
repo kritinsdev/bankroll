@@ -7,20 +7,4 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
-
-    .boardSlot {
-        flex:0 0 100%;
-    
-        @include mq('phablet') {
-            flex:0 0 calc(33% - var(--spacing-default));
-        }
-
-        @include mq('tablet-mid') {
-            flex: 0 0 calc(25% - var(--spacing-default));
-        }
-
-        @include mq('tablet-wide') {
-            flex:0 0 calc(18% - var(--spacing-default));
-        }
-    }
 }

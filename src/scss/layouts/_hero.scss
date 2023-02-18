@@ -1,15 +1,13 @@
 .hero {
-    background-color: var(--color-primary);
-    padding:var(--spacing-lg) 0;  
+    padding:var(--spacing-lg) 0;
+    background-color: orange;
 }
 
 .hero__inner {
     h1 {
-        color:var(--text-light);
         margin-bottom: var(--spacing-default);
     }
 
     p {
-        color:var(--text-grey);
     }
 }
