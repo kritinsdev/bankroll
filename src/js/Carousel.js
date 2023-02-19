@@ -1,10 +1,17 @@
-import EmblaCarousel from 'embla-carousel';
+import Splide from '@splidejs/splide';
 
 class Carousel {
     constructor() {
-        const emblaNode = document.querySelector('.boardCarousel')
-        const options = { loop: false }
-        const embla = EmblaCarousel(emblaNode, options)
+        new Splide( '.splide', {
+            perPage: 6,
+            gap: '1.6rem',
+            breakpoints: {
+                600: {
+                    perPage: 2,
+                    arrows: false,
+                }
+            }
+        }).mount();
     }
 }
 

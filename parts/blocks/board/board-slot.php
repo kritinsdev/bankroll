@@ -4,7 +4,7 @@ $provider = $slot->getProvider();
 $image = $slot->getImage();
 ?>
 
-<div class="board__item slot">
+<div class="board__item splide__slide slot">
     <div class="slot__image">
         <img src="<?php echo $image['url']; ?>" alt="">
     </div>

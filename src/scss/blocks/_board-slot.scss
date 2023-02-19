@@ -1,20 +1,22 @@
 .board {
     .slot {
+        &:not(.splide__slide) {
+            flex: 0 0 100%;
+
+            @include mq('phablet') {
+                flex: 0 0 calc(33% - var(--spacing-default));
+            }
+    
+            @include mq('tablet-mid') {
+                flex: 0 0 calc(25% - var(--spacing-default));
+            }
+    
+            @include mq('tablet-wide') {
+                flex: 0 0 calc(16.6% - var(--spacing-default));
+            }
+        }
         border-radius: var(--border-radius);
-        flex: 0 0 100%;
         background-color: var(--color-white);
-
-        @include mq('phablet') {
-            flex: 0 0 calc(33% - var(--spacing-default));
-        }
-
-        @include mq('tablet-mid') {
-            flex: 0 0 calc(25% - var(--spacing-default));
-        }
-
-        @include mq('tablet-wide') {
-            flex: 0 0 calc(16.6% - var(--spacing-default));
-        }
 
         &__image {
             display: flex;

@@ -34,7 +34,6 @@
     "webpack-livereload-plugin": "^3.0.2"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4",
-    "embla-carousel": "^7.0.9"
+    "@splidejs/splide": "^4.1.4"
   }
 }

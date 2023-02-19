@@ -14,4 +14,8 @@ class Parts {
     public static function siteLogo(array $args = []): string {
         return BANKROLL_DIR_URI . '/dist/img/logo-placeholder.png';
     }
+
+    public static function carousel() {
+        get_template_part('parts/global/carousel', null, ['data' => ['']]);
+    }
 }
