@@ -1,10 +1,19 @@
 .board {
-    display: flex;
-    flex-direction: column;
-    gap:var(--spacing-default);
 
-    @include mq('phablet') {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .boardItems {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-default);
+
+        @include mq('phablet') {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .boardLoadMore {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
     }
 }

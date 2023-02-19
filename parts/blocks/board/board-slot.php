@@ -15,6 +15,5 @@ $image = $slot->getImage();
         <p>
             <?php echo $provider->name; ?>
         </p>
-
     </div>
 </div>

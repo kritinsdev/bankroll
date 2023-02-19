@@ -11,7 +11,7 @@
         }
 
         @include mq('tablet-wide') {
-            flex:0 0 calc(18% - var(--spacing-default));
+            flex:0 0 calc(16.6% - var(--spacing-default));
         }
 
         &__image {

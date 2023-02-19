@@ -5,10 +5,10 @@ namespace Bankroll\Includes\Factory;
 use Bankroll\Includes\Resource\Slot;
 
 class SlotFactory {
-    public static function create($post): Slot  {
+    public static function create(\WP_Post|int $post): Slot  {
         $slot = new Slot();
 
-        $slot->setId(get_the_ID());
+        $slot->setId(is_int($post) ? $post : $post->ID);
         $slot->setPermalink(get_the_permalink($post));
         $slot->setName(get_the_title($post));
         $slot->setRtp(get_field('slot_rtp', $post));

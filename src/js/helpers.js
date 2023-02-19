@@ -1,1 +1,7 @@
-console.log('helpers');
+const spinner = (element) => {
+    console.log(element);
+}
+
+export {
+    spinner
+}
