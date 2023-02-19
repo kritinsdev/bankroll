@@ -16,7 +16,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
 ?>
 
 <div class="board carousel">
-    <div class="boardItems">
+    <div class="board__items">
         <?php foreach ($postIds as $itemCount => $id):
             $post = $typeFactory::create($id); ?>
             <?php if($mode === 'default') : ?>
@@ -27,7 +27,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
         <?php endforeach; ?>
     </div>
     <?php if ($showLoadMore): ?>
-        <div id="boardLoadMore" class="boardLoadMore" data-remaining-posts="[1,2,3,4,5]">
+        <div id="boardLoadMore" class="board__loadMore" data-remaining-posts="[1,2,3,4,5]">
             <button>Load More</button>
         </div>
     <?php endif; ?>

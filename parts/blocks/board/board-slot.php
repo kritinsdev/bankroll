@@ -4,11 +4,11 @@ $provider = $slot->getProvider();
 $image = $slot->getImage();
 ?>
 
-<div class="boardSlot">
-    <div class="boardSlot__image">
+<div class="board__item slot">
+    <div class="slot__image">
         <img src="<?php echo $image['url']; ?>" alt="">
     </div>
-    <div class="boardSlot__details">
+    <div class="slot__details">
         <a href="<?php echo $slot->getPermalink(); ?>">
             <?php echo $slot->getName(); ?>
         </a>
