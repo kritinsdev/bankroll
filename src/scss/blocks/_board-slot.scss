@@ -1,6 +1,8 @@
 .board {
     .boardSlot {
+        border-radius: var(--border-radius);
         flex:0 0 100%;
+        background-color: var(--color-white);
     
         @include mq('phablet') {
             flex:0 0 calc(33% - var(--spacing-default));
@@ -15,22 +17,28 @@
         }
 
         &__image {
-            
+            display: flex;
+            height: 20rem;
+
             img {
                 width: 100%;
-                max-height: 20rem;
+                border-radius: var(--border-radius-top);
                 object-fit: cover;
             }
         }
 
         &__details {
-            span {
+            padding:var(--spacing-sm);
+            a {
                 font-weight: bold;
-                color:var(--text-light);
+                color:var(--text-dark);
+                font-size:var(--font-size-sm);
             }
 
             p {
                 color: var(--text-grey);
+                font-size: var(--font-size-xs);
+                margin-top: var(--spacing-sm);
             }
         }
     }

@@ -15,5 +15,6 @@ $image = $slot->getImage();
         <p>
             <?php echo $provider->name; ?>
         </p>
+        <p>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>x</p>
     </div>
 </div>
