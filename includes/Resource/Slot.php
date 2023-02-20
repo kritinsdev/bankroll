@@ -60,11 +60,11 @@ class Slot
         return $this->maxMultiplier;
     }
 
-    public function setProvider(int $termId): void {
-        $this->provider = get_term($termId, 'provider');
-    }
+    // public function setProvider(array|int $termId): void {
+    //     $this->provider = get_term($termId, 'provider');
+    // }
 
-    public function getProvider(): \WP_Term {
-        return $this->provider;
-    }
+    // public function getProvider(): \WP_Term {
+    //     return $this->provider;
+    // }
 }

@@ -11,6 +11,7 @@ if ($showAll) {
         'numberposts' => -1
     ]);
 }
+
 $maxPostsCount = 12; //TODO : add setting?
 $showLoadMore = count($postIds) > $maxPostsCount;
 ?>
@@ -23,7 +24,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
                     <?php foreach ($postIds as $itemCount => $id):
                         $post = $typeFactory::create($id); ?>
                         <?php if ($itemCount < $maxPostsCount): ?>
-                            <?php get_template_part('parts/blocks/board/board-' . $postType, null, ['data' => $post]); ?>
+                            <?php get_template_part('parts/blocks/board/board-' . $postType, null, ['data' => $post, 'carousel' => true]); ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>

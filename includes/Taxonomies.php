@@ -65,7 +65,6 @@ class Taxonomies
                 'show_ui' => true,
                 'show_admin_column' => true,
                 'query_var' => true,
-                'meta_box_cb'     => false,
                 'show_in_rest' => false,
                 'rewrite' => [
                     'slug' => $taxonomyData['slug'],
