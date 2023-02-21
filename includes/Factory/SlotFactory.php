@@ -7,13 +7,15 @@ use Bankroll\Includes\Resource\Slot;
 class SlotFactory {
     public static function create(\WP_Post|int $post): Slot  {
         $slot = new Slot();
+        $id = (is_int($post)) ? $post : $post->ID;
 
-        $slot->setId(is_int($post) ? $post : $post->ID);
-        $slot->setPermalink(get_the_permalink($post));
-        $slot->setName(get_the_title($post));
-        $slot->setRtp(get_field('slot_rtp', $post));
-        $slot->setMaxMultiplier(get_field('slot_max_multiplier', $post));
-        $slot->setImage(get_field('slot_image', $post));
+        $slot->setId($id);
+        $slot->setPermalink(get_the_permalink($id));
+        $slot->setProvider(wp_get_post_terms($id, 'provider'));
+        $slot->setName(get_the_title($id));
+        $slot->setRtp(get_field('slot_rtp', $id));
+        $slot->setMaxMultiplier(get_field('slot_max_multiplier', $id));
+        $slot->setImage(get_field('slot_image', $id));
 
         return $slot;
     }

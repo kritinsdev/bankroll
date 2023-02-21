@@ -2,8 +2,10 @@
 use Bankroll\Includes\Factory\SlotFactory;
 
 $slot = SlotFactory::create(get_the_ID());
-$provider = $slot->getProvider();
-get_header(); ?>
+$providers = $slot->getProvider();
+
+get_header(); 
+?>
 
 <main>
    <div class="slotMainBlock">
@@ -24,9 +26,6 @@ get_header(); ?>
       </div>
    </div>
    <div class="container">
-      <pre>
-         <?php var_dump($slot->getImage()['url']); ?>
-      </pre>
       <h1>
          <?php echo $slot->getName(); ?>
       </h1>
@@ -36,9 +35,11 @@ get_header(); ?>
       <p>Max Multiplier:
          <?php echo $slot->getMaxMultiplier(); ?>
       </p>
-      <p>Provider:
-         <?php echo $provider->name; ?>
-      </p>
+      <div class="providers">
+         <?php foreach($providers as $provider) : ?>
+               <span><?php echo $provider; ?></span>
+         <?php endforeach; ?>
+      </div>
    </div>
 </main>
 

@@ -9,7 +9,7 @@ class Slot
     private string $name;
     private float $rtp;
     private int $maxMultiplier;
-    private mixed $provider;
+    private array $provider;
     private array $image;
 
     public function setId(int $id): void {
@@ -60,11 +60,16 @@ class Slot
         return $this->maxMultiplier;
     }
 
-    // public function setProvider(array|int $termId): void {
-    //     $this->provider = get_term($termId, 'provider');
-    // }
+    public function setProvider(array $terms): void {
+        $this->provider = $terms;
+    }   
 
-    // public function getProvider(): \WP_Term {
-    //     return $this->provider;
-    // }
+    public function getProvider() {
+        $providers = [];
+        foreach($this->provider as $provider) {
+            $providers[] = $provider->name;
+        }
+
+        return $providers;
+    }
 }
