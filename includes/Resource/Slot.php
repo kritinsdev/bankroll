@@ -6,11 +6,13 @@ class Slot
 {
     private int $id;
     private string $permalink;
+    private array $image;
     private string $name;
     private float $rtp;
     private int $maxMultiplier;
-    private array $provider;
-    private array $image;
+    private array $providers;
+    private array $themes;
+    private array $features;
 
     public function setId(int $id): void {
         $this->id = $id;
@@ -61,15 +63,26 @@ class Slot
     }
 
     public function setProvider(array $terms): void {
-        $this->provider = $terms;
+        $this->providers = $terms;
     }   
 
     public function getProvider() {
-        $providers = [];
-        foreach($this->provider as $provider) {
-            $providers[] = $provider->name;
+        $providersArray = [];
+        foreach($this->providers as $provider) {
+            $providersArray[] = $provider->name;
         }
 
-        return $providers;
+        return $providersArray;
+    }
+
+    public function setTheme(array $terms): void {
+        $this->themes = $terms;
+    }
+
+    public function getTheme() {
+        $themes = [];
+        foreach($this->themes as $theme) {
+
+        }
     }
 }
