@@ -1,6 +1,7 @@
 <?php
 $slot = $args['data'];
 $image = $slot->getImage();
+$provider = $slot->getProvider();
 ?>
 
 <div class="board__item <?php if(isset($args['carousel'])) echo 'splide__slide'; ?> slot">
@@ -12,7 +13,7 @@ $image = $slot->getImage();
             <?php echo $slot->getName(); ?>
         </a>
         <p>
-            PROVIDER
+            <?php foreach($provider as $prov) echo $prov; ?>
         </p>
         <p>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>x</p>
     </div>

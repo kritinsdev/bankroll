@@ -80,9 +80,11 @@ class Slot
     }
 
     public function getTheme() {
-        $themes = [];
+        $themesArray = [];
         foreach($this->themes as $theme) {
-
+            $themesArray[] = $theme->name;
         }
+
+        return $themesArray;
     }
 }
