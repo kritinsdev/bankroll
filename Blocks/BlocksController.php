@@ -21,7 +21,7 @@ class BlocksController {
         }
     }
 
-    public static function resolveBlocks(string $key, array $data, array $settings) {
+    public static function resolveBlocks(string $key, array|bool $data, array|bool $settings) {
         $block = ltrim(strstr($key, '_'), '_');
         $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 

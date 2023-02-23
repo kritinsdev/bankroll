@@ -1,10 +1,11 @@
 body {
-  color:var(--text-light);
+  color:var(--text-grey);
   font-size: var(--font-size-default);
   font-family: var(--font-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color:var(--text-white);
   font-weight: bold;
   margin:0;
 }
@@ -15,9 +16,8 @@ a {
   display: inline-flex;
 }
 
-p {
+p, ul, li {
   line-height: 2.4rem;
-  color:var(--text-grey);
 }
 
 //wp default img alignment styles

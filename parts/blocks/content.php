@@ -1,6 +1,3 @@
 <div>
-    <h2>Data</h2>
-    <pre>
-        <?php var_dump($args['data']); ?>
-    </pre>
+    <?php echo $args['data']['block_content_editor']; ?> 
 </div>
