@@ -26,9 +26,6 @@ get_header();
       </div>
    </div>
    <div class="container">
-      <h1>
-         <?php echo $slot->getName(); ?>
-      </h1>
       <p>RTP:
          <?php echo $slot->getRtp(); ?>
       </p>

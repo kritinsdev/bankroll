@@ -12,9 +12,9 @@ $provider = $slot->getProvider();
         <a href="<?php echo $slot->getPermalink(); ?>">
             <?php echo $slot->getName(); ?>
         </a>
-        <p>
+        <span>
             <?php foreach($provider as $prov) echo $prov; ?>
-        </p>
-        <p>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>x</p>
+        </span>
+        <span>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>x</span>
     </div>
 </div>

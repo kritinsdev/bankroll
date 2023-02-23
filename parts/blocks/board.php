@@ -18,7 +18,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
 
 <div class="board">
     <?php if ($mode === 'carousel'): ?>
-        <div class="splide" aria-label="Basic Structure Example">
+        <div class="splide" aria-label="Basic carousel">
             <div class="splide__track">
                 <div class="splide__list">
                     <?php foreach ($postIds as $itemCount => $id):

@@ -38,7 +38,8 @@
                 font-size: var(--font-size-sm);
             }
 
-            p {
+            span {
+                display: block;
                 color: var(--text-grey);
                 font-size: var(--font-size-xs);
                 margin-top: var(--spacing-sm);
