@@ -16,8 +16,10 @@ class BlocksController {
 
         $blocks = get_field('blocks', $post->ID);
 
-        foreach($blocks as $block) {
-            self::resolveBlocks($block['acf_fc_layout'], $block['block_data'], $block['block_settings']);
+        if ($blocks) {
+            foreach ($blocks as $block) {
+                self::resolveBlocks($block['acf_fc_layout'], $block['block_data'], $block['block_settings']);
+            }
         }
     }
 
