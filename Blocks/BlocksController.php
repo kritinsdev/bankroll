@@ -29,10 +29,14 @@ class BlocksController {
         get_template_part("parts/blocks/$block", null, ['data' => $data]);
         $template = ob_get_clean();
 
-        self::blockWrapper($template, $settings);
+        self::blockWrapper($template, $settings, $block);
     }
 
-    public static function blockWrapper(string $template, array $settings) {
-        get_template_part('parts/blocks/wrapper', null, ['template' => $template, 'settings' => $settings]);
+    public static function blockWrapper(string $template, array $settings, string $blockType) {
+        get_template_part('parts/blocks/wrapper', null, [
+            'template' => $template, 
+            'settings' => $settings,
+            'blockType' => $blockType
+        ]);
     }
 }
