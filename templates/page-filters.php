@@ -12,7 +12,20 @@ get_header(); ?>
                 <?php BlocksController::show(); ?>
             </div>
             <div class="mainArea__sidebar">
-                THIS IS SIDEBAR
+                <div class="filters">
+                    <div class="filter">
+                        <div class="filter__head">
+                            Filter By Provider
+                        </div>
+                        <div class="filter__data">
+                            <div>Netent</div>
+                            <div>Netent</div>
+                            <div>Netent</div>
+                            <div>Netent</div>
+                            <div>Netent</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
