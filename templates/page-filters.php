@@ -14,13 +14,10 @@ get_header(); ?>
             <div class="mainArea__sidebar">
                 <div class="filters">
                     <div class="filter">
-                        <div class="filter__head">
+                        <div class="filter__header">
                             Filter By Provider
                         </div>
                         <div class="filter__data">
-                            <div>Netent</div>
-                            <div>Netent</div>
-                            <div>Netent</div>
                             <div>Netent</div>
                             <div>Netent</div>
                         </div>

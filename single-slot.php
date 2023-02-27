@@ -4,16 +4,21 @@ use Bankroll\Includes\Factory\SlotFactory;
 $slot = SlotFactory::create(get_the_ID());
 $providers = $slot->getProvider();
 
-get_header(); 
+get_header();
 ?>
 
 <main>
    <div class="slotMainBlock">
       <div class="container">
-      <div class="slotMainBlock__game">
-         IFRAME
-      </div>
-      <div class="slotMainBlock__properties">
+         <div class="slotMainBlock__wrap">
+            <div class="slotMainBlock__game">
+               <iframe loading="lazy"
+                  src="https://d3nsdzdtjbr5ml.cloudfront.net/casino/relax/fatrabbit/index.html?&moneymode=fun"
+                  style="border:0px # none;" name="" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px"
+                  height="400px" width="600px" allowfullscreen></iframe>
+            </div>
+            <div class="slotMainBlock__properties">
+            </div>
             <div class="slotMainBlock__image">
                <img src="#" alt="#">
             </div>
@@ -22,7 +27,7 @@ get_header();
                   TABLE OF PROPS
                </div>
             </div>
-      </div>
+         </div>
       </div>
    </div>
    <div class="container">
@@ -33,8 +38,10 @@ get_header();
          <?php echo $slot->getMaxMultiplier(); ?>
       </p>
       <div class="providers">
-         <?php foreach($providers as $provider) : ?>
-               <span><?php echo $provider; ?></span>
+         <?php foreach ($providers as $provider): ?>
+            <span>
+               <?php echo $provider; ?>
+            </span>
          <?php endforeach; ?>
       </div>
    </div>
