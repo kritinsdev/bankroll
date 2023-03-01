@@ -1,8 +1,35 @@
 .filter {
-
+    border-radius: var(--border-radius);
+    padding:var(--spacing-default);
+    background-color: var(--color-primary);
+    &:not(:last-child) {
+        margin-bottom: var(--spacing-default);
+    }
 }
 
 .filter__header {
     font-weight: bold;
     color:var(--color-white);
+    font-size: var(--font-size-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter__item {
+    padding:var(--spacing-sm) 0;
+
+    label {
+        margin-left: var(--spacing-sm);
+    }
+}
+
+.filter__data {
+    display: none;
+    &.show {
+        margin-top: var(--spacing-default);
+        display: block;
+        max-height: 16rem;
+        overflow-y: scroll;
+    }
 }
