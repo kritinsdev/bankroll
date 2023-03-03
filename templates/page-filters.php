@@ -8,11 +8,9 @@ get_header(); ?>
 <main>
     <div class="container">
         <div class="mainArea">
-            <div class="mainArea__main">
-                <?php BlocksController::show(); ?>
-            </div>
-            <div class="mainArea__sidebar">
-                <div class="filters">
+        <div class="mainArea__sidebar">
+                <div class="filters block">
+                    
                     <div class="filter filter-providers">
                         <div class="filter__header">
                             <span>Filter By Providers</span>
@@ -40,7 +38,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="filter filter-providers">
+                    <div class="filter filter-akrakko">
                         <div class="filter__header">
                             <span>Filter By Themes</span>
                             <span>
@@ -67,7 +65,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="filter filter-providers">
+                    <div class="filter filter-bkrakko">
                         <div class="filter__header">
                             <span>Filter By Features</span>
                             <span>
@@ -109,6 +107,9 @@ get_header(); ?>
                     </div>
 
                 </div>
+            </div>
+            <div class="mainArea__main">
+                <?php BlocksController::show(); ?>
             </div>
         </div>
     </div>
