@@ -3,8 +3,8 @@
     gap:var(--spacing-default);
 }
 .filter {
+    position: relative;
     border-radius: var(--border-radius);
-    padding:var(--spacing-default);
     background-color: var(--color-primary);
     flex:0 0 calc(25% - var(--spacing-default));
 
@@ -14,6 +14,8 @@
 }
 
 .filter__header {
+    height: 2rem;
+    padding:var(--spacing-default);
     font-weight: bold;
     color:var(--color-white);
     font-size: var(--font-size-lg);
@@ -27,7 +29,7 @@
 }
 
 .filter__item {
-    padding:var(--spacing-sm) 0;
+    padding:var(--spacing-sm);
 
     label {
         margin-left: var(--spacing-sm);
@@ -35,11 +37,14 @@
 }
 
 .filter__data {
+    border-radius: var(--border-radius);
+    position: absolute;
+    width: 100%;
+    top:5.5rem;
+    left:0;
     display: none;
+    background-color: var(--color-primary);
     &.show {
-        margin-top: var(--spacing-default);
         display: block;
-        max-height: 16rem;
-        overflow-y: scroll;
     }
 }

@@ -3,6 +3,11 @@
 
 use Bankroll\Blocks\BlocksController;
 
+$providers = get_terms('provider', [
+    'orderby' => 'name',
+    'order' => 'ASC'
+]);
+
 get_header(); ?>
 
 <main>
@@ -19,21 +24,19 @@ get_header(); ?>
                                 </svg>
                             </span>
                         </div>
-                        <div class="filter__data">
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-1">
-                                <label for="checkbox-1">Text for the checkbox</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-2">
-                                <label for="checkbox-2">Text for the checkbox</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-3">
-                                <label for="checkbox-3">Text for the checkbox</label>
-                            </div>
+                        <div class="filter__data" data-filter-data="providers">
+                            <?php foreach ($providers as $provider): ?>
+                                <!-- <div class="filter__item">
+                                    <input type="checkbox" id="checkbox-1">
+                                    <label for="checkbox-1">Text for the checkbox</label>
+                                </div> -->
+                                <div class="filter__item">
+                                    <input type="checkbox" id="<?php echo sprintf('%s_%d', $provider->slug, $provider->term_id) ; ?>">
+                                    <label for="<?php echo sprintf('%s_%d', $provider->slug, $provider->term_id) ; ?>">
+                                        <?php echo $provider->name; ?>        
+                                    </label>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
 
@@ -46,20 +49,10 @@ get_header(); ?>
                                 </svg>
                             </span>
                         </div>
-                        <div class="filter__data">
+                        <div class="filter__data" data-filter-data="themes">
                             <div class="filter__item">
                                 <input type="checkbox" id="checkbox-1">
                                 <label for="checkbox-1">Text for the checkbox</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-2">
-                                <label for="checkbox-2">Text for the checkbox</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-3">
-                                <label for="checkbox-3">Text for the checkbox</label>
                             </div>
                         </div>
                     </div>
@@ -73,38 +66,13 @@ get_header(); ?>
                                 </svg>
                             </span>
                         </div>
-                        <div class="filter__data">
+                        <div class="filter__data" data-filter-data="features">
                             <div class="filter__item">
                                 <input type="checkbox" id="checkbox-1">
                                 <label for="checkbox-1">Megaways</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-2">
-                                <label for="checkbox-2">Free Spins</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-3">
-                                <label for="checkbox-3">Pirates</label>
-                            </div>
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-1">
-                                <label for="checkbox-1">Megaways</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-2">
-                                <label for="checkbox-2">Free Spins</label>
-                            </div>
-
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-3">
-                                <label for="checkbox-3">Pirates</label>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <?php 

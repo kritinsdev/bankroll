@@ -17,7 +17,6 @@ class BoardLoadMore {
 
     loadMorePosts(e) {
         const loadMoreWrap = e.target.closest('#boardLoadMore');
-        
 
         if(loadMoreWrap) {
             const button = loadMoreWrap.querySelector('button');
