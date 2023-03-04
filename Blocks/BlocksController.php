@@ -11,30 +11,38 @@ class BlocksController {
         'block_content_after' => null,
     ];
 
-    public static function show() {
+    public static function blocks()
+    {
         global $post;
 
         $blocks = get_field('blocks', $post->ID);
 
         if ($blocks) {
             foreach ($blocks as $block) {
-                self::resolveBlocks($block['acf_fc_layout'], $block['block_data'], $block['block_settings']);
+                self::resolveBlock($block['acf_fc_layout'], $block['block_data'], $block['block_settings']);
             }
         }
     }
 
-    public static function resolveBlocks(string $key, array|bool $data, array|bool $settings) {
-        $block = ltrim(strstr($key, '_'), '_');
+    public static function block(string $layout, array $data, ?array $settings = [])
+    {   
+        self::resolveBlock($layout, $data, $settings);
+    }
+
+    public static function resolveBlock(string $layout, array|bool $data, ?array $settings = []) {
+        $block = ltrim(strstr($layout, '_'), '_');
         $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 
         ob_start();
         get_template_part("parts/blocks/$block", null, ['data' => $data]);
         $template = ob_get_clean();
 
-        self::blockWrapper($template, $settings, $block);
+        self::blockWrapper($template, $block, $settings);
     }
 
-    public static function blockWrapper(string $template, array $settings, string $blockType) {
+
+
+    public static function blockWrapper(string $template, string $blockType, ?array $settings) {
         get_template_part('parts/blocks/wrapper', null, [
             'template' => $template, 
             'settings' => $settings,

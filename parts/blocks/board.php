@@ -1,6 +1,6 @@
 <?php
 $postType = $args['data']['block_board_post_type'];
-$mode = $args['data']['block_board_mode'];
+$mode = (!isset($args['data']['block_board_mode'])) ? 'default' : $args['data']['block_board_mode'];
 $typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst($postType) . 'Factory';
 $showAll = $args['data']['block_board_show_all'];
 $postIds = $args['data']['block_board_' . $postType];

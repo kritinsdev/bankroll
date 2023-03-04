@@ -9,9 +9,8 @@ get_header(); ?>
     <div class="container">
         <div class="mainArea">
         <div class="mainArea__sidebar">
-                <div class="filters block">
-                    
-                    <div class="filter filter-providers">
+                <div id="filter" class="filters block">
+                    <div class="filter" data-filter="providers">
                         <div class="filter__header">
                             <span>Filter By Providers</span>
                             <span>
@@ -38,7 +37,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="filter filter-akrakko">
+                    <div class="filter" data-filter="themes">
                         <div class="filter__header">
                             <span>Filter By Themes</span>
                             <span>
@@ -65,7 +64,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="filter filter-bkrakko">
+                    <div class="filter" data-filter="features">
                         <div class="filter__header">
                             <span>Filter By Features</span>
                             <span>
@@ -74,7 +73,7 @@ get_header(); ?>
                                 </svg>
                             </span>
                         </div>
-                        <div class="filter__data show">
+                        <div class="filter__data">
                             <div class="filter__item">
                                 <input type="checkbox" id="checkbox-1">
                                 <label for="checkbox-1">Megaways</label>
@@ -108,8 +107,21 @@ get_header(); ?>
 
                 </div>
             </div>
+            <?php 
+                $args = array(
+                    'post_type' => 'slot',
+                );
+                
+                $query = new WP_Query( $args );
+            ?>
+
             <div class="mainArea__main">
-                <?php BlocksController::show(); ?>
+                <?php BlocksController::block('block_board', [
+                    'block_board_post_type' => 'slot',
+                    'block_board_mode' => 'default',
+                    'block_board_show_all' => false,
+                    'block_board_slot' => $query->posts
+                ]); ?>
             </div>
         </div>
     </div>

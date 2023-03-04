@@ -6,7 +6,7 @@
 
    <main>
       <div class="container">
-         <?php BlocksController::show(); ?>
+         <?php BlocksController::blocks(); ?>
       </div>
    </main>
 

@@ -1,9 +1,15 @@
+.filters {
+    display: flex;
+    gap:var(--spacing-default);
+}
 .filter {
     border-radius: var(--border-radius);
     padding:var(--spacing-default);
     background-color: var(--color-primary);
-    &:not(:last-child) {
-        margin-bottom: var(--spacing-default);
+    flex:0 0 calc(25% - var(--spacing-default));
+
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -14,6 +20,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    span {
+        display: flex;
+    }
 }
 
 .filter__item {
