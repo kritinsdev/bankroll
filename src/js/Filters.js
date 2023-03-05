@@ -87,24 +87,12 @@ class Filters {
     }
 
     filterPosts() {
-        fetchAdminAjax('filterPosts', { name: 'John', email: 'john@example.com' })
-            .then(data => console.log(data))
+        fetchAdminAjax('filterPosts', { terms: [1,2,3,4,5,6] })
+            .then(data => {
+                const termsArray = JSON.parse(data);
+                console.log(termsArray);
+            })
             .catch(error => console.log(error));
-
-        // const data = new URLSearchParams();
-        // data.append('action', 'filterPosts');
-
-        // fetch(ajaxObject.ajaxUrl, {
-        //     method: "POST",
-        //     credentials: 'same-origin',
-        //     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        //     body: new URLSearchParams(data).toString(),
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
-        //     .catch(error => (error));
     }
 }
 
