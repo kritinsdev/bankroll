@@ -2,6 +2,7 @@
 /* Template Name: Page Filters */
 
 use Bankroll\Blocks\BlocksController;
+use Bankroll\Includes\View\Helpers;
 
 $providers = get_terms('provider', [
     'orderby' => 'name',
@@ -14,67 +15,16 @@ get_header(); ?>
     <div class="container">
         <div class="mainArea">
         <div class="mainArea__sidebar">
+                <div class="selectedFilters" id="selectedFilters">
+
+                </div>
                 <div id="filter" class="filters block">
-                    <div class="filter" data-filter="providers">
-                        <div class="filter__header">
-                            <span>Filter By Providers</span>
-                            <span>
-                                <svg width="8" height="5" viewBox="0 0 8 5">
-                                    <use xlink:href="#chevron-down"/>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="filter__data" data-filter-data="providers">
-                            <?php foreach ($providers as $provider): ?>
-                                <!-- <div class="filter__item">
-                                    <input type="checkbox" id="checkbox-1">
-                                    <label for="checkbox-1">Text for the checkbox</label>
-                                </div> -->
-                                <div class="filter__item">
-                                    <input type="checkbox" id="<?php echo sprintf('%s_%d', $provider->slug, $provider->term_id) ; ?>">
-                                    <label for="<?php echo sprintf('%s_%d', $provider->slug, $provider->term_id) ; ?>">
-                                        <?php echo $provider->name; ?>        
-                                    </label>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-
-                    <div class="filter" data-filter="themes">
-                        <div class="filter__header">
-                            <span>Filter By Themes</span>
-                            <span>
-                                <svg width="8" height="5" viewBox="0 0 8 5">
-                                    <use xlink:href="#chevron-down"/>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="filter__data" data-filter-data="themes">
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-1">
-                                <label for="checkbox-1">Text for the checkbox</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="filter" data-filter="features">
-                        <div class="filter__header">
-                            <span>Filter By Features</span>
-                            <span>
-                                <svg width="8" height="5" viewBox="0 0 8 5">
-                                    <use xlink:href="#chevron-down"/>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="filter__data" data-filter-data="features">
-                            <div class="filter__item">
-                                <input type="checkbox" id="checkbox-1">
-                                <label for="checkbox-1">Megaways</label>
-                            </div>
-                        </div>
-                    </div>
+                    <?php Helpers::taxonomyTermsFilter('provider'); ?>
+                    <?php Helpers::taxonomyTermsFilter('theme'); ?>
+                    <?php Helpers::taxonomyTermsFilter('feature'); ?>
                 </div>
             </div>
+            
             <?php 
                 $args = array(
                     'post_type' => 'slot',

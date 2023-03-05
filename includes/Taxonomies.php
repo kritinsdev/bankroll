@@ -23,7 +23,7 @@ class Taxonomies
             'publicly_queryable' => true,
             'hierarchical' => true
         ],
-        'features' => [
+        'feature' => [
             'singular' => 'Feature',
             'plural' => 'Features',
             'slug' => 'feature',

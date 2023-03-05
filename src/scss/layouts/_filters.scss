@@ -18,7 +18,7 @@
     padding:var(--spacing-default);
     font-weight: bold;
     color:var(--color-white);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-default);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,22 +29,53 @@
 }
 
 .filter__item {
-    padding:var(--spacing-sm);
+    display: flex;
+    font-size: var(--font-size-sm);
+    padding:var(--spacing-sm) var(--spacing-default);
 
     label {
-        margin-left: var(--spacing-sm);
+        flex: 1;
+        padding-left: var(--spacing-sm);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    input {
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
 .filter__data {
     border-radius: var(--border-radius);
+    padding-top: var(--spacing-default);
     position: absolute;
     width: 100%;
-    top:5.5rem;
+    top:3.8rem;
     left:0;
     display: none;
     background-color: var(--color-primary);
     &.show {
         display: block;
+    }
+}
+
+.selectedFilters {
+    display: flex;
+    gap:var(--spacing-default);
+
+    &__item {
+        display: flex;
+        color: var(--color-white);
+        gap:var(--spacing-sm);
+        align-items: center;
+        font-size: var(--font-size-xs);
+        text-transform: uppercase;
+        background-color: var(--color-primary);
+        padding:var(--spacing-sm);
+        border-radius: var(--border-radius);
     }
 }

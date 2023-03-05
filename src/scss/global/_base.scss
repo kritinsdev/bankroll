@@ -21,3 +21,30 @@ img {
 body {
     background-color: var(--color-secondary);
 }
+
+.cross {
+    position: relative;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+  }
+  
+  .cross::before,
+  .cross::after {
+    content: "";
+    position: absolute;
+    width: 0.2rem;
+    height: 1.2rem;
+    top: 0.15rem;
+    left: 0.65rem;
+    background-color: var(--color-white);
+    transform: rotate(45deg);
+  }
+  
+  .cross::after {
+    transform: rotate(-45deg);
+  }
