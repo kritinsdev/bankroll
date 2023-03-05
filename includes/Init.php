@@ -16,7 +16,7 @@ class Init
         Taxonomies::get_instance();
         Menu::get_instance();
         Enqueue::get_instance();
-        // AjaxFunctions::get_instance();
+        AjaxFunctions::get_instance();
 
         $this->setupHooks();
     }

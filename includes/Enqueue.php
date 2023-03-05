@@ -31,9 +31,9 @@ class Enqueue
         wp_register_script('main', $this->jsDir . 'main.js', [], current_time('timestamp'), true);
         wp_enqueue_script('main');
 
-        // wp_localize_script('mainjs', 'ajaxObject', [
-        //     'adminAjax'       => admin_url('admin-ajax.php'),
-        // ]);
+        wp_localize_script('main', 'ajaxObject', [
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+        ]);
     }
 
     public function deferScripts($tag, $handle)

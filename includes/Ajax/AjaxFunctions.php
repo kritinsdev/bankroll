@@ -11,6 +11,7 @@ class AjaxFunctions
     public function __construct()
     {
         new LoadMore();
+        new Filters();
     }
 
 }

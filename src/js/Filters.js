@@ -1,3 +1,5 @@
+import {fetchAdminAjax} from './helpers';
+
 class Filters {
     constructor() {
         this.filterBlock = document.querySelector('#filter');
@@ -13,6 +15,7 @@ class Filters {
     }
 
     events() {
+        document.addEventListener('click', this.filterPosts);
         this.filterBlock.addEventListener('click', this.filtersController);
         this.selectedFilters.addEventListener('click', this.removeFilterItem);
     }
@@ -81,6 +84,27 @@ class Filters {
         element.appendChild(title);
         element.appendChild(cross);
         this.selectedFilters.appendChild(element);
+    }
+
+    filterPosts() {
+        fetchAdminAjax('filterPosts', { name: 'John', email: 'john@example.com' })
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
+
+        // const data = new URLSearchParams();
+        // data.append('action', 'filterPosts');
+
+        // fetch(ajaxObject.ajaxUrl, {
+        //     method: "POST",
+        //     credentials: 'same-origin',
+        //     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        //     body: new URLSearchParams(data).toString(),
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        //     .catch(error => (error));
     }
 }
 

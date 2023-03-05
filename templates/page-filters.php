@@ -15,9 +15,7 @@ get_header(); ?>
     <div class="container">
         <div class="mainArea">
         <div class="mainArea__sidebar">
-                <div class="selectedFilters" id="selectedFilters">
-
-                </div>
+                <div class="selectedFilters" id="selectedFilters"></div>
                 <div id="filter" class="filters block">
                     <?php Helpers::taxonomyTermsFilter('provider'); ?>
                     <?php Helpers::taxonomyTermsFilter('theme'); ?>
