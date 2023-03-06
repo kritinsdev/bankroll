@@ -12,6 +12,9 @@ class Filters
 
     public function filterPosts()
     {
-        exit(json_encode('123'));
+
+        $terms = ($_POST['terms']) ? explode(',', $_POST['terms']) : [];
+
+        exit(json_encode($terms));
     }
 }

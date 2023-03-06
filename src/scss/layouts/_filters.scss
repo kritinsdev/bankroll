@@ -8,6 +8,12 @@
     background-color: var(--color-primary);
     flex:0 0 calc(25% - var(--spacing-default));
 
+    &.show {
+        .filter__data {
+            display: block;
+        }
+    }
+
     &:hover {
         cursor: pointer;
     }
@@ -58,9 +64,6 @@
     left:0;
     display: none;
     background-color: var(--color-primary);
-    &.show {
-        display: block;
-    }
 }
 
 .selectedFilters {

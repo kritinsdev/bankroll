@@ -3,49 +3,46 @@ import {fetchAdminAjax} from './helpers';
 class Filters {
     constructor() {
         this.filterBlock = document.querySelector('#filter');
-        this.selectedFilters = document.querySelector("#selectedFilters");
-        this.selectedFilterData = [
-            {
-                providers: null,
-                themes:null,
-                features:null
-            }
-        ];
+        this.selectedFilterItems = document.querySelector("#selectedFilters");
+        this.boardItems = document.querySelector("#boardItems");
+        this.selectedFilters = { provider: [], theme: [], feature: [] };
         this.events();
     }
 
     events() {
         document.addEventListener('click', this.filterPosts);
         this.filterBlock.addEventListener('click', this.filtersController);
-        this.selectedFilters.addEventListener('click', this.removeFilterItem);
+        this.selectedFilterItems.addEventListener('click', this.removeFilterItem);
     }
 
     filtersController = (e) => { // Open or closed 
-        if(e.target.closest('[data-filter]') && !e.target.closest('[data-term-id]')) {
+        if(e.target.closest('[data-filter]')) {
             const filter = e.target.closest('[data-filter]');
-            const filterData = filter.querySelector('[data-filter-data]');
-    
-            if(!filterData.classList.contains('show')) {
-                filterData.classList.add('show');
+
+            if(!filter.classList.contains('show')) {
+                filter.classList.add('show');
             } else {
-                filterData.classList.remove('show');
+                filter.classList.remove('show');
             }
         }
 
         if(e.target.closest('[data-term-id]')) {
             e.preventDefault();
 
+            const taxonomy = e.target.closest('[data-filter]').getAttribute;
             const dataTag = e.target.closest('[data-term-id]');
             const termId = dataTag.getAttribute('data-term-id');
             const title = dataTag.querySelector('label').innerText;
             const checkbox = dataTag.querySelector('input[type="checkbox"]');
             const checkboxStatus = checkbox.checked;
 
+            console.log(taxonomy);
+
             if(!checkboxStatus) {
                 checkbox.checked = true;
                 this.createSelectedFilterElement(termId, title);
             } else {
-                const selectedFilterItem = this.selectedFilters.querySelector(`[data-term-id="${termId}"]`);
+                const selectedFilterItem = this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`);
                 selectedFilterItem.remove();
                 checkbox.checked = false;
             }
@@ -83,14 +80,13 @@ class Filters {
 
         element.appendChild(title);
         element.appendChild(cross);
-        this.selectedFilters.appendChild(element);
+        this.selectedFilterItems.appendChild(element);
     }
 
     filterPosts() {
         fetchAdminAjax('filterPosts', { terms: [1,2,3,4,5,6] })
             .then(data => {
-                const termsArray = JSON.parse(data);
-                console.log(termsArray);
+                console.log(data);
             })
             .catch(error => console.log(error));
     }

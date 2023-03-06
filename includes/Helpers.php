@@ -3,7 +3,8 @@
 namespace Bankroll\Includes;
 
 class Helpers {
-    public static function createPosts($postType, $posts, $maxCount) {
+    public static function createPosts($postType, $posts, $maxCount)
+    {
         $typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst( $postType ) . 'Factory';
         $posts = [];
     
@@ -16,5 +17,11 @@ class Helpers {
         }
     
         return $posts;
+    }
+
+
+    public static function slotFiltersQuery($filters) 
+    {
+        
     }
 }

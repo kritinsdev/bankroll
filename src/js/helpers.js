@@ -4,7 +4,7 @@ const spinner = (element) => {
 
 const fetchAdminAjax = (action, data, method = 'POST') => {
     const url = ajaxObject.ajaxUrl;
-    const body = new FormData();
+    const body = new URLSearchParams();
     body.append('action', action);
 
     for (const key in data) {
@@ -15,7 +15,9 @@ const fetchAdminAjax = (action, data, method = 'POST') => {
     
     return fetch(url, {
       method: method,
-      body: body
+      credentials: 'same-origin',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(body).toString(),
     })
     .then(response => {
       if (!response.ok) {

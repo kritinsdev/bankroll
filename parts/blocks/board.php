@@ -32,7 +32,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
         </div>
 
     <?php else: ?>
-        <div class="board__items">
+        <div class="board__items" id="boardItems">
             <?php foreach ($postIds as $itemCount => $id):
                 $post = $typeFactory::create($id); ?>
                 <?php if ($itemCount < $maxPostsCount): ?>
