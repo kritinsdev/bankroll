@@ -5,12 +5,11 @@ class Filters {
         this.filterBlock = document.querySelector('#filter');
         this.selectedFilterItems = document.querySelector("#selectedFilters");
         this.boardItems = document.querySelector("#boardItems");
-        this.selectedFilters = { provider: [], theme: [], feature: [] };
+        this.filtersForQuery = {theme:[], provider: [], feature: []};
         this.events();
     }
 
     events() {
-        document.addEventListener('click', this.filterPosts);
         this.filterBlock.addEventListener('click', this.filtersController);
         this.selectedFilterItems.addEventListener('click', this.removeFilterItem);
     }
@@ -29,14 +28,14 @@ class Filters {
         if(e.target.closest('[data-term-id]')) {
             e.preventDefault();
 
-            const taxonomy = e.target.closest('[data-filter]').getAttribute;
+            const taxonomy = e.target.closest('[data-filter]').getAttribute('data-filter');
             const dataTag = e.target.closest('[data-term-id]');
             const termId = dataTag.getAttribute('data-term-id');
             const title = dataTag.querySelector('label').innerText;
             const checkbox = dataTag.querySelector('input[type="checkbox"]');
             const checkboxStatus = checkbox.checked;
 
-            console.log(taxonomy);
+            this.filtersForQuery[`${taxonomy}`].push(termId);
 
             if(!checkboxStatus) {
                 checkbox.checked = true;
