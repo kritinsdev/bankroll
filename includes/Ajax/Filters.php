@@ -6,15 +6,14 @@ class Filters
 {
     public function __construct()
     {
-        add_action('wp_ajax_nopriv_filterPosts', [$this, 'filterPosts']);
-        add_action('wp_ajax_filterPosts', [$this, 'filterPosts']);
+        add_action('wp_ajax_nopriv_filterResults', [$this, 'filterResults']);
+        add_action('wp_ajax_filterResults', [$this, 'filterResults']);
     }
 
-    public function filterPosts()
+    public function filterResults()
     {
+        // $terms = ($_POST['terms']) ? explode(',', $_POST['terms']) : [];
 
-        $terms = ($_POST['terms']) ? explode(',', $_POST['terms']) : [];
-
-        exit(json_encode($terms));
+        exit(json_encode($_POST));
     }
 }

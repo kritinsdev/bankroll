@@ -33,13 +33,15 @@ class Filters {
             const termId = dataTag.getAttribute('data-term-id');
             const title = dataTag.querySelector('label').innerText;
             const checkbox = dataTag.querySelector('input[type="checkbox"]');
-            const checkboxStatus = checkbox.checked;
+            const checkboxChecked = checkbox.checked;
 
             this.filtersForQuery[`${taxonomy}`].push(termId);
 
-            if(!checkboxStatus) {
+            if(!checkboxChecked) {
                 checkbox.checked = true;
                 this.createSelectedFilterElement(termId, title);
+                this.updateFiltersQuery(taxonomy, termId);
+                this.filterResults();
             } else {
                 const selectedFilterItem = this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`);
                 selectedFilterItem.remove();
@@ -82,8 +84,16 @@ class Filters {
         this.selectedFilterItems.appendChild(element);
     }
 
-    filterPosts() {
-        fetchAdminAjax('filterPosts', { terms: [1,2,3,4,5,6] })
+    updateFiltersQuery(taxonomy, termId, action = 'add') {
+        if(action == 'add') {
+            this.filtersForQuery[`${taxonomy}`].push(termId);
+        } else {
+
+        }
+    }
+
+    filterResults() {
+        fetchAdminAjax('filterPosts', this.filtersForQuery)
             .then(data => {
                 console.log(data);
             })

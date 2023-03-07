@@ -29,9 +29,7 @@
         <?php foreach ($terms as $term): ?>
             <div class="filter__item" data-term-id="<?php echo $term->term_id; ?>">
                 <input type="checkbox" id="<?php echo sprintf('%s_%d', $term->slug, $term->term_id); ?>">
-                <label for="<?php echo sprintf('%s_%d', $term->slug, $term->term_id); ?>">
-                    <?php echo $term->name; ?>
-                </label>
+                <label for="<?php echo sprintf('%s_%d', $term->slug, $term->term_id); ?>"><?php echo $term->name; ?></label>
             </div>
         <?php endforeach; ?>
     </div>
