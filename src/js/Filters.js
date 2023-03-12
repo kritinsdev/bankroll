@@ -14,7 +14,7 @@ class Filters {
         this.selectedFilterItems.addEventListener('click', this.removeFilterItem);
     }
 
-    filtersController = (e) => { // Open or closed 
+    filtersController = (e) => { // Open or closed
         if(e.target.closest('[data-filter]')) {
             const filter = e.target.closest('[data-filter]');
 
@@ -26,27 +26,23 @@ class Filters {
         }
 
         if(e.target.closest('[data-term-id]')) {
-            e.preventDefault();
-
             const taxonomy = e.target.closest('[data-filter]').getAttribute('data-filter');
             const dataTag = e.target.closest('[data-term-id]');
             const termId = dataTag.getAttribute('data-term-id');
-            const title = dataTag.querySelector('label').innerText;
-            const checkbox = dataTag.querySelector('input[type="checkbox"]');
-            const checkboxChecked = checkbox.checked;
+            const title = dataTag.querySelector('span').innerText;
 
             this.filtersForQuery[`${taxonomy}`].push(termId);
+            this.createSelectedFilterElement(termId, title);
+            this.updateFiltersQuery(taxonomy, termId);
+            // this.filterResults();
 
-            if(!checkboxChecked) {
-                checkbox.checked = true;
-                this.createSelectedFilterElement(termId, title);
-                this.updateFiltersQuery(taxonomy, termId);
-                this.filterResults();
-            } else {
-                const selectedFilterItem = this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`);
-                selectedFilterItem.remove();
-                checkbox.checked = false;
-            }
+
+
+            // const selectedFilterItem = this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`);
+            // selectedFilterItem.remove();
+            // checkbox.checked = false;
+
+            console.log(this.filtersForQuery);
         }
 
     }
@@ -93,7 +89,7 @@ class Filters {
     }
 
     filterResults() {
-        fetchAdminAjax('filterPosts', this.filtersForQuery)
+        fetchAdminAjax('filterPosts', {terms: [1,2,3]})
             .then(data => {
                 console.log(data);
             })

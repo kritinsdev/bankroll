@@ -1,3 +1,8 @@
 .footer {
-  
+    background-color: var(--color-primary);
+}
+
+.footer__menus {
+    display: flex;
+    justify-content: space-between;
 }

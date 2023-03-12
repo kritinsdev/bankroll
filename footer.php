@@ -1,6 +1,60 @@
 <footer class="footer">
     <div class="container">
-        FOOTER
+        <div class="footer__info">
+            <!-- TODO : Site logo -->
+            <img src="" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, saepe dicta! Voluptatum fuga error incidunt iure eligendi. Quasi impedit autem tenetur ipsum ut neque totam.</p>
+        </div>
+        <div class="footer__menus">
+            <div class="footer__menu">
+                <div class="footer__menu-title">
+                    Footer Menu Title
+                </div>
+                <ul>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+            <div class="footer__menu-title">
+                    Footer Menu Title
+                </div>
+                <ul>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+            <div class="footer__menu-title">
+                    Footer Menu Title
+                </div>
+                <ul>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                </ul>
+            </div>
+            <div class="footer__menu">
+            <div class="footer__menu-title">
+                    Footer Menu Title
+                </div>
+                <ul>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                    <li>Menu Item 1</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </footer>
 <?php wp_footer(); ?>
