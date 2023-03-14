@@ -24,13 +24,12 @@ get_header();
                <div>
                   <img src="#" alt="#">
                </div>
-               <div>RTP:
-                  <?php echo $slot->getRtp(); ?>
+               <div>RTP: <?php echo $slot->getRtp(); ?>
                </div>
-               <div>Max Multiplier:
-                  <?php echo $slot->getMaxMultiplier(); ?>
+               <div>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>
                </div>
                <div class="providers">
+                  Providers: 
                   <?php foreach ($providers as $provider): ?>
                      <span>
                         <?php echo $provider; ?>
