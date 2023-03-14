@@ -1,9 +1,18 @@
 .slotMainBlock {
     &__wrap {
         display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
     }
 
     &__table {
-        border:2px solid red;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            align-self: center;
+            max-width: 24rem;
+            border-radius: var(--border-radius);
+        }
     }
 }

@@ -18,12 +18,8 @@ get_header();
                   height="400px" width="600px" allowfullscreen>
                </iframe>
             </div>
-            <div class="slotMainBlock__properties">
-            </div>
             <div class="slotMainBlock__table"> 
-               <div>
-                  <img src="#" alt="#">
-               </div>
+               <img src="<?php echo BANKROLL_DIR_URI . '/dist/img/gatesofolympus.jpg'; ?>" alt="#">
                <div>RTP: <?php echo $slot->getRtp(); ?>
                </div>
                <div>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>
