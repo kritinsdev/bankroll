@@ -33,10 +33,10 @@ class Filters {
 
             this.filtersForQuery[`${taxonomy}`].push(termId);
             this.createSelectedFilterElement(termId, title);
+
             this.updateFiltersQuery(taxonomy, termId);
+            
             // this.filterResults();
-
-
 
             // const selectedFilterItem = this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`);
             // selectedFilterItem.remove();
@@ -81,10 +81,14 @@ class Filters {
     }
 
     updateFiltersQuery(taxonomy, termId, action = 'add') {
-        if(action == 'add') {
+        if(action === 'add') {
             this.filtersForQuery[`${taxonomy}`].push(termId);
-        } else {
+        }
 
+        if(action === 'remove'){
+            this.filtersForQuery[`${taxonomy}`] = this.filtersForQuery[`${taxonomy}`].filter((id) => {
+                return id !== termId || !this.filtersQuery[`${taxonomy}`] || !this.filtersQuery[`${taxonomy}`].includes(id);
+            });
         }
     }
 
