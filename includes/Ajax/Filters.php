@@ -13,7 +13,8 @@ class Filters
     public function filterResults()
     {
         // $terms = ($_POST['terms']) ? explode(',', $_POST['terms']) : [];
+        $data = json_decode($_POST['data']);
 
-        exit(json_encode($_POST));
+        exit(json_encode($data));
     }
 }

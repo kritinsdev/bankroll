@@ -43,6 +43,8 @@ class Filters {
                 this.selectedFilterLabelAction(taxonomy, termId, title, 'remove');
                 this.updateFiltersQuery(taxonomy, termId, 'remove');
             }
+
+            this.filterResults();
         }
     }
 
@@ -103,7 +105,7 @@ class Filters {
 
     filterResults() 
     {
-        fetchAdminAjax('filterPosts', {terms: [1,2,3]})
+        fetchAdminAjax('filterResults', {data: this.filtersForQuery})
             .then(data => {
                 console.log(data);
             })
