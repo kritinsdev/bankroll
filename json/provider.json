@@ -1,0 +1,923 @@
+[
+  {
+    "provider": "iSoftbet"
+  },
+  {
+    "provider": "Pragmatic Play"
+  },
+  {
+    "provider": "Playtech"
+  },
+  {
+    "provider": "Play N Go"
+  },
+  {
+    "provider": "KA Gaming"
+  },
+  {
+    "provider": "Microgaming"
+  },
+  {
+    "provider": "High 5"
+  },
+  {
+    "provider": "Red Tiger Gaming"
+  },
+  {
+    "provider": "Skywind"
+  },
+  {
+    "provider": "Net Ent"
+  },
+  {
+    "provider": "IGT"
+  },
+  {
+    "provider": "Blueprint Gaming"
+  },
+  {
+    "provider": "Novomatic"
+  },
+  {
+    "provider": "Betsoft"
+  },
+  {
+    "provider": "CQ9 Gaming"
+  },
+  {
+    "provider": "Gamomat"
+  },
+  {
+    "provider": "StakeLogic"
+  },
+  {
+    "provider": "Habanero"
+  },
+  {
+    "provider": "Evoplay"
+  },
+  {
+    "provider": "Yggdrasil Gaming"
+  },
+  {
+    "provider": "Booming Games"
+  },
+  {
+    "provider": "Genesis"
+  },
+  {
+    "provider": "Next Gen"
+  },
+  {
+    "provider": "GameArt"
+  },
+  {
+    "provider": "Real Time Gaming"
+  },
+  {
+    "provider": "WMS"
+  },
+  {
+    "provider": "Playson"
+  },
+  {
+    "provider": "Wazdan"
+  },
+  {
+    "provider": "Gameplay Interactive"
+  },
+  {
+    "provider": "Inspired"
+  },
+  {
+    "provider": "Spinmatic"
+  },
+  {
+    "provider": "Spinomenal"
+  },
+  {
+    "provider": "Ainsworth"
+  },
+  {
+    "provider": "Amatic"
+  },
+  {
+    "provider": "Quickspin"
+  },
+  {
+    "provider": "World Match"
+  },
+  {
+    "provider": "Relax Gaming"
+  },
+  {
+    "provider": "CT Gaming"
+  },
+  {
+    "provider": "EURASIAN Gaming"
+  },
+  {
+    "provider": "Lightning Box"
+  },
+  {
+    "provider": "Booongo"
+  },
+  {
+    "provider": "Nucleus Gaming"
+  },
+  {
+    "provider": "Barcrest"
+  },
+  {
+    "provider": "Eyecon"
+  },
+  {
+    "provider": "Ash Gaming"
+  },
+  {
+    "provider": "Merkur Gaming"
+  },
+  {
+    "provider": "ELK Studios"
+  },
+  {
+    "provider": "Kalamba Games"
+  },
+  {
+    "provider": "Endorphina"
+  },
+  {
+    "provider": "BGaming"
+  },
+  {
+    "provider": "MGA"
+  },
+  {
+    "provider": "Slot Factory"
+  },
+  {
+    "provider": "PariPlay"
+  },
+  {
+    "provider": "Red Rake Gaming"
+  },
+  {
+    "provider": "Dreamtech"
+  },
+  {
+    "provider": "1x2 Gaming"
+  },
+  {
+    "provider": "Spadegaming"
+  },
+  {
+    "provider": "Light & Wonder"
+  },
+  {
+    "provider": "Mobilots"
+  },
+  {
+    "provider": "Rival Gaming"
+  },
+  {
+    "provider": "PG Soft"
+  },
+  {
+    "provider": "Platipus Gaming"
+  },
+  {
+    "provider": "Beefee"
+  },
+  {
+    "provider": "NoLimit City"
+  },
+  {
+    "provider": "Rubyplay"
+  },
+  {
+    "provider": "Kajot"
+  },
+  {
+    "provider": "Synot Games"
+  },
+  {
+    "provider": "Bally Wulff"
+  },
+  {
+    "provider": "Fazi Interactive"
+  },
+  {
+    "provider": "Thunderkick"
+  },
+  {
+    "provider": "Aspect Gaming"
+  },
+  {
+    "provider": "Gaming1"
+  },
+  {
+    "provider": "MrSlotty"
+  },
+  {
+    "provider": "Slingo Originals"
+  },
+  {
+    "provider": "Toptrend Gaming"
+  },
+  {
+    "provider": "Big Time Gaming"
+  },
+  {
+    "provider": "CORE Gaming"
+  },
+  {
+    "provider": "Konami"
+  },
+  {
+    "provider": "Mancala Gaming"
+  },
+  {
+    "provider": "Design Works Gaming"
+  },
+  {
+    "provider": "Mascot Gaming"
+  },
+  {
+    "provider": "Bally"
+  },
+  {
+    "provider": "Rabcat"
+  },
+  {
+    "provider": "5 Men Gaming"
+  },
+  {
+    "provider": "Leander"
+  },
+  {
+    "provider": "Saucify"
+  },
+  {
+    "provider": "R Franco"
+  },
+  {
+    "provider": "SimplePlay"
+  },
+  {
+    "provider": "FunTa Gaming"
+  },
+  {
+    "provider": "Bwin Party"
+  },
+  {
+    "provider": "Belatra Games"
+  },
+  {
+    "provider": "Betixon"
+  },
+  {
+    "provider": "Arrows Edge"
+  },
+  {
+    "provider": "irondog"
+  },
+  {
+    "provider": "Just For The Win"
+  },
+  {
+    "provider": "EGT"
+  },
+  {
+    "provider": "Spearhead Games"
+  },
+  {
+    "provider": "Inbet Games"
+  },
+  {
+    "provider": "Hacksaw Gaming"
+  },
+  {
+    "provider": "Spin Games"
+  },
+  {
+    "provider": "Playzido"
+  },
+  {
+    "provider": "Thunderspin"
+  },
+  {
+    "provider": "Push Gaming"
+  },
+  {
+    "provider": "Maverick Slots"
+  },
+  {
+    "provider": "PlayPearls"
+  },
+  {
+    "provider": "Cayetano"
+  },
+  {
+    "provider": "NetGame Entertainment"
+  },
+  {
+    "provider": "OneTouch"
+  },
+  {
+    "provider": "Caleta Gaming"
+  },
+  {
+    "provider": "Ganapati"
+  },
+  {
+    "provider": "888 Slots"
+  },
+  {
+    "provider": "Realistic"
+  },
+  {
+    "provider": "ReelPlay"
+  },
+  {
+    "provider": "Multislot"
+  },
+  {
+    "provider": "Dragon Gaming"
+  },
+  {
+    "provider": "Dragoonsoft"
+  },
+  {
+    "provider": "Iconic Gaming"
+  },
+  {
+    "provider": "Apollo Games"
+  },
+  {
+    "provider": "Big Pot Gaming"
+  },
+  {
+    "provider": "Aristocrat"
+  },
+  {
+    "provider": "FBM Gaming"
+  },
+  {
+    "provider": "2 By 2 Gaming"
+  },
+  {
+    "provider": "Swintt"
+  },
+  {
+    "provider": "G Gaming"
+  },
+  {
+    "provider": "Reel NRG"
+  },
+  {
+    "provider": "Woohoo Games"
+  },
+  {
+    "provider": "Amigo Gaming"
+  },
+  {
+    "provider": "Matrix Studios"
+  },
+  {
+    "provider": "Casimi"
+  },
+  {
+    "provider": "Greentube"
+  },
+  {
+    "provider": "Gamzix"
+  },
+  {
+    "provider": "Truelabs"
+  },
+  {
+    "provider": "NetGaming"
+  },
+  {
+    "provider": "Tom Horn Gaming"
+  },
+  {
+    "provider": "Triple Cherry"
+  },
+  {
+    "provider": "Urgent Games"
+  },
+  {
+    "provider": "GameSys"
+  },
+  {
+    "provider": "Manna Play"
+  },
+  {
+    "provider": "Golden Hero"
+  },
+  {
+    "provider": "7Mojos"
+  },
+  {
+    "provider": "3 Oaks"
+  },
+  {
+    "provider": "Amaya"
+  },
+  {
+    "provider": "Vela Gaming"
+  },
+  {
+    "provider": "Popok Gaming"
+  },
+  {
+    "provider": "Fantasma"
+  },
+  {
+    "provider": "Nektan"
+  },
+  {
+    "provider": "Promatic"
+  },
+  {
+    "provider": "Casino Web Scripts"
+  },
+  {
+    "provider": "DLV"
+  },
+  {
+    "provider": "Altea Gaming"
+  },
+  {
+    "provider": "Peter and Sons"
+  },
+  {
+    "provider": "Genii"
+  },
+  {
+    "provider": "Betdigital"
+  },
+  {
+    "provider": "Parlay Games"
+  },
+  {
+    "provider": "Capecod"
+  },
+  {
+    "provider": "August Gaming"
+  },
+  {
+    "provider": "Roxor Gaming"
+  },
+  {
+    "provider": "Lady Luck"
+  },
+  {
+    "provider": "Reel Kingdom"
+  },
+  {
+    "provider": "Northern Lights"
+  },
+  {
+    "provider": "AllWaySpin"
+  },
+  {
+    "provider": "SlotMill"
+  },
+  {
+    "provider": "1spin4win"
+  },
+  {
+    "provider": "4ThePlayer"
+  },
+  {
+    "provider": "Everi Interactive"
+  },
+  {
+    "provider": "Expanse Studios"
+  },
+  {
+    "provider": "Green Jade Games"
+  },
+  {
+    "provider": "Smartsoft Gaming"
+  },
+  {
+    "provider": "Arcadem"
+  },
+  {
+    "provider": "Flipluck"
+  },
+  {
+    "provider": "Leap Gaming"
+  },
+  {
+    "provider": "Green Feather Gaming"
+  },
+  {
+    "provider": "We Are Casino"
+  },
+  {
+    "provider": "Radi8 Games"
+  },
+  {
+    "provider": "Avatar UX"
+  },
+  {
+    "provider": "Gameburger Studios"
+  },
+  {
+    "provider": "Barbara Bang"
+  },
+  {
+    "provider": "Foxium"
+  },
+  {
+    "provider": "Magnet Gaming"
+  },
+  {
+    "provider": "Triple Edge Studios"
+  },
+  {
+    "provider": "All41 Studios"
+  },
+  {
+    "provider": "Live5 Gaming"
+  },
+  {
+    "provider": "AGS"
+  },
+  {
+    "provider": "Zeus Play"
+  },
+  {
+    "provider": "Boomerang Studios"
+  },
+  {
+    "provider": "Wizard Games"
+  },
+  {
+    "provider": "Espresso Games"
+  },
+  {
+    "provider": "Octavian Gaming"
+  },
+  {
+    "provider": "Vibra Gaming"
+  },
+  {
+    "provider": "Max Win Gaming"
+  },
+  {
+    "provider": "GameBeat"
+  },
+  {
+    "provider": "Getta Gaming"
+  },
+  {
+    "provider": "Naga Games"
+  },
+  {
+    "provider": "SoftSwiss"
+  },
+  {
+    "provider": "Red7"
+  },
+  {
+    "provider": "Funfair Games"
+  },
+  {
+    "provider": "Onlyplay"
+  },
+  {
+    "provider": "Lucksome"
+  },
+  {
+    "provider": "Revolver Gaming"
+  },
+  {
+    "provider": "Zitro Games"
+  },
+  {
+    "provider": "Oryx Gaming"
+  },
+  {
+    "provider": "Golden Rock Studios"
+  },
+  {
+    "provider": "Hurricane Games"
+  },
+  {
+    "provider": "Gold Coin Studios"
+  },
+  {
+    "provider": "GW Games"
+  },
+  {
+    "provider": "STHML Gaming"
+  },
+  {
+    "provider": "Neogames"
+  },
+  {
+    "provider": "Reel Time Gaming"
+  },
+  {
+    "provider": "Crazy Tooth Studio"
+  },
+  {
+    "provider": "Tuko Productions"
+  },
+  {
+    "provider": "Holle Games"
+  },
+  {
+    "provider": "Reloaded Gaming"
+  },
+  {
+    "provider": "Games Lab"
+  },
+  {
+    "provider": "Casumo Games"
+  },
+  {
+    "provider": "Stormcraft Studios"
+  },
+  {
+    "provider": "Slingshot Studios"
+  },
+  {
+    "provider": "Epic Industries"
+  },
+  {
+    "provider": "Gaming Corps"
+  },
+  {
+    "provider": "Air Dice"
+  },
+  {
+    "provider": "Side City Studios"
+  },
+  {
+    "provider": "Asylum Labs"
+  },
+  {
+    "provider": "Pear Fiction"
+  },
+  {
+    "provider": "Play Labs"
+  },
+  {
+    "provider": "Print Studios"
+  },
+  {
+    "provider": "Noble Gaming"
+  },
+  {
+    "provider": "JVL"
+  },
+  {
+    "provider": "Atomic Slot Lab"
+  },
+  {
+    "provider": "Elysium Studios"
+  },
+  {
+    "provider": "Storm Gaming"
+  },
+  {
+    "provider": "Wild Streak Gaming"
+  },
+  {
+    "provider": "Shuffle Master"
+  },
+  {
+    "provider": "Japan Technicals Games (JTG)"
+  },
+  {
+    "provider": "Electric Elephant"
+  },
+  {
+    "provider": "Bulletproof Games"
+  },
+  {
+    "provider": "Neon Valley Studios"
+  },
+  {
+    "provider": "Rarestone"
+  },
+  {
+    "provider": "Bang Bang Games"
+  },
+  {
+    "provider": "Blue Guru Games"
+  },
+  {
+    "provider": "OMI Gaming"
+  },
+  {
+    "provider": "SGS Universal"
+  },
+  {
+    "provider": "Black Pudding Games"
+  },
+  {
+    "provider": "Bla Bla Bla Studios"
+  },
+  {
+    "provider": "Snowborn Games"
+  },
+  {
+    "provider": "Concept Gaming"
+  },
+  {
+    "provider": "Qora Games"
+  },
+  {
+    "provider": "Armadillo Studios"
+  },
+  {
+    "provider": "Cyber Slot"
+  },
+  {
+    "provider": "Cadillac Jack"
+  },
+  {
+    "provider": "Games OS"
+  },
+  {
+    "provider": "iGaming2Go"
+  },
+  {
+    "provider": "Gaming Realms"
+  },
+  {
+    "provider": "Instant Win Gaming"
+  },
+  {
+    "provider": "Givme Games"
+  },
+  {
+    "provider": "Pulse8 Studios"
+  },
+  {
+    "provider": "Silverback Gaming"
+  },
+  {
+    "provider": "Sunfox"
+  },
+  {
+    "provider": "Plank Gaming"
+  },
+  {
+    "provider": "Reflex Gaming"
+  },
+  {
+    "provider": "mPlay Games"
+  },
+  {
+    "provider": "Spinplay"
+  },
+  {
+    "provider": "Hillside Media"
+  },
+  {
+    "provider": "Geco Gaming"
+  },
+  {
+    "provider": "The Games Company"
+  },
+  {
+    "provider": "HungryBear"
+  },
+  {
+    "provider": "Games Inc"
+  },
+  {
+    "provider": "Fortune Factory"
+  },
+  {
+    "provider": "Dice Lab"
+  },
+  {
+    "provider": "Buck Stakes Entertainment"
+  },
+  {
+    "provider": "Hot Rise Games"
+  },
+  {
+    "provider": "Superlotto Games"
+  },
+  {
+    "provider": "Spinberry"
+  },
+  {
+    "provider": "Jelly"
+  },
+  {
+    "provider": "Apple Jack"
+  },
+  {
+    "provider": "Bluberi"
+  },
+  {
+    "provider": "Fuga"
+  },
+  {
+    "provider": "Spielo"
+  },
+  {
+    "provider": "WMG"
+  },
+  {
+    "provider": "Igrosoft"
+  },
+  {
+    "provider": "Bunfox"
+  },
+  {
+    "provider": "MetaGU"
+  },
+  {
+    "provider": "BB Games"
+  },
+  {
+    "provider": "Jade Rabbit Studio"
+  },
+  {
+    "provider": "Magic Dreams"
+  },
+  {
+    "provider": "High Flyer Games"
+  },
+  {
+    "provider": "Shock"
+  },
+  {
+    "provider": "Bad Dingo"
+  },
+  {
+    "provider": "Giocoplus"
+  },
+  {
+    "provider": "Skyrocket Studios"
+  },
+  {
+    "provider": "Four Leaf Gaming"
+  },
+  {
+    "provider": "Fair Game Studio"
+  },
+  {
+    "provider": "Old skool Gaming"
+  },
+  {
+    "provider": "Openbet"
+  },
+  {
+    "provider": "Wild Game Reserve"
+  },
+  {
+    "provider": "YoYouGaming"
+  },
+  {
+    "provider": "Mutuel Play"
+  },
+  {
+    "provider": "Mazooma"
+  },
+  {
+    "provider": "Probability Jones"
+  },
+  {
+    "provider": "Amazing Gaming"
+  },
+  {
+    "provider": "AdoptIt"
+  },
+  {
+    "provider": "Pirates Gold Studios"
+  },
+  {
+    "provider": "Sapphire Gaming"
+  },
+  {
+    "provider": "Mr Slotty"
+  },
+  {
+    "provider": "JustPlay"
+  },
+  {
+    "provider": "Gamatron"
+  },
+  {
+    "provider": "RNGPlay"
+  },
+  {
+    "provider": "Baltic Studios"
+  },
+  {
+    "provider": "Reel Life Games"
+  }
+]

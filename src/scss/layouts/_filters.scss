@@ -61,9 +61,27 @@
     position: absolute;
     width: 100%;
     top:3.8rem;
+    max-height: 25rem;
+    overflow: auto;
     left:0;
     display: none;
     background-color: var(--color-primary);
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--color-primary);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--color-white);
+    }
+
+        &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 }
 
 .selectedFilters {

@@ -26,60 +26,67 @@ class Filters {
         }
 
         if(e.target.closest('[data-term-id]')) {
+            e.preventDefault();
+
             const taxonomy = e.target.closest('[data-filter]').getAttribute('data-filter');
             const dataTag = e.target.closest('[data-term-id]');
+            const checkbox = dataTag.querySelector('input');
             const termId = dataTag.getAttribute('data-term-id');
             const title = dataTag.querySelector('span').innerText;
-
-            this.filtersForQuery[`${taxonomy}`].push(termId);
-            this.createSelectedFilterElement(termId, title);
-
-            this.updateFiltersQuery(taxonomy, termId);
             
-            // this.filterResults();
-
-            // const selectedFilterItem = this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`);
-            // selectedFilterItem.remove();
-            // checkbox.checked = false;
-
-            console.log(this.filtersForQuery);
+            if(!checkbox.checked) {
+                checkbox.checked = true;
+                this.selectedFilterLabelAction(taxonomy, termId, title);
+                this.updateFiltersQuery(taxonomy, termId);
+            } else {
+                checkbox.checked = false;
+                this.selectedFilterLabelAction(taxonomy, termId, title, 'remove');
+                this.updateFiltersQuery(taxonomy, termId, 'remove');
+            }
         }
-
     }
 
     removeFilterItem = (e) => {
         if(e.target.closest('[data-term-id]')) {
             const currentItem = e.target.closest('[data-term-id]');
-            const itemId = currentItem.getAttribute('data-term-id');
+            const termId = currentItem.getAttribute('data-term-id');
+            const taxonomy = currentItem.getAttribute('data-filter');
 
-            const filterItem = this.filterBlock.querySelector(`[data-term-id="${itemId}"]`);
-            const filterCheckbox = filterItem.querySelector('input[type="checkbox"]');
+            const filterItem = this.filterBlock.querySelector(`[data-term-id="${termId}"]`);
+            const checkbox = filterItem.querySelector('input[type="checkbox"]');
 
-            // updateFiltersQuery(a,b, 'remove');
-
+            this.updateFiltersQuery(taxonomy, termId, 'remove');
             currentItem.remove();
-            filterCheckbox.checked = false;
+            checkbox.checked = false;
         }
     }
 
 
-    createSelectedFilterElement(id, termTitle) 
+    selectedFilterLabelAction(taxonomy, termId, termTitle = null, action = 'add') 
     {
-        const element = document.createElement('div');
-        element.classList.add('selectedFilters__item');
-        element.setAttribute('data-term-id', id);
+        if(action === 'add') {
+            const element = document.createElement('div');
+            element.classList.add('selectedFilters__item');
+            element.setAttribute('data-term-id', termId);
+            element.setAttribute('data-filter', taxonomy);
+    
+            const title = document.createElement('span');
+            title.classList.add('selectedFilters__title');
+            title.innerText = termTitle;
+    
+            const cross = document.createElement('span');
+            cross.setAttribute('id', 'cross');
+            cross.classList.add('cross');
+    
+            element.appendChild(title);
+            element.appendChild(cross);
+            this.selectedFilterItems.appendChild(element);
+        }
 
-        const title = document.createElement('span');
-        title.classList.add('selectedFilters__title');
-        title.innerText = termTitle;
+        if(action === 'remove') {
+            this.selectedFilterItems.querySelector(`[data-term-id="${termId}"]`).remove();
+        }
 
-        const cross = document.createElement('span');
-        cross.setAttribute('id', 'cross');
-        cross.classList.add('cross');
-
-        element.appendChild(title);
-        element.appendChild(cross);
-        this.selectedFilterItems.appendChild(element);
     }
 
     updateFiltersQuery(taxonomy, termId, action = 'add') {
@@ -89,12 +96,13 @@ class Filters {
 
         if(action === 'remove'){
             this.filtersForQuery[`${taxonomy}`] = this.filtersForQuery[`${taxonomy}`].filter((id) => {
-                return id !== termId || !this.filtersQuery[`${taxonomy}`] || !this.filtersQuery[`${taxonomy}`].includes(id);
+                return id !== termId;
             });
         }
     }
 
-    filterResults() {
+    filterResults() 
+    {
         fetchAdminAjax('filterPosts', {terms: [1,2,3]})
             .then(data => {
                 console.log(data);

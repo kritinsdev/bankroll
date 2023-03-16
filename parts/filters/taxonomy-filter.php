@@ -8,7 +8,8 @@
 
     $terms = get_terms($taxonomy, [
         'orderby' => 'name',
-        'order' => 'ASC'
+        'order' => 'ASC',
+        'hide_empty' => false
     ]);
 
     if(empty($terms)) {

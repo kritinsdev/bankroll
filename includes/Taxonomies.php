@@ -41,6 +41,7 @@ class Taxonomies
     protected function setupHooks(): void
     {
         add_action('init', [$this, 'addTaxonomies'], 0);
+        add_action('after_switch_theme', [$this, 'importTaxonomyTerms']);
     }
 
     public function addTaxonomies(): void
@@ -72,6 +73,30 @@ class Taxonomies
                     'hierarchical' => false,
                 ],
             ]);
+        }
+    }
+
+    public function importTaxonomyTerms(): void
+    {
+        $taxonomy_name = ['feature', 'theme', 'provider'];
+
+        foreach ($taxonomy_name as $taxonomy) {
+            // Read the JSON file
+            $json_data = file_get_contents(BANKROLL_DIR . "/json/$taxonomy.json");
+            $data = json_decode($json_data, true);
+
+            // Loop through each record and add it as a taxonomy term
+            foreach ($data as $item) {
+                $term = $item[$taxonomy];
+
+                // Check if the term exists
+                $term_exists = term_exists($term, $taxonomy);
+
+                // If the term does not exist, create it
+                if (!$term_exists) {
+                    wp_insert_term($term, $taxonomy);
+                }
+            }
         }
     }
 
