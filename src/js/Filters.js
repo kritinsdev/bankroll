@@ -55,6 +55,8 @@ class Filters {
             const filterItem = this.filterBlock.querySelector(`[data-term-id="${itemId}"]`);
             const filterCheckbox = filterItem.querySelector('input[type="checkbox"]');
 
+            // updateFiltersQuery(a,b, 'remove');
+
             currentItem.remove();
             filterCheckbox.checked = false;
         }
