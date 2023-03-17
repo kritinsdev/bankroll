@@ -33,6 +33,7 @@ class Enqueue
 
         wp_localize_script('main', 'ajaxObject', [
             'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('nonce')
         ]);
     }
 
