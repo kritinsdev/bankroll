@@ -16,8 +16,10 @@ use Bankroll\Includes\View\Parts;
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php $template = (get_queried_object()->taxonomy) ? get_queried_object()->taxonomy : get_queried_object()->post_type; ?>
+
 <?php include_once BANKROLL_DIR . '/svg.php'; ?>
 
 <?php Parts::navigation(); ?>
 
-<?php Parts::hero(); ?>
+<?php Parts::hero(['template' => $template]); ?>

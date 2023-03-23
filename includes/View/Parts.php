@@ -11,6 +11,14 @@ class Parts {
     }
 
     public static function hero(array $args = []): void {
-        get_template_part('parts/global/hero', null, ['data' => ['']]);
+        $template = BANKROLL_DIR . "/parts/global/hero/hero-" . $args['template'];
+
+        if(file_exists($template)) {
+            wp_die('EXISTS');
+        } else {
+            wp_die('DOES NOTE EXIT');
+        }
+
+        get_template_part($template);
     }
 }
