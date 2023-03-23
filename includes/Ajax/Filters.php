@@ -12,8 +12,8 @@ class Filters
 
     public function filterResults()
     {
-        // $terms = ($_POST['terms']) ? explode(',', $_POST['terms']) : [];
-        $data = json_decode($_POST['query']);
+        $input = file_get_contents('php://input');
+        $data = json_decode($input, true);
 
         exit(json_encode($data));
     }

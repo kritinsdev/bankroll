@@ -7,14 +7,14 @@ class CustomPostTypes
     use Singleton;
 
     protected array $customPostTypes = [
-        'casino'     => [
-            'singular'    => 'Casino',
-            'plural'      => 'Casinos',
-            'slug'        => 'casino',
-            'has_archive' => false,
-            'supports'    => ['title', 'thumbnail'],
-            'taxonomies' => ['asscrako']
-        ],
+        // 'casino'     => [
+        //     'singular'    => 'Casino',
+        //     'plural'      => 'Casinos',
+        //     'slug'        => 'casino',
+        //     'has_archive' => false,
+        //     'supports'    => ['title', 'thumbnail'],
+        //     'taxonomies' => ['asscrako']
+        // ],
         'slot'       => [
             'singular'    => 'Slot',
             'plural'      => 'Slots',

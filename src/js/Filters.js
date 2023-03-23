@@ -105,16 +105,11 @@ class Filters {
 
     filterResults() 
     {
-        const data = new URLSearchParams();
-        data.append('nonce', ajaxObject.nonce);
-        data.append('action', 'filterResults');
-        data.append('query', JSON.stringify(this.filtersForQuery));
-
-        fetch(ajaxObject.ajaxUrl, {
+        fetch(`${ajaxObject.ajaxUrl}?action=filterResults`, {
             method: "POST",
             credentials: 'same-origin',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: new URLSearchParams(data).toString(),
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(this.filtersForQuery)
         })
             .then(res => res.json())
             .then(data => {
