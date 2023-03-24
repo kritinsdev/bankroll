@@ -398,6 +398,27 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "slot"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "provider"
+            }
         ]
     ],
     "menu_order": 0,
@@ -409,5 +430,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678973568
+    "modified": 1679695016
 }

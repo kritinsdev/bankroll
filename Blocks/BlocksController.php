@@ -14,8 +14,8 @@ class BlocksController {
     public static function blocks()
     {
         global $post;
-
-        $blocks = get_field('blocks', $post->ID);
+        $post = isset($post->ID) ? $post->ID : get_queried_object();
+        $blocks = get_field('blocks', $post);
 
         if ($blocks) {
             foreach ($blocks as $block) {
