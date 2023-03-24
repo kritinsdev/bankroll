@@ -21,4 +21,9 @@ class Parts {
 
         get_template_part($template);
     }
+
+    public static function postDetails(array $args = []): void
+    {
+        get_template_part('parts/global/post-details');
+    }
 }
