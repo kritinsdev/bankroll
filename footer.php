@@ -60,4 +60,3 @@
 
 </body>
 </html>
-<?php var_dump(BANKROLL_DIR . '/json/something.json');

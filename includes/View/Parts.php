@@ -11,12 +11,12 @@ class Parts {
     }
 
     public static function hero(array $args = []): void {
-        $template = BANKROLL_DIR . "/parts/global/hero/hero-" . $args['template'];
+        $template = BANKROLL_DIR . "/parts/global/hero/hero-" . $args['template'] . ".php";
 
         if(file_exists($template)) {
-            wp_die('EXISTS');
+            get_template_part('/parts/global/hero/hero-' . $args['template']);
         } else {
-            wp_die('DOES NOTE EXIT');
+            get_template_part('/parts/global/hero/hero-page');
         }
 
         get_template_part($template);
