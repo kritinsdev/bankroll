@@ -11,7 +11,7 @@ use Bankroll\Includes\View\Parts;
                 <?php echo get_the_title(get_the_ID()); ?>
             </h1>
             <p>
-                Deez nuts. Ha gottem.
+                This is hero for page.
             </p>
         </div>
     </div>
