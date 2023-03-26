@@ -39,7 +39,14 @@ class Slot
     }
 
     public function setImage(array $image): void {
-        $this->image = $image;
+        if(!empty($image)) {
+            $this->image = $image;
+        } else {
+            $defaultImage = [];
+            $defaultImage['url'] = BANKROLL_DIR_URI . '/dist/img/default-slot.jpg';
+ 
+            $this->image = $defaultImage;
+        }
     }
 
     public function getImage(): array {
