@@ -9,9 +9,9 @@ require_once('vendor/autoload.php');
 
 Init::get_instance();
 
-// add_action('init', 'createSlot');
+add_action('init', 'createSlots');
 
-function createSlot()
+function createSlots()
 {
     $slotData = BANKROLL_DIR . '/scraper/slot.json';
 
@@ -19,14 +19,14 @@ function createSlot()
     $data = json_decode($jsonData, true);
 
     foreach ($data as $slot) {
-        $page = get_page_by_title($slot['name'], OBJECT, 'slot');
+        $page = get_page_by_title($slot['slotName'], OBJECT, 'slot');
 
         if (!empty($page->ID) && isset($page->ID)) {
-            return;
+            continue;
         }
 
         $postData = [
-            'post_title' => $slot['name'],
+            'post_title' => $slot['slotName'],
             'post_status' => 'publish',
             'post_type' => 'slot'
         ];
@@ -37,23 +37,23 @@ function createSlot()
             wp_die('failed to add slot');
         }
 
-        update_field('slot_rtp', $slot['rtp'], $id);
-        update_field('slot_min_bet', $slot['minBet'], $id);
-        update_field('slot_max_bet', $slot['maxBet'], $id);
-        update_field('slot_max_multiplier', $slot['maxMultiplier'], $id);
+        update_field('slot_rtp', $slot['slotRtp'], $id);
+        update_field('slot_min_bet', $slot['slotMinBet'], $id);
+        update_field('slot_max_bet', $slot['slotMaxBet'], $id);
+        update_field('slot_max_multiplier', $slot['slotMaxMultiplier'], $id);
 
         $providersArray = [];
-        foreach($slot['providers'] as $provider) {
+        foreach($slot['slotProviders'] as $provider) {
             $providersArray[] = $provider;
         }
 
         $featuresArray = [];
-        foreach($slot['features'] as $feature) {
+        foreach($slot['slotFeatures'] as $feature) {
             $featuresArray[] = $feature;
         }
 
         $themesArray = [];
-        foreach($slot['themes'] as $theme){
+        foreach($slot['slotThemes'] as $theme){
             $themesArray[] = $theme;
         }
 
