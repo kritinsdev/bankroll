@@ -9,6 +9,10 @@ require_once('vendor/autoload.php');
 
 Init::get_instance();
 
+function _ts($string) {
+    return $string;
+}
+
 add_action('init', 'createSlots');
 
 function createSlots()

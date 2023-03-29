@@ -15,6 +15,6 @@ $provider = $slot->getProvider();
         <span>
             <?php foreach($provider as $prov) echo $prov; ?>
         </span>
-        <span>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>x</span>
+        <span><?php echo _ts('Max multiplier'); ?> <?php echo $slot->getMaxMultiplier(); ?>x</span>
     </div>
 </div>
