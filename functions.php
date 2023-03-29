@@ -47,17 +47,17 @@ function createSlots()
         update_field('slot_max_multiplier', $slot['slotMaxMultiplier'], $id);
 
         $providersArray = [];
-        foreach($slot['slotProviders'] as $provider) {
+        foreach($slot['slotProviders'] as $slug => $provider) {
             $providersArray[] = $provider;
         }
 
         $featuresArray = [];
-        foreach($slot['slotFeatures'] as $feature) {
+        foreach($slot['slotFeatures'] as $slug => $feature) {
             $featuresArray[] = $feature;
         }
 
         $themesArray = [];
-        foreach($slot['slotThemes'] as $theme){
+        foreach($slot['slotThemes'] as $slug => $theme){
             $themesArray[] = $theme;
         }
 
