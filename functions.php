@@ -13,7 +13,7 @@ function _ts($string) {
     return $string;
 }
 
-add_action('init', 'createSlots');
+// add_action('init', 'createSlots');
 
 function createSlots()
 {
