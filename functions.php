@@ -13,7 +13,7 @@ function _ts($string) {
     return $string;
 }
 
-// add_action('init', 'createSlots');
+add_action('init', 'createSlots');
 
 function createSlots()
 {
@@ -21,6 +21,12 @@ function createSlots()
 
     $jsonData = file_get_contents($slotData);
     $data = json_decode($jsonData, true);
+
+    echo '<pre>';
+    var_dump($data);
+    echo '</pre>';
+
+    die;
 
     foreach ($data as $slot) {
         $page = get_page_by_title($slot['slotName'], OBJECT, 'slot');
