@@ -1,12 +1,8 @@
 .slotMainBlock {
     &__wrap {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-lg);
-
-        @include mq('tablet-wide') {
-            flex-direction: row;
-        }
+        background-color: var(--color-primary);
+        padding: 10px;
+        border-radius: 10px;
     }
 
     &__table {

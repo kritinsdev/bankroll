@@ -14,6 +14,7 @@ function _ts($string) {
 }
 
 add_action('init', 'createSlots');
+add_action('init', 'renameTerms');
 
 function createSlots()
 {
@@ -21,12 +22,6 @@ function createSlots()
 
     $jsonData = file_get_contents($slotData);
     $data = json_decode($jsonData, true);
-
-    echo '<pre>';
-    var_dump($data);
-    echo '</pre>';
-
-    die;
 
     foreach ($data as $slot) {
         $page = get_page_by_title($slot['slotName'], OBJECT, 'slot');
@@ -53,22 +48,51 @@ function createSlots()
         update_field('slot_max_multiplier', $slot['slotMaxMultiplier'], $id);
 
         $providersArray = [];
-        foreach($slot['slotProviders'] as $slug => $provider) {
+        foreach($slot['slotProviders'] as $provider) {
             $providersArray[] = $provider;
         }
 
         $featuresArray = [];
-        foreach($slot['slotFeatures'] as $slug => $feature) {
+        foreach($slot['slotFeatures'] as $feature) {
             $featuresArray[] = $feature;
         }
 
         $themesArray = [];
-        foreach($slot['slotThemes'] as $slug => $theme){
+        foreach($slot['slotThemes'] as $theme){
             $themesArray[] = $theme;
         }
 
         wp_set_object_terms($id, $featuresArray, 'feature');
         wp_set_object_terms($id, $themesArray, 'theme');
         wp_set_object_terms($id, $providersArray, 'provider');
+    }
+}
+
+function renameTerms()
+{
+    $taxonomies = ['provider', 'theme', 'feature']; // replace with your actual taxonomy slug
+
+    foreach($taxonomies as $taxonomy) {
+        $terms = get_terms( array(
+            'taxonomy' => $taxonomy,
+            'hide_empty' => false,
+        ) );
+    
+        foreach ( $terms as $term ) {
+            // check if the term name matches the pattern
+            if ( preg_match( '/^([\w-]+)$/', $term->name, $matches ) ) {
+                // create the new term name
+                $words = explode( '-', $matches[1] );
+                $new_name = '';
+                foreach ( $words as $word ) {
+                    $new_name .= ucfirst( $word ) . ' ';
+                }
+                $new_name = rtrim( $new_name );
+                // update the term name
+                wp_update_term( $term->term_id, $taxonomy, array(
+                    'name' => $new_name,
+                ) );
+            }
+        }
     }
 }

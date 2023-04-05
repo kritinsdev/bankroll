@@ -12,27 +12,7 @@ get_header();
       <div class="container">
          <div class="slotMainBlock__wrap">
             <div class="slotMainBlock__game">
-               IFRAME
-               <!-- <iframe
-                  src="https://d3nsdzdtjbr5ml.cloudfront.net/casino/relax/fatrabbit/index.html?&moneymode=fun"
-                  style="border:0px # none;" name="" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px"
-                  height="400px" width="600px" allowfullscreen>
-               </iframe> -->
-            </div>
-            <div class="slotMainBlock__table"> 
-               <img src="<?php echo BANKROLL_DIR_URI . '/dist/img/gatesofolympus.jpg'; ?>" alt="#">
-               <div>RTP: <?php echo $slot->getRtp(); ?>
-               </div>
-               <div>Max Multiplier: <?php echo $slot->getMaxMultiplier(); ?>
-               </div>
-               <div class="providers">
-                  Providers: 
-                  <?php foreach ($providers as $provider): ?>
-                     <span>
-                        <?php echo $provider; ?>
-                     </span>
-                  <?php endforeach; ?>
-               </div>
+               <iframe frameborder="0" allowfullscreen="" mozallowfullscreen="" class="iframeGame" webkitallowfullscreen="" hspace="0" vspace="0" scrolling="none" src="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?lang=en&amp;cur=USD&amp;gameSymbol=vs20fruitsw" width="100%" height="100%"></iframe>
             </div>
          </div>
       </div>
