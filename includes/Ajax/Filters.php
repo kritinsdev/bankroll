@@ -18,6 +18,7 @@ class Filters
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
 
+
         $queriedItems = [
             'postType' => 'slot',
             'query' => [

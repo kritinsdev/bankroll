@@ -7,8 +7,12 @@ class QueryBuilder
     public static function queryForPosts(array $data): array
     {
         $query['post_type'] = $data['postType'];
+        $query['tax_query']['relation'] = 'AND';
 
         foreach($data['query'] as $taxonomy => $ids) {
+            if(empty($ids)) {
+                continue;
+            }            
 
             $taxQuery = [
                 'taxonomy' => $taxonomy,
@@ -18,17 +22,6 @@ class QueryBuilder
 
             $query['tax_query'][] = $taxQuery;
         }
-
-        $query = array(
-            'post_type' => $data['postType'],
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'provider',
-                    'field'    => 'id',
-                    'terms'    => [530],
-                ),
-            ),
-        );
 
         $query = new \WP_Query( $query );
         $idsArray = [];

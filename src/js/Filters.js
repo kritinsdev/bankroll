@@ -61,6 +61,8 @@ class Filters {
             this.updateFiltersQuery(taxonomy, termId, 'remove');
             currentItem.remove();
             checkbox.checked = false;
+
+            this.filterResults();
         }
     }
 
@@ -114,6 +116,7 @@ class Filters {
         })
             .then(res => res.json())
             .then(cards => {
+                console.log(cards);
                 removeChildItems(this.boardItems);
                 this.boardItems.innerHTML = cards;
             })
