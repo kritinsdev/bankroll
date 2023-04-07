@@ -1,4 +1,4 @@
-const spinner = (element) => {
+const showSpinner = (element) => {
     console.log(element);
 }
 
@@ -36,7 +36,7 @@ const fetchAdminAjax = (action, data, method = 'POST') => {
   
 
 export {
-    spinner,
+    showSpinner,
     removeChildItems,
     fetchAdminAjax
 }

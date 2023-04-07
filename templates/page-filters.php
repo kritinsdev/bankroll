@@ -14,7 +14,7 @@ get_header(); ?>
 <main>
     <div class="container">
         <div class="mainArea">
-        <div class="mainArea__sidebar">
+            <div class="mainArea__filters">
                 <div class="selectedFilters" id="selectedFilters"></div>
                 <div id="filter" class="filters block">
                     <?php Helpers::taxonomyTermsFilter('provider'); ?>
@@ -22,13 +22,13 @@ get_header(); ?>
                     <?php Helpers::taxonomyTermsFilter('feature'); ?>
                 </div>
             </div>
-            
-            <?php 
-                $args = array(
-                    'post_type' => 'slot',
-                );
-                
-                $query = new WP_Query( $args );
+
+            <?php
+            $args = array(
+                'post_type' => 'slot',
+            );
+
+            $query = new WP_Query($args);
             ?>
 
             <div class="mainArea__main">

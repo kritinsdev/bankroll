@@ -2,12 +2,16 @@ import {fetchAdminAjax, removeChildItems} from './helpers';
 
 class Filters {
     constructor() {
-        this.filterBlock = document.querySelector('#filter');
-        this.selectedFilterItems = document.querySelector("#selectedFilters");
-        this.boardItems = document.querySelector("#boardItems");
-        this.initialItems = this.boardItems.innerHTML;
-        this.filtersForQuery = {theme:[], provider: [], feature: []};
-        this.events();
+        this.template = document.querySelector('.page-template-page-filters');
+        
+        if(this.template) {
+            this.filterBlock = this.template.querySelector('#filter');
+            this.selectedFilterItems = this.template.querySelector("#selectedFilters");
+            this.boardItems = this.template.querySelector("#boardItems");
+            this.initialItems = this.boardItems.innerHTML;
+            this.filtersForQuery = {theme:[], provider: [], feature: []};
+            this.events();
+        }
     }
 
     events() {

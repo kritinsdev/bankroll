@@ -14,7 +14,7 @@ if ($showAll) {
     ]);
 }
 
-$maxPostsCount = 10; //TODO : add setting?
+$maxPostsCount = 15; //TODO : add setting?
 $showLoadMore = count($postIds) > $maxPostsCount;
 ?>
 
