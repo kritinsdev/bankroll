@@ -1,10 +1,11 @@
-import {fetchAdminAjax} from './helpers';
+import {fetchAdminAjax, removeChildItems} from './helpers';
 
 class Filters {
     constructor() {
         this.filterBlock = document.querySelector('#filter');
         this.selectedFilterItems = document.querySelector("#selectedFilters");
         this.boardItems = document.querySelector("#boardItems");
+        this.initialItems = this.boardItems.innerHTML;
         this.filtersForQuery = {theme:[], provider: [], feature: []};
         this.events();
     }
@@ -112,8 +113,9 @@ class Filters {
             body: JSON.stringify(this.filtersForQuery)
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(cards => {
+                removeChildItems(this.boardItems);
+                this.boardItems.innerHTML = cards;
             })
             .catch(error => (error));
     }

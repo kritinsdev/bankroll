@@ -2,6 +2,12 @@ const spinner = (element) => {
     console.log(element);
 }
 
+const removeChildItems = (element) => {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
 const fetchAdminAjax = (action, data, method = 'POST') => {
     const url = ajaxObject.ajaxUrl;
     const body = new URLSearchParams();
@@ -31,5 +37,6 @@ const fetchAdminAjax = (action, data, method = 'POST') => {
 
 export {
     spinner,
+    removeChildItems,
     fetchAdminAjax
 }

@@ -11,7 +11,7 @@ $provider = $slot->getProvider();
     </div>
     <div class="slot__details">
         <div>
-            <a href="#" class="slot__title"><?php echo $slot->getName(); ?></a>
+            <a href="<?php echo $slot->getPermalink(); ?>" class="slot__title"><?php echo $slot->getName(); ?></a>
             <div class="slot__provider"><?php foreach($provider as $prov) echo $prov; ?></div>
         </div>
     </div>

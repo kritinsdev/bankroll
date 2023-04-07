@@ -4,6 +4,8 @@ $mode = (!isset($args['data']['block_board_mode'])) ? 'default' : $args['data'][
 $typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst($postType) . 'Factory';
 $showAll = $args['data']['block_board_show_all'];
 $postIds = $args['data']['block_board_' . $postType];
+$cardStyle = "1"; // TODO : add setting for style
+$cardTemplate = "parts/cards/$postType/card-$cardStyle";
 
 if ($showAll) {
     $postIds = get_posts([
@@ -12,7 +14,7 @@ if ($showAll) {
     ]);
 }
 
-$maxPostsCount = 12; //TODO : add setting?
+$maxPostsCount = 10; //TODO : add setting?
 $showLoadMore = count($postIds) > $maxPostsCount;
 ?>
 
@@ -24,7 +26,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
                     <?php foreach ($postIds as $itemCount => $id):
                         $post = $typeFactory::create($id); ?>
                         <?php if ($itemCount < $maxPostsCount): ?>
-                            <?php get_template_part('parts/blocks/board/board-' . $postType, null, ['data' => $post, 'carousel' => true]); ?>
+                            <?php get_template_part($cardTemplate, null, ['data' => $post, 'carousel' => true]); ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
@@ -36,7 +38,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
             <?php foreach ($postIds as $itemCount => $id):
                 $post = $typeFactory::create($id); ?>
                 <?php if ($itemCount < $maxPostsCount): ?>
-                    <?php get_template_part('parts/blocks/board/board-' . $postType, null, ['data' => $post]); ?>
+                    <?php get_template_part($cardTemplate, null, ['data' => $post]); ?>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>

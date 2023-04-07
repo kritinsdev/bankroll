@@ -2,6 +2,9 @@
 
 namespace Bankroll\Includes\Ajax;
 
+use Bankroll\Includes\QueryBuilder;
+use Bankroll\Includes\Factory\SlotFactory;
+
 class Filters
 {
     public function __construct()
@@ -15,12 +18,27 @@ class Filters
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
 
-        $providers = $data['provider'];
-        $theme = $data['theme'];
-        $feature = $data['feature'];
+        $queriedItems = [
+            'postType' => 'slot',
+            'query' => [
+                'provider' => $data['provider'],
+                'theme' => $data['theme'],
+                'feature' => $data['feature']
+            ]
+        ];
 
-        
+        $postIds = QueryBuilder::queryForPosts($queriedItems);
 
-        exit(json_encode($data['provider']));
+        ob_start();
+
+        foreach($postIds as $id) {
+            $slot = SlotFactory::create($id);
+            get_template_part('parts/cards/slot/card-1', null, ['data' => $slot]);
+        }
+
+        $cards = ob_get_contents();
+        ob_end_clean();
+
+        exit(json_encode($cards));
     }
 }

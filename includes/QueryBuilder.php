@@ -4,10 +4,23 @@ namespace Bankroll\Includes;
 
 class QueryBuilder
 {
-    public static function queryForPosts(...$args)
+    public static function queryForPosts(array $data): array
     {
-        $args = array(
-            'post_type' => 'slot',
+        $query['post_type'] = $data['postType'];
+
+        foreach($data['query'] as $taxonomy => $ids) {
+
+            $taxQuery = [
+                'taxonomy' => $taxonomy,
+                'field' => 'id',
+                'terms' => $ids
+            ];
+
+            $query['tax_query'][] = $taxQuery;
+        }
+
+        $query = array(
+            'post_type' => $data['postType'],
             'tax_query' => array(
                 array(
                     'taxonomy' => 'provider',
@@ -17,7 +30,7 @@ class QueryBuilder
             ),
         );
 
-        $query = new \WP_Query( $args );
+        $query = new \WP_Query( $query );
         $idsArray = [];
         $posts = $query->posts;
 
