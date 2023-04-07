@@ -11,7 +11,7 @@ use Bankroll\Includes\View\Parts;
                 <?php echo get_the_title(get_the_ID()); ?>
             </h1>
             <p>
-                This is hero for page.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta amet neque possimus deleniti magni nam. Reprehenderit est sed eveniet. Eaque rerum aliquid eveniet quos itaque architecto repudiandae mollitia assumenda similique. Enim quidem cupiditate suscipit aspernatur nemo alias, aut quibusdam repudiandae, ea voluptate animi numquam nulla eum tempore accusantium molestiae. Blanditiis.
             </p>
         </div>
     </div>

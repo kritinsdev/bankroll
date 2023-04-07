@@ -30,7 +30,7 @@
             height: 28rem;
 
             img {
-                transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * 5deg));
+                transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * 3deg));
                 transition: transform 0.2s;
                 width: 100%;
                 border-radius: var(--border-radius);

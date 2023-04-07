@@ -15,6 +15,12 @@ class Filters
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
 
-        exit(json_encode($data));
+        $providers = $data['provider'];
+        $theme = $data['theme'];
+        $feature = $data['feature'];
+
+        
+
+        exit(json_encode($data['provider']));
     }
 }

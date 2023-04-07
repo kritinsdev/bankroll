@@ -54,7 +54,11 @@ class Slot
     }
 
     public function setRtp(float $rtp): void {
-        $this->rtp = $rtp;
+        if(!empty($rtp)) {
+            $this->rtp = $rtp;
+        } else {
+            $this->rtp = 0;
+        }
     }
 
     public function getRtp(): float {

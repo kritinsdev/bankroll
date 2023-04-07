@@ -60,3 +60,13 @@
 
 </body>
 </html>
+
+<?php 
+
+// use Bankroll\Includes\QueryBuilder;
+
+// $val = QueryBuilder::queryForPosts();
+
+// echo '<pre>';
+// print_r($val);
+// echo '</pre>';
