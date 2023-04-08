@@ -4,7 +4,7 @@ namespace Bankroll\Includes\View;
 
 class Parts {
     public static function siteLogo(array $args = []): string {
-        return BANKROLL_DIR_URI . '/dist/img/logo-placeholder.png';
+        return BANKROLL_DIR_URI . '/dist/img/placeholder-logo.svg';
     }
     public static function navigation(array $args = []): void {
         get_template_part('parts/global/navigation', null, ['data' => ['']]);

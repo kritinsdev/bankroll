@@ -19,7 +19,7 @@
 
 <div class="filter" data-filter="<?php echo $taxonomy; ?>">
     <div class="filter__header">
-        <span>Filter By <?php echo ucfirst($taxonomy); ?></span>
+        <span>Filter By <?php echo ucfirst($taxonomy); ?> <i class="fa-solid fa-gamepad fa-lg"></i></span>
         <span>
             <svg width="8" height="5" viewBox="0 0 8 5">
                 <use xlink:href="#chevron-down" />

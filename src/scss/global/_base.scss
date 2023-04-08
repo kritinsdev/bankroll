@@ -14,12 +14,21 @@ ul {
     padding: 0 var(--spacing-default);
 }
 
+.relative {
+    position: relative;
+}
+
 img, iframe {
     max-width: 100%;
 }
 
 body {
-    // background-color: var(--color-secondary);
+    background: var(--color-primary);  
+    background: linear-gradient(to left, var(--color-primary-light), var(--color-primary));
+}
+
+main {
+    background-color: var(--color-white);
 }
 
 .cross {

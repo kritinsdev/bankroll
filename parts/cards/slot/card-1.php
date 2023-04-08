@@ -6,9 +6,15 @@ $provider = $slot->getProvider();
 
 <div class="board__item <?php if (isset($args['carousel']))
     echo 'splide__slide'; ?> slot">
-    <div class="slot__image">
-        <img src="<?php echo $image['url']; ?>" alt="">
-    </div>
+    <?php if(!empty($image['url'])) : ?>
+        <div class="slot__image">
+            <img src="<?php echo $image['url']; ?>" alt="">
+        </div>
+    <?php else : ?>
+        <div class="slot__image blank">
+            IMAGE MISSING
+        </div>
+    <?php endif; ?>
     <div class="slot__details">
         <div>
             <a href="<?php echo $slot->getPermalink(); ?>" class="slot__title"><?php echo $slot->getName(); ?></a>

@@ -43,7 +43,7 @@ class Slot
             $this->image = $image;
         } else {
             $defaultImage = [];
-            $defaultImage['url'] = BANKROLL_DIR_URI . '/dist/img/default-slot.jpg';
+            // $defaultImage['url'] = BANKROLL_DIR_URI . '/dist/img/default-slot.jpg';
  
             $this->image = $defaultImage;
         }

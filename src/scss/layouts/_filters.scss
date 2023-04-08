@@ -5,8 +5,8 @@
 .filter {
     position: relative;
     border-radius: var(--border-radius);
-    background-color: var(--color-primary);
-    flex:0 0 calc(25% - var(--spacing-default));
+    background-color: var(--color-primary-light);
+    flex:0 0 calc(20% - var(--spacing-default));
 
     &.show {
         .filter__data {
@@ -28,6 +28,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    span:first-child {
+        display: flex;
+        align-items: center;
+        gap:var(--spacing-sm);
+    }
 
     span {
         display: flex;
@@ -67,10 +73,10 @@
     overflow: auto;
     left:0;
     display: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-light);
 
     &::-webkit-scrollbar {
-        width: 10px;
+        width: 1rem;
     }
 
     &::-webkit-scrollbar-track {
@@ -78,17 +84,15 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background: var(--color-white);
-    }
-
-        &::-webkit-scrollbar-thumb:hover {
         background: #555;
+        border-radius:10px;
     }
 }
 
 .selectedFilters {
     display: flex;
     gap:var(--spacing-default);
+    padding-bottom: var(--spacing-default);
 
     &__item {
         display: flex;
@@ -100,5 +104,10 @@
         background-color: var(--color-primary);
         padding:var(--spacing-sm);
         border-radius: var(--border-radius);
+        cursor: pointer;
+
+        &:hover {
+            background-color: orangered; // TODO :  color
+        }
     }
 }

@@ -1,9 +1,10 @@
 .hero {
     padding:var(--spacing-lg) 0;
-    background-color: #ededed;
 }
 
 .hero__inner {
+    color:var(--text-light);
+
     h1 {
         margin-bottom: var(--spacing-default);
     }

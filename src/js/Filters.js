@@ -1,4 +1,4 @@
-import {fetchAdminAjax, removeChildItems} from './helpers';
+import {showLoader, removeChildItems} from './helpers';
 
 class Filters {
     constructor() {
@@ -112,6 +112,8 @@ class Filters {
 
     filterResults() 
     {
+        showLoader(this.boardItems);
+
         fetch(`${ajaxObject.ajaxUrl}?action=filterResults`, {
             method: "POST",
             credentials: 'same-origin',
@@ -120,9 +122,13 @@ class Filters {
         })
             .then(res => res.json())
             .then(cards => {
-                console.log(cards);
-                removeChildItems(this.boardItems);
-                this.boardItems.innerHTML = cards;
+                if(cards) {
+                    this.boardItems.innerHTML = cards;
+                } else {
+                    const element = document.createElement('p');
+                    element.textContent = 'No results found';
+                    this.boardItems.append(element);
+                }
             })
             .catch(error => (error));
     }

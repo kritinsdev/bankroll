@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Page Filters */
+/* Template Name: Filters Page */
 
 use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\View\Helpers;
@@ -14,9 +14,9 @@ get_header(); ?>
 <main>
     <div class="container">
         <div class="mainArea">
-            <div class="mainArea__filters">
+            <div class="mainArea__filters block">
                 <div class="selectedFilters" id="selectedFilters"></div>
-                <div id="filter" class="filters block">
+                <div id="filter" class="filters">
                     <?php Helpers::taxonomyTermsFilter('provider'); ?>
                     <?php Helpers::taxonomyTermsFilter('theme'); ?>
                     <?php Helpers::taxonomyTermsFilter('feature'); ?>
@@ -35,7 +35,7 @@ get_header(); ?>
                 <?php BlocksController::block('block_board', [
                     'block_board_post_type' => 'slot',
                     'block_board_mode' => 'default',
-                    'block_board_show_all' => false,
+                    'block_board_show_all' => true,
                     'block_board_slot' => $query->posts
                 ]); ?>
             </div>
