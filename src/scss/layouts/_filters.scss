@@ -80,12 +80,11 @@
     }
 
     &::-webkit-scrollbar-track {
-        background: var(--color-primary);
+        background: var(--color-primary-light);
     }
 
     &::-webkit-scrollbar-thumb {
-        background: #555;
-        border-radius:10px;
+        background: var(--color-primary);
     }
 }
 

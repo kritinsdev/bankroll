@@ -10,7 +10,7 @@ class Parts {
         get_template_part('parts/global/navigation', null, ['data' => ['']]);
     }
 
-    public static function hero(array $args = []): void {
+    public static function hero(array $args): void {
         $template = BANKROLL_DIR . "/parts/global/hero/hero-" . $args['template'] . ".php";
 
         if(file_exists($template)) {
@@ -18,8 +18,6 @@ class Parts {
         } else {
             get_template_part('/parts/global/hero/hero-page');
         }
-
-        get_template_part($template);
     }
 
     public static function postDetails(array $args = []): void

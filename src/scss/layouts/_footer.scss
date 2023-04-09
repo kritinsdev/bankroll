@@ -1,5 +1,7 @@
 .footer {
+    padding:var(--spacing-lg) 0;
     background-color: var(--color-secondary);
+    color:var(--text-light);
 }
 
 .footer__menus {

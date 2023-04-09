@@ -127,6 +127,7 @@ class Filters {
                 } else {
                     const element = document.createElement('p');
                     element.textContent = 'No results found';
+                    removeChildItems(this.boardItems);
                     this.boardItems.append(element);
                 }
             })

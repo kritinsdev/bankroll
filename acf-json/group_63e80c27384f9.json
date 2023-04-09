@@ -154,6 +154,28 @@
             "append": ""
         },
         {
+            "key": "field_6431eb623961b",
+            "label": "Rank",
+            "name": "slot_rank",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_63f93d48202e2",
             "label": "Slot Image \/ Iframe",
             "name": "",
@@ -231,5 +253,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678974000
+    "modified": 1681025370
 }

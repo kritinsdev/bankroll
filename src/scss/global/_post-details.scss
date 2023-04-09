@@ -5,3 +5,9 @@
     font-size: var(--font-size-xs);
     color:var(--text-light);
 }
+
+.postDetails__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap:4px;
+}

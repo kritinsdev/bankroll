@@ -1,5 +1,10 @@
 .board {
     .slot {
+        overflow: hidden;
+        background-color: var(--color-white);
+        position: relative;
+
+
         &:is(:hover, :focus-visible) {
             --hover: 1;
         }
@@ -20,11 +25,6 @@
             }
         }
 
-        overflow: hidden;
-        border-radius: var(--border-radius);
-        background-color: var(--color-white);
-        position: relative;
-
         &__image {
             display: flex;
             height: 28rem;
@@ -33,7 +33,6 @@
                 transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * 3deg));
                 transition: transform 0.2s;
                 width: 100%;
-                border-radius: var(--border-radius);
                 object-fit: cover;
             }
 
@@ -49,7 +48,6 @@
         }
 
         &__details {
-            border-radius: var(--border-radius-bot);
             font-size: 14px;
             position: absolute;
             bottom: 0;
@@ -58,11 +56,6 @@
             height: 20%;
             background: hsl(0 0% 100% / 0.5);
             backdrop-filter: blur(16px);
-
-            > div {
-                display: flex;
-                flex-direction: column;
-            }
         }
 
         &__title {

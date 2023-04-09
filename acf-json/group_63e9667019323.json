@@ -66,7 +66,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "33.3",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -83,6 +83,30 @@
                                     "placeholder": ""
                                 },
                                 {
+                                    "key": "field_643272e40fef8",
+                                    "label": "Card Style",
+                                    "name": "block_board_card_style",
+                                    "aria-label": "",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "1": "1",
+                                        "2": "2",
+                                        "3": "3"
+                                    },
+                                    "default_value": "",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "layout": "horizontal"
+                                },
+                                {
                                     "key": "field_63f1e6ce0ad61",
                                     "label": "Mode",
                                     "name": "block_board_mode",
@@ -92,7 +116,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "33.3",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -157,38 +181,13 @@
                                     ],
                                     "taxonomy": "",
                                     "filters": [
-                                        "search"
+                                        "search",
+                                        "taxonomy"
                                     ],
                                     "return_format": "object",
                                     "min": "",
                                     "max": "",
                                     "elements": ""
-                                },
-                                {
-                                    "key": "field_6431064ea25d5",
-                                    "label": "Test Label",
-                                    "name": "test_label",
-                                    "aria-label": "",
-                                    "type": "select",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "firstTax": "First Tax",
-                                        "secondTax": "Second Tax"
-                                    },
-                                    "default_value": false,
-                                    "return_format": "value",
-                                    "multiple": 0,
-                                    "allow_null": 0,
-                                    "ui": 0,
-                                    "ajax": 0,
-                                    "placeholder": ""
                                 }
                             ]
                         },
@@ -456,5 +455,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680934755
+    "modified": 1681028018
 }

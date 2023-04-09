@@ -98,4 +98,9 @@ class Slot
 
         return $themesArray;
     }
+
+    public function getSimilarSlots(): array 
+    {
+        return [];
+    }
 }

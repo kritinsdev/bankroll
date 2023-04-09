@@ -3,7 +3,14 @@
 }
 
 .hero__inner {
+    display: flex;
+    flex-direction: column;
     color:var(--text-light);
+
+    @include mq('desktop') {
+        flex-direction: row;
+        align-items: center;
+    }
 
     h1 {
         margin-bottom: var(--spacing-default);
@@ -14,17 +21,27 @@
     }
 }
 
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+.hero__pageDetails {
+    @include mq('desktop') {
+        flex:0 0 50%;
     }
+}
 
-    50% {
-        background-position: 100% 50%;
-    }
+/** Slot hero styles **/
+.hero.slot {
 
-    100% {
-        background-position: 0% 50%;
+    .hero__pageDetails {
+        display: flex;
+        align-items: center;
+        gap:var(--spacing-default);
+
+        div:first-child {
+            width: -webkit-fill-available;
+        }
+
+        img {
+            display: flex;
+            border-radius: var(--border-radius);
+        }
     }
 }

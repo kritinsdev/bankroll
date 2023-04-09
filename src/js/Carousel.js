@@ -7,7 +7,7 @@ class Carousel {
         if(carousels) {
             carousels.forEach((carousel) => {
                 new Splide( carousel, {
-                    perPage: 6,
+                    perPage: 5,
                     gap: '1.6rem',
                     breakpoints: {
                         600: {

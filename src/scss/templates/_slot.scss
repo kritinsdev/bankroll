@@ -1,18 +1,26 @@
 .slotMainBlock {
+    padding:var(--spacing-default) 0;
     &__wrap {
-        background-color: var(--color-primary);
-        padding: 10px;
-        border-radius: 10px;
+        background-color: var(--color-secondary);
+        padding: var(--spacing-default);
+        display:flex;
+        gap:var(--spacing-default);
     }
+}
 
-    &__table {
-        display: flex;
-        flex-direction: column;
+.slotMainBlock__game {
 
-        img {
-            align-self: center;
-            max-width: 24rem;
-            border-radius: var(--border-radius);
-        }
+    @include mq('desktop') {
+        min-height: 50rem;
+        flex:1;
+    }
+}
+
+.slotMainBlock__similarGames {
+    color:var(--text-light);
+
+
+    @include mq('desktop') {
+        flex:0 0 20%;
     }
 }
