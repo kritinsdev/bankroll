@@ -60,6 +60,7 @@
 
 .header__controls {
     display: flex;
+    align-items: center;
     gap:var(--spacing-default);
 
     i {
@@ -71,21 +72,20 @@
 .header__searchInput {
     display: none;
     padding: 0;
-    background-color: var(--color-secondary);
-    border-radius: var(--border-radius-lg);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    border:2px solid #373737;
+    border-radius: 5px;
+    padding:4px;
 
     &.show {
-        display: flex;
+        display: block;
     }
 
     input {
+        background-color: var(--color-primary-light);
         flex:1;
-        padding-left: var(--spacing-default);
         border:none;
-        border-radius: var(--border-radius-lg);
-        background-color: var(--color-primary);
         color:var(--color-white);
+
 
         &::placeholder {
             color:var(--color-white);
@@ -101,6 +101,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+.header__search {
+    @include mq('desktop') {
+        display: none;
     }
 }
 
