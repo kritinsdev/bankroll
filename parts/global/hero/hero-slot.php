@@ -31,6 +31,16 @@ $imageUrl = ($slot->getImage()) ? $slot->getImage()['sizes']['medium'] : '';
                     <i class="fa-solid fa-percent fa-xl"></i>
                 </div>
                 <div class="infoItem">
+                    <span>RTP</span>
+                    <div><?php echo $slot->getRtp(); ?></div>
+                    <i class="fa-solid fa-percent fa-xl"></i>
+                </div>
+                <div class="infoItem">
+                    <span>RTP</span>
+                    <div><?php echo $slot->getRtp(); ?></div>
+                    <i class="fa-solid fa-percent fa-xl"></i>
+                </div>
+                <div class="infoItem">
                     <span>Max Multi</span>
                     <div>x<?php echo $slot->getMaxMultiplier(); ?></div>
                     <i class="fa-solid fa-coins fa-xl"></i>

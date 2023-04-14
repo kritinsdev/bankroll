@@ -1,4 +1,5 @@
 <?php
+use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\Factory\SlotFactory;
 
 $slot = SlotFactory::create(get_the_ID());
@@ -15,6 +16,9 @@ get_header();
             <div class="slotMainBlock__game">
                <?php if(false) : ?>
                   <iframe frameborder="0" allowfullscreen="" mozallowfullscreen="" class="iframeGame" webkitallowfullscreen="" hspace="0" vspace="0" scrolling="none" src="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?lang=en&amp;cur=USD&amp;gameSymbol=vs20fruitsw" width="100%" height="100%"></iframe>
+
+               <?php else : ?>
+                  <div class="placeholder">IFRAME MISSING</div>
                <?php endif; ?>
             </div>
             <div class="slotMainBlock__similarSlots">
@@ -29,7 +33,7 @@ get_header();
       </div>
    </div>
    <div class="container">
-
+      <?php BlocksController::blocks(); ?>
    </div>
 </main>
 
