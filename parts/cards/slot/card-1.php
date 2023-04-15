@@ -1,5 +1,4 @@
 <?php
-
 use Bankroll\Includes\Helpers;
 
 $slot = $args['data'];
@@ -21,6 +20,6 @@ $rtpRange = Helpers::getSlotRtpRange($rtp);
     <?php endif; ?>
     <div class="slot__details">
             <a href="<?php echo $slot->getPermalink(); ?>" class="slot__title"><?php echo $slot->getName(); ?></a>
-            <div class="slot__provider"><?php foreach($provider as $prov) echo $prov; ?></div>
+            <div class="slot__maxWin">Max Win: x20000</div>
     </div>
 </div>
