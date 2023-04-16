@@ -46,7 +46,7 @@ $showLoadMore = count($postIds) > $maxPostsCount;
 
     <?php if ($showLoadMore): ?>
         <div id="boardLoadMore" class="board__loadMore" data-remaining-posts="[1,2,3,4,5]">
-            <button id="loadMore" data-ids="1,2,3">Load More</button>
+            <button id="loadMore">Load More</button>
         </div>
     <?php endif; ?>
 </div>

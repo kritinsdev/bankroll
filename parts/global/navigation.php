@@ -26,7 +26,7 @@ use Bankroll\Includes\View\Parts;
             </div>
             <div class="header__controls">
                 <div id="siteSearchInput" class="header__searchInput">
-                    <input id="s" name="s" placeholder="<?php echo __('Search...'); ?>" type="text" />
+                    <input id="s" name="s" autocomplete="off" placeholder="<?php echo __('Search...'); ?>" type="text" />
                     <div id="closeSearchInput">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
