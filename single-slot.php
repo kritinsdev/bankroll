@@ -24,8 +24,8 @@ get_header();
             <div class="slotMainBlock__similarSlots">
                   <h2>Similar Slots (Provider)</h2>
                   <div>
-                     <?php foreach($similarSlots as $slot) : ?>
-                           <?php get_template_part('parts/cards/slot/card-2', null, ['data' => SlotFactory::create($slot)]); ?>
+                     <?php foreach($similarSlots as $id) : ?>
+                           <?php get_template_part('parts/cards/slot/card-2', null, ['data' => SlotFactory::create($id)]); ?>
                      <?php endforeach; ?>
                   </div>
             </div>

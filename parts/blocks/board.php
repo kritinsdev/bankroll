@@ -14,8 +14,14 @@ if ($showAll) {
     ]);
 }
 
+$showLoadMore = false;
 $maxPostsCount = 15; //TODO : add setting?
-$showLoadMore = count($postIds) > $maxPostsCount;
+$remainingPosts = [];
+
+if(count($postIds) > $maxPostsCount) {
+    $showLoadMore = true;
+    $remainingPosts[] = [];
+}
 ?>
 
 <div class="board">
