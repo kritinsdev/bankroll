@@ -99,8 +99,28 @@ class Slot
         return $themesArray;
     }
 
-    public function getSimilarSlots(): array 
+    public function getSimilarByProvider($provider = ''): array 
     {
-        return [];
+
+        $args = [
+            'post_type' => 'slot',
+            'tax_query' => [
+                [
+                    'taxonomy' => 'provider',
+                    'field' => 'slug',
+                    'terms' => 'pragmatic-play'
+                ]
+            ]
+        ];
+
+        $query = new \WP_Query($args);
+        $posts = $query->posts;
+        $postIds = [];
+
+        foreach($posts as $post){
+            $postIds[] = $post->ID;
+        }
+
+        return $postIds;
     }
 }

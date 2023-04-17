@@ -4,7 +4,7 @@ use Bankroll\Includes\Factory\SlotFactory;
 
 $slot = SlotFactory::create(get_the_ID());
 $providers = $slot->getProvider();
-$similarSlots = $slot->getsimilarSlots('abc');
+$similarSlots = $slot->getSimilarByProvider($providers[0]);
 
 get_header();
 ?>
@@ -25,7 +25,7 @@ get_header();
                   <h2>Similar Slots (Provider)</h2>
                   <div>
                      <?php foreach($similarSlots as $slot) : ?>
-                        
+                           <?php get_template_part('parts/cards/slot/card-2', null, ['data' => SlotFactory::create($slot)]); ?>
                      <?php endforeach; ?>
                   </div>
             </div>
