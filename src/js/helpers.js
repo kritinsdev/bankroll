@@ -1,3 +1,12 @@
+
+const createBackdrop = () => {
+  const body = document.querySelector('body');
+  const bdrop = document.createElement('div');
+  bdrop.classList.add('backdrop');
+
+  body.appendChild(bdrop);
+}
+
 const showLoader = (element) => {
     element.classList.add('relative');
     element.appendChild(createLoaderElement());
