@@ -10,7 +10,7 @@ class BoardBlock implements BlockInterface {
     }
 
     public static function registerFields(): array {
-        
+        //register fields here
     }
 }
 
