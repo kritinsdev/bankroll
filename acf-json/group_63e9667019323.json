@@ -107,29 +107,6 @@
                                     "layout": "horizontal"
                                 },
                                 {
-                                    "key": "field_63f1e6ce0ad61",
-                                    "label": "Mode",
-                                    "name": "block_board_mode",
-                                    "aria-label": "",
-                                    "type": "button_group",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "default": "Default",
-                                        "carousel": "Carousel"
-                                    },
-                                    "default_value": "",
-                                    "return_format": "value",
-                                    "allow_null": 0,
-                                    "layout": "horizontal"
-                                },
-                                {
                                     "key": "field_63f1eafbac92b",
                                     "label": "Show All Posts",
                                     "name": "block_board_show_all",
@@ -455,5 +432,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681028018
+    "modified": 1682000150
 }
