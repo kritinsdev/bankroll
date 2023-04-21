@@ -12,25 +12,18 @@ use Bankroll\Includes\View\Parts;
                     <img class="siteLogo" src="<?php echo Parts::siteLogo(); ?>" alt="">
                 </a>
             </div>
-            <div id="navWrap" class="header__siteNavWrap">
-                <?php
-                wp_nav_menu([
-                    'menu' => 'primary-menu',
-                    'container' => 'ul',
-                    'menu_class' => 'header__siteNav',
-                    'menu_id' => 'm',
-                    'theme_location' => 'primary-menu',
-                    'walker' => new MenuWalker(),
-                ]);
-                ?>
-            </div>
+            
+            <?php
+            wp_nav_menu([
+                'menu' => 'primary-menu',
+                'container' => 'ul',
+                'menu_class' => 'header__siteNav',
+                'menu_id' => 'headerNav',
+                'theme_location' => 'primary-menu',
+                'walker' => new MenuWalker(),
+            ]);
+            ?>
             <div class="header__controls">
-                <div id="siteSearchInput" class="header__searchInput">
-                    <input id="s" name="s" autocomplete="off" placeholder="<?php echo __('Search...'); ?>" type="text" />
-                    <div id="closeSearchInput">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                </div>
                 <div id="siteSearch" class="header__search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>

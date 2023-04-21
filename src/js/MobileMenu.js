@@ -1,8 +1,10 @@
+import {createBackdrop, overflowHidden} from '../js/helpers';
+
 class MobileMenu {
     constructor() {
         this.header = document.querySelector('#header');
         this.menuBtn = header.querySelector('#mobileMenu');
-        this.navigation = header.querySelector('#navWrap');
+        this.navigation = header.querySelector('#headerNav');
         this.searchBtn = header.querySelector('#siteSearch');
         this.searchInput = header.querySelector('#siteSearchInput');
         this.submenuParentItem = header.querySelectorAll('.has-submenu');
@@ -40,11 +42,13 @@ class MobileMenu {
         const icon = this.menuBtn.querySelector('i');
         
         if(!this.navigation.classList.contains('show')) {
+            overflowHidden();
             this.navigation.classList.add('show');
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-xmark');
             this.menuOpen = true;
         } else {
+            overflowHidden();
             this.navigation.classList.remove('show');
             icon.classList.remove('fa-xmark');
             icon.classList.add('fa-bars');
@@ -54,21 +58,7 @@ class MobileMenu {
 
     toggleSiteSearch(e) {
         if(e.target.closest('#siteSearch')) {
-            if(this.menuOpen) {
-                this.navigation.classList.remove('show');
-                const icon = this.menuBtn.querySelector('i');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-            this.searchInput.classList.add('show');
-            const input = this.searchInput.querySelector('input');
-            input.focus();
-        }
-
-        if(e.target.closest('#closeSearchInput')) {
-            const input = this.searchInput.querySelector('input');
-            this.searchInput.classList.remove('show');
-            input.value = '';
+            createBackdrop();
         }
     }
 }

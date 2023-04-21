@@ -1,10 +1,23 @@
+const body = document.querySelector('body');
+
+body.addEventListener('click', (e) => {
+  if(e.target.classList.contains('backdrop')) {
+    document.querySelector('.backdrop').remove();
+  }
+});
 
 const createBackdrop = () => {
-  const body = document.querySelector('body');
   const bdrop = document.createElement('div');
   bdrop.classList.add('backdrop');
-
   body.appendChild(bdrop);
+}
+
+const overflowHidden = () => {
+  if (!body.classList.contains('overflow-hidden')) {
+    body.classList.add('overflow-hidden');
+  } else {
+    body.classList.remove('overflow-hidden');
+  }
 }
 
 const showLoader = (element) => {
@@ -44,4 +57,6 @@ const removeChildItems = (element) => {
 export {
     showLoader,
     removeChildItems,
+    createBackdrop,
+    overflowHidden
 }

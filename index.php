@@ -5,9 +5,7 @@
    get_header(); ?>
 
    <main>
-      <div class="container">
-         <?php BlocksController::blocks(); ?>
-      </div>
+      <?php BlocksController::blocks(); ?>
    </main>
 
    <?php get_footer(); ?>
