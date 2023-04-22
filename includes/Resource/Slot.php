@@ -99,7 +99,7 @@ class Slot
         return $themesArray;
     }
 
-    public function getSimilarByProvider($provider = ''): array 
+    public function getSimilarByProvider(string $provider): array 
     {
 
         $args = [
@@ -108,7 +108,7 @@ class Slot
                 [
                     'taxonomy' => 'provider',
                     'field' => 'slug',
-                    'terms' => 'pragmatic-play'
+                    'terms' => $provider
                 ]
             ]
         ];

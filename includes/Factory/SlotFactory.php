@@ -15,8 +15,8 @@ class SlotFactory {
         $slot->setPermalink(get_the_permalink($id));
         $slot->setProvider(wp_get_post_terms($id, 'provider'));
         $slot->setName(get_the_title($id));
-        $slot->setRtp(get_field('slot_rtp', $id));
-        $slot->setMaxMultiplier(get_field('slot_max_multiplier', $id));
+        $slot->setRtp(intval(get_field('slot_rtp', $id)));
+        $slot->setMaxMultiplier(intval(get_field('slot_max_multiplier', $id)));
         $slot->setImage($image);
 
         return $slot;
