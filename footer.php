@@ -59,21 +59,3 @@
 
 </body>
 </html>
-
-<?php
-
-// use Bankroll\Includes\QueryBuilder;
-
-// $query = [
-//     'postType' => 'slot',
-//     'query' => [
-//         'provider' => [530],
-//         'theme' => [529]
-//     ]
-// ];
-
-// $val = QueryBuilder::queryForPosts($query);
-
-// echo '<pre>';
-// print_r($val);
-// echo '</pre>';
