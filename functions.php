@@ -13,12 +13,11 @@ function _ts($string) {
     return $string;
 }
 
-// add_action('init', 'createSlots');
 // add_action('init', 'renameTerms');
 
 function renameTerms()
 {
-    $taxonomies = ['provider', 'theme', 'feature']; // replace with your actual taxonomy slug
+    $taxonomies = ['provider', 'theme', 'feature'];
 
     foreach($taxonomies as $taxonomy) {
         $terms = get_terms( array(

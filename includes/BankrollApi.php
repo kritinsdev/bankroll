@@ -24,22 +24,18 @@ class BankrollApi
         ]);
     }
 
-    function importSlot() {
+    public function importSlot() {
         // Check if the request has a slot ID
         if (!isset($_GET['slot_id'])) {
             wp_send_json_error('Slot ID is missing', 400);
         }
     
-        // Get the slot ID
         $slot_id = $_GET['slot_id'];
     
-        // Define your external API URL
         $api_url = 'http://localhost:3000/api/v1/slots/id/' . $slot_id;
     
-        // Fetch the slot data from your external API
         $response = wp_remote_get($api_url);
     
-        // Check if the API request was successful
         if (is_wp_error($response)) {
             wp_send_json_error('Error fetching data from the external API', 500);
         }
@@ -54,14 +50,14 @@ class BankrollApi
 
     public function createSlot($slot)
     {
-        $page = get_page_by_title($slot['slotName'], OBJECT, 'slot');
+        $page = get_page_by_title($slot['name'], OBJECT, 'slot');
 
         if (!empty($page->ID) && isset($page->ID)) {
             return;
         }
 
         $postData = [
-            'post_title' => $slot['slotName'],
+            'post_title' => $slot['name'],
             'post_status' => 'publish',
             'post_type' => 'slot'
         ];
@@ -72,23 +68,23 @@ class BankrollApi
             wp_die('failed to add slot');
         }
 
-        update_field('slot_rtp', $slot['slotRtp'], $id);
-        update_field('slot_min_bet', $slot['slotMinBet'], $id);
-        update_field('slot_max_bet', $slot['slotMaxBet'], $id);
-        update_field('slot_max_multiplier', $slot['slotMaxMultiplier'], $id);
+        update_field('slot_rtp', $slot['rtp'], $id);
+        update_field('slot_min_bet', $slot['minBet'], $id);
+        update_field('slot_max_bet', $slot['maxBet'], $id);
+        update_field('slot_max_multiplier', $slot['maxMultiplier'], $id);
 
         $providersArray = [];
-        foreach ($slot['slotProviders'] as $provider) {
+        foreach ($slot['providers'] as $provider) {
             $providersArray[] = $provider;
         }
 
         $featuresArray = [];
-        foreach ($slot['slotFeatures'] as $feature) {
+        foreach ($slot['features'] as $feature) {
             $featuresArray[] = $feature;
         }
 
         $themesArray = [];
-        foreach ($slot['slotThemes'] as $theme) {
+        foreach ($slot['themes'] as $theme) {
             $themesArray[] = $theme;
         }
 
