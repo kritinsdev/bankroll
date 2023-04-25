@@ -18,6 +18,7 @@ class Init
         Enqueue::get_instance();
         AjaxFunctions::get_instance();
         BankrollApi::get_instance();
+        Importer::get_instance();
 
         $this->setupHooks();
     }
