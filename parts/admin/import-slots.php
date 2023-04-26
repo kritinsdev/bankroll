@@ -11,6 +11,7 @@
             <h2>Find slots by provider</h2>
             <input type="text" id="provider" name="provider" placeholder="Search by provider">
         </div>
+        <button id="slotsSearch" class="button button-primary" disabled>Search</button>
     </form>
     <div class="results" id="results"></div>
     <div id="pagination"></div>
@@ -47,94 +48,113 @@
 </style>
 
 <script>
-    const form = document.getElementById('importForm');
-    const resultsElement = document.getElementById('results');
-    const paginationElement = document.querySelector('#pagination');
 
-    let currentPage = 1;
-    const itemsPerPage = 10;
+    class SlotsImporter {
+        constructor() {
+            this.form = document.getElementById('importForm');
+            this.resultsElement = document.getElementById('results');
+            this.paginationElement = document.querySelector('#pagination');
+            this.currentPage = 1;
+            this.itemsPerPage = 10;
 
-    form.addEventListener('input', fetchData);
-    document.addEventListener('click', handleClick);
-
-    async function fetchData(currentPage, itemsPerPage) {
-        const inputField = event.target;
-        let fetchUrl = '';
-        const resultsElement = document.getElementById('results');
-
-        const input = inputField.value;
-        const searchType = inputField.id;
-
-        switch (searchType) {
-            case 'slot':
-                fetchUrl = `http://localhost:3000/api/v1/slots/name/${encodeURIComponent(input)}?page=${currentPage}&limit=${itemsPerPage}`;
-                break;
-            case 'provider':
-                fetchUrl = `http://localhost:3000/api/v1/providers/${encodeURIComponent(input)}?page=${currentPage}&limit=${itemsPerPage}`;
-                break;
+            this.events();
         }
 
-        if (input.length > 2) {
-            try {
-                const response = await fetch(fetchUrl);
-                const data = await response.json();
+        events() {
+            this.form.addEventListener('input', this.handleForm);
+            // document.addEventListener('click', handleClick);
+        }
 
-                // Display the results
-                resultsElement.innerHTML = data.data.map(slot => {
-                    return `<div class="resultBox">
-                            <span>${slot.name}</span>
-                            <p>By: ${slot.providers}</p>
-                            <button class="import-btn" data-id="${slot._id}">Import</button>
-                            <input type="checkbox" data-id="${slot._id}" />
-                        </div>`;
-                }).join('');
+        fetchData()
+        {
+            const inputField = event.target;
+        }
 
-                // Generate and display pagination buttons
-                const totalPages = data.totalPages;
-                paginationElement.innerHTML = generatePagination(totalPages, currentPage);
-
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                resultsElement.innerHTML = '<p>An error occurred while fetching data.</p>';
-            }
-        } else {
-            resultsElement.innerHTML = '';
+        handleForm = (e) => {
+            console.log(e.target);
         }
     }
 
-    function handleClick(event) {
-        const currentTarget = event.target;
+    // async function fetchData(currentPage, itemsPerPage) {
+    //     const inputField = event.target;
+    //     let fetchUrl = '';
+    //     const resultsElement = document.getElementById('results');
 
-        if (currentTarget.classList.contains('import-btn')) {
-            const slotId = currentTarget.getAttribute('data-id');
-            fetch(`http://bankroll.local/wp-json/bankroll/v1/import?slot_id=${encodeURIComponent(slotId)}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert('Slot imported successfully');
-                    } else {
-                        alert('Error importing slot');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error importing slot:', error);
-                    alert('Error importing slot');
-                });
-        }
+    //     const input = inputField.value;
+    //     const searchType = inputField.id;
 
-        if (currentTarget.classList.contains('pagination-btn')) {
-            currentPage = parseInt(currentTarget.dataset.page);
-            fetchData();
-        }
-    }
+    //     switch (searchType) {
+    //         case 'slot':
+    //             fetchUrl = `http://localhost:3000/api/v1/slots/name/${encodeURIComponent(input)}?page=${currentPage}&limit=${itemsPerPage}`;
+    //             break;
+    //         case 'provider':
+    //             fetchUrl = `http://localhost:3000/api/v1/providers/${encodeURIComponent(input)}?page=${currentPage}&limit=${itemsPerPage}`;
+    //             break;
+    //     }
 
-    function generatePagination(totalPages, currentPage) {
-        let buttons = '';
+    //     if (input.length > 2) {
+    //         try {
+    //             const response = await fetch(fetchUrl);
+    //             const data = await response.json();
 
-        for (let i = 1; i <= totalPages; i++) {
-            buttons += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
-        }
+    //             // Display the results
+    //             resultsElement.innerHTML = data.data.map(slot => {
+    //                 return `<div class="resultBox">
+    //                         <span>${slot.name}</span>
+    //                         <p>By: ${slot.providers}</p>
+    //                         <button class="import-btn" data-id="${slot._id}">Import</button>
+    //                         <input type="checkbox" data-id="${slot._id}" />
+    //                     </div>`;
+    //             }).join('');
 
-        return buttons;
-    }
+    //             // Generate and display pagination buttons
+    //             const totalPages = data.totalPages;
+    //             paginationElement.innerHTML = generatePagination(totalPages, currentPage);
+
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //             resultsElement.innerHTML = '<p>An error occurred while fetching data.</p>';
+    //         }
+    //     } else {
+    //         resultsElement.innerHTML = '';
+    //     }
+    // }
+
+    // function handleClick(event) {
+    //     const currentTarget = event.target;
+
+    //     if (currentTarget.classList.contains('import-btn')) {
+    //         const slotId = currentTarget.getAttribute('data-id');
+    //         fetch(`http://bankroll.local/wp-json/bankroll/v1/import?slot_id=${encodeURIComponent(slotId)}`)
+    //             .then(response => response.json())
+    //             .then(data => {
+    //                 if (data.success) {
+    //                     alert('Slot imported successfully');
+    //                 } else {
+    //                     alert('Error importing slot');
+    //                 }
+    //             })
+    //             .catch(error => {
+    //                 console.error('Error importing slot:', error);
+    //                 alert('Error importing slot');
+    //             });
+    //     }
+
+    //     if (currentTarget.classList.contains('pagination-btn')) {
+    //         currentPage = parseInt(currentTarget.dataset.page);
+    //         fetchData();
+    //     }
+    // }
+
+    // function generatePagination(totalPages, currentPage) {
+    //     let buttons = '';
+
+    //     for (let i = 1; i <= totalPages; i++) {
+    //         buttons += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
+    //     }
+
+    //     return buttons;
+    // }
+
+    new SlotsImporter();
 </script>

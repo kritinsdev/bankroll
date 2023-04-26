@@ -7,11 +7,23 @@ class Importer
     use Singleton;
 
     public function __construct() {
-        add_action('admin_menu', [$this, 'createImportPage']);
+        add_action('admin_menu', [$this, 'createAdminPage']);
     }
 
-    public function createImportPage() 
+    public function createAdminPage() 
     {
-        // get_template_part('parts/admin/import-slots');
+        add_submenu_page(
+            'edit.php?post_type=slot',
+            'Import',
+            'Import slots',
+            'manage_options',
+            'custom-admin-page',
+            [$this, 'createImportPage']
+        );
+    }
+    
+    public function createImportPage()
+    {
+        get_template_part('parts/admin/import-slots');
     }
 }
