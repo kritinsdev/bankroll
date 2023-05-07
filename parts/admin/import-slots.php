@@ -81,13 +81,20 @@
 
         updateResults = (e) => {
             e.preventDefault();
-            console.log();
-            // this.fetchData();
+            let searchType, searchValue;
+            if (this.slotInput.value.length > 2) {
+                searchType = 'name';
+                searchValue = this.slotInput.value;
+            } else if (this.providerInput.value.length > 2) {
+                searchType = 'provider';
+                searchValue = this.providerInput.value;
+            }
+            this.getSlots(searchType, searchValue);
         }
 
-        async fetchData() {
+        async getSlots(type, value) {
             try {
-                const response = await fetch(`http://localhost:3000/api/v1/providers/${encodeURIComponent('prag')}?page=${this.currentPage}&limit=${this.itemsPerPage}`);
+                const response = await fetch(`http://localhost:3000/api/v1/slots?${type}=${encodeURIComponent(value)}&page=${this.currentPage}&limit=${this.itemsPerPage}`);
                 const data = await response.json();
 
                 this.resultsElement.innerHTML = data.data.map(slot => {
@@ -108,13 +115,13 @@
         }
 
         generatePagination(totalPages) {
-                let buttons = '';
+            let buttons = '';
 
-                for (let i = 1; i <= totalPages; i++) {
-                    buttons += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
-                }
+            for (let i = 1; i <= totalPages; i++) {
+                buttons += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
+            }
 
-                return buttons;
+            return buttons;
         }
     }
     new SlotsImporter();

@@ -20,19 +20,19 @@ class BankrollApi
     {
         register_rest_route('bankroll/v1', '/import', [
             'methods' => 'GET',
-            'callback' => [$this, 'importSlot'],
+            'callback' => [$this, 'importSlots'],
         ]);
     }
 
-    public function importSlot() {
-        // Check if the request has a slot ID
-        if (!isset($_GET['slot_id'])) {
-            wp_send_json_error('Slot ID is missing', 400);
+    public function importSlots() {
+        // Check if the request has slot IDs
+        if (!isset($_GET['slot_ids'])) {
+            wp_send_json_error('Slot IDs are missing', 400);
         }
     
-        $slot_id = $_GET['slot_id'];
+        $slot_ids = $_GET['slot_ids'];
     
-        $api_url = 'http://localhost:3000/api/v1/slots/id/' . $slot_id;
+        $api_url = 'http://localhost:3000/api/v1/slots/import?ids=' . $slot_ids;
     
         $response = wp_remote_get($api_url);
     
@@ -43,9 +43,11 @@ class BankrollApi
         // Decode the JSON data
         $data = json_decode(wp_remote_retrieve_body($response), true);
     
-        $this->createSlot($data);
+        foreach ($data as $slot) {
+            $this->createSlot($slot);
+        }
     
-        wp_send_json_success('Slot imported successfully');
+        wp_send_json_success('Slots imported successfully');
     }
 
     public function createSlot($slot)
