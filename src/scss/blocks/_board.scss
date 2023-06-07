@@ -1,13 +1,8 @@
 .board {
     &__items {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
         gap: var(--spacing-default);
-
-        @include mq('phablet') {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
     }
 
     &__loadMore {
