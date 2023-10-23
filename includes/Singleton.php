@@ -8,17 +8,14 @@ trait Singleton
 
     private function __construct()
     {
-
     }
 
     public static function get_instance()
     {
-        if ( ! self::$instance) {
-            // new self() will refer to the class that uses the trait
+        if (!self::$instance) {
             self::$instance = new self();
         }
 
         return self::$instance;
     }
-
 }

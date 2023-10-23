@@ -2,9 +2,14 @@
 
 namespace Bankroll\Includes\View;
 
-class Helpers {
-    public static function taxonomyTermsFilter(string $taxonomy, ?array $options = [])
+class Helpers
+{
+    public static function getTemplatePart($part = '')
     {
-        get_template_part('parts/filters/taxonomy-filter', null, ['taxonomy' => $taxonomy, 'options' => $options]);
+        $partial = 'partials/' . $part;
+
+        if (file_exists(BANKROLL_DIR . '/' . $partial . '.php')) {
+            get_template_part($partial);
+        }
     }
 }

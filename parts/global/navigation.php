@@ -1,4 +1,5 @@
 <?php
+
 use Bankroll\Includes\MenuWalker;
 use Bankroll\Includes\View\Parts;
 
@@ -12,7 +13,7 @@ use Bankroll\Includes\View\Parts;
                     <img class="siteLogo" src="<?php echo Parts::siteLogo(); ?>" alt="">
                 </a>
             </div>
-            
+
             <?php
             wp_nav_menu([
                 'menu' => 'primary-menu',
@@ -24,15 +25,7 @@ use Bankroll\Includes\View\Parts;
             ]);
             ?>
             <div class="header__controls">
-                <div id="siteSearch" class="header__search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div id="compareSlots" class="header__compare">
-                    <i class="fa-solid fa-scale-unbalanced"></i>
-                </div>
-                <div id="mobileMenu" class="header__mobileMenu">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+
             </div>
         </div>
     </div>

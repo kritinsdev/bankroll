@@ -2,7 +2,7 @@
 
 namespace Bankroll\Includes;
 
-class Menu
+class Menus
 {
     use Singleton;
 
@@ -26,6 +26,4 @@ class Menu
             'footer-4'     => 'Fourth Footer Menu',
         ]);
     }
-
-
 }

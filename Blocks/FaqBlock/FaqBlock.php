@@ -4,12 +4,20 @@ namespace Bankroll\Includes\Blocks;
 
 use Bankroll\Blocks\BlockInterface;
 
-class FaqBlock implements BlockInterface {
-    public function __construct() {
+class FaqBlock implements BlockInterface
+{
+    public function __construct()
+    {
         echo 'faq block';
     }
 
-    public static function registerFields(): array {
+    public function show()
+    {
+        echo 'faq block';
+    }
+
+    public static function registerFields(): array
+    {
         return array(
             'key' => 'layout_63e967d677abe',
             'name' => 'block_faq',
@@ -86,9 +94,4 @@ class FaqBlock implements BlockInterface {
             'max' => '',
         );
     }
-    
-    public function show() {
-        echo 'faq block';
-    }
 }
-

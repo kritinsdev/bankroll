@@ -4,21 +4,18 @@ namespace Bankroll\Includes;
 
 use Bankroll\Includes\Ajax\AjaxFunctions;
 
-
 class Init
 {
     use Singleton;
-    
+
     protected function __construct()
     {
         ACF::get_instance();
         CustomPostTypes::get_instance();
         Taxonomies::get_instance();
-        Menu::get_instance();
+        Menus::get_instance();
         Enqueue::get_instance();
         AjaxFunctions::get_instance();
-        BankrollApi::get_instance();
-        Importer::get_instance();
 
         $this->setupHooks();
     }
