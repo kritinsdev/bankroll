@@ -19,4 +19,32 @@ class Helpers
 
         return $posts;
     }
+
+    public static function parseImageArray(array $imageArray)
+    {
+        $unsetKeys = [
+            'ID',
+            'filename',
+            'filesize',
+            'link',
+            'author',
+            'status',
+            'uploaded_to',
+            'date',
+            'modified',
+            'menu_order',
+            'mime_type',
+            'type',
+            'subtype',
+            'prefix',
+            'icon',
+            'sizes', // TODO
+        ];
+
+        foreach ($unsetKeys as $key) {
+            unset($imageArray[$key]);
+        }
+
+        return $imageArray;
+    }
 }

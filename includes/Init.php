@@ -3,6 +3,8 @@
 namespace Bankroll\Includes;
 
 use Bankroll\Includes\Ajax\AjaxFunctions;
+use Bankroll\Includes\Resource\ThemeSettings;
+use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue};
 
 class Init
 {
@@ -10,7 +12,7 @@ class Init
 
     protected function __construct()
     {
-        ACF::get_instance();
+        InitACF::get_instance();
         CustomPostTypes::get_instance();
         Taxonomies::get_instance();
         Menus::get_instance();
@@ -22,6 +24,7 @@ class Init
 
     protected function setupHooks(): void
     {
+        add_action('init', [$this, 'setGlobalSiteSettings'], 1);
         add_action('init', [$this, 'removeEditor']);
         add_action('after_setup_theme', [$this, 'setupTheme']);
         add_filter('use_block_editor_for_post', '__return_false', 10);
@@ -39,5 +42,11 @@ class Init
     {
         remove_post_type_support('page', 'editor');
         remove_post_type_support('post', 'editor');
+    }
+
+    public function setGlobalSiteSettings()
+    {
+        global $siteSettings;
+        $siteSettings = new ThemeSettings();
     }
 }

@@ -4,14 +4,9 @@ namespace Bankroll\Includes\View;
 
 class Parts
 {
-    public static function siteLogo(array $args = []): string
-    {
-        return BANKROLL_DIR_URI . '/dist/img/placeholder-logo.svg';
-    }
-
     public static function navigation(array $args = []): void
     {
-        get_template_part('parts/global/navigation', null, []);
+        TemplateHelpers::getTemplatePart('global', 'navigation', $args);
     }
 
     public static function hero(array $args): void
@@ -23,10 +18,5 @@ class Parts
         } else {
             get_template_part('/parts/global/hero/hero-page');
         }
-    }
-
-    public static function postDetails(array $args = []): void
-    {
-        get_template_part('parts/global/post-details');
     }
 }

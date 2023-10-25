@@ -1,3 +1,1 @@
-<footer>
-    FOOTER
-</footer>
+<?php get_footer();

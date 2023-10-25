@@ -1,8 +1,9 @@
-<?php 
+<?php
 
 namespace Bankroll\Blocks;
 
-class BlocksController {
+class BlocksController
+{
 
     public static array $defaultBlockSettings = [
         'block_mode' => null,
@@ -25,11 +26,12 @@ class BlocksController {
     }
 
     public static function block(string $layout, array $data, ?array $settings = [])
-    {   
+    {
         self::resolveBlock($layout, $data, $settings);
     }
 
-    public static function resolveBlock(string $layout, array|bool $data, ?array $settings = []) {
+    public static function resolveBlock(string $layout, array|bool $data, ?array $settings = [])
+    {
         $block = ltrim(strstr($layout, '_'), '_');
         $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 
@@ -42,9 +44,10 @@ class BlocksController {
 
 
 
-    public static function blockWrapper(string $template, string $blockType, ?array $settings) {
+    public static function blockWrapper(string $template, string $blockType, ?array $settings)
+    {
         get_template_part('parts/blocks/wrapper', null, [
-            'template' => $template, 
+            'template' => $template,
             'settings' => $settings,
             'blockType' => $blockType
         ]);

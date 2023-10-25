@@ -1,14 +1,23 @@
    <?php
 
    use Bankroll\Blocks\BlocksController;
+   use Bankroll\Includes\View\TemplateHelpers;
 
-   get_header(); ?>
+   global $siteSettings;
 
-   <svg width="40" height="40">
-      <use xlink:href="#test" />
-   </svg>
+   dump($siteSettings);
+
+   $template = !empty(get_queried_object()->post_type) ? get_queried_object()->post_type : null;
+   ?>
+
+   <?php TemplateHelpers::getTemplatePart("global", "header"); ?>
+
+   <?php TemplateHelpers::getTemplatePart("global", "navigation"); ?>
+
+   <?php TemplateHelpers::getTemplatePart("hero", "{$template}"); ?>
+
    <main>
       <?php BlocksController::blocks(); ?>
    </main>
 
-   <?php get_footer(); ?>
+   <?php TemplateHelpers::getTemplatePart("global", "footer"); ?>

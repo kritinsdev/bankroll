@@ -13,3 +13,10 @@ function _ts($string)
 {
     return $string;
 }
+
+function dump(mixed $value)
+{
+    echo "<pre>";
+    var_dump($value);
+    echo "</pre>";
+}
