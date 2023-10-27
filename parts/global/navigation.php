@@ -1,12 +1,16 @@
 <?php
 
 use Bankroll\Includes\MenuWalker;
+use Bankroll\Includes\Resource\ThemeSettings;
 use Bankroll\Includes\View\TemplateHelpers;
+
+/** @var ThemeSettings $themeSettings */
+global $themeSettings;
 ?>
 
-<header class="bg-red-500">
+<header class="bg-neutral-900">
     <div class="container mx-auto">
-        <?php TemplateHelpers::getTemplatePart('global', 'logo'); ?>
+        <?php TemplateHelpers::getTemplatePart('global', 'logo', $themeSettings->getSiteLogo()); ?>
     </div>
 
     <?php

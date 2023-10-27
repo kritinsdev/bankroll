@@ -20,8 +20,12 @@ class Helpers
         return $posts;
     }
 
-    public static function parseImageArray(array $imageArray)
+    public static function parseImageArray(bool|array $imageArray): array
     {
+        if (empty($imageArray)) {
+            return [];
+        }
+
         $unsetKeys = [
             'ID',
             'filename',

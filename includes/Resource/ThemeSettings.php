@@ -6,8 +6,8 @@ use Bankroll\Includes\Helpers;
 
 class ThemeSettings
 {
-    public array $logo = [];
-    public string $prefix = 'bankroll';
+    private array $logo = [];
+    private string $prefix = 'bankroll';
 
     public function __construct()
     {
@@ -18,5 +18,10 @@ class ThemeSettings
     private function setDefaults()
     {
         $this->logo = Helpers::parseImageArray(get_field("{$this->prefix}_logo", 'option'));
+    }
+
+    public function getSiteLogo(): array
+    {
+        return $this->logo;
     }
 }

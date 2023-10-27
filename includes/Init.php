@@ -46,7 +46,7 @@ class Init
 
     public function setGlobalSiteSettings()
     {
-        global $siteSettings;
-        $siteSettings = new ThemeSettings();
+        global $themeSettings;
+        $themeSettings = new ThemeSettings();
     }
 }

@@ -3,10 +3,6 @@
    use Bankroll\Blocks\BlocksController;
    use Bankroll\Includes\View\TemplateHelpers;
 
-   global $siteSettings;
-
-   dump($siteSettings);
-
    $template = !empty(get_queried_object()->post_type) ? get_queried_object()->post_type : null;
    ?>
 

@@ -2,6 +2,7 @@
 
 namespace Bankroll\Includes\Setup;
 
+use Bankroll\Includes\ACF\SetupFields;
 use Bankroll\Includes\Singleton;
 
 class InitACF
@@ -15,6 +16,8 @@ class InitACF
         add_filter('acf/settings/url', [$this, 'acfSettingsUrl']);
         add_filter('acf/settings/show_updates', '__return_false', 100);
         add_action('acf/init', [$this, 'registerOptionsPage']);
+
+        new SetupFields();
     }
 
     public function acfSettingsUrl($url)

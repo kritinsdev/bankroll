@@ -14,9 +14,17 @@ class CustomPostTypes
             'plural'      => 'Casinos',
             'slug'        => 'casino',
             'has_archive' => false,
-            'supports'    => ['title', 'thumbnail'],
-            'taxonomies' => ['']
+            'supports'    => ['title'],
+            'taxonomies' => []
         ],
+        'bonus' => [
+            'singular'    => 'Bonus',
+            'plural'      => 'Bonuses',
+            'slug'        => 'bonus',
+            'has_archive' => false,
+            'supports'    => [''],
+            'taxonomies' => []
+        ]
     ];
 
     protected function __construct()
