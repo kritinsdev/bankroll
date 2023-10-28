@@ -11,7 +11,7 @@ class InitACF
 
     public function __construct()
     {
-        include_once(BANKROLL_DIR . '/vendor/advanced-custom-fields-pro/acf.php');
+        include_once(BANKROLL_DIR . '/vendor/acf/acf.php');
 
         add_filter('acf/settings/url', [$this, 'acfSettingsUrl']);
         add_filter('acf/settings/show_updates', '__return_false', 100);
@@ -22,7 +22,7 @@ class InitACF
 
     public function acfSettingsUrl($url)
     {
-        return BANKROLL_DIR_URI . '/vendor/advanced-custom-fields-pro/';
+        return BANKROLL_DIR_URI . '/vendor/acf/';
     }
 
     public function registerOptionsPage()

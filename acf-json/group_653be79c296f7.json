@@ -1,11 +1,11 @@
 {
     "key": "group_653be79c296f7",
-    "title": "Casino",
+    "title": "Casino Details",
     "fields": [
         {
-            "key": "field_653be79c986cc",
-            "label": "Test",
-            "name": "test_field",
+            "key": "field_653d634f8aa80",
+            "label": "Related Bonuses",
+            "name": "cpt_casino_related_bonuses",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -19,16 +19,17 @@
             "post_type": [
                 "bonus"
             ],
+            "post_status": "",
             "taxonomy": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "return_format": "object",
+            "filters": "",
+            "return_format": "id",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_653bd62822140"
+            ]
         }
     ],
     "location": [
@@ -49,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698434121
+    "modified": 1698522293
 }

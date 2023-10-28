@@ -36,7 +36,7 @@ class BlocksController
         $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 
         ob_start();
-        get_template_part("parts/blocks/$block", null, ['data' => $data]);
+        get_template_part("Blocks/blockParts/$block", null, ['data' => $data]);
         $template = ob_get_clean();
 
         self::blockWrapper($template, $block, $settings);
@@ -46,7 +46,7 @@ class BlocksController
 
     public static function blockWrapper(string $template, string $blockType, ?array $settings)
     {
-        get_template_part('parts/blocks/wrapper', null, [
+        get_template_part('Blocks/blockParts/wrapper', null, [
             'template' => $template,
             'settings' => $settings,
             'blockType' => $blockType

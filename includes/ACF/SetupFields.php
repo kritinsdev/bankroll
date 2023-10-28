@@ -9,5 +9,6 @@ class SetupFields
     public function __construct()
     {
         new SetupBonus();
+        new SetupCasino();
     }
 }

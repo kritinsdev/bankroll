@@ -12,33 +12,36 @@ class SetupBonus
 
     public function setupHooks()
     {
-        add_filter('acf/load_field/name=cpt_bonus_casino_list', [$this, 'populateCasinos']);
+        add_filter('acf/load_field/name=cpt_bonus_for_casino', [$this, 'populateCasinos']);
     }
 
     public function populateCasinos(array $field): array
     {
-        $casinos = get_posts([
-            'post_type' => 'casino',
-            'numberposts' => -1,
+        global $post;
 
-        ]);
+        if (isset($post->post_type, $post->ID) && $post->post_type != 'acf-field-group') {
+            $casinos = get_posts([
+                'post_type' => 'casino',
+                'numberposts' => -1,
+            ]);
 
-        if (empty($casinos)) {
-            return [];
-        }
+            if (empty($casinos)) {
+                return [];
+            }
 
-        $choices = [];
-        foreach ($casinos as $casino) {
-            $choices[$casino->ID] = $casino->post_title;
-        }
+            $choices = [];
+            foreach ($casinos as $casino) {
+                $choices[$casino->ID] = $casino->post_title;
+            }
 
-        $field['choices'] = [];
+            $field['choices'] = [];
 
-        if (is_array($choices)) {
+            if (is_array($choices)) {
 
-            foreach ($choices as $key => $choice) {
+                foreach ($choices as $key => $choice) {
 
-                $field['choices'][$key] = $choice;
+                    $field['choices'][$key] = $choice;
+                }
             }
         }
 
