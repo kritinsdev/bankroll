@@ -17,7 +17,7 @@ class ThemeSettings
 
     private function setDefaults()
     {
-        $this->logo = Helpers::parseImageArray(get_field("{$this->prefix}_logo", 'option'));
+        $this->logo = !empty(get_field("{$this->prefix}_logo", 'option')) ? Helpers::parseImageArray(get_field("{$this->prefix}_logo", 'option')) : [];
     }
 
     public function getSiteLogo(): array

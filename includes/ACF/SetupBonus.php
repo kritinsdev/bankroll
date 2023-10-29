@@ -26,7 +26,7 @@ class SetupBonus
             ]);
 
             if (empty($casinos)) {
-                return [];
+                return $field;
             }
 
             $choices = [];

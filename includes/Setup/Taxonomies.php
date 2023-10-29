@@ -27,7 +27,6 @@ class Taxonomies
     protected function setupHooks(): void
     {
         add_action('init', [$this, 'addTaxonomies'], 0);
-        add_action('after_switch_theme', [$this, 'importTaxonomyTerms']);
     }
 
     public function addTaxonomies(): void

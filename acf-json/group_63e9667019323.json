@@ -164,7 +164,8 @@
                                     "return_format": "object",
                                     "min": "",
                                     "max": "",
-                                    "elements": ""
+                                    "elements": "",
+                                    "bidirectional_target": []
                                 }
                             ]
                         },
@@ -405,21 +406,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "casino"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "slot"
+                "value": "post"
             }
         ],
         [
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "provider"
+                "value": "all"
             }
         ]
     ],
@@ -432,5 +433,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682000150
+    "modified": 1698577912
 }
