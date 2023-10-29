@@ -1,5 +1,6 @@
 .hero {
     padding:var(--spacing-block) 0;
+    background: yellowgreen;
     
     .hero-wrap {
         @extend .container;
