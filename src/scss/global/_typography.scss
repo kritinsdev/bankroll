@@ -1,0 +1,29 @@
+body {
+  color:var(--text-color-primary);
+  font-size: var(--font-size-default);
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:var(--text-white);
+  font-weight: bold;
+  margin:0;
+}
+
+a {
+  color:var(--color-anchor-default);
+  text-decoration: none;
+  display: inline-flex;
+}
+
+p, ul, li {
+  line-height: 2.4rem;
+}
+
+//wp default img alignment styles
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}

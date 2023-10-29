@@ -1,0 +1,13 @@
+.board {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-default);
+    }
+
+    &__loadMore {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+    }
+}

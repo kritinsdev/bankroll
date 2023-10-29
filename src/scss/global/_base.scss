@@ -1,0 +1,53 @@
+.container {
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-default);
+
+    @include mq('desktop') {
+        padding:0;
+    }
+}
+
+.relative {
+    position: relative!important;
+}
+
+.overflow-hidden {
+    overflow: hidden!important;
+}
+
+.hidden {
+    display: none!important;
+}
+
+img, iframe {
+    max-width: 100%;
+}
+
+body {
+    background: var(--color-primary); 
+    color:var(--color-text-light);
+    line-height: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: var(--spacing-default);
+}
+
+.icon {
+    cursor: pointer;
+
+    &.icon-bg {
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        padding:var(--spacing-sm)
+    }
+}

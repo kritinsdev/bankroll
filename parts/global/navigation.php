@@ -1,5 +1,6 @@
 <?php
 
+use Bankroll\Includes\Helpers;
 use Bankroll\Includes\MenuWalker;
 use Bankroll\Includes\Resource\ThemeSettings;
 use Bankroll\Includes\View\TemplateHelpers;
@@ -8,17 +9,24 @@ use Bankroll\Includes\View\TemplateHelpers;
 global $themeSettings;
 ?>
 
-<header class="bg-neutral-900">
-    <div class="container mx-auto">
-        <?php TemplateHelpers::getTemplatePart('global', 'logo', $themeSettings->getSiteLogo()); ?>
-    </div>
+<header id="header" class="header">
+    <div class="header-wrap">
+        <div class="header-logo">
+            <?php TemplateHelpers::getTemplatePart('global', 'logo', $themeSettings->getSiteLogo()); ?>
+        </div>
 
-    <?php
-    wp_nav_menu([
-        'menu' => 'primary-menu',
-        'container' => 'ul',
-        'theme_location' => 'primary-menu',
-        'walker' => new MenuWalker(),
-    ]);
-    ?>
+        <?php
+        wp_nav_menu([
+            'menu' => 'primary-menu',
+            'container' => 'ul',
+            'menu_class' => 'header-nav',
+            'menu_id' => null,
+            'theme_location' => 'primary-menu',
+            'walker' => new MenuWalker(),
+        ]);
+        ?>
+        <div class="header-controls">
+            <?php TemplateHelpers::svgIcon(width: 24, icon: 'magnifyingGlass', class: 'header-controls-search icon icon-bg', color: $themeSettings->color); ?>
+        </div>
+    </div>
 </header>

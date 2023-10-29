@@ -1,0 +1,14 @@
+.block {
+    &.content {
+        ul, ol {
+            padding-inline-start: var(--spacing-default);
+            margin-block-start: var(--spacing-default);
+            margin-block-end: var(--spacing-default);
+            list-style-type: initial;
+        }
+
+        p {
+            margin-bottom: var(--spacing-default);
+        }
+    }
+}

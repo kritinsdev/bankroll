@@ -29,11 +29,11 @@ class Enqueue
 
 
 
-        wp_register_style('main', $this->cssDir . 'style.css', [], current_time('timestamp'));
+        wp_register_style('main', $this->cssDir . 'main.css', [], current_time('timestamp'));
         wp_enqueue_style('main');
 
-        // wp_register_style('theme-colors', $this->cssDir . 'colorTheme-' . $this->colorTheme . '.css', [], current_time('timestamp'));
-        // wp_enqueue_style('theme-colors');
+        wp_register_style('theme-colors', $this->cssDir . 'theme-' . $this->colorTheme . '.css', [], current_time('timestamp'));
+        wp_enqueue_style('theme-colors');
     }
 
     public function bankrollScripts()

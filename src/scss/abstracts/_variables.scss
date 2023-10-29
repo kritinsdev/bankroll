@@ -1,0 +1,29 @@
+:root {
+  /** FONTS **/
+  --font-primary: 'Verdana', sans-serif;
+  --font-secondary: serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-default: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+
+  /** CONTAINER **/
+  --container: 1200px;
+
+  /** SPACING - Use for paddings, margins, gaps **/
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-default: 16px;
+  --spacing-lg: 24px;
+  --spacing-block:30px;
+
+  --border-radius:10px;
+  --border-radius-top:10px 10px 0 0;
+  --border-radius-bot:0 0 10px 10px;
+  --border-radius-lg:20px;
+
+  /** BOX SHADOW **/
+  --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}

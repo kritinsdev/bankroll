@@ -6,9 +6,9 @@ class BlocksController
 {
 
     public static array $defaultBlockSettings = [
-        'block_mode' => null,
         'block_title' => null,
-        'block_content_pre' => null,
+        'block_subtitle' => null,
+        'block_content_before' => null,
         'block_content_after' => null,
     ];
 
@@ -20,6 +20,7 @@ class BlocksController
 
         if ($blocks) {
             foreach ($blocks as $block) {
+                // dump($block);
                 self::resolveBlock($block['acf_fc_layout'], $block['block_data'], $block['block_settings']);
             }
         }
@@ -35,14 +36,14 @@ class BlocksController
         $block = ltrim(strstr($layout, '_'), '_');
         $settings = wp_parse_args($settings, self::$defaultBlockSettings);
 
-        ob_start();
-        get_template_part("Blocks/blockParts/$block", null, ['data' => $data]);
-        $template = ob_get_clean();
+        if (file_exists(BANKROLL_DIR . "/Blocks/blockParts/{$block}.php")) {
+            ob_start();
+            get_template_part("Blocks/blockParts/{$block}", null, ['data' => $data]);
+            $template = ob_get_clean();
 
-        self::blockWrapper($template, $block, $settings);
+            self::blockWrapper($template, $block, $settings);
+        }
     }
-
-
 
     public static function blockWrapper(string $template, string $blockType, ?array $settings)
     {

@@ -1,6 +1,6 @@
 <div class="block <?php echo $args['blockType']; ?>">
     <div class="container">
-        <?php if ($args['settings']['block_title']): ?>
+        <?php if ($args['settings']['block_title']) : ?>
             <div class="block__title">
                 <h2>
                     <?php echo $args['settings']['block_title']; ?>
@@ -8,9 +8,9 @@
             </div>
         <?php endif; ?>
 
-        <?php if ($args['settings']['block_content_pre']): ?>
+        <?php if ($args['settings']['block_content_before']) : ?>
             <div class="block__pre">
-                <?php echo $args['settings']['block_content_pre']; ?>
+                <?php echo $args['settings']['block_content_before']; ?>
             </div>
         <?php endif; ?>
 
@@ -18,7 +18,7 @@
             <?php echo $args['template']; ?>
         </div>
 
-        <?php if ($args['settings']['block_content_after']): ?>
+        <?php if ($args['settings']['block_content_after']) : ?>
             <div class="block__after">
                 <?php echo $args['settings']['block_content_after']; ?>
             </div>

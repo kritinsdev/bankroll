@@ -5,8 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
-        'colorTheme-default': [
-          './src/scss/colors/colorTheme-default.scss'
+        'theme-default': [
+          './src/scss/colors/theme-default.scss'
         ],
         'main': [
             './src/scss/main.scss',

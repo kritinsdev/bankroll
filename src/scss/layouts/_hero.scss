@@ -1,0 +1,11 @@
+.hero {
+    padding:var(--spacing-block) 0;
+    
+    .hero-wrap {
+        @extend .container;
+    }
+
+    .hero-text {
+        // font-size: 14px;
+    }
+}

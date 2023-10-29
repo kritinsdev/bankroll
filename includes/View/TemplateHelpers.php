@@ -13,15 +13,21 @@ class TemplateHelpers
         }
     }
 
-    public static function svgIcon(string $icon, mixed $width = 20, $color = '#000'): void
+    public static function svgIcon(string $icon, mixed $width = 20, $color = '#000', $class = null): void
     {
         if (empty($icon)) {
             return;
         }
 
-        $iconHtml = "<svg width='{$width}' height='{$width}' color='{$color}'>";
+        if (!empty($class)) {
+            $class = "<div class='{$class}'>";
+        }
+
+        $iconHtml = !empty($class) ? $class : "<div>";
+        $iconHtml .= "<svg width='{$width}' height='{$width}' color='{$color}'>";
         $iconHtml .= "<use xlink:href='#{$icon}' />";
         $iconHtml .= "</svg>";
+        $iconHtml .= "</div>";
 
         echo $iconHtml;
     }

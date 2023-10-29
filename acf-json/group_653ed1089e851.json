@@ -1,28 +1,11 @@
 {
-    "key": "group_653be79c296f7",
-    "title": "Casino Details",
+    "key": "group_653ed1089e851",
+    "title": "Toplist Details",
     "fields": [
         {
-            "key": "field_653ebe29eb708",
-            "label": "Related Bonuses",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_653d634f8aa80",
-            "label": "Related Bonuses",
-            "name": "cpt_casino_related_bonuses",
+            "key": "field_653ed108ab242",
+            "label": "test toplist",
+            "name": "test_toplist",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -34,19 +17,19 @@
                 "id": ""
             },
             "post_type": [
-                "bonus"
+                "casino"
             ],
             "post_status": "",
             "taxonomy": "",
-            "filters": "",
+            "filters": [
+                "search"
+            ],
             "return_format": "id",
             "min": "",
             "max": "",
             "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_653bd62822140"
-            ]
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -54,7 +37,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "casino"
+                "value": "toplist"
             }
         ]
     ],
@@ -67,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698610769
+    "modified": 1698615634
 }

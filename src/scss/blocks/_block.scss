@@ -1,0 +1,15 @@
+.block {
+    padding:var(--spacing-default) 0;
+
+    // &__title {
+    //     margin-bottom: var(--spacing-default);
+    // }
+
+    &__pre {
+        margin-bottom: var(--spacing-default);
+    }
+
+    &__content {
+        margin-bottom: var(--spacing-default);
+    }
+}
