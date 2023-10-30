@@ -16,6 +16,10 @@ class Casino
         return $this->id;
     }
 
+    public function setCasinoBonuses()
+    {
+    }
+
     public function getCasinoBonuses()
     {
         return [];

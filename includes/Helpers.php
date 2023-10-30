@@ -4,21 +4,41 @@ namespace Bankroll\Includes;
 
 class Helpers
 {
-    public static function createPosts($postType, $posts, $maxCount)
+    public static function createPosts($postType, $postIds, $maxCount)
     {
         $typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst($postType) . 'Factory';
         $posts = [];
 
-        foreach ($posts as $itemCount => $id) {
-            if ($itemCount >= $maxCount) {
-                break;
-            }
-
+        foreach ($postIds as $id) {
             $posts[] = $typeFactory::create($id);
         }
 
         return $posts;
     }
+
+    public static function retrievePostsWpQuery($postType, $postIds)
+    {
+        $args = [
+            'post_type' => $postType,
+            'post__in' => $postIds,
+            'posts_per_page' => -1,
+        ];
+
+        $query = new \WP_Query($args);
+
+        $postIdsArray = [];
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $postIdsArray[] = get_the_ID();
+            }
+            wp_reset_postdata();
+        }
+
+        return $postIdsArray;
+    }
+
 
     public static function parseImageArray(bool|array $imageArray): array
     {
