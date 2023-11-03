@@ -522,7 +522,7 @@
                                         "id": ""
                                     },
                                     "post_type": [
-                                        "casino"
+                                        "toplist"
                                     ],
                                     "post_status": "",
                                     "taxonomy": "",
@@ -695,5 +695,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698617852
+    "modified": 1699045345
 }

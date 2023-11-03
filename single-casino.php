@@ -6,7 +6,6 @@ use Bankroll\Includes\View\TemplateHelpers;
 
 $template = !empty(get_queried_object()->post_type) ? get_queried_object()->post_type : null;
 $casino = CasinoFactory::create(get_the_id());
-var_dump($casino->getId());
 ?>
 
 <?php TemplateHelpers::getTemplatePart("global", "header"); ?>
@@ -17,7 +16,7 @@ var_dump($casino->getId());
 
 <main>
    <div>
-      Casino bonuses
+      333333
    </div>
 
    <?php BlocksController::blocks(); ?>

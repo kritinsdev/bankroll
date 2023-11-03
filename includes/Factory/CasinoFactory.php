@@ -13,7 +13,7 @@ class CasinoFactory
 
         $casino->setId($id);
 
-        $casino->setCasinoBonuses();
+        $casino->getCasinoBonuses($id);
 
         return $casino;
     }

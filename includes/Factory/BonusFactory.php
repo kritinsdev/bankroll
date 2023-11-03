@@ -11,7 +11,8 @@ class BonusFactory
         $bonus = new Bonus();
         $id = (is_int($post)) ? $post : $post->ID;
 
-        $title = '123';
+        $bonus->setId($id);
+        $bonus->setBonusType(get_field('cpt_bonus_type', $id));
 
         return $bonus;
     }

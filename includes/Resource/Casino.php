@@ -2,6 +2,8 @@
 
 namespace Bankroll\Includes\Resource;
 
+use Bankroll\Includes\Factory\BonusFactory;
+
 class Casino
 {
     private int $id;
@@ -16,12 +18,15 @@ class Casino
         return $this->id;
     }
 
-    public function setCasinoBonuses()
+    public function getCasinoBonuses(): array
     {
-    }
+        $bonusIds = get_field('cpt_casino_related_bonuses', $this->id);
 
-    public function getCasinoBonuses()
-    {
-        return [];
+        $bonuses = [];
+        foreach ($bonusIds as $id) {
+            $bonuses[] = BonusFactory::create($id);
+        }
+
+        return $bonuses;
     }
 }
