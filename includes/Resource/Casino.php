@@ -18,13 +18,21 @@ class Casino
         return $this->id;
     }
 
-    public function getCasinoBonuses(): array
+    public function getCasinoBonuses(string $type = null): array
     {
         $bonusIds = get_field('cpt_casino_related_bonuses', $this->id);
-
         $bonuses = [];
-        foreach ($bonusIds as $id) {
-            $bonuses[] = BonusFactory::create($id);
+
+        if (!empty($bonusIds)) {
+            foreach ($bonusIds as $id) {
+                $bonus = BonusFactory::create($id);
+
+                if (!empty($type) && $type === $bonus->getBonusType()) {
+                    $bonuses[] = $bonus->getBonusData();
+                } else {
+                    $bonuses[] = $bonus->getBonusData();
+                }
+            }
         }
 
         return $bonuses;
