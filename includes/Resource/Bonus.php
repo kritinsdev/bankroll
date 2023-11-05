@@ -10,17 +10,13 @@ class Bonus
 
     private int $id;
     private array $bonusType;
+    private int $bonusForCasino;
     private string $bonusForPostType;
     private string $firstLine;
     private string $secondLine;
     private bool $enableSDate;
     // private \DateTime $startDate;
     // private \DateTime $endDate;
-
-    public function getImage(): array
-    {
-        return [];
-    }
 
     public function setId(int $id)
     {
@@ -43,6 +39,20 @@ class Bonus
     public function getBonusType(string $returnValue = 'value'): string
     {
         return $this->bonusType[$returnValue];
+    }
+
+    public function setBonusForCasinoId(array $ids)
+    {
+        if (!empty($ids[0])) {
+            $this->bonusForCasino = $ids[0];
+        } else {
+            $this->bonusForCasino = null;
+        }
+    }
+
+    public function getBonusForCasinoId(): int
+    {
+        return $this->bonusForCasino;
     }
 
     public function setFirstLine(string $firstLine)
@@ -72,6 +82,7 @@ class Bonus
             'bonusType' => $this->getBonusType(),
             'firstLine' => $this->getFirstLine(),
             'secondLine' => $this->getSecondLine(),
+            'image' => $this->getImage($this->getBonusForCasinoId())
         ];
 
         return $data;

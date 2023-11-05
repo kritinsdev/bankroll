@@ -3,6 +3,23 @@
     "title": "Blocks",
     "fields": [
         {
+            "key": "field_6548159df6164",
+            "label": "Tab",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_63e9667077abb",
             "label": "Content Blocks",
             "name": "blocks",
@@ -695,5 +712,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699045345
+    "modified": 1699222965
 }
