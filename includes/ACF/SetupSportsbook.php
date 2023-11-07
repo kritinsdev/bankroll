@@ -19,13 +19,8 @@ class SetupSportsbook
     public function registerFields()
     {
         $data = [];
-        $data['blocks'] = Helpers::globalBlocks($this->postType);
-        $fields = Helpers::globalTabs($this->postType, $data);
-
-        // echo '<pre>';
-        // print_r($fields);
-        // die;
-
+        $data['blocks'] = Helpers::blocks($this->postType);
+        $fields = Helpers::tabs($this->postType, $data);
 
         add_action('acf/include_fields', function () use ($fields) {
             if (!function_exists('acf_add_local_field_group')) {
