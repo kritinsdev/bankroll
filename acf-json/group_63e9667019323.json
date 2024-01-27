@@ -88,8 +88,8 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "slot": "Slot",
-                                        "casino": "Casino"
+                                        "casino": "Casino",
+                                        "bonus": "Bonus"
                                     },
                                     "default_value": false,
                                     "return_format": "value",
@@ -100,28 +100,78 @@
                                     "placeholder": ""
                                 },
                                 {
-                                    "key": "field_643272e40fef8",
-                                    "label": "Card Style",
-                                    "name": "block_board_card_style",
+                                    "key": "field_63eeafd3ed04f",
+                                    "label": "Select Casinos",
+                                    "name": "block_board_casino_items",
                                     "aria-label": "",
-                                    "type": "button_group",
+                                    "type": "relationship",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63eac79dbaccb",
+                                                "operator": "==",
+                                                "value": "casino"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": {
-                                        "1": "1",
-                                        "2": "2",
-                                        "3": "3"
+                                    "post_type": [
+                                        "casino"
+                                    ],
+                                    "post_status": "",
+                                    "taxonomy": "",
+                                    "filters": [
+                                        "search"
+                                    ],
+                                    "return_format": "id",
+                                    "min": "",
+                                    "max": "",
+                                    "elements": "",
+                                    "bidirectional": 0,
+                                    "bidirectional_target": []
+                                },
+                                {
+                                    "key": "field_65b4ef2b7566f",
+                                    "label": "Select Bonuses",
+                                    "name": "block_board_bonus_items",
+                                    "aria-label": "",
+                                    "type": "relationship",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63eac79dbaccb",
+                                                "operator": "==",
+                                                "value": "bonus"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
                                     },
-                                    "default_value": "",
-                                    "return_format": "value",
-                                    "allow_null": 0,
-                                    "layout": "horizontal"
+                                    "post_type": [
+                                        "bonus"
+                                    ],
+                                    "post_status": "",
+                                    "taxonomy": "",
+                                    "filters": [
+                                        "search"
+                                    ],
+                                    "return_format": "id",
+                                    "min": "",
+                                    "max": "",
+                                    "elements": "",
+                                    "bidirectional": 0,
+                                    "bidirectional_target": []
                                 },
                                 {
                                     "key": "field_63f1eafbac92b",
@@ -142,47 +192,6 @@
                                     "ui_on_text": "",
                                     "ui_off_text": "",
                                     "ui": 1
-                                },
-                                {
-                                    "key": "field_63eeafd3ed04f",
-                                    "label": "Slots",
-                                    "name": "block_board_slot",
-                                    "aria-label": "",
-                                    "type": "relationship",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_63eac79dbaccb",
-                                                "operator": "==",
-                                                "value": "slot"
-                                            },
-                                            {
-                                                "field": "field_63f1eafbac92b",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": [
-                                        "slot"
-                                    ],
-                                    "taxonomy": "",
-                                    "filters": [
-                                        "search",
-                                        "taxonomy"
-                                    ],
-                                    "return_format": "object",
-                                    "min": "",
-                                    "max": "",
-                                    "elements": "",
-                                    "bidirectional_target": []
                                 }
                             ]
                         },
@@ -712,5 +721,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706348894
+    "modified": 1706360194
 }

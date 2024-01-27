@@ -16,6 +16,7 @@ class InitACF
         add_filter('acf/settings/url', [$this, 'acfSettingsUrl']);
         add_filter('acf/settings/show_updates', '__return_false', 100);
         add_action('acf/init', [$this, 'registerOptionsPage']);
+        // add_filter('acf/settings/show_admin', '__return_false');
 
         new SetupFields();
     }

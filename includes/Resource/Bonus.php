@@ -8,13 +8,13 @@ class Bonus
 {
     use HasImage;
 
-    private int $id;
-    private array $bonusType;
-    private int $bonusForCasino;
-    private string $bonusForPostType;
-    private string $firstLine;
-    private string $secondLine;
-    private bool $enableSDate;
+    public int $id;
+    public array $bonusType;
+    public int $bonusForCasino;
+    public string $bonusForPostType;
+    public string $firstLine;
+    public string $secondLine;
+    public bool $enableSDate;
     // private \DateTime $startDate;
     // private \DateTime $endDate;
 

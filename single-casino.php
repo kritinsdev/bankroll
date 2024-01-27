@@ -4,6 +4,7 @@ use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\Factory\CasinoFactory;
 use Bankroll\Includes\View\TemplateHelpers;
 
+$blockController = new BlocksController(get_the_ID());
 $casino = CasinoFactory::create(get_the_id());
 ?>
 
@@ -15,10 +16,10 @@ $casino = CasinoFactory::create(get_the_id());
 
 <main>
    <div>
-      <?php dump($casino->getCasinoBonuses()); ?>
+      <!-- <?php dump($casino->getCasinoBonuses()); ?> -->
    </div>
 
-   <?php BlocksController::blocks(); ?>
+   <?php $blockController->printBlocks(); ?>
 </main>
 
 <?php TemplateHelpers::getTemplatePart("global", "footer"); ?>

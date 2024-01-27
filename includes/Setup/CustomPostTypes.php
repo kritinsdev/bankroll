@@ -24,27 +24,27 @@ class CustomPostTypes
             'supports'    => [''],
             'taxonomies' => []
         ],
-        'sportsbook' => [
-            'singular'    => 'Sportsbook',
-            'plural'      => 'Sportsbooks',
-            'slug'        => 'sportsbook',
-            'supports'    => ['title'],
-            'taxonomies' => []
-        ],
-        'payment' => [
-            'singular'    => 'Payment Method',
-            'plural'      => 'Payment Methods',
-            'slug'        => 'payment-method',
-            'supports'    => ['title'],
-            'taxonomies' => []
-        ],
-        'software' => [
-            'singular'    => 'Software Provider',
-            'plural'      => 'Software Providers',
-            'slug'        => 'software-provider',
-            'supports'    => ['title'],
-            'taxonomies' => []
-        ],
+        // 'sportsbook' => [
+        //     'singular'    => 'Sportsbook',
+        //     'plural'      => 'Sportsbooks',
+        //     'slug'        => 'sportsbook',
+        //     'supports'    => ['title'],
+        //     'taxonomies' => []
+        // ],
+        // 'payment' => [
+        //     'singular'    => 'Payment Method',
+        //     'plural'      => 'Payment Methods',
+        //     'slug'        => 'payment-method',
+        //     'supports'    => ['title'],
+        //     'taxonomies' => []
+        // ],
+        // 'software' => [
+        //     'singular'    => 'Software Provider',
+        //     'plural'      => 'Software Providers',
+        //     'slug'        => 'software-provider',
+        //     'supports'    => ['title'],
+        //     'taxonomies' => []
+        // ],
         'toplist' => [
             'singular'    => 'Toplist',
             'plural'      => 'Toplists',

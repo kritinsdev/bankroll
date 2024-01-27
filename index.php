@@ -4,7 +4,6 @@
    use Bankroll\Includes\View\TemplateHelpers;
 
    $blockController = new BlocksController(get_the_ID());
-
    $template = !empty(get_queried_object()->post_type) ? get_queried_object()->post_type : null;
    ?>
 

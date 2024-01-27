@@ -6,7 +6,11 @@ use Bankroll\Includes\Factory\BonusFactory;
 
 class Casino
 {
-    private int $id;
+    public int $id;
+    public string $name;
+    public array $related_bonuses;
+
+
 
     public function setId(int $id): void
     {
@@ -20,21 +24,20 @@ class Casino
 
     public function getCasinoBonuses(string $type = null): array
     {
-        $bonusIds = get_field('cpt_casino_related_bonuses', $this->id);
-        $bonuses = [];
+        $bonus_ids = get_field('cpt_casino_related_bonuses', $this->id);
 
-        if (!empty($bonusIds)) {
-            foreach ($bonusIds as $id) {
+        if (!empty($bonus_ids)) {
+            foreach ($bonus_ids as $id) {
                 $bonus = BonusFactory::create($id);
 
                 if (!empty($type) && $type === $bonus->getBonusType()) {
-                    $bonuses[] = $bonus->getBonusData();
+                    $this->related_bonuses[] = $bonus->getBonusData();
                 } else {
-                    $bonuses[] = $bonus->getBonusData();
+                    $this->related_bonuses[] = $bonus->getBonusData();
                 }
             }
         }
 
-        return $bonuses;
+        return $this->related_bonuses;
     }
 }

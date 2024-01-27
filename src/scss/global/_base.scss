@@ -9,6 +9,18 @@
     }
 }
 
+.container-narrow {
+    max-width: var(--container-narrow);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-default);
+
+    @include mq('desktop') {
+        padding:0;
+    }
+}
+
+
 .relative {
     position: relative!important;
 }

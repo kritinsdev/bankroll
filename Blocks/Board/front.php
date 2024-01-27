@@ -6,11 +6,9 @@ echo 'Board block';
 return;
 
 $postType = $args['data']['block_board_post_type'];
-$mode = (!isset($args['data']['block_board_mode'])) ? 'default' : $args['data']['block_board_mode'];
 $typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst($postType) . 'Factory';
 $showAll = $args['data']['block_board_show_all'];
 $postIds = $args['data']['block_board_' . $postType];
-$cardStyle = "1"; // TODO : add setting for style
 $cardTemplate = "parts/cards/$postType/card-$cardStyle";
 
 if ($showAll) {
