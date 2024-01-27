@@ -11,7 +11,7 @@ class Helpers
         if (!empty($postType) && !empty($fields)) {
             return array(
                 'key' => "group_{$postType}_6547d0a971d4d",
-                'title' => 'Globals',
+                'title' => "{$type} Settings",
                 'fields' => array(
                     array(
                         'key' => "field_{$postType}_6547d0a9f5bba",
@@ -32,7 +32,7 @@ class Helpers
                     ),
                     array(
                         'key' => "field_{$postType}_6547d112f5bbb",
-                        'label' => 'Blocks',
+                        'label' => 'Content Blocks',
                         'name' => '',
                         'aria-label' => '',
                         'type' => 'tab',

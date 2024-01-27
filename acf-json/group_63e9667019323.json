@@ -526,8 +526,8 @@
                             "sub_fields": [
                                 {
                                     "key": "field_653ed756af2c7",
-                                    "label": "Editor",
-                                    "name": "block_toplist_items",
+                                    "label": "Select toplist",
+                                    "name": "block_toplist",
                                     "aria-label": "",
                                     "type": "relationship",
                                     "instructions": "",
@@ -712,5 +712,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699222965
+    "modified": 1706348894
 }

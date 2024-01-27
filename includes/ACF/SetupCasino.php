@@ -14,6 +14,11 @@ class SetupCasino
 
     public function setupHooks()
     {
-        // add_filter("acf/load_field/name={$this->postType}_cpt_related_bonuses", [$this, 'populateBonuses']);
+        // add_filter("acf/load_field/name=cpt_{$this->postType}_related_bonuses", [$this, 'testF']);
+    }
+
+    public function testF($args)
+    {
+        dump($args);
     }
 }

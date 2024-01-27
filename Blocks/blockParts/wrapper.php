@@ -1,4 +1,4 @@
-<div class="block <?php echo "block" . ucfirst($args['blockType']); ?>">
+<div class="block <?php echo $args['class']; ?>">
     <div class="container">
         <?php if ($args['settings']['block_title']) : ?>
             <div class="block-title">
