@@ -10,4 +10,7 @@ enum BonusTypes: string
     case NoDepositBonus = 'No Deposit Bonus';
     case CashbackBonus = 'Cashback Bonus';
     case FreeSpinsBonus = 'Free Spins Bonus';
+    case ReloadBonus = 'Reload Bonus';
+    case WageringBonus = 'Wagering Bonus';
+    case CustomBonus = 'Custom Bonus';
 }

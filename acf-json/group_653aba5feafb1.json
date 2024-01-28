@@ -41,13 +41,7 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "main": "Main Bonus",
-                "firstDeposit": "First Deposit Bonus",
-                "welcome": "Welcome Bonus",
-                "cashback": "Cashback Bonus",
-                "freeSpins": "Free Spins Bonus"
-            },
+            "choices": [],
             "default_value": false,
             "return_format": "array",
             "multiple": 0,
@@ -363,5 +357,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706469239
+    "modified": 1706475342
 }

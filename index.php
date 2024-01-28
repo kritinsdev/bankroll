@@ -1,6 +1,7 @@
    <?php
 
    use Bankroll\Blocks\BlocksController;
+   use Bankroll\Includes\Enums\BonusTypes;
    use Bankroll\Includes\View\TemplateHelpers;
 
    $blockController = new BlocksController(get_the_ID());
@@ -14,6 +15,13 @@
    <?php TemplateHelpers::getTemplatePart("hero", "$template"); ?>
 
    <main>
+      <?php $cases = BonusTypes::cases();
+
+      foreach ($cases as $enum) {
+         dump($enum);
+      }
+
+      ?>
       <?php $blockController->printBlocks(); ?>
    </main>
 

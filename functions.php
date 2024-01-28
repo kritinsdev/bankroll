@@ -1,5 +1,6 @@
 <?php
 
+use Bankroll\Includes\Enums\BonusTypes;
 use Bankroll\Includes\Init;
 
 define('BANKROLL_DIR', get_stylesheet_directory());
@@ -220,3 +221,29 @@ function deleteExpiredBonuses()
     }
 }
 add_action('init', 'deleteExpiredBonuses');
+
+// LOAD BONUS TYPES
+function loadBonusTypes($field)
+{
+    $field['choices'] = array();
+
+    $bonus_types = [];
+
+    $cases = BonusTypes::cases();
+
+    foreach ($cases as $type) {
+        $bonus_types[] = $type->value;
+    }
+
+
+    if (is_array($bonus_types)) {
+
+        foreach ($bonus_types as $choice) {
+
+            $field['choices'][$choice] = $choice;
+        }
+    }
+    return $field;
+}
+
+add_filter('acf/load_field/name=cpt_bonus_type', 'loadBonusTypes');
