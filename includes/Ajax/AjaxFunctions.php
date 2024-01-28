@@ -10,8 +10,7 @@ class AjaxFunctions
 
     public function __construct()
     {
-        new LoadMore();
-        new Filters();
+        // new LoadMore();
+        // new Filters();
     }
-
 }

@@ -9,14 +9,15 @@ class Bonus
     use HasImage;
 
     public int $id;
-    public array $bonusType;
-    public int $bonusForCasino;
-    public string $bonusForPostType;
-    public string $firstLine;
-    public string $secondLine;
-    public bool $enableSDate;
-    // private \DateTime $startDate;
-    // private \DateTime $endDate;
+    public array $bonus_type;
+    public int $bonus_for_casino;
+    public string $bonus_for_post_type;
+    public string $first_line;
+    public string $second_line;
+    public ?int $bonus_value;
+    public ?int $free_spins_value;
+    public \DateTime $startDate;
+    public \DateTime $endDate;
 
     public function setId(int $id)
     {
@@ -30,7 +31,7 @@ class Bonus
 
     public function setBonusType(array $type)
     {
-        $this->bonusType = $type;
+        $this->bonus_type = $type;
     }
 
     /**
@@ -38,50 +39,70 @@ class Bonus
      */
     public function getBonusType(string $returnValue = 'value'): string
     {
-        return $this->bonusType[$returnValue];
+        return $this->bonus_type[$returnValue];
     }
 
     public function setBonusForCasinoId(array $ids)
     {
         if (!empty($ids[0])) {
-            $this->bonusForCasino = $ids[0];
+            $this->bonus_for_casino = $ids[0];
         } else {
-            $this->bonusForCasino = null;
+            $this->bonus_for_casino = null;
         }
     }
 
     public function getBonusForCasinoId(): int
     {
-        return $this->bonusForCasino;
+        return $this->bonus_for_casino;
     }
 
-    public function setFirstLine(string $firstLine)
+    public function setFirstLine(string $first_line)
     {
-        $this->firstLine = $firstLine;
+        $this->first_line = $first_line;
     }
 
     public function getFirstLine(): string
     {
-        return $this->firstLine;
+        return $this->first_line;
     }
 
-    public function setSecondLine(string $secondLine)
+    public function setSecondLine(string $second_line)
     {
-        $this->secondLine = $secondLine;
+        $this->second_line = $second_line;
     }
 
     public function getSecondLine(): string
     {
-        return $this->secondLine;
+        return $this->second_line;
+    }
+
+    public function setBonusValue(int $bonus_value)
+    {
+        $this->bonus_value = $bonus_value;
+    }
+
+    public function getBonusValue(): int
+    {
+        return $this->bonus_value;
+    }
+
+    public function setFreeSpinsValue(int $free_spins_value)
+    {
+        $this->free_spins_value = $free_spins_value;
+    }
+
+    public function getFreeSpinsValue(): int
+    {
+        return $this->free_spins_value;
     }
 
     public function getBonusData(): array
     {
         $data = [
             'id' => $this->getId(),
-            'bonusType' => $this->getBonusType(),
-            'firstLine' => $this->getFirstLine(),
-            'secondLine' => $this->getSecondLine(),
+            'bonus_type' => $this->getBonusType(),
+            'first_line' => $this->getFirstLine(),
+            'second_line' => $this->getSecondLine(),
             'image' => $this->getImage($this->getBonusForCasinoId())
         ];
 

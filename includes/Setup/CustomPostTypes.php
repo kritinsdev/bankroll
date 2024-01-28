@@ -9,7 +9,7 @@ class CustomPostTypes
     use Singleton;
 
     protected array $customPostTypes = [
-        'casino'     => [
+        'casino' => [
             'singular'    => 'Casino',
             'plural'      => 'Casinos',
             'slug'        => 'casino',
@@ -23,6 +23,28 @@ class CustomPostTypes
             'slug'        => 'bonus',
             'supports'    => [''],
             'taxonomies' => []
+        ],
+        'toplist' => [
+            'singular'    => 'Toplist',
+            'plural'      => 'Toplists',
+            'supports'    => ['title'],
+            'public' => true,
+            'exclude_from_search' => true,
+            'show_in_admin_bar'   => false,
+            'show_in_nav_menus'   => false,
+            'publicly_queryable'  => false,
+            'query_var'           => false
+        ],
+        'afflink' => [
+            'singular'    => 'Affiliate Link',
+            'plural'      => 'Affiliate Links',
+            'supports'    => [''],
+            'public' => true,
+            'exclude_from_search' => true,
+            'show_in_admin_bar'   => false,
+            'show_in_nav_menus'   => false,
+            'publicly_queryable'  => false,
+            'query_var'           => false
         ],
         // 'sportsbook' => [
         //     'singular'    => 'Sportsbook',
@@ -45,17 +67,6 @@ class CustomPostTypes
         //     'supports'    => ['title'],
         //     'taxonomies' => []
         // ],
-        'toplist' => [
-            'singular'    => 'Toplist',
-            'plural'      => 'Toplists',
-            'supports'    => ['title'],
-            'public' => true,
-            'exclude_from_search' => true,
-            'show_in_admin_bar'   => false,
-            'show_in_nav_menus'   => false,
-            'publicly_queryable'  => false,
-            'query_var'           => false
-        ],
     ];
 
     protected function __construct()

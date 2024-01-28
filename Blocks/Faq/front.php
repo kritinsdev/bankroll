@@ -1,6 +1,3 @@
 <div>
-    <h2>FAQ</h2>
-    <pre>
-        <?php var_dump($args['data']); ?>
-    </pre>
+    <h2>FAQ BLOCK</h2>
 </div>

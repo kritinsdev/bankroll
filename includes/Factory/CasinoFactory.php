@@ -16,8 +16,7 @@ class CasinoFactory
         $id = (is_int($post)) ? $post : $post->ID;
 
         $casino->setId($id);
-
-        $casino->getCasinoBonuses($id);
+        $casino->setCasinoBonuses();
 
         return $casino;
     }

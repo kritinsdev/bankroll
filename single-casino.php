@@ -15,10 +15,6 @@ $casino = CasinoFactory::create(get_the_id());
 <?php TemplateHelpers::getTemplatePart("hero", "casino"); ?>
 
 <main>
-   <div>
-      <!-- <?php dump($casino->getCasinoBonuses()); ?> -->
-   </div>
-
    <?php $blockController->printBlocks(); ?>
 </main>
 

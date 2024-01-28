@@ -10,8 +10,6 @@ class Casino
     public string $name;
     public array $related_bonuses;
 
-
-
     public function setId(int $id): void
     {
         $this->id = $id;
@@ -22,7 +20,7 @@ class Casino
         return $this->id;
     }
 
-    public function getCasinoBonuses(string $type = null): array
+    public function setCasinoBonuses(string $type = null): void
     {
         $bonus_ids = get_field('cpt_casino_related_bonuses', $this->id);
 
@@ -37,7 +35,5 @@ class Casino
                 }
             }
         }
-
-        return $this->related_bonuses;
     }
 }

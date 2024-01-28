@@ -123,8 +123,10 @@ class BlocksController
         $board_data['post_type'] = $data['block_board_post_type'];
         $board_data['show_all'] = $data['block_board_show_all'];
 
-        foreach ($resource_ids as $id) {
-            $board_data['items'][] = $factory::create($id);
+        if (!empty($resource_ids)) {
+            foreach ($resource_ids as $id) {
+                $board_data['items'][] = $factory::create($id);
+            }
         }
 
         dump($board_data);

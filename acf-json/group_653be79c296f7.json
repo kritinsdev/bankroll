@@ -46,7 +46,7 @@
         },
         {
             "key": "field_653ebe29eb708",
-            "label": "Related Bonuses",
+            "label": "Bonuses",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -109,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699176165
+    "modified": 1706468941
 }
