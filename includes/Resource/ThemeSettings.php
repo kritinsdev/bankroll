@@ -6,8 +6,8 @@ use Bankroll\Includes\Helpers;
 
 class ThemeSettings
 {
-    private array $logo = [];
-    private string $prefix = 'bankroll';
+    public array $logo = [];
+    public string $prefix = 'bankroll';
     public string $color;
 
     public function __construct()

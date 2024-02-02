@@ -28,11 +28,11 @@ class Casino
             foreach ($bonus_ids as $id) {
                 $bonus = BonusFactory::create($id);
 
-                if (!empty($type) && $type === $bonus->getBonusType()) {
-                    $this->related_bonuses[] = $bonus->getBonusData();
-                } else {
-                    $this->related_bonuses[] = $bonus->getBonusData();
-                }
+                // if (!empty($type) && $type === $bonus->getBonusType()) {
+                //     $this->related_bonuses[] = $bonus->getBonusData();
+                // } else {
+                //     $this->related_bonuses[] = $bonus->getBonusData();
+                // }
             }
         }
     }

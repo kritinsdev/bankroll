@@ -9,7 +9,7 @@ class Bonus
     use HasImage;
 
     public int $id;
-    public array $bonus_type;
+    public string $bonus_type;
     public int $bonus_for_casino;
     public string $bonus_for_post_type;
     public string $first_line;
@@ -29,17 +29,18 @@ class Bonus
         return $this->id;
     }
 
-    public function setBonusType(array $type)
+    public function setBonusType($type)
     {
+        dump($type, true);
         $this->bonus_type = $type;
     }
 
     /**
      * return label or value
      */
-    public function getBonusType(string $returnValue = 'value'): string
+    public function getBonusType(): string
     {
-        return $this->bonus_type[$returnValue];
+        return $this->bonus_type;
     }
 
     public function setBonusForCasinoId(array $ids)

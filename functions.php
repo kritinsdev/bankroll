@@ -232,17 +232,19 @@ function loadBonusTypes($field)
     $cases = BonusTypes::cases();
 
     foreach ($cases as $type) {
-        $bonus_types[] = $type->value;
+        $bonus_types[$type->key()] = [
+            'label' => $type->label(),
+            'enum' => $type
+        ];
     }
 
 
     if (is_array($bonus_types)) {
-
-        foreach ($bonus_types as $choice) {
-
-            $field['choices'][$choice] = $choice;
+        foreach ($bonus_types as $key => $choice) {
+            $field['choices'][$key] = $choice['label'];
         }
     }
+
     return $field;
 }
 
