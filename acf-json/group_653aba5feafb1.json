@@ -41,9 +41,19 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "main_bonus": "Main bonus",
+                "welcome_bonus": "Welcome bonus",
+                "first_deposit_bonus": "First deposit bonus",
+                "no_deposit_bonus": "No deposit bonus",
+                "cashback_bonus": "Cashback bonus",
+                "free_spins_bonus": "Free spins bonus",
+                "reload_bonus": "Reload bonus",
+                "wagering_bonus": "Wagering bonus",
+                "custom_bonus": "Custom bonus"
+            },
             "default_value": false,
-            "return_format": "array",
+            "return_format": "value",
             "multiple": 0,
             "allow_null": 1,
             "ui": 0,
@@ -357,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706475342
+    "modified": 1706991659
 }

@@ -115,7 +115,6 @@ class BlocksController
 
     private function boardData(array $data): array
     {
-        // dump($data);
         $board_data = [];
         $resource_ids = $data['block_board_' . $data['block_board_post_type'] . '_items'];
         $factory = 'Bankroll\Includes\Factory\\' . ucfirst($data['block_board_post_type']) . 'Factory';
@@ -128,8 +127,6 @@ class BlocksController
                 $board_data['items'][] = $factory::create($id);
             }
         }
-
-        dump($board_data);
 
         return $board_data;
     }

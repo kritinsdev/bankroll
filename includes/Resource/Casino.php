@@ -20,14 +20,16 @@ class Casino
         return $this->id;
     }
 
-    public function setCasinoBonuses(string $type = null): void
+    public function setCasinoBonuses(): void
     {
         $bonus_ids = get_field('cpt_casino_related_bonuses', $this->id);
-
         if (!empty($bonus_ids)) {
             foreach ($bonus_ids as $id) {
-                $bonus = BonusFactory::create($id);
+                if (get_post_status($id)) {
+                    $bonus = BonusFactory::create($id);
 
+                    $this->related_bonuses[] = $bonus->getBonusData();
+                }
                 // if (!empty($type) && $type === $bonus->getBonusType()) {
                 //     $this->related_bonuses[] = $bonus->getBonusData();
                 // } else {

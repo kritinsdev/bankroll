@@ -1,7 +1,7 @@
    <?php
 
    use Bankroll\Blocks\BlocksController;
-   use Bankroll\Includes\Enums\BonusTypes;
+   use Bankroll\Includes\Enums\BonusType;
    use Bankroll\Includes\View\TemplateHelpers;
 
    $blockController = new BlocksController(get_the_ID());

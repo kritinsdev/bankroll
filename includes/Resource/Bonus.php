@@ -2,6 +2,7 @@
 
 namespace Bankroll\Includes\Resource;
 
+use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Traits\HasImage;
 
 class Bonus
@@ -13,7 +14,7 @@ class Bonus
     public int $bonus_for_casino;
     public string $bonus_for_post_type;
     public string $first_line;
-    public string $second_line;
+    public ?string $second_line;
     public ?int $bonus_value;
     public ?int $free_spins_value;
     public \DateTime $startDate;
@@ -29,24 +30,20 @@ class Bonus
         return $this->id;
     }
 
-    public function setBonusType($type)
+    public function setBonusType(string $type): void
     {
-        dump($type, true);
         $this->bonus_type = $type;
     }
 
-    /**
-     * return label or value
-     */
     public function getBonusType(): string
     {
-        return $this->bonus_type;
+        return BonusType::fromName($this->bonus_type);
     }
 
-    public function setBonusForCasinoId(array $ids)
+    public function setBonusForCasinoId(int $id)
     {
-        if (!empty($ids[0])) {
-            $this->bonus_for_casino = $ids[0];
+        if (!empty($id)) {
+            $this->bonus_for_casino = $id;
         } else {
             $this->bonus_for_casino = null;
         }
@@ -67,32 +64,32 @@ class Bonus
         return $this->first_line;
     }
 
-    public function setSecondLine(string $second_line)
+    public function setSecondLine(?string $second_line)
     {
         $this->second_line = $second_line;
     }
 
-    public function getSecondLine(): string
+    public function getSecondLine(): ?string
     {
         return $this->second_line;
     }
 
-    public function setBonusValue(int $bonus_value)
+    public function setBonusValue(?int $bonus_value)
     {
         $this->bonus_value = $bonus_value;
     }
 
-    public function getBonusValue(): int
+    public function getBonusValue(): ?int
     {
         return $this->bonus_value;
     }
 
-    public function setFreeSpinsValue(int $free_spins_value)
+    public function setFreeSpinsValue(?int $free_spins_value)
     {
         $this->free_spins_value = $free_spins_value;
     }
 
-    public function getFreeSpinsValue(): int
+    public function getFreeSpinsValue(): ?int
     {
         return $this->free_spins_value;
     }

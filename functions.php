@@ -1,6 +1,6 @@
 <?php
 
-use Bankroll\Includes\Enums\BonusTypes;
+use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Init;
 
 define('BANKROLL_DIR', get_stylesheet_directory());
@@ -97,11 +97,17 @@ add_action('manage_afflink_posts_custom_column', 'customLinkColumnData', 10, 2);
 //
 function onBonusPostSave(int $id, \WP_Post $post, bool $update)
 {
+    if (!$update) {
+        return;
+    }
+
     if ($post->post_type === 'bonus') {
         $post_id = $post->ID;
         $casino_id = !empty(get_field('cpt_bonus_for_casino', $post_id)) ? get_field('cpt_bonus_for_casino', $post_id)[0] : null;
         $link_id = !empty(get_field('cpt_bonus_link', $post_id)) ? get_field('cpt_bonus_link', $post_id)[0] : null;
-        $bonus_type = !empty(get_field('cpt_bonus_type', $post_id)['label']) ? get_field('cpt_bonus_type', $post_id)['label'] : '';
+        $bonus_type = !empty(BonusType::fromName(get_field('cpt_bonus_type', $post_id))) ?
+            BonusType::fromName(get_field('cpt_bonus_type', $post_id)) :
+            '';
 
         $title = get_the_title($casino_id);
         $post->post_title = "[{$title}] [{$bonus_type}]";
@@ -137,7 +143,10 @@ add_filter('manage_bonus_posts_columns', 'addCustomColumnForBonus');
 function customBonusColumnData($column, $postId)
 {
     $casinoId = get_field('cpt_bonus_for_casino', $postId)[0];
-    $bonusType = !empty(get_field('cpt_bonus_type', $postId)['label']) ? get_field('cpt_bonus_type', $postId)['label'] : '';
+    $bonusType = !empty(BonusType::fromName(get_field('cpt_bonus_type', $postId))) ?
+        BonusType::fromName(get_field('cpt_bonus_type', $postId)) :
+        '';
+
     $start_date = !empty(get_field('cpt_bonus_bonus_date_group', $postId)['cpt_bonus_start_date']) ?
         get_field('cpt_bonus_bonus_date_group')['cpt_bonus_start_date'] :
         '-';
@@ -149,7 +158,6 @@ function customBonusColumnData($column, $postId)
     switch ($column) {
         case 'bonus_resource':
             $title = get_the_title($casinoId);
-            // $post_type = get_post_type()
             $postUrl = admin_url('post.php?post=' . $casinoId) . '&action=edit';
             echo "<a href='{$postUrl}'>{$title}</a>";
             break;
@@ -229,7 +237,7 @@ function loadBonusTypes($field)
 
     $bonus_types = [];
 
-    $cases = BonusTypes::cases();
+    $cases = BonusType::cases();
 
     foreach ($cases as $type) {
         $bonus_types[$type->key()] = [
