@@ -26,8 +26,6 @@ class BonusFactory
         $bonus->setId($id);
 
         foreach (self::$fields_map as $action => $field_data) {
-            if ($action === 'setBonusType') {
-            }
             $value = !empty(get_field($field_data, $id)) ? get_field($field_data, $id) : null;
             $bonus->$action($value);
         }

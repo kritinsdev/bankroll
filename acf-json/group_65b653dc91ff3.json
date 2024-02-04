@@ -45,7 +45,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "afflink"
+                "value": "affiliate_link"
             }
         ]
     ],
@@ -58,5 +58,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706449477
+    "modified": 1707073433
 }

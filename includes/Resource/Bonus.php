@@ -101,6 +101,8 @@ class Bonus
             'bonus_type' => $this->getBonusType(),
             'first_line' => $this->getFirstLine(),
             'second_line' => $this->getSecondLine(),
+            'bonus_value' => $this->getBonusValue(),
+            'free_spins_value' => $this->getFreeSpinsValue(),
             'image' => $this->getImage($this->getBonusForCasinoId())
         ];
 

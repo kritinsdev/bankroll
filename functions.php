@@ -18,7 +18,7 @@ function _ts($string)
 function dump(mixed $value, bool $die = false)
 {
     echo "<pre>";
-    var_dump($value);
+    print_r($value);
     echo "</pre>";
     if ($die) {
         die();
@@ -44,7 +44,7 @@ if (!function_exists('write_log')) {
 //
 function onLinkSave(int $id, \WP_Post $post, bool $update)
 {
-    if ($post->post_type === 'afflink') {
+    if ($post->post_type === 'affiliate_link') {
         $postId = $post->ID;
         $title = get_field('acf_link_description', $postId);
 
@@ -66,7 +66,7 @@ function addCustomColumnsForLinks($columns)
 
     return $columns;
 }
-add_filter('manage_afflink_posts_columns', 'addCustomColumnsForLinks');
+add_filter('manage_affiliate_link_posts_columns', 'addCustomColumnsForLinks');
 
 function customLinkColumnData($column, $postId)
 {
@@ -85,7 +85,7 @@ function customLinkColumnData($column, $postId)
             break;
     }
 }
-add_action('manage_afflink_posts_custom_column', 'customLinkColumnData', 10, 2);
+add_action('manage_affiliate_link_posts_custom_column', 'customLinkColumnData', 10, 2);
 
 // END AFFILIATE LINKS CPT FUNCTIONALITY
 //

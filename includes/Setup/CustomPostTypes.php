@@ -35,7 +35,7 @@ class CustomPostTypes
             'publicly_queryable'  => false,
             'query_var'           => false
         ],
-        'afflink' => [
+        'affiliate_link' => [
             'singular'    => 'Affiliate Link',
             'plural'      => 'Affiliate Links',
             'supports'    => [''],

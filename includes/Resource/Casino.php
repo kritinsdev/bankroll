@@ -3,9 +3,12 @@
 namespace Bankroll\Includes\Resource;
 
 use Bankroll\Includes\Factory\BonusFactory;
+use Bankroll\Includes\Traits\HasImage;
 
 class Casino
 {
+    use HasImage;
+
     public int $id;
     public string $name;
     public array $related_bonuses;
@@ -24,18 +27,20 @@ class Casino
     {
         $bonus_ids = get_field('cpt_casino_related_bonuses', $this->id);
         if (!empty($bonus_ids)) {
+
+            $existing_bonuses = [];
             foreach ($bonus_ids as $id) {
                 if (get_post_status($id)) {
-                    $bonus = BonusFactory::create($id);
-
-                    $this->related_bonuses[] = $bonus->getBonusData();
+                    $existing_bonuses[] = $id;
                 }
-                // if (!empty($type) && $type === $bonus->getBonusType()) {
-                //     $this->related_bonuses[] = $bonus->getBonusData();
-                // } else {
-                //     $this->related_bonuses[] = $bonus->getBonusData();
-                // }
             }
+
+            foreach ($existing_bonuses as $id) {
+                $bonus = BonusFactory::create($id);
+                $this->related_bonuses[] = $bonus->getBonusData();
+            }
+
+            dump($this->related_bonuses, true);
         }
     }
 }
