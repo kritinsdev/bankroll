@@ -2,14 +2,14 @@
 
 use Bankroll\Includes\View\Components;
 
-echo 'Board block';
-return;
+// dump($args['data'], true);
 
-$postType = $args['data']['block_board_post_type'];
+$postType = $args['data']['post_type'];
 $typeFactory = 'Bankroll\Includes\Factory\\' . ucfirst($postType) . 'Factory';
-$showAll = $args['data']['block_board_show_all'];
-$postIds = $args['data']['block_board_' . $postType];
-$cardTemplate = "parts/cards/$postType/card-$cardStyle";
+$showAll = $args['data']['show_all'];
+// $postIds = $args['data']['block_board_' . $postType];
+// $cardTemplate = "parts/cards/$postType/card-$cardStyle";
+
 
 if ($showAll) {
     $postIds = get_posts([
@@ -38,5 +38,7 @@ if (count($postIds) > $maxPostsCount) {
         <?php endforeach; ?>
     </div>
 
-    <?php Components::loadMoreButton($showLoadMore, $remainingPosts); ?>
+    <?php if ($showLoadMore && !empty($remainingPosts)) {
+        Components::loadMoreButton($showLoadMore, $remainingPosts);
+    } ?>
 </div>

@@ -193,16 +193,19 @@ function my_acf_fields_relationship_query($args, $field, $post_id)
 add_filter('acf/fields/relationship/query/name=cpt_casino_related_bonuses', 'my_acf_fields_relationship_query', 10, 3);
 
 // HIDE FIELD FROM BONUS ADMIN PANEL
-function my_custom_fonts()
+function hideBonusFields()
 {
     echo '<style>
     [data-name="cpt_bonus_for_casino_id"],
     [data-name="cpt_bonus_link_id"] {
         display: none;
-    } 
+    }
+    [data-name="cpt_casino_related_bonuses"] {
+        pointer-events:none;
+    }
     </style>';
 }
-add_action('admin_head', 'my_custom_fonts');
+add_action('admin_head', 'hideBonusFields');
 
 function deleteExpiredBonuses()
 {

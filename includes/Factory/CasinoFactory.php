@@ -17,6 +17,7 @@ class CasinoFactory
 
         $casino->setId($id);
         $casino->setCasinoBonuses();
+        $casino->setImage();
 
         return $casino;
     }

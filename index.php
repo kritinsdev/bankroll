@@ -15,8 +15,6 @@
    <?php TemplateHelpers::getTemplatePart("hero", "$template"); ?>
 
    <main>
-      <?php $types = get_post_types();
-      dump($types); ?>
       <?php $blockController->printBlocks(); ?>
    </main>
 

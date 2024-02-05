@@ -11,6 +11,7 @@ class Casino
 
     public int $id;
     public string $name;
+    public array $image;
     public array $related_bonuses;
 
     public function setId(int $id): void
@@ -39,8 +40,11 @@ class Casino
                 $bonus = BonusFactory::create($id);
                 $this->related_bonuses[] = $bonus->getBonusData();
             }
-
-            dump($this->related_bonuses, true);
         }
+    }
+
+    public function setImage()
+    {
+        $this->image = $this->getImage($this->id);
     }
 }

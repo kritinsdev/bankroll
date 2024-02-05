@@ -6,8 +6,11 @@ trait HasImage
 {
     public function getImage(string|int $id = null, string $post_type = 'casino'): array
     {
-        if (!empty($id)) {
-            $imageData = get_field("cpt_{$post_type}_featured_image", $id);
+        $imageData = !empty(get_field("cpt_{$post_type}_featured_image", $id)) ?
+            get_field("cpt_{$post_type}_featured_image", $id) :
+            [];
+
+        if (!empty($id) && !empty($imageData)) {
 
             if (!empty($imageData)) {
                 unset($imageData['id']);
@@ -35,10 +38,8 @@ trait HasImage
                 unset($imageData['sizes']['large-width']);
                 unset($imageData['sizes']['large-height']);
             }
-            return $imageData;
         }
 
-
-        return [];
+        return $imageData;
     }
 }

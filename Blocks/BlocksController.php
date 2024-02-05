@@ -106,7 +106,6 @@ class BlocksController
                 break;
             case 'block_board':
                 $block_data = $this->boardData($data['block_data']);
-
                 break;
         }
 
@@ -116,10 +115,10 @@ class BlocksController
     private function boardData(array $data): array
     {
         $board_data = [];
-        $resource_ids = $data['block_board_' . $data['block_board_post_type'] . '_items'];
-        $factory = 'Bankroll\Includes\Factory\\' . ucfirst($data['block_board_post_type']) . 'Factory';
+        $resource_ids = $data['block_board_' . $data['post_type'] . '_items'];
+        $factory = 'Bankroll\Includes\Factory\\' . ucfirst($data['post_type']) . 'Factory';
 
-        $board_data['post_type'] = $data['block_board_post_type'];
+        $board_data['post_type'] = $data['post_type'];
         $board_data['show_all'] = $data['block_board_show_all'];
 
         if (!empty($resource_ids)) {
