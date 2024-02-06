@@ -33,11 +33,13 @@ class BlocksController
         $blockData = $this->resolveData($data);
 
         if (file_exists(BANKROLL_DIR . "/Blocks/{$blockData['layout']['folder']}/front.php")) {
+
             ob_start();
 
-            get_template_part("Blocks/{$blockData['layout']['folder']}/front", null, [
-                'data' => $this->prepareBlockData($blockData),
-            ]);
+            get_template_part(
+                slug: "Blocks/{$blockData['layout']['folder']}/front",
+                args: $this->prepareBlockData($blockData)
+            );
 
             $template = ob_get_clean();
 
