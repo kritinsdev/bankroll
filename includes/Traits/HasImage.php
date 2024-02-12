@@ -14,7 +14,13 @@ trait HasImage
 
             if (!empty($imageData)) {
                 unset($imageData['id']);
+                unset($imageData['ID']);
                 unset($imageData['filesize']);
+                unset($imageData['filename']);
+                unset($imageData['name']);
+                unset($imageData['icon']);
+                unset($imageData['title']);
+                unset($imageData['description']);
                 unset($imageData['link']);
                 unset($imageData['author']);
                 unset($imageData['status']);
