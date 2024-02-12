@@ -8,6 +8,7 @@ use Bankroll\Includes\Traits\HasImage;
 class Bonus
 {
     use HasImage;
+    // use HasLink;
 
     public int $id;
     public string $bonus_type;
@@ -59,9 +60,9 @@ class Bonus
         $this->first_line = $first_line;
     }
 
-    public function getFirstLine(): string
+    public function getFirstLine(): ?string
     {
-        return $this->first_line;
+        return !empty($this->first_line) ? $this->first_line : null;
     }
 
     public function setSecondLine(?string $second_line)
@@ -71,7 +72,7 @@ class Bonus
 
     public function getSecondLine(): ?string
     {
-        return $this->second_line;
+        return !empty($this->second_line) ? $this->second_line : null;
     }
 
     public function setBonusValue(?int $bonus_value)
@@ -81,7 +82,7 @@ class Bonus
 
     public function getBonusValue(): ?int
     {
-        return $this->bonus_value;
+        return !empty($this->bonus_value) ? $this->bonus_value : null;
     }
 
     public function setFreeSpinsValue(?int $free_spins_value)
@@ -91,7 +92,7 @@ class Bonus
 
     public function getFreeSpinsValue(): ?int
     {
-        return $this->free_spins_value;
+        return !empty($this->free_spins_value) ? $this->free_spins_value : null;
     }
 
     public function getBonusData(): array

@@ -2,6 +2,8 @@
 
 namespace Bankroll\Blocks;
 
+use Bankroll\Includes\Factory\CasinoFactory;
+use Bankroll\Includes\Resource\Casino;
 use WP_Post;
 
 class BlocksController
@@ -19,33 +21,30 @@ class BlocksController
         $blocks = get_field('blocks', $postId);
 
         if (!empty($postId) && !empty($blocks)) {
-            foreach ($blocks as $blockData) {
-                $this->resolveBlock($blockData);
+            foreach ($blocks as $block_data) {
+                $this->resolveBlock($block_data);
             }
-        } else {
-            dump('Something went wrong');
         }
     }
 
 
     private function resolveBlock(array $data): void
     {
-        $blockData = $this->resolveData($data);
+        $block_data = $this->resolveData($data);
 
-        if (file_exists(BANKROLL_DIR . "/Blocks/{$blockData['layout']['folder']}/front.php")) {
-
+        if (file_exists(BANKROLL_DIR . "/Blocks/{$block_data['layout']['folder']}/front.php")) {
             ob_start();
 
             get_template_part(
-                slug: "Blocks/{$blockData['layout']['folder']}/front",
-                args: $this->prepareBlockData($blockData)
+                slug: "Blocks/{$block_data['layout']['folder']}/front",
+                args: $this->prepareBlockData($block_data)
             );
 
             $template = ob_get_clean();
 
-            $this->wrapBlock($template, $blockData['layout']['class'], $blockData['block_settings']);
+            $this->wrapBlock($template, $block_data['layout']['class'], $block_data['block_settings']);
         } else {
-            echo $blockData['layout']['acf_layout'] . " doesnt exist";
+            echo $block_data['layout']['acf_layout'] . " doesnt exist";
         }
     }
 
@@ -60,18 +59,17 @@ class BlocksController
 
     private function resolveData(array $data): array
     {
-        $blockData = [];
-        $blockData['layout'] = [
+        $block_data = [];
+        $block_data['layout'] = [
             'acf_layout' => $data['acf_fc_layout'],
             'folder' => ucfirst(ltrim(strstr($data['acf_fc_layout'], '_'), '_')),
             'class' => str_replace('_', '-', $data['acf_fc_layout']),
         ];
 
-        $blockData['block_data'] = $data['block_data'];
-        $blockData['block_settings'] = $data['block_settings'];
+        $block_data['block_data'] = $data['block_data'];
+        $block_data['block_settings'] = $data['block_settings'];
 
-
-        return $blockData;
+        return $block_data;
     }
 
     private function resolvePostId(): ?int
@@ -103,7 +101,9 @@ class BlocksController
                 $items = get_field('test_toplist', $resourceId);
 
                 if (!empty($items)) {
-                    $block_data['toplist_items'] = $items;
+                    foreach ($items as $toplist_item_id) {
+                        $block_data['toplist_items'][] = CasinoFactory::create($toplist_item_id);
+                    }
                 }
                 break;
             case 'block_board':

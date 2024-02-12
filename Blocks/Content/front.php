@@ -1,1 +1,2 @@
-<?php echo $args['data']['block_content_editor'];
+<?php
+echo $args['block_content_editor'];

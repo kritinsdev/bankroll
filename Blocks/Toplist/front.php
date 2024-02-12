@@ -1,7 +1,5 @@
 <div>
     <?php
-    echo '<pre>';
-    print_r($args['data']);
-    echo '</pre>';
+    dump($args['toplist_items']);
     ?>
 </div>

@@ -27,7 +27,10 @@ class BonusFactory
 
         foreach (self::$fields_map as $action => $field_data) {
             $value = !empty(get_field($field_data, $id)) ? get_field($field_data, $id) : null;
-            $bonus->$action($value);
+
+            if (!empty($value)) {
+                $bonus->$action($value);
+            }
         }
 
         return $bonus;
