@@ -4,15 +4,16 @@ namespace Bankroll\Includes\Resource;
 
 use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Traits\HasImage;
+use Bankroll\Includes\Traits\Link;
 
 class Bonus
 {
     use HasImage;
-    // use HasLink;
+    use Link;
 
     public int $id;
     public string $bonus_type;
-    public int $bonus_for_casino;
+    public int $bonus_for_id;
     public string $bonus_for_post_type;
     public string $first_line;
     public ?string $second_line;
@@ -41,18 +42,18 @@ class Bonus
         return BonusType::fromName($this->bonus_type);
     }
 
-    public function setBonusForCasinoId(int $id)
+    public function setBonusForId(int $id): void
     {
         if (!empty($id)) {
-            $this->bonus_for_casino = $id;
+            $this->bonus_for_id = $id;
         } else {
-            $this->bonus_for_casino = null;
+            $this->bonus_for_id = null;
         }
     }
 
-    public function getBonusForCasinoId(): int
+    public function getBonusForId(): int
     {
-        return $this->bonus_for_casino;
+        return $this->bonus_for_id;
     }
 
     public function setFirstLine(string $first_line)
@@ -104,7 +105,8 @@ class Bonus
             'second_line' => $this->getSecondLine(),
             'bonus_value' => $this->getBonusValue(),
             'free_spins_value' => $this->getFreeSpinsValue(),
-            'image' => $this->getFeaturedImage($this->getBonusForCasinoId())
+            'image' => $this->getFeaturedImage($this->getBonusForId()),
+            'link' => $this->getLink($this->bonus_for_id),
         ];
 
         return $data;

@@ -4,7 +4,7 @@ namespace Bankroll\Includes\Traits;
 
 trait HasImage
 {
-    public function getImage(string|int $id = null, string $post_type = 'casino'): array
+    public function getFeaturedImage(string|int $id = null, string $post_type = 'casino'): array
     {
         $imageData = !empty(get_field("cpt_{$post_type}_featured_image", $id)) ?
             get_field("cpt_{$post_type}_featured_image", $id) :

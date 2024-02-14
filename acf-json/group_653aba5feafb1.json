@@ -62,8 +62,8 @@
         },
         {
             "key": "field_653bd62822140",
-            "label": "Bonus For Casino",
-            "name": "cpt_bonus_for_casino",
+            "label": "Bonus For ID",
+            "name": "cpt_bonus_for_id",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -367,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706991659
+    "modified": 1707943267
 }

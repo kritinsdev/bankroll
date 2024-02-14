@@ -45,6 +45,6 @@ class Casino
 
     public function setImage()
     {
-        $this->image = $this->getImage($this->id);
+        $this->image = $this->getFeaturedImage($this->id);
     }
 }

@@ -13,8 +13,12 @@ class TemplateHelpers
         }
     }
 
-    public static function svgIcon(string $icon, mixed $width = 20, $color = '#000', $class = null): void
-    {
+    public static function svgIcon(
+        string $icon,
+        mixed $width = 20,
+        $color = '#000',
+        $class = null
+    ): void {
         if (empty($icon)) {
             return;
         }

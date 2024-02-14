@@ -8,7 +8,7 @@ class BonusFactory
 {
     public static array $fields_map = [
         'setBonusType' => 'cpt_bonus_type',
-        'setBonusForCasinoId' => 'cpt_bonus_for_casino_id',
+        'setBonusForId' => 'cpt_bonus_for_id',
         'setFirstLine' => 'cpt_bonus_bonus_info_cpt_bonus_first_line',
         'setSecondLine' => 'cpt_bonus_bonus_info_cpt_bonus_second_line',
         'setBonusValue' => 'cpt_bonus_bonus_info_cpt_bonus_amount_value',
