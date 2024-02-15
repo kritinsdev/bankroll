@@ -13,8 +13,8 @@ class Bonus
 
     public int $id;
     public string $bonus_type;
-    public int $bonus_for_id;
-    public string $bonus_for_post_type;
+    public ?int $bonus_for_id;
+    public ?string $bonus_for_post_type;
     public string $first_line;
     public ?string $second_line;
     public ?int $bonus_value;
@@ -42,16 +42,16 @@ class Bonus
         return BonusType::fromName($this->bonus_type);
     }
 
-    public function setBonusForId(int $id): void
+    public function setBonusForId(array $id): void
     {
         if (!empty($id)) {
-            $this->bonus_for_id = $id;
+            $this->bonus_for_id = $id[0];
         } else {
             $this->bonus_for_id = null;
         }
     }
 
-    public function getBonusForId(): int
+    public function getBonusForId(): ?int
     {
         return $this->bonus_for_id;
     }
@@ -106,7 +106,7 @@ class Bonus
             'bonus_value' => $this->getBonusValue(),
             'free_spins_value' => $this->getFreeSpinsValue(),
             'image' => $this->getFeaturedImage($this->getBonusForId()),
-            'link' => $this->getLink($this->bonus_for_id),
+            'link' => $this->getLink($this->getBonusForId()),
         ];
 
         return $data;

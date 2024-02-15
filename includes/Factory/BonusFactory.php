@@ -13,6 +13,7 @@ class BonusFactory
         'setSecondLine' => 'cpt_bonus_bonus_info_cpt_bonus_second_line',
         'setBonusValue' => 'cpt_bonus_bonus_info_cpt_bonus_amount_value',
         'setFreeSpinsValue' => 'cpt_bonus_bonus_info_cpt_freespins_amount_value',
+        // 'setBonusLink' => 'cpt_bonus_link',
         // 'setBonusStartDate' => ['cpt_bonus_bonus_date_group', 'cpt_bonus_start_date'],
         // 'setBonusEndDate' => ['cpt_bonus_bonus_date_group', 'cpt_bonus_end_date'],
         // 'setAffiliateLink' => 'cpt_bonus_link_id',

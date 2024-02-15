@@ -3,7 +3,7 @@
 }
 
 .header {
-    background-color: var(--color-secondary);
+    // background-color: var(--color-secondary);
 }
 
 .header-logo {
@@ -33,7 +33,6 @@
     li {
         list-style-type: none;
         a {
-            color:var(--color-text-light);
             padding:var(--spacing-default);
         }
     }

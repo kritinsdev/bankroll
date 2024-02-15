@@ -62,12 +62,12 @@
         },
         {
             "key": "field_653bd62822140",
-            "label": "Bonus For ID",
+            "label": "Bonus For",
             "name": "cpt_bonus_for_id",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -367,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707943267
+    "modified": 1708024485
 }

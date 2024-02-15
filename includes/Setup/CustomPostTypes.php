@@ -110,6 +110,7 @@ class CustomPostTypes
                 'supports'           => $customPostTypeData['supports'],
                 'taxonomies'         => !empty($customPostTypeData['taxonomies']) ? $customPostTypeData['taxonomies'] : [],
                 'show_in_rest'       => false,
+                'show_in_menu' => !empty($customPostTypeData['show_in_menu']) ? $customPostTypeData['show_in_menu'] : true,
             ];
 
             if (!empty($customPostTypeData['slug'])) {

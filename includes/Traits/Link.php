@@ -9,11 +9,12 @@ trait Link
         $link_prefix = 'visit';
         $post_type = get_post_type($id);
         $resource = $this->formatTitle(get_the_title($id));
+        $bonus_type = 'reload-bonus';
 
         $site_url = site_url();
 
 
-        return "{$site_url}/{$link_prefix}/{$post_type}/{$resource}/";
+        return "{$site_url}/{$link_prefix}/{$post_type}/{$resource}/{$bonus_type}/";
     }
 
     private function formatTitle(string $title): string
