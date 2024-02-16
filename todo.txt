@@ -1,3 +1,3 @@
 1. site currency for bonuses [Theme Settings]
 2. bonus start date / end date [Bonus CPT]
-3. do not show bonus in casinos where there is no relationship bonus->casino [Casino / Bonus]
+3. Affiliate link prefix from site settings

@@ -48,7 +48,7 @@ class Casino
 
             foreach ($existing_bonuses as $id) {
                 $bonus = BonusFactory::create($id);
-                $this->bonuses[] = $bonus->getBonusData();
+                $this->bonuses[] = $bonus;
             }
         }
     }
