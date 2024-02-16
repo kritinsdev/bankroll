@@ -10,23 +10,33 @@ class Casino
     use HasImage;
 
     public int $id;
-    public string $name;
+    public string $title;
+    public string $permalink;
     public array $image;
-    public array $related_bonuses;
+    public array $bonuses;
 
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    public function getId(): int
+    public function setImage()
     {
-        return $this->id;
+        $this->image = $this->getFeaturedImage($this->id);
     }
 
-    public function setCasinoBonuses(): void
+    public function setTitle()
     {
-        $bonus_ids = get_field('cpt_casino_related_bonuses', $this->id);
+        $this->title = get_the_title($this->id);
+    }
+
+    public function setPermalink()
+    {
+        $this->permalink = get_the_permalink($this->id);
+    }
+
+    public function setBonuses(array $bonus_ids): void
+    {
         if (!empty($bonus_ids)) {
 
             $existing_bonuses = [];
@@ -38,13 +48,8 @@ class Casino
 
             foreach ($existing_bonuses as $id) {
                 $bonus = BonusFactory::create($id);
-                $this->related_bonuses[] = $bonus->getBonusData();
+                $this->bonuses[] = $bonus->getBonusData();
             }
         }
-    }
-
-    public function setImage()
-    {
-        $this->image = $this->getFeaturedImage($this->id);
     }
 }

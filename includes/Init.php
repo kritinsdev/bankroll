@@ -4,7 +4,7 @@ namespace Bankroll\Includes;
 
 use Bankroll\Includes\Ajax\AjaxFunctions;
 use Bankroll\Includes\Resource\ThemeSettings;
-use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue};
+use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue, DisablePosts};
 
 class Init
 {
@@ -18,8 +18,10 @@ class Init
         Menus::get_instance();
         Enqueue::get_instance();
         AjaxFunctions::get_instance();
+        // DisablePosts::get_instance();
 
         $this->setupHooks();
+        $this->disableComments();
     }
 
     protected function setupHooks(): void
@@ -58,6 +60,42 @@ class Init
         remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
         // add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
         // add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
+    }
+
+    private function disableComments()
+    {
+        add_action('admin_init', function () {
+            global $pagenow;
+
+            if ($pagenow === 'edit-comments.php') {
+                wp_safe_redirect(admin_url());
+                exit;
+            }
+
+            remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+            foreach (get_post_types() as $post_type) {
+                if (post_type_supports($post_type, 'comments')) {
+                    remove_post_type_support($post_type, 'comments');
+                    remove_post_type_support($post_type, 'trackbacks');
+                }
+            }
+        });
+
+        add_filter('comments_open', '__return_false', 20, 2);
+        add_filter('pings_open', '__return_false', 20, 2);
+
+        add_filter('comments_array', '__return_empty_array', 10, 2);
+
+        add_action('admin_menu', function () {
+            remove_menu_page('edit-comments.php');
+        });
+
+        add_action('init', function () {
+            if (is_admin_bar_showing()) {
+                remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+            }
+        });
     }
 
     public function removeImageSizes()

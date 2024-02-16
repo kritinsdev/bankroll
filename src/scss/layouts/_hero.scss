@@ -3,9 +3,13 @@
     
     .hero-wrap {
         @extend .container;
+        background-color: var(--color-hero-bg);
+        padding:var(--spacing-default);
+        border-radius: var(--border-radius);
+        display: flex;
     }
 
     .hero-text {
-        // font-size: 14px;
+        width:50%;
     }
 }

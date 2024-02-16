@@ -1,3 +1,3 @@
 <?php
 
-echo 'template-1';
+dump($args);

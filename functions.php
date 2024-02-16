@@ -200,9 +200,6 @@ function hideBonusFields()
     [data-name="cpt_bonus_link_id"] {
         display: none;
     }
-    [data-name="cpt_casino_related_bonuses"] {
-        pointer-events:none;
-    }
     </style>';
 }
 add_action('admin_head', 'hideBonusFields');

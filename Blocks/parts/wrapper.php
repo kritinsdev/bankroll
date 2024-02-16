@@ -1,5 +1,5 @@
 <div class="block <?php echo $args['class']; ?>">
-    <div class="container-narrow">
+    <div class="container">
         <?php if ($args['settings']['block_title']) : ?>
             <div class="block-title">
                 <h2>

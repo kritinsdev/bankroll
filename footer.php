@@ -1,9 +1,10 @@
 <footer class="footer">
-    FOOTER
+    <div class="container">
+        SOMETHING
+    </div>
 </footer>
 <?php
 
-use Bankroll\Includes\Helpers;
 
 wp_footer(); ?>
 

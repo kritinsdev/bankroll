@@ -20,6 +20,9 @@
     }
 }
 
+.fixed {
+    position: fixed!important;
+}
 
 .relative {
     position: relative!important;
@@ -39,6 +42,8 @@ img, iframe {
 
 body {
     line-height: 24px;
+    // background-color: var(--color-primary);
+    // color:var(--color-text-light);
 }
 
 h1,
@@ -54,7 +59,6 @@ h6 {
     cursor: pointer;
 
     &.icon-bg {
-        background-color: var(--color-primary);
         border-radius: 50%;
         display: grid;
         place-items: center;
