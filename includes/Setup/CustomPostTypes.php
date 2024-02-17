@@ -15,14 +15,25 @@ class CustomPostTypes
             'slug'        => 'casino',
             'has_archive' => false,
             'supports'    => ['title'],
-            'taxonomies' => []
         ],
+        // 'slot' => [
+        //     'singular'    => 'Slot',
+        //     'plural'      => 'Slots',
+        //     'slug'        => 'slot',
+        //     'has_archive' => false,
+        //     'supports'    => ['title'],
+        // ],
         'bonus' => [
             'singular'    => 'Bonus',
             'plural'      => 'Bonuses',
             'slug'        => 'bonus',
+            'public' => true,
             'supports'    => [''],
-            'taxonomies' => []
+            'exclude_from_search' => true,
+            'show_in_admin_bar'   => false,
+            'show_in_nav_menus'   => false,
+            'publicly_queryable'  => false,
+            'query_var'           => false
         ],
         'toplist' => [
             'singular'    => 'Toplist',
@@ -46,20 +57,13 @@ class CustomPostTypes
             'publicly_queryable'  => false,
             'query_var'           => false
         ],
-        // 'sportsbook' => [
-        //     'singular'    => 'Sportsbook',
-        //     'plural'      => 'Sportsbooks',
-        //     'slug'        => 'sportsbook',
-        //     'supports'    => ['title'],
-        //     'taxonomies' => []
-        // ],
-        // 'payment' => [
-        //     'singular'    => 'Payment Method',
-        //     'plural'      => 'Payment Methods',
-        //     'slug'        => 'payment-method',
-        //     'supports'    => ['title'],
-        //     'taxonomies' => []
-        // ],
+        'payment_method' => [
+            'singular'    => 'Payment Method',
+            'plural'      => 'Payment Methods',
+            'slug'        => 'payment-method',
+            'supports'    => ['title'],
+            'taxonomies' => []
+        ],
         // 'software' => [
         //     'singular'    => 'Software Provider',
         //     'plural'      => 'Software Providers',
@@ -81,45 +85,45 @@ class CustomPostTypes
 
     public function registerPostTypes()
     {
-        foreach ($this->customPostTypes as $custom_post_type => $customPostTypeData) {
+        foreach ($this->customPostTypes as $cpt => $cpt_data) {
 
             $labels = [
-                'name'                  => $customPostTypeData['plural'],
-                'singular_name'         => $customPostTypeData['singular'],
-                'menu_name'             => $customPostTypeData['plural'],
-                'name_admin_bar'        => $customPostTypeData['singular'],
+                'name'                  => $cpt_data['plural'],
+                'singular_name'         => $cpt_data['singular'],
+                'menu_name'             => $cpt_data['plural'],
+                'name_admin_bar'        => $cpt_data['singular'],
                 'add_new'               => 'Add New',
-                'add_new_item'          => 'Add New ' . $customPostTypeData['singular'],
-                'new_item'              => 'New ' . $customPostTypeData['singular'],
-                'edit_item'             => 'Edit ' . $customPostTypeData['singular'],
-                'view_item'             => 'View ' . $customPostTypeData['singular'],
-                'all_items'             => 'All ' . $customPostTypeData['plural'],
+                'add_new_item'          => 'Add New ' . $cpt_data['singular'],
+                'new_item'              => 'New ' . $cpt_data['singular'],
+                'edit_item'             => 'Edit ' . $cpt_data['singular'],
+                'view_item'             => 'View ' . $cpt_data['singular'],
+                'all_items'             => 'All ' . $cpt_data['plural'],
             ];
             $args   = [
                 'labels'             => $labels,
-                'description'        => $customPostTypeData['singular'] . ' custom post type.',
-                'public'             => isset($customPostTypeData['public']) ? $customPostTypeData['public'] : true,
-                'publicly_queryable' => isset($customPostTypeData['publicly_queryable']) ? $customPostTypeData['publicly_queryable'] : true,
-                'show_ui'            => isset($customPostTypeData['show_ui']) ? $customPostTypeData['show_ui'] : true,
-                'show_in_menu'       => isset($customPostTypeData['show_in_menu']) ? $customPostTypeData['show_in_menu'] : true,
-                'query_var'          => isset($customPostTypeData['query_var']) ? $customPostTypeData['query_var'] : true,
-                'exclude_from_search' => isset($customPostTypeData['exclude_from_search']) ? $customPostTypeData['exclude_from_search'] : false,
-                'has_archive'        => isset($customPostTypeData['has_archive']) ? $customPostTypeData['has_archive'] : false,
-                'hierarchical'       => isset($customPostTypeData['hierarchical']) ? $customPostTypeData['hierarchical'] : false,
+                'description'        => $cpt_data['singular'] . ' custom post type.',
+                'public'             => isset($cpt_data['public']) ? $cpt_data['public'] : true,
+                'publicly_queryable' => isset($cpt_data['publicly_queryable']) ? $cpt_data['publicly_queryable'] : true,
+                'show_ui'            => isset($cpt_data['show_ui']) ? $cpt_data['show_ui'] : true,
+                'show_in_menu'       => isset($cpt_data['show_in_menu']) ? $cpt_data['show_in_menu'] : true,
+                'query_var'          => isset($cpt_data['query_var']) ? $cpt_data['query_var'] : true,
+                'exclude_from_search' => isset($cpt_data['exclude_from_search']) ? $cpt_data['exclude_from_search'] : false,
+                'has_archive'        => isset($cpt_data['has_archive']) ? $cpt_data['has_archive'] : false,
+                'hierarchical'       => isset($cpt_data['hierarchical']) ? $cpt_data['hierarchical'] : false,
                 'menu_position'      => 20,
-                'supports'           => $customPostTypeData['supports'],
-                'taxonomies'         => !empty($customPostTypeData['taxonomies']) ? $customPostTypeData['taxonomies'] : [],
+                'supports'           => $cpt_data['supports'],
+                'taxonomies'         => !empty($cpt_data['taxonomies']) ? $cpt_data['taxonomies'] : [],
                 'show_in_rest'       => false,
-                'show_in_menu' => !empty($customPostTypeData['show_in_menu']) ? $customPostTypeData['show_in_menu'] : true,
+                'show_in_menu' => !empty($cpt_data['show_in_menu']) ? $cpt_data['show_in_menu'] : true,
             ];
 
-            if (!empty($customPostTypeData['slug'])) {
-                $args['rewrite'] = ['slug' => $customPostTypeData['slug']];
+            if (!empty($cpt_data['slug'])) {
+                $args['rewrite'] = ['slug' => $cpt_data['slug']];
             } else {
                 $args['rewrite'] = false;
             }
 
-            register_post_type($custom_post_type, $args);
+            register_post_type($cpt, $args);
         }
     }
 }

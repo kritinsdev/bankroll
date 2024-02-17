@@ -16,7 +16,7 @@ class Bonus
     public string $bonus_type;
     public ?int $bonus_for_id;
     public ?string $bonus_for_post_type;
-    public string $first_line;
+    public ?string $first_line = '';
     public ?string $second_line = '';
     public ?int $bonus_value = null;
     public ?int $free_spins_value = null;
@@ -42,7 +42,7 @@ class Bonus
         }
     }
 
-    public function setFirstLine(string $first_line)
+    public function setFirstLine(?string $first_line)
     {
         $this->first_line = $first_line;
     }
