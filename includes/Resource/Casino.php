@@ -12,8 +12,9 @@ class Casino
     public int $id;
     public string $title;
     public string $permalink;
-    public array $image;
-    public array $bonuses;
+    public array $image = [];
+    public array $bonuses = [];
+    public array $payment_methods = [];
 
     public function setId(int $id): void
     {
@@ -48,8 +49,12 @@ class Casino
 
             foreach ($existing_bonuses as $id) {
                 $bonus = BonusFactory::create($id);
-                $this->bonuses[] = $bonus;
+                $this->bonuses[] = $bonus->dto();
             }
         }
+    }
+
+    public function setPaymentMethods(): void
+    {
     }
 }

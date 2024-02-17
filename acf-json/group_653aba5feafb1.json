@@ -63,7 +63,7 @@
         {
             "key": "field_653bd62822140",
             "label": "Bonus For",
-            "name": "cpt_bonus_for_id",
+            "name": "cpt_bonus_for_relationship",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -93,8 +93,8 @@
         },
         {
             "key": "field_65b617968df30",
-            "label": "For Casino ID",
-            "name": "cpt_bonus_for_casino_id",
+            "label": "Resource ID",
+            "name": "cpt_bonus_for_id",
             "aria-label": "",
             "type": "number",
             "instructions": "",
@@ -167,7 +167,7 @@
         {
             "key": "field_65b522a0aca2b",
             "label": "Bonus Details Info",
-            "name": "cpt_bonus_bonus_info",
+            "name": "cpt_bonus_info",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -183,7 +183,7 @@
                 {
                     "key": "field_653c1cc1e8314",
                     "label": "Bonus First Line",
-                    "name": "cpt_bonus_first_line",
+                    "name": "first_line",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -203,7 +203,7 @@
                 {
                     "key": "field_653c1ce2e8315",
                     "label": "Bonus Second Line",
-                    "name": "cpt_bonus_second_line",
+                    "name": "second_line",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -223,7 +223,7 @@
                 {
                     "key": "field_65b52328aca2e",
                     "label": "Bonus Amount Value",
-                    "name": "cpt_bonus_amount_value",
+                    "name": "amount_value",
                     "aria-label": "",
                     "type": "number",
                     "instructions": "",
@@ -245,7 +245,7 @@
                 {
                     "key": "field_65b52344aca2f",
                     "label": "Freespins Amount Value",
-                    "name": "cpt_freespins_amount_value",
+                    "name": "freespins_amount_value",
                     "aria-label": "",
                     "type": "number",
                     "instructions": "",
@@ -263,6 +263,48 @@
                     "step": "",
                     "prepend": "",
                     "append": ""
+                },
+                {
+                    "key": "field_65d0b900151ae",
+                    "label": "Wager Requirement",
+                    "name": "wagering_requiremet",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_65d0984358cf3",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
                 }
             ]
         },
@@ -313,7 +355,7 @@
                 {
                     "key": "field_653cb16b3300a",
                     "label": "Start Date",
-                    "name": "cpt_bonus_start_date",
+                    "name": "start_date",
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "",
@@ -331,7 +373,7 @@
                 {
                     "key": "field_653cb19d3300b",
                     "label": "End Date",
-                    "name": "cpt_bonus_end_date",
+                    "name": "end_date",
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "",
@@ -367,5 +409,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708024485
+    "modified": 1708177684
 }

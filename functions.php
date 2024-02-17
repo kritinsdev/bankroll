@@ -1,7 +1,8 @@
 <?php
 
-use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Init;
+use PHPMailer\PHPMailer\PHPMailer;
+use Bankroll\Includes\Enums\BonusType;
 
 define('BANKROLL_DIR', get_stylesheet_directory());
 define('BANKROLL_DIR_URI', get_stylesheet_directory_uri());
@@ -103,22 +104,27 @@ function onBonusPostSave(int $id, \WP_Post $post, bool $update)
 
     if ($post->post_type === 'bonus') {
         $post_id = $post->ID;
-        $casino_id = !empty(get_field('cpt_bonus_for_casino', $post_id)) ? get_field('cpt_bonus_for_casino', $post_id)[0] : null;
+        $casino_id = !empty(get_field('cpt_bonus_for_relationship', $post_id)) ?
+            get_field('cpt_bonus_for_relationship', $post_id)[0] :
+            null;
+
         $link_id = !empty(get_field('cpt_bonus_link', $post_id)) ? get_field('cpt_bonus_link', $post_id)[0] : null;
+
         $bonus_type = !empty(BonusType::fromName(get_field('cpt_bonus_type', $post_id))) ?
             BonusType::fromName(get_field('cpt_bonus_type', $post_id)) :
             '';
-
-        $title = get_the_title($casino_id);
-        $post->post_title = "[{$title}] [{$bonus_type}]";
+        $title = '';
 
         if (!empty($casino_id)) {
-            update_field('cpt_bonus_for_casino_id', $casino_id);
+            update_field('cpt_bonus_for_id', $casino_id);
+            $title = get_the_title($casino_id);
         }
 
         if (!empty($link_id)) {
             update_field('cpt_bonus_link_id', $link_id);
         }
+
+        $post->post_title = "[{$title}] [{$bonus_type}]";
 
         remove_action('save_post', 'onBonusPostSave');
         wp_update_post($post);
@@ -142,7 +148,7 @@ add_filter('manage_bonus_posts_columns', 'addCustomColumnForBonus');
 
 function customBonusColumnData($column, $postId)
 {
-    $casinoId = get_field('cpt_bonus_for_casino', $postId)[0];
+    $casinoId = get_field('cpt_bonus_for_id', $postId);
     $bonusType = !empty(BonusType::fromName(get_field('cpt_bonus_type', $postId))) ?
         BonusType::fromName(get_field('cpt_bonus_type', $postId)) :
         '';
@@ -184,7 +190,7 @@ add_action('manage_bonus_posts_custom_column', 'customBonusColumnData', 10, 2);
 function my_acf_fields_relationship_query($args, $field, $post_id)
 {
     $args['post_status'] = 'publish';
-    $args['meta_key'] = 'cpt_bonus_for_casino_id';
+    $args['meta_key'] = 'cpt_bonus_for_id';
     $args['meta_compare'] = 'LIKE';
     $args['meta_value'] = $post_id;
 
@@ -196,7 +202,7 @@ add_filter('acf/fields/relationship/query/name=cpt_casino_related_bonuses', 'my_
 function hideBonusFields()
 {
     echo '<style>
-    [data-name="cpt_bonus_for_casino_id"],
+    [data-name="cpt_bonus_for_id"],
     [data-name="cpt_bonus_link_id"] {
         display: none;
     }

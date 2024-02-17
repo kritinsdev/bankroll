@@ -2,6 +2,7 @@
 
 namespace Bankroll\Includes\Resource;
 
+use Bankroll\Includes\Dto\BonusDto;
 use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Traits\HasImage;
 use Bankroll\Includes\Traits\Link;
@@ -16,9 +17,9 @@ class Bonus
     public ?int $bonus_for_id;
     public ?string $bonus_for_post_type;
     public string $first_line;
-    public ?string $second_line;
-    public ?int $bonus_value;
-    public ?int $free_spins_value;
+    public ?string $second_line = '';
+    public ?int $bonus_value = null;
+    public ?int $free_spins_value = null;
     public \DateTime $startDate;
     public \DateTime $endDate;
 
@@ -32,10 +33,10 @@ class Bonus
         $this->bonus_type = $type;
     }
 
-    public function setBonusForId(array $id): void
+    public function setBonusForId(int $id): void
     {
         if (!empty($id)) {
-            $this->bonus_for_id = $id[0];
+            $this->bonus_for_id = $id;
         } else {
             $this->bonus_for_id = null;
         }
@@ -61,19 +62,16 @@ class Bonus
         $this->free_spins_value = $free_spins_value;
     }
 
-    // public function getBonusData(): array
-    // {
-    //     $data = [
-    //         'id' => $this->getId(),
-    //         'bonus_type' => $this->getBonusType(),
-    //         'first_line' => $this->getFirstLine(),
-    //         'second_line' => $this->getSecondLine(),
-    //         'bonus_value' => $this->getBonusValue(),
-    //         'free_spins_value' => $this->getFreeSpinsValue(),
-    //         'image' => $this->getFeaturedImage($this->getBonusForId()),
-    //         'link' => $this->getLink($this->getBonusForId()),
-    //     ];
-
-    //     return $data;
-    // }
+    public function dto()
+    {
+        return new BonusDto(
+            id: $this->id,
+            bonus_type: $this->bonus_type,
+            bonus_for_id: $this->bonus_for_id,
+            first_line: $this->first_line,
+            second_line: $this->second_line,
+            bonus_value: $this->bonus_value,
+            free_spins_value: $this->free_spins_value,
+        );
+    }
 }

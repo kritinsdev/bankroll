@@ -4,7 +4,8 @@ namespace Bankroll\Includes;
 
 use Bankroll\Includes\Ajax\AjaxFunctions;
 use Bankroll\Includes\Resource\ThemeSettings;
-use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue, DisablePosts};
+use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue, DisablePosts, Mailer};
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Init
 {
@@ -21,8 +22,10 @@ class Init
         // DisablePosts::get_instance();
 
         $this->setupHooks();
+        // $this->setupMailer();
         $this->disableComments();
     }
+
 
     protected function setupHooks(): void
     {

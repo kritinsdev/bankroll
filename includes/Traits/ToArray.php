@@ -1,0 +1,11 @@
+<?php
+
+namespace Bankroll\Includes\Traits;
+
+trait ToArray
+{
+    public function toArray(): array
+    {
+        return get_object_vars($this);
+    }
+}
