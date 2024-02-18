@@ -1,11 +1,11 @@
 <?php
 
 use Bankroll\Includes\Init;
-use PHPMailer\PHPMailer\PHPMailer;
 use Bankroll\Includes\Enums\BonusType;
 
 define('BANKROLL_DIR', get_stylesheet_directory());
 define('BANKROLL_DIR_URI', get_stylesheet_directory_uri());
+define('BANKROLL_ASSETS_URL', BANKROLL_DIR_URI . '/dist');
 
 require_once('vendor/autoload.php');
 
@@ -19,7 +19,7 @@ function _ts($string)
 function dump(mixed $value, bool $die = false)
 {
     echo "<pre>";
-    print_r($value);
+    var_dump($value);
     echo "</pre>";
     if ($die) {
         die();

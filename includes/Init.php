@@ -2,9 +2,10 @@
 
 namespace Bankroll\Includes;
 
+use Bankroll\Blocks\RegisterBlocks;
 use Bankroll\Includes\Ajax\AjaxFunctions;
 use Bankroll\Includes\Resource\ThemeSettings;
-use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue, DisablePosts, Mailer};
+use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue, DisablePosts, RegisterMailer};
 use PHPMailer\PHPMailer\PHPMailer;
 
 class Init
@@ -18,11 +19,13 @@ class Init
         Taxonomies::get_instance();
         Menus::get_instance();
         Enqueue::get_instance();
-        AjaxFunctions::get_instance();
+        // AjaxFunctions::get_instance();
         // DisablePosts::get_instance();
 
+        new RegisterMailer();
+        new RegisterBlocks();
+
         $this->setupHooks();
-        // $this->setupMailer();
         $this->disableComments();
     }
 
@@ -44,6 +47,10 @@ class Init
     public function setupTheme(): void
     {
         add_theme_support('title-tag');
+        remove_action('wp_head', 'rest_output_link_wp_head', 10);
+        remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+        remove_action('wp_head', 'wp_generator');
+        remove_action('wp_head', 'rsd_link');
     }
 
     public function removeEditor(): void
