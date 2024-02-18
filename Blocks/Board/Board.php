@@ -11,22 +11,19 @@ class Board extends DefaultBlock
         parent::__construct($block_key);
     }
 
-    public function prepareData(array $block_data): array
+    public function prepareData(array $block_data): void
     {
-        $prepared_data = [];
         $resource_ids = $block_data['block_board_' . $block_data['block_board_post_type'] . '_items'];
         $factory = 'Bankroll\Includes\Factory\\' . ucfirst($block_data['block_board_post_type']) . 'Factory';
 
-        $prepared_data['post_type'] = $block_data['block_board_post_type'];
-        $prepared_data['show_all'] = $block_data['block_board_show_all'];
+        $this->prepared_data['post_type'] = $block_data['block_board_post_type'];
+        $this->prepared_data['show_all'] = $block_data['block_board_show_all'];
 
         if (!empty($resource_ids)) {
             foreach ($resource_ids as $id) {
-                $prepared_data['items'][] = $factory::create($id);
+                $this->prepared_data['items'][] = $factory::create($id);
             }
         }
-
-        return $prepared_data;
     }
 
     public function registerSubFields(): array

@@ -9,9 +9,9 @@ interface BlockInterface
 
     public function registerSubFields(): array;
 
-    public function prepareData(array $data): array;
+    public function prepareData(array $data): void;
 
-    public function view(array $data): mixed;
+    public function view(): mixed;
 
     public function enqueue(): void;
 

@@ -7,6 +7,7 @@ use Bankroll\Blocks\BlockInterface;
 abstract class DefaultBlock implements BlockInterface
 {
     protected string $view_folder;
+    protected array $prepared_data = [];
 
     public function __construct(
         protected string $block_key,
@@ -15,7 +16,7 @@ abstract class DefaultBlock implements BlockInterface
 
     abstract public function registerSubFields(): array;
 
-    abstract public function prepareData(array $block_data): array;
+    abstract public function prepareData(array $block_data): void;
 
     public function init(): void
     {
@@ -24,12 +25,12 @@ abstract class DefaultBlock implements BlockInterface
         $this->registerAjax();
     }
 
-    public function view(array $block_data): mixed
+    public function view(): mixed
     {
         return
             get_template_part(
                 slug: $this->view_folder,
-                args: $this->prepareData($block_data),
+                args: $this->prepared_data,
             );
     }
 
@@ -49,7 +50,7 @@ abstract class DefaultBlock implements BlockInterface
     public function setFolder()
     {
         $folder = ucfirst($this->block_key);
-        $this->view_folder = "Blocks\{$folder}\\view";
+        $this->view_folder = "Blocks/$folder/view";
     }
 
     public function enqueue(): void

@@ -1,3 +1,3 @@
 <?php
 
-dump($args);
+dump($args->title);

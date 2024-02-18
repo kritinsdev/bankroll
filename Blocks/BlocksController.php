@@ -30,12 +30,16 @@ class BlocksController
         $class = "Bankroll\Blocks\\{$block_data['layout']['folder']}";
 
         if (class_exists($class)) {
-            $class = new $class($block_data['layout']['block']);
+            $class = new $class(
+                $block_data['layout']['block'],
+            );
+
             $class->init();
+            $class->prepareData($block_data['block_data']);
 
             ob_start();
 
-            $class->view($block_data['block_data']);
+            $class->view();
 
             $template = ob_get_clean();
 
