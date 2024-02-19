@@ -1,5 +1,7 @@
 <div>
     <?php
-    dump($args);
+    foreach ($args['toplist_items'] as $item) {
+        echo $item->title;
+    }
     ?>
 </div>

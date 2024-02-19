@@ -11,8 +11,12 @@ class Board extends DefaultBlock
         parent::__construct($block_key);
     }
 
-    public function prepareData(array $block_data): void
+    public function prepareData(array|false $block_data): void
     {
+        if (empty($block_data)) {
+            return;
+        }
+
         $resource_ids = $block_data['block_board_' . $block_data['block_board_post_type'] . '_items'];
         $factory = 'Bankroll\Includes\Factory\\' . ucfirst($block_data['block_board_post_type']) . 'Factory';
 

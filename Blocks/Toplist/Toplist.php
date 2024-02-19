@@ -30,6 +30,36 @@ class Toplist extends DefaultBlock
 
     public function registerSubFields(): array
     {
-        return array();
+        return array(
+            array(
+                'key' => "field_{$this->block_key}653ed756af2c7",
+                'label' => 'Select toplist',
+                'name' => 'block_toplist',
+                'aria-label' => '',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'toplist',
+                ),
+                'post_status' => '',
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'search',
+                ),
+                'return_format' => 'id',
+                'min' => '',
+                'max' => '',
+                'elements' => '',
+                'bidirectional' => 0,
+                'bidirectional_target' => array(),
+            ),
+        );
     }
 }
