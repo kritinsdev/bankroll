@@ -30,7 +30,7 @@ class Board extends DefaultBlock
     {
         return array(
             array(
-                'key' => 'field_63eac79dbaccb',
+                'key' => "field_{$this->block_key}_63eac79dbaccb",
                 'label' => 'Type',
                 'name' => 'block_board_post_type',
                 'aria-label' => '',
@@ -45,7 +45,6 @@ class Board extends DefaultBlock
                 ),
                 'choices' => array(
                     'casino' => 'Casino',
-                    'bonus' => 'Bonus',
                 ),
                 'default_value' => false,
                 'return_format' => 'value',
@@ -56,7 +55,7 @@ class Board extends DefaultBlock
                 'placeholder' => '',
             ),
             array(
-                'key' => 'field_63eeafd3ed04f',
+                'key' => "field_{$this->block_key}_63eeafd3ed04f",
                 'label' => 'Select Casinos',
                 'name' => 'block_board_casino_items',
                 'aria-label' => '',
@@ -93,7 +92,7 @@ class Board extends DefaultBlock
                 'bidirectional_target' => array(),
             ),
             array(
-                'key' => 'field_65b4ef2b7566f',
+                'key' => "field_{$this->block_key}_65b4ef2b7566f",
                 'label' => 'Select Bonuses',
                 'name' => 'block_board_bonus_items',
                 'aria-label' => '',
@@ -130,7 +129,7 @@ class Board extends DefaultBlock
                 'bidirectional_target' => array(),
             ),
             array(
-                'key' => 'field_63f1eafbac92b',
+                'key' => "field_{$this->block_key}_63f1eafbac92b",
                 'label' => 'Show All Posts',
                 'name' => 'block_board_show_all',
                 'aria-label' => '',

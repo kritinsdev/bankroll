@@ -76,8 +76,7 @@ class RegisterBlocks
     {
         return [
             (new Board('board'))->register(),
-            // (new Content())->setAcfFields(),
-            // (new Toplist())->setAcfFields(),
+            (new Toplist('toplist'))->register(),
         ];
     }
 }
