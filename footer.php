@@ -9,7 +9,3 @@
 </body>
 
 </html>
-
-<?php
-
-// get_template_part('Blocks/Board/view', null, []);
