@@ -1,9 +1,9 @@
 {
-    "key": "group_653be79c296f7",
-    "title": "Casino Details",
+    "key": "group_65d52d1f70597",
+    "title": "Casino Details New",
     "fields": [
         {
-            "key": "field_65475a19a6e2e",
+            "key": "field_65d52d1f75e33",
             "label": "General Information",
             "name": "",
             "aria-label": "",
@@ -16,12 +16,12 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
-            "key": "field_65475a3ba6e2f",
-            "label": "Image",
+            "key": "field_65d52d1f798cf",
+            "label": "Featured Image",
             "name": "cpt_casino_featured_image",
             "aria-label": "",
             "type": "image",
@@ -42,10 +42,71 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "thumbnail"
         },
         {
-            "key": "field_653ebe29eb708",
+            "key": "field_65d52e68643f1",
+            "label": "Casino Founded",
+            "name": "cpt_casino_founded",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65d52e2a643f0",
+            "label": "Rating",
+            "name": "cpt_casino_rating",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 9,
+            "min": 1,
+            "max": 10,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65d530a98a0d0",
+            "label": "Website",
+            "name": "cpt_casino_webiste",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_65d52d1f7d4ed",
             "label": "Bonuses",
             "name": "",
             "aria-label": "",
@@ -62,7 +123,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_653d634f8aa80",
+            "key": "field_65d52d1f80f01",
             "label": "Related Bonuses",
             "name": "cpt_casino_related_bonuses",
             "aria-label": "",
@@ -91,7 +152,7 @@
             ]
         },
         {
-            "key": "field_65cfd85d72a55",
+            "key": "field_65d52d1f84aa4",
             "label": "Payments",
             "name": "",
             "aria-label": "",
@@ -108,11 +169,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_65cfd87f72a56",
-            "label": "Withdrawal Time",
-            "name": "cpt_casino_withdrawal_time",
+            "key": "field_65d52f9798830",
+            "label": "Payment Methods",
+            "name": "cpt_casino_payments",
             "aria-label": "",
-            "type": "text",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -121,54 +182,67 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "post_type": [
+                "payment_method"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         },
         {
-            "key": "field_65cfd9a26cc9d",
+            "key": "field_65d52d1f8bfbf",
             "label": "Minimum Deposit",
             "name": "cpt_casino_minimum_deposit",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
+            "min": "",
+            "max": "",
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_65cfda07a814f",
+            "key": "field_65d52d1f8fd37",
             "label": "Minimum Withdrawal",
             "name": "cpt_casino_minimum_withdrawal",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
+            "min": "",
+            "max": "",
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_65cfd9c06cc9e",
+            "key": "field_65d52d1f93891",
             "label": "Withdrawal Limit",
             "name": "cpt_casino_withdrawal_limit",
             "aria-label": "",
@@ -177,7 +251,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -186,6 +260,60 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_65d52d1f88621",
+            "label": "Withdrawal Time",
+            "name": "cpt_casino_withdrawal_time",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65d531108a0d1",
+            "label": "Games \/ Slots",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_65d53123be17c",
+            "label": "Responsible Gaming",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
         }
     ],
     "location": [
@@ -199,12 +327,12 @@
     ],
     "menu_order": 0,
     "position": "acf_after_title",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708469571
+    "modified": 1708470578
 }

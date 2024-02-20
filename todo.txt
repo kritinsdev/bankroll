@@ -1,3 +1,7 @@
-1. site currency for bonuses [Theme Settings]
-2. bonus start date / end date [Bonus CPT]
-3. Affiliate link prefix from site settings
+1. theme settings - site currency for bonuses
+2. bonus - start date / end date
+3. theme settings - affiliate link prefix 
+4. theme settings - socials
+5. block settings - background color for block
+6. block settings - add image before title / subtitle ?
+7. site header - bell / what's new ? latest casinos
