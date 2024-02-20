@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_653ed108ab242",
-            "label": "test toplist",
-            "name": "test_toplist",
+            "label": "Items",
+            "name": "toplist_items",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -50,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698615634
+    "modified": 1708464005
 }

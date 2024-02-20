@@ -20,7 +20,7 @@ class RegisterBlocks
         }
 
         acf_add_local_field_group(array(
-            'key' => 'group_63e9667019323',
+            'key' => 'group_6e9667019323',
             'title' => 'Blocks',
             'fields' => array(
                 array(
@@ -58,7 +58,7 @@ class RegisterBlocks
 
     private function registerLocationForCpts(): array
     {
-        $supported_cpts = ['page', 'casino'];
+        $supported_cpts = ['page', 'casino', 'payment_method'];
         $location = [];
 
         foreach ($supported_cpts as $cpt) {
@@ -77,6 +77,7 @@ class RegisterBlocks
         return [
             (new Board('board'))->register(),
             (new Toplist('toplist'))->register(),
+            (new Content('content'))->register(),
         ];
     }
 }

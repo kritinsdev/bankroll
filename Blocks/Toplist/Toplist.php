@@ -18,8 +18,8 @@ class Toplist extends DefaultBlock
             return;
         }
 
-        $resourceId = $block_data['block_toplist'][0];
-        $items = get_field('test_toplist', $resourceId);
+        $resource_id = $block_data['block_toplist'][0];
+        $items = get_field('toplist_items', $resource_id);
 
         if (!empty($items)) {
             foreach ($items as $toplist_item_id) {
