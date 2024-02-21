@@ -1,15 +1,26 @@
 .hero {
     padding:var(--spacing-block) 0;
+    background-color: var(--color-primary);
     
     .hero-wrap {
         @extend .container;
-        background-color: var(--color-hero-bg);
         padding:var(--spacing-default);
         border-radius: var(--border-radius);
         display: flex;
     }
 
-    .hero-text {
+    .hero-information {
         width:50%;
+    }
+
+    .hero-title {
+        color:var( --color-text-header-title);
+        font-size: 38px;
+        line-height: 38px;
+    }
+    
+    .hero-text {
+        color:var(--color-text-header-text);
+
     }
 }

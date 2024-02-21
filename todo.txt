@@ -4,4 +4,4 @@
 4. theme settings - socials
 5. block settings - background color for block
 6. block settings - add image before title / subtitle ?
-7. site header - bell / what's new ? latest casinos
+7. site header - bell / what's new ? latest casinosi
