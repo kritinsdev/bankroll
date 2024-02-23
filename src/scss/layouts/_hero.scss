@@ -4,7 +4,6 @@
     
     .hero-wrap {
         @extend .container;
-        padding:var(--spacing-default);
         border-radius: var(--border-radius);
         display: flex;
     }

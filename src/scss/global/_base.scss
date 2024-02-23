@@ -42,8 +42,6 @@ img, iframe {
 
 body {
     line-height: 24px;
-    // background-color: var(--color-primary);
-    // color:var(--color-text-light);
 }
 
 h1,
@@ -64,4 +62,17 @@ h6 {
         place-items: center;
         padding:var(--spacing-sm)
     }
+}
+
+p {
+    &:first-child {
+        margin-top: var(--spacing-paragraph-sm);
+    }
+    &:not(:last-child) {
+        margin-bottom:var(--spacing-paragraph);
+    }
+}
+
+ol, ul {
+    padding-left: var(--spacing-default);
 }
