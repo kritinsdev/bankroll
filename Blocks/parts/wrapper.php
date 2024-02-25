@@ -1,6 +1,6 @@
-<div class="block <?php echo $args['class']; ?>">
+<div class="block <?php echo $args['class']; ?>" style="background-color:<?php echo $args['settings']['block_background_color']; ?>;">
     <div class="container-narrow">
-        <?php if ($args['settings']['block_title']) : ?>
+        <?php if (!empty($args['settings']['block_title'])) : ?>
             <div class="block-title">
                 <h2>
                     <?php echo $args['settings']['block_title']; ?>
@@ -8,7 +8,7 @@
             </div>
         <?php endif; ?>
 
-        <?php if ($args['settings']['block_subtitle']) : ?>
+        <?php if (!empty($args['settings']['block_subtitle'])) : ?>
             <div class="block-subtitle">
                 <span>
                     <?php echo $args['settings']['block_subtitle']; ?>
@@ -16,7 +16,7 @@
             </div>
         <?php endif; ?>
 
-        <?php if ($args['settings']['block_content_before']) : ?>
+        <?php if (!empty($args['settings']['block_content_before'])) : ?>
             <div class="block-content-before">
                 <?php echo $args['settings']['block_content_before']; ?>
             </div>
@@ -26,7 +26,7 @@
             <?php echo $args['template']; ?>
         </div>
 
-        <?php if ($args['settings']['block_content_after']) : ?>
+        <?php if (!empty($args['settings']['block_content_after'])) : ?>
             <div class="block-content-after">
                 <?php echo $args['settings']['block_content_after']; ?>
             </div>

@@ -41,7 +41,7 @@ img, iframe {
 }
 
 body {
-    line-height: 24px;
+    // line-height: 24px;
 }
 
 h1,
@@ -73,6 +73,16 @@ p {
     }
 }
 
-ol, ul {
-    padding-left: var(--spacing-default);
+main {
+    ol, ul {
+        padding-inline-start: var(--spacing-default);
+    
+        li:not(:last-child) {
+            margin-bottom:var(--spacing-paragraph);
+        }
+    
+        &:has(> *) {
+            margin-bottom: var(--spacing-paragraph);
+        }
+    }
 }

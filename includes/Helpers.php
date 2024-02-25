@@ -62,7 +62,7 @@ class Helpers
             'subtype',
             'prefix',
             'icon',
-            'sizes', // TODO
+            'sizes',
         ];
 
         foreach ($unsetKeys as $key) {
