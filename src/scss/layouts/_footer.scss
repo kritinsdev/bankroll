@@ -1,9 +1,9 @@
 .footer {
-    padding:var(--spacing-lg) 0;
+    padding:var(--spacing-block) 0;
     color:var(--text-color-primary);
+    background-color: var(--color-primary);
 }
 
-.footer__menus {
-    display: flex;
-    justify-content: space-between;
+.footer-menu {
+    color:var(--color-text-light);
 }
