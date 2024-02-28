@@ -71,4 +71,15 @@ class Helpers
 
         return $imageArray;
     }
+
+    public static function generateShortname(string $input)
+    {
+        $formatted = preg_replace('/\s+/', '_', $input);
+
+        $formatted = preg_replace('/[^A-Za-z0-9_]/', '', $formatted);
+
+        $formatted = strtolower($formatted);
+
+        return $formatted;
+    }
 }

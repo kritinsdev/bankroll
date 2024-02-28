@@ -17,7 +17,7 @@ class BonusFactory
         'setDescription' => 'cpt_bonus_info_description',
         'setBonusStartDate' => 'cpt_bonus_date_group_start_date',
         'setBonusEndDate' => 'cpt_bonus_date_group_start_date',
-        // 'setAffiliateLink' => 'cpt_bonus_link_id',
+        'setAffiliateLink' => '',
     ];
 
     public static function create(\WP_Post|int $post): Bonus

@@ -6,6 +6,7 @@ use Bankroll\Includes\Dto\BonusDto;
 use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Traits\HasImage;
 use Bankroll\Includes\Traits\Link;
+use Bankroll\Includes\Helpers;
 
 class Bonus
 {
@@ -16,6 +17,7 @@ class Bonus
     public string $bonus_type;
     public ?int $bonus_for_id;
     public ?string $bonus_for_post_type;
+    public string $affiliate_link;
     public ?string $first_line = '';
     public ?string $second_line = '';
     public ?int $bonus_value = null;
@@ -62,12 +64,20 @@ class Bonus
         $this->free_spins_value = $free_spins_value;
     }
 
+    public function setAffiliateLink()
+    {
+        $name = Helpers::generateShortname(get_the_title($this->bonus_for_id));
+
+        $this->affiliate_link = "/visit/{$name}/{$this->bonus_type}";
+    }
+
     public function dto()
     {
         return new BonusDto(
             id: $this->id,
             bonus_type: $this->bonus_type,
             bonus_for_id: $this->bonus_for_id,
+            affiliate_link: $this->affiliate_link,
             first_line: $this->first_line,
             second_line: $this->second_line,
             bonus_value: $this->bonus_value,
