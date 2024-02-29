@@ -4,10 +4,12 @@ namespace Bankroll\Includes\Resource;
 
 use Bankroll\Includes\Factory\BonusFactory;
 use Bankroll\Includes\Traits\HasImage;
+use Bankroll\Includes\Traits\ToArray;
 
 class Casino
 {
     use HasImage;
+    use ToArray;
 
     public int $id;
     public string $title;
