@@ -30,6 +30,36 @@ class Board extends DefaultBlock
         }
     }
 
+    public function registerBlockSettingsSubFields(): array
+    {
+        return array(
+            array(
+                'key' => "field_{$this->block_key}_63eea9a10d143",
+                'label' => 'Title',
+                'name' => 'block_title',
+                'aria-label' => '',
+                'type' => 'text',
+            ),
+            array(
+                'key' => "field_{$this->block_key}_653ed9933fa31",
+                'label' => 'Subtitle',
+                'name' => 'block_subtitle',
+                'aria-label' => '',
+                'type' => 'text',
+            ),
+            array(
+                'key' => "field_{$this->block_key}_65db908a33ade",
+                'label' => 'Color picker',
+                'name' => 'block_background_color',
+                'aria-label' => '',
+                'type' => 'color_picker',
+                'default_value' => '',
+                'enable_opacity' => 0,
+                'return_format' => 'string',
+            ),
+        );
+    }
+
     public function registerSubFields(): array
     {
         return array(
@@ -39,14 +69,6 @@ class Board extends DefaultBlock
                 'name' => 'block_board_post_type',
                 'aria-label' => '',
                 'type' => 'select',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
                 'choices' => array(
                     'casino' => 'Casino',
                 ),
@@ -69,16 +91,11 @@ class Board extends DefaultBlock
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_63eac79dbaccb',
+                            'field' => "field_{$this->block_key}_63eac79dbaccb",
                             'operator' => '==',
                             'value' => 'casino',
                         ),
                     ),
-                ),
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
                 ),
                 'post_type' => array(
                     0 => 'casino',
@@ -106,16 +123,11 @@ class Board extends DefaultBlock
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_63eac79dbaccb',
+                            'field' => "field_{$this->block_key}_63eac79dbaccb",
                             'operator' => '==',
                             'value' => 'bonus',
                         ),
                     ),
-                ),
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
                 ),
                 'post_type' => array(
                     0 => 'bonus',

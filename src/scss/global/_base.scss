@@ -81,7 +81,7 @@ main {
             margin-bottom:var(--spacing-paragraph);
         }
     
-        &:has(> *) {
+        &:has(> *) + *{
             margin-bottom: var(--spacing-paragraph);
         }
     }

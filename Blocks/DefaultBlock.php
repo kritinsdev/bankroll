@@ -45,23 +45,30 @@ abstract class DefaultBlock implements BlockInterface
 
     public function enqueue(): void
     {
-        wp_enqueue_script(
-            "{$this->block_key}-js",
-            BANKROLL_ASSETS_URL . "{$this->block_key}-js.js",
-            array(),
-            '1.0.0',
-            array(
-                'strategy'  => 'defer',
-                'in_footer' => true,
-            )
-        );
+        $js_file_path = BANKROLL_DIR . "/dist/{$this->block_key}-js.js";
+        $css_file_path = BANKROLL_DIR . "/dist/{$this->block_key}-css.css";
 
-        wp_enqueue_style(
-            "{$this->block_key}-css",
-            BANKROLL_ASSETS_URL . "{$this->block_key}-css.css",
-            array(),
-            '1.0.0',
-        );
+        if (file_exists($js_file_path)) {
+            wp_enqueue_script(
+                "{$this->block_key}-js",
+                BANKROLL_ASSETS_URL . "/{$this->block_key}-js.js",
+                array(),
+                '1.0.0',
+                array(
+                    'strategy'  => 'defer',
+                    'in_footer' => true,
+                )
+            );
+        }
+
+        if (file_exists($css_file_path)) {
+            wp_enqueue_style(
+                "{$this->block_key}-css",
+                BANKROLL_ASSETS_URL . "/{$this->block_key}-css.css",
+                array(),
+                '1.0.0',
+            );
+        }
     }
 
     public function registerAjax(): void

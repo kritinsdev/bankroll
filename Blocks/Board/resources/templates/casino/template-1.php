@@ -1,3 +1,8 @@
 <?php
+$casino = $args;
 
-dump($args->title);
+?>
+
+<div>
+    <?php echo $casino->title; ?>
+</div>
