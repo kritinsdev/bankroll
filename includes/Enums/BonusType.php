@@ -51,6 +51,5 @@ enum BonusType
                 return $status->label();
             }
         }
-        // throw new \ValueError("$key is not a valid backing value for enum " . self::class);
     }
 }

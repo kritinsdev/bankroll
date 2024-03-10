@@ -351,7 +351,7 @@
         {
             "key": "field_653cd84d2495f",
             "label": "Date Details",
-            "name": "cpt_bonus_bonus_date_group",
+            "name": "cpt_bonus_date_group",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -429,5 +429,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708469328
+    "modified": 1710075200
 }

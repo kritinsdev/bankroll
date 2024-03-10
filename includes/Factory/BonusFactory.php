@@ -15,8 +15,8 @@ class BonusFactory
         'setFreeSpinsValue' => 'cpt_bonus_info_freespins_amount_value',
         'setWageringRequirement' => 'cpt_bonus_info_wagering_requiremet',
         'setDescription' => 'cpt_bonus_info_description',
-        'setBonusStartDate' => 'cpt_bonus_date_group_start_date',
-        'setBonusEndDate' => 'cpt_bonus_date_group_start_date',
+        'setStartDate' => 'cpt_bonus_date_group_start_date',
+        'setEndDate' => 'cpt_bonus_date_group_start_date',
         'setAffiliateLink' => '',
     ];
 

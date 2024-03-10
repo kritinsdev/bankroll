@@ -2,6 +2,8 @@
 
 namespace Bankroll\Includes;
 
+use Carbon\Carbon;
+
 class Helpers
 {
     public static function createPosts($postType, $postIds, $maxCount)

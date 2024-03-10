@@ -2,6 +2,8 @@
 
 namespace Bankroll\Includes\Resource;
 
+use Bankroll\Includes\Enums\BonusType;
+use Bankroll\Includes\Dto\BonusDto;
 use Bankroll\Includes\Factory\BonusFactory;
 use Bankroll\Includes\Traits\HasImage;
 use Bankroll\Includes\Traits\ToArray;
@@ -16,6 +18,7 @@ class Casino
     public string $permalink;
     public array $image = [];
     public array $bonuses = [];
+    public BonusDto $main_bonus;
     public array $payment_methods = [];
 
     public function setId(int $id): void
@@ -51,8 +54,21 @@ class Casino
 
             foreach ($existing_bonuses as $id) {
                 $bonus = BonusFactory::create($id);
+
+                if ($bonus->bonus_type == BonusType::MainBonus->key()) {
+                    $this->setMainBonus($bonus);
+                    continue;
+                }
+
                 $this->bonuses[] = $bonus->dto();
             }
+        }
+    }
+
+    public function setMainBonus(Bonus $bonus): void
+    {
+        if (!empty($bonus)) {
+            $this->main_bonus = $bonus->dto();
         }
     }
 

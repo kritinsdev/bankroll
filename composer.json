@@ -11,5 +11,8 @@
             "Bankroll\\Includes\\": "Includes/",
             "Bankroll\\Blocks\\": "Blocks/"
         }
+    },
+    "require": {
+        "nesbot/carbon": "^3.0"
     }
 }

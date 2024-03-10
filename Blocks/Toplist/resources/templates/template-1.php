@@ -1,5 +1,5 @@
 <?php
-// dump($args);
+dump($args);
 
 $toplist_item = $args;
 ?>

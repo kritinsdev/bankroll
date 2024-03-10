@@ -2,8 +2,8 @@
 
 namespace Bankroll\Includes\Resource;
 
+use Carbon\Carbon;
 use Bankroll\Includes\Dto\BonusDto;
-use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Traits\HasImage;
 use Bankroll\Includes\Traits\Link;
 use Bankroll\Includes\Helpers;
@@ -20,10 +20,11 @@ class Bonus
     public string $affiliate_link;
     public ?string $first_line = '';
     public ?string $second_line = '';
+    public ?string $description = '';
     public ?int $bonus_value = null;
     public ?int $free_spins_value = null;
-    public \DateTime $startDate;
-    public \DateTime $endDate;
+    public ?Carbon $start_date = null;
+    public ?Carbon $end_date = null;
 
     public function setId(int $id)
     {
@@ -44,24 +45,38 @@ class Bonus
         }
     }
 
-    public function setFirstLine(?string $first_line)
+    public function setFirstLine(?string $first_line): void
     {
         $this->first_line = $first_line;
     }
 
-    public function setSecondLine(?string $second_line)
+    public function setSecondLine(?string $second_line): void
     {
         $this->second_line = $second_line;
     }
 
-    public function setBonusValue(?int $bonus_value)
+    public function setBonusValue(?int $bonus_value): void
     {
         $this->bonus_value = $bonus_value;
     }
 
-    public function setFreeSpinsValue(?int $free_spins_value)
+    public function setFreeSpinsValue(?int $free_spins_value): void
     {
         $this->free_spins_value = $free_spins_value;
+    }
+
+    public function setStartDate(string $start_date = null): void
+    {
+        if (!empty($start_date)) {
+            $this->start_date = Carbon::createFromFormat('d/m/Y', $start_date);
+        }
+    }
+
+    public function setEndDate(string $end_date = null): void
+    {
+        if (!empty($end_date)) {
+            $this->end_date = Carbon::createFromFormat('d/m/Y', $end_date);
+        }
     }
 
     public function setAffiliateLink()
@@ -82,6 +97,8 @@ class Bonus
             second_line: $this->second_line,
             bonus_value: $this->bonus_value,
             free_spins_value: $this->free_spins_value,
+            start_date: $this->start_date ? $this->start_date->format('d/m/Y') : null,
+            end_date: $this->end_date ? $this->end_date->format('d/m/Y') : null
         );
     }
 }
