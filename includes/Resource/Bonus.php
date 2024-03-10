@@ -18,13 +18,14 @@ class Bonus
     public ?int $bonus_for_id;
     public ?string $bonus_for_post_type;
     public string $affiliate_link;
-    public ?string $first_line = '';
-    public ?string $second_line = '';
-    public ?string $description = '';
-    public ?int $bonus_value = null;
-    public ?int $free_spins_value = null;
-    public ?Carbon $start_date = null;
-    public ?Carbon $end_date = null;
+    public ?string $first_line;
+    public ?string $second_line;
+    public ?string $description;
+    public ?string $promo_code;
+    public ?int $bonus_value;
+    public ?int $free_spins_value;
+    public ?Carbon $start_date;
+    public ?Carbon $end_date;
 
     public function setId(int $id)
     {
@@ -65,6 +66,16 @@ class Bonus
         $this->free_spins_value = $free_spins_value;
     }
 
+    public function setDescription(?string $description = null): void
+    {
+        $this->description = $description;
+    }
+
+    public function setPromoCode(?string $promo_code = null): void
+    {
+        $this->promo_code = $promo_code;
+    }
+
     public function setStartDate(string $start_date = null): void
     {
         if (!empty($start_date)) {
@@ -97,6 +108,8 @@ class Bonus
             second_line: $this->second_line,
             bonus_value: $this->bonus_value,
             free_spins_value: $this->free_spins_value,
+            description: $this->description,
+            promo_code: $this->promo_code,
             start_date: $this->start_date ? $this->start_date->format('d/m/Y') : null,
             end_date: $this->end_date ? $this->end_date->format('d/m/Y') : null
         );
