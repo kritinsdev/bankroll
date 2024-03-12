@@ -1,7 +1,5 @@
 <?php
 $toplist_item = $args;
-
-// dump($toplist_item);
 ?>
 
 <div>

@@ -85,7 +85,7 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": "",
-                            "preview_size": "medium"
+                            "preview_size": "thumbnail"
                         },
                         {
                             "key": "field_65dba566713e1",
@@ -136,5 +136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708894108
+    "modified": 1710282223
 }

@@ -97,9 +97,9 @@ class Bonus
         $this->affiliate_link = "/visit/{$name}/{$this->bonus_type}";
     }
 
-    public function dto()
+    public function data(): array
     {
-        return new BonusDto(
+        $dto = new BonusDto(
             id: $this->id,
             bonus_type: $this->bonus_type,
             bonus_for_id: $this->bonus_for_id,
@@ -113,5 +113,7 @@ class Bonus
             start_date: $this->start_date ? $this->start_date->format('d/m/Y') : null,
             end_date: $this->end_date ? $this->end_date->format('d/m/Y') : null
         );
+
+        return $dto->toArray();
     }
 }

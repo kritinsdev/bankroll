@@ -170,7 +170,7 @@ class Content extends DefaultBlock
                                 'max_height' => '',
                                 'max_size' => '',
                                 'mime_types' => '',
-                                'preview_size' => 'medium',
+                                'preview_size' => 'thumbnail',
                             ),
                             array(
                                 'key' => 'field_65dba566713e1',
@@ -189,6 +189,8 @@ class Content extends DefaultBlock
                                 'choices' => array(
                                     'left' => 'Left',
                                     'right' => 'Right',
+                                    'top' => 'Top',
+                                    'bottom' => 'Bottom'
                                 ),
                                 'default_value' => false,
                                 'return_format' => 'value',

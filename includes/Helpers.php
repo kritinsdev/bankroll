@@ -50,6 +50,10 @@ class Helpers
 
         $unsetKeys = [
             'ID',
+            'id',
+            'description',
+            'caption',
+            'title',
             'filename',
             'filesize',
             'link',
@@ -68,7 +72,9 @@ class Helpers
         ];
 
         foreach ($unsetKeys as $key) {
-            unset($imageArray[$key]);
+            if (array_key_exists($key, $imageArray)) {
+                unset($imageArray[$key]);
+            }
         }
 
         return $imageArray;

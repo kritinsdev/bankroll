@@ -18,7 +18,7 @@ class Casino
     public string $permalink;
     public array $image = [];
     public array $bonuses = [];
-    public BonusDto $main_bonus;
+    public array $main_bonus = [];
     public array $payment_methods = [];
 
     public function setId(int $id): void
@@ -60,7 +60,7 @@ class Casino
                     continue;
                 }
 
-                $this->bonuses[] = $bonus->dto();
+                $this->bonuses[] = $bonus->data();
             }
         }
     }
@@ -68,7 +68,7 @@ class Casino
     public function setMainBonus(Bonus $bonus): void
     {
         if (!empty($bonus)) {
-            $this->main_bonus = $bonus->dto();
+            $this->main_bonus = $bonus->data();
         }
     }
 
