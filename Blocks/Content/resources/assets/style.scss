@@ -1,0 +1,28 @@
+.block-content {
+    .content-block {
+        display: flex;
+        align-items: center;
+        gap:var(--spacing-default);
+    }
+    
+    .image-top, .image-bottom {
+        flex-direction: column;
+    }
+    
+    .image-top .content-image, .image-bottom .content-image {
+        order: -1;
+    }
+    
+    .image-bottom .content-image {
+        order: 1;
+    }
+    
+    .content-text {
+        padding: var(--spacing-default);
+    }
+    
+    .content-image {
+        max-width: 50%;
+        height: auto;
+    }
+}

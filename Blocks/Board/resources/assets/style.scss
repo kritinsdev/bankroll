@@ -1,0 +1,19 @@
+.block-board {
+
+    .board {
+
+        &--casino {
+            .casino-items {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap:var(--spacing-default);
+            }
+
+            .casino-item {
+                border:1px solid #c5c5c5;
+                border-radius: 10px;
+                padding:var(--spacing-default);
+            }
+        }
+    }
+}

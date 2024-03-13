@@ -24,8 +24,8 @@ class Bonus
     public ?string $promo_code;
     public ?int $bonus_value;
     public ?int $free_spins_value;
-    public ?Carbon $start_date;
-    public ?Carbon $end_date;
+    public ?Carbon $start_date = null;
+    public ?Carbon $end_date = null;
 
     public function setId(int $id)
     {
@@ -56,12 +56,12 @@ class Bonus
         $this->second_line = $second_line;
     }
 
-    public function setBonusValue(?int $bonus_value): void
+    public function setBonusValue(?int $bonus_value = null): void
     {
         $this->bonus_value = $bonus_value;
     }
 
-    public function setFreeSpinsValue(?int $free_spins_value): void
+    public function setFreeSpinsValue(?int $free_spins_value = null): void
     {
         $this->free_spins_value = $free_spins_value;
     }

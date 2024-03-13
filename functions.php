@@ -2,6 +2,7 @@
 
 use Bankroll\Includes\Init;
 use Bankroll\Includes\Enums\BonusType;
+use Bankroll\Includes\Factory\CasinoFactory;
 
 define('BANKROLL_DIR', get_stylesheet_directory());
 define('BANKROLL_DIR_URI', get_stylesheet_directory_uri());
@@ -23,6 +24,13 @@ function dump(mixed $value, bool $die = false)
     echo "</pre>";
     if ($die) {
         die();
+    }
+}
+
+function __se(mixed $var)
+{
+    if (isset($var) && !empty($var)) {
+        echo $var;
     }
 }
 
@@ -107,6 +115,12 @@ function onBonusPostSave(int $id, \WP_Post $post, bool $update)
         $casino_id = !empty(get_field('cpt_bonus_for_relationship', $post_id)) ?
             get_field('cpt_bonus_for_relationship', $post_id)[0] :
             null;
+
+
+        // Check if casino id already has main bonus
+        $testing = CasinoFactory::create($casino_id);
+
+        dump($testing, 1);
 
         $link_id = !empty(get_field('cpt_bonus_link', $post_id)) ? get_field('cpt_bonus_link', $post_id)[0] : null;
 

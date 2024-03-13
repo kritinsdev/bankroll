@@ -1,4 +1,4 @@
-<div class="block <?php echo $args['class']; ?>" style="background-color:<?php echo $args['settings']['block_background_color']; ?>;">
+<div class="block <?php echo $args['class']; ?>" <?php echo $args['background_color']; ?>>
     <div class="container-narrow">
         <?php if (!empty($args['settings']['block_title'])) : ?>
             <div class="block-title">

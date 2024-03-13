@@ -55,10 +55,17 @@ class BlocksController
 
     private function wrapBlock(string $template, string $class, ?array $settings): void
     {
+        $background_color = '';
+
+        if (!empty($settings['block_background_color'])) {
+            $background_color = "style='background-color:{$settings['block_background_color']}'";
+        }
+
         get_template_part('Blocks/parts/wrapper', null, [
             'template' => $template,
             'settings' => $settings,
-            'class' => $class
+            'class' => $class,
+            'background_color' => $background_color,
         ]);
     }
 

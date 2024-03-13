@@ -3,7 +3,6 @@
 namespace Bankroll\Includes\Resource;
 
 use Bankroll\Includes\Enums\BonusType;
-use Bankroll\Includes\Dto\BonusDto;
 use Bankroll\Includes\Factory\BonusFactory;
 use Bankroll\Includes\Traits\HasImage;
 use Bankroll\Includes\Traits\ToArray;
@@ -20,6 +19,11 @@ class Casino
     public array $bonuses = [];
     public array $main_bonus = [];
     public array $payment_methods = [];
+
+    public function __construct()
+    {
+        return $this;
+    }
 
     public function setId(int $id): void
     {
