@@ -116,12 +116,6 @@ function onBonusPostSave(int $id, \WP_Post $post, bool $update)
             get_field('cpt_bonus_for_relationship', $post_id)[0] :
             null;
 
-
-        // Check if casino id already has main bonus
-        $testing = CasinoFactory::create($casino_id);
-
-        dump($testing, 1);
-
         $link_id = !empty(get_field('cpt_bonus_link', $post_id)) ? get_field('cpt_bonus_link', $post_id)[0] : null;
 
         $bonus_type = !empty(BonusType::fromName(get_field('cpt_bonus_type', $post_id))) ?

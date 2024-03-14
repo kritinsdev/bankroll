@@ -10,9 +10,9 @@ readonly class BonusDto
 
     public function __construct(
         public int $id,
-        public string $bonus_type,
-        public string $first_line,
-        public int $bonus_for_id,
+        public ?string $bonus_type,
+        public ?string $first_line,
+        public ?int $bonus_for_id,
         public ?string $affiliate_link = null,
         public ?string $second_line = null,
         public ?int $bonus_value = null,

@@ -2,7 +2,7 @@
     .content-block {
         display: flex;
         align-items: center;
-        gap:var(--spacing-default);
+        gap:var(--spacing-block);
     }
     
     .image-top, .image-bottom {
@@ -15,10 +15,6 @@
     
     .image-bottom .content-image {
         order: 1;
-    }
-    
-    .content-text {
-        padding: var(--spacing-default);
     }
     
     .content-image {

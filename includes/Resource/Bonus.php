@@ -37,7 +37,7 @@ class Bonus
         $this->bonus_type = $type;
     }
 
-    public function setBonusForId(int $id): void
+    public function setBonusForId(?int $id = null): void
     {
         if (!empty($id)) {
             $this->bonus_for_id = $id;
@@ -46,12 +46,12 @@ class Bonus
         }
     }
 
-    public function setFirstLine(?string $first_line): void
+    public function setFirstLine(?string $first_line = null): void
     {
         $this->first_line = $first_line;
     }
 
-    public function setSecondLine(?string $second_line): void
+    public function setSecondLine(?string $second_line = null): void
     {
         $this->second_line = $second_line;
     }
@@ -99,21 +99,25 @@ class Bonus
 
     public function data(): array
     {
-        $dto = new BonusDto(
-            id: $this->id,
-            bonus_type: $this->bonus_type,
-            bonus_for_id: $this->bonus_for_id,
-            affiliate_link: $this->affiliate_link,
-            first_line: $this->first_line,
-            second_line: $this->second_line,
-            bonus_value: $this->bonus_value,
-            free_spins_value: $this->free_spins_value,
-            description: $this->description,
-            promo_code: $this->promo_code,
-            start_date: $this->start_date ? $this->start_date->format('d/m/Y') : null,
-            end_date: $this->end_date ? $this->end_date->format('d/m/Y') : null
-        );
+        $dto = null;
 
-        return $dto->toArray();
+        if (!empty($this->id)) {
+            $dto = new BonusDto(
+                id: $this->id,
+                bonus_type: $this->bonus_type,
+                bonus_for_id: $this->bonus_for_id,
+                affiliate_link: $this->affiliate_link,
+                first_line: $this->first_line,
+                second_line: $this->second_line,
+                bonus_value: $this->bonus_value,
+                free_spins_value: $this->free_spins_value,
+                description: $this->description,
+                promo_code: $this->promo_code,
+                start_date: $this->start_date ? $this->start_date->format('d/m/Y') : null,
+                end_date: $this->end_date ? $this->end_date->format('d/m/Y') : null
+            );
+        }
+
+        return $dto ? $dto->toArray() : [];
     }
 }
