@@ -13,10 +13,3 @@ $toplist_item = $args;
         <?php print_r($toplist_item['main_bonus']); ?>
     </div>
 </div>
-
-<style>
-    .testimg {
-        width: 200px;
-        height: 60px;
-    }
-</style>

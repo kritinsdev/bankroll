@@ -22,9 +22,7 @@
             </div>
         <?php endif; ?>
 
-        <div class="block-content-field">
-            <?php echo $args['template']; ?>
-        </div>
+        <?php echo $args['template']; ?>
 
         <?php if (!empty($args['settings']['block_content_after'])) : ?>
             <div class="block-content-after">
