@@ -1,0 +1,12 @@
+.toplist {
+
+}
+
+.toplist-item {
+  display: flex;
+}
+
+.toplist-image {
+  max-width: 160px;
+  border-radius: var(--border-radius);
+}

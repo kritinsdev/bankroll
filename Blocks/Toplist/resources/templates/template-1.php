@@ -1,15 +1,16 @@
 <?php
+
+use Bankroll\Includes\Helpers;
+
 $toplist_item = $args;
 ?>
 
-<div>
+<div class="toplist-item">
     <div>
-        <?php echo $toplist_item['title']; ?>
+        <?php Helpers::image($toplist_item['image'], 'toplist-image'); ?>
     </div>
     <div>
-        <img class="testimg" src="<?php echo $toplist_item['image']['url']; ?>" alt="">
-    </div>
-    <div>
-        <?php print_r($toplist_item['main_bonus']); ?>
+        <div><?php echo $toplist_item['main_bonus']['first_line'] ?></div>
+        <div><?php echo $toplist_item['main_bonus']['second_line'] ?></div>
     </div>
 </div>

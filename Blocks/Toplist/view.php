@@ -2,7 +2,7 @@
 // dump($args);
 ?>
 
-<div>
+<div class="toplist">
     <?php foreach ($args['toplist_items'] as $item) {
         get_template_part(
             slug: 'Blocks/Toplist/resources/templates/template-1',

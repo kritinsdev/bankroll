@@ -30,9 +30,9 @@ class Casino
         $this->id = $id;
     }
 
-    public function setImage()
+    public function setImage(?int $id = null)
     {
-        $this->image = $this->getFeaturedImage($this->id);
+        $this->image = $this->getImageData($id);
     }
 
     public function setTitle()

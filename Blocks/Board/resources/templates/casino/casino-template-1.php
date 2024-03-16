@@ -1,12 +1,18 @@
 <?php
+
+use Bankroll\Includes\Helpers;
+
 $casino = $args;
 
-// dump($casino, 1);
 ?>
 
 <div class="casino-item">
     <div>
         <?php echo $casino['title']; ?>
+    </div>
+
+    <div>
+        <?php Helpers::image($casino['image']); ?>
     </div>
 
     <div>

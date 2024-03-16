@@ -116,10 +116,8 @@ class Init
 
     public function addBankrollImageSizes()
     {
-        add_image_size('bankroll-square-sm', 50, 50, false);
-        add_image_size('bankroll-square-md', 150, 150, false);
-        add_image_size('bankroll-square-lg', 300, 300, false);
-        add_image_size('bankroll-square-xl', 600, 600, false);
+        add_image_size('bankroll-logo', 400, 400);
+        add_image_size('bankroll-background', 1400, 400);
     }
 
     public function setGlobalSiteSettings()

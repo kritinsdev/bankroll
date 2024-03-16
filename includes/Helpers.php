@@ -90,4 +90,14 @@ class Helpers
 
         return $formatted;
     }
+
+    // TODO : move to template part?
+    public static function image(array $imageData, string $class = 'default-image'): void
+    {
+        echo "<img src='{$imageData['src'][0]}'";
+        echo "class='{$class}'";
+        echo "srcset='{$imageData['srcset']}'";
+        echo "sizes='{$imageData['sizes']}'";
+        echo "alt='{$imageData['alt']}' />";
+    }
 }

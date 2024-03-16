@@ -1,6 +1,6 @@
 {
     "key": "group_65d52d1f70597",
-    "title": "Casino Details New",
+    "title": "Casino Details N",
     "fields": [
         {
             "key": "field_65d52d1f75e33",
@@ -33,7 +33,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -334,5 +334,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708470578
+    "modified": 1710583835
 }
