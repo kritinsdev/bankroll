@@ -62,7 +62,7 @@
         {
             "key": "field_65fdf14795215",
             "label": "Hero Settings",
-            "name": "page_hero",
+            "name": "page_hero_settings",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -197,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711146214
+    "modified": 1711147329
 }
