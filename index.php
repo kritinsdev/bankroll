@@ -1,20 +1,18 @@
-   <?php
+<?php
 
-   use Bankroll\Blocks\BlocksController;
-   use Bankroll\Includes\View\TemplateHelpers;
+use Bankroll\Blocks\BlocksController;
+use Bankroll\Includes\View\TemplateHelpers;
 
-   $blockController = new BlocksController(get_the_ID());
-   $template = !empty(get_queried_object()->post_type) ? get_queried_object()->post_type : null;
-   ?>
+?>
 
-   <?php TemplateHelpers::getTemplatePart("global", "header"); ?>
+<?php TemplateHelpers::getTemplatePart("global", "header"); ?>
 
-   <?php TemplateHelpers::getTemplatePart("global", "navigation"); ?>
+<?php TemplateHelpers::getTemplatePart("global", "navigation"); ?>
 
-   <?php TemplateHelpers::getTemplatePart("hero", "$template"); ?>
+<?php TemplateHelpers::getTemplatePart("hero", "page"); ?>
 
-   <main>
-      <?php $blockController->printBlocks(); ?>
-   </main>
+    <main>
+        <?php (new BlocksController(get_the_ID()))->printBlocks(); ?>
+    </main>
 
-   <?php TemplateHelpers::getTemplatePart("global", "footer"); ?>
+<?php TemplateHelpers::getTemplatePart("global", "footer"); ?>

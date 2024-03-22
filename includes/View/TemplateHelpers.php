@@ -9,7 +9,10 @@ class TemplateHelpers
         $partial = "parts/{$folder}/"  . $part;
 
         if (file_exists(BANKROLL_DIR . '/' . $partial . '.php')) {
-            get_template_part($partial, null, $data);
+            get_template_part(
+                slug: $partial,
+                args: $data
+            );
         }
     }
 

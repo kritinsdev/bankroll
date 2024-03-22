@@ -1,9 +1,3 @@
-<?php
-
-use Bankroll\Includes\View\Parts;
-
-?>
-
 <div class="hero">
     <div class="hero-wrap">
         <div class="hero-information">
