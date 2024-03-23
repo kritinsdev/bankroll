@@ -67,28 +67,6 @@
             "append": ""
         },
         {
-            "key": "field_65d52e2a643f0",
-            "label": "Rating",
-            "name": "cpt_casino_rating",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 9,
-            "min": 1,
-            "max": 10,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_65d530a98a0d0",
             "label": "Website",
             "name": "cpt_casino_webiste",
@@ -283,7 +261,7 @@
         },
         {
             "key": "field_65d531108a0d1",
-            "label": "Games \/ Slots",
+            "label": "Ratings",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -297,6 +275,50 @@
             },
             "placement": "left",
             "endpoint": 0
+        },
+        {
+            "key": "field_65ff4c61b73e7",
+            "label": "Rating Global",
+            "name": "cpt_casino_rating_global",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65ff4c86b73e8",
+            "label": "Rating - Trust & Fairness",
+            "name": "cpt_casino_rating_trust_fairness",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_65d53123be17c",
@@ -334,5 +356,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710583835
+    "modified": 1711230125
 }
