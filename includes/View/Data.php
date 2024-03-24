@@ -13,7 +13,12 @@ class Data
         return [
             'title' => get_field("{$type}_hero_title", $id),
             'text' => get_field("{$type}_hero_text", $id),
-            'settings' => get_field("{$type}_hero_settings", $id)
+            'settings' => get_field("{$type}_hero_settings", $id),
+            'image' => Components::imageData(get_field("{$type}_hero_settings", $id)['content_image']),
+            'background_image' => wp_get_attachment_image_src(
+                get_field("{$type}_hero_settings", $id)['background_image'],
+                'bankroll-background'
+            ),
         ];
     }
 }

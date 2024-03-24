@@ -1,7 +1,12 @@
 <?php
+
+use Bankroll\Includes\View\Components;
+
 $hero = $args;
+
+var_dump($hero);
 ?>
-<div class="hero">
+<div class="hero" style="background-image:url('<?php echo $hero['background_image'][0]; ?>')">
     <div class="hero-wrap">
         <div class="hero-main">
             <h1 class="hero-title">
@@ -10,10 +15,10 @@ $hero = $args;
             <div class="hero-text">
                 <?php echo $hero['text']; ?>
             </div>
-        </div>
 
-        <div>
-            <?php var_dump($hero['settings']); ?>
+            <div>
+                <?php Components::image($hero['image']); ?>
+            </div>
         </div>
     </div>
 </div>
