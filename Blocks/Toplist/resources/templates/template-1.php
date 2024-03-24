@@ -1,13 +1,13 @@
 <?php
 
-use Bankroll\Includes\Helpers;
+use Bankroll\Includes\View\Components;
 
 $toplist_item = $args;
 ?>
 
 <div class="toplist-item">
     <div>
-        <?php Helpers::image($toplist_item['image'], 'toplist-image'); ?>
+        <?php Components::image($toplist_item['image'], ['toplist-image']); ?>
     </div>
     <div>
         <div><?php echo $toplist_item['main_bonus']['first_line'] ?></div>

@@ -92,9 +92,20 @@ class Bonus
 
     public function setAffiliateLink()
     {
-        $name = Helpers::generateShortname(get_the_title($this->bonus_for_id));
+        $name = $this->generateShortname(get_the_title($this->bonus_for_id));
 
         $this->affiliate_link = "/visit/{$name}/{$this->bonus_type}";
+    }
+
+    private function generateShortname(string $input)
+    {
+        $formatted = preg_replace('/\s+/', '_', $input);
+
+        $formatted = preg_replace('/[^A-Za-z0-9_]/', '', $formatted);
+
+        $formatted = strtolower($formatted);
+
+        return $formatted;
     }
 
     public function data(): array

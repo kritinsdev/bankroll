@@ -4,6 +4,7 @@ namespace Bankroll\Blocks\Content;
 
 use Bankroll\Blocks\DefaultBlock;
 use Bankroll\Includes\Helpers;
+use Bankroll\Includes\View\Components;
 
 class Content extends DefaultBlock
 {
@@ -16,7 +17,7 @@ class Content extends DefaultBlock
     {
         $this->prepared_data['block_content_editor'] = $data['block_content_editor'];
         $this->prepared_data['enable_image'] = $data['block_content_settings']['enable_image'];
-        $this->prepared_data['image'] = Helpers::parseImageArray($data['block_content_settings']['image_settings']['image']);
+        $this->prepared_data['image'] = Components::imageData($data['block_content_settings']['image_settings']['image']);
         $this->prepared_data['image_placement'] = $data['block_content_settings']['image_settings']['image_placement'];
     }
 
@@ -161,7 +162,7 @@ class Content extends DefaultBlock
                                     'class' => '',
                                     'id' => '',
                                 ),
-                                'return_format' => 'array',
+                                'return_format' => 'id',
                                 'library' => 'all',
                                 'min_width' => '',
                                 'min_height' => '',

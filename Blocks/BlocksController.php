@@ -10,7 +10,7 @@ class BlocksController
         $this->setDefaults();
     }
 
-    public function printBlocks(): void
+    public function output(): void
     {
         $postId = $this->resolvePostId();
 

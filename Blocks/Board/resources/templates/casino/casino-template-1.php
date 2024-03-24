@@ -1,6 +1,6 @@
 <?php
 
-use Bankroll\Includes\Helpers;
+use Bankroll\Includes\View\Components;
 
 $casino = $args;
 
@@ -12,7 +12,7 @@ $casino = $args;
     </div>
 
     <div>
-        <?php Helpers::image($casino['image']); ?>
+        <?php Components::image($casino['image']); ?>
     </div>
 
     <div>

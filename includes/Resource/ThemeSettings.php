@@ -3,10 +3,11 @@
 namespace Bankroll\Includes\Resource;
 
 use Bankroll\Includes\Helpers;
+use Bankroll\Includes\View\Components;
 
 class ThemeSettings
 {
-    public array $logo = [];
+    public array $logo;
     public string $prefix = 'bankroll';
     public string $color;
 
@@ -19,7 +20,8 @@ class ThemeSettings
     private function setDefaults()
     {
         $this->color = "#ebebf2";
-        $this->logo = !empty(get_field("{$this->prefix}_logo", 'option')) ? Helpers::parseImageArray(get_field("{$this->prefix}_logo", 'option')) : [];
+
+        $this->logo = Components::imageData(get_field("{$this->prefix}_logo", 'option'));
     }
 
     public function getSiteLogo(): array

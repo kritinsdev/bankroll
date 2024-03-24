@@ -1,13 +1,13 @@
 <?php
 
-use Bankroll\Includes\View\TemplateHelpers;
+use Bankroll\Includes\View\Template;
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#" data-theme="default">
 
-<?php TemplateHelpers::getTemplatePart('global', 'head'); ?>
+<?php Template::templatePart('global', 'head'); ?>
 
 <body <?php body_class(); ?>>
     <?php include_once BANKROLL_DIR . '/svg.php'; ?>

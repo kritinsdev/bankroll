@@ -1,9 +1,9 @@
 <?php
 
-use Bankroll\Includes\Helpers;
-use Bankroll\Includes\MenuWalker;
 use Bankroll\Includes\Resource\ThemeSettings;
-use Bankroll\Includes\View\TemplateHelpers;
+use Bankroll\Includes\Setup\MenuWalker;
+use Bankroll\Includes\View\Components;
+use Bankroll\Includes\View\Template;
 
 /** @var ThemeSettings $themeSettings */
 global $themeSettings;
@@ -12,7 +12,7 @@ global $themeSettings;
 <header id="header" class="header">
     <div class="header-wrap">
         <div class="header-logo">
-            <?php TemplateHelpers::getTemplatePart('global', 'logo', $themeSettings->getSiteLogo()); ?>
+            <?php Template::templatePart('global', 'logo', $themeSettings->getSiteLogo()); ?>
         </div>
 
         <?php
@@ -26,7 +26,12 @@ global $themeSettings;
         ]);
         ?>
         <div class="header-controls">
-            <?php TemplateHelpers::svgIcon(width: 24, icon: 'magnifyingGlass', class: 'header-controls-search icon icon-bg', color: $themeSettings->color); ?>
+            <?php Components::svgIcon(
+                width: 24,
+                icon: 'magnifyingGlass',
+                class: 'header-controls-search icon icon-bg',
+                color: $themeSettings->color
+            ); ?>
         </div>
     </div>
 </header>

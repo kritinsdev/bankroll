@@ -2,20 +2,20 @@
 
 use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\Factory\CasinoFactory;
-use Bankroll\Includes\View\TemplateHelpers;
+use Bankroll\Includes\View\Template;
 
 $blockController = new BlocksController(get_the_ID());
 $casino = CasinoFactory::create(get_the_id());
 ?>
 
-<?php TemplateHelpers::getTemplatePart("global", "header"); ?>
+<?php Template::templatePart("global", "header"); ?>
 
-<?php TemplateHelpers::getTemplatePart("global", "navigation"); ?>
+<?php Template::templatePart("global", "navigation"); ?>
 
-<?php TemplateHelpers::getTemplatePart("hero", "casino"); ?>
+<?php Template::templatePart("hero", "casino"); ?>
 
 <main>
-   <?php $blockController->printBlocks(); ?>
+   <?php $blockController->output(); ?>
 </main>
 
-<?php TemplateHelpers::getTemplatePart("global", "footer"); ?>
+<?php Template::templatePart("global", "footer"); ?>

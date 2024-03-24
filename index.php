@@ -1,22 +1,23 @@
 <?php
 
 use Bankroll\Blocks\BlocksController;
-use Bankroll\Includes\View\TemplateHelpers;
+use Bankroll\Includes\View\Template;
+use Bankroll\Includes\View\Data;
 
 ?>
 
-<?php TemplateHelpers::getTemplatePart("global", "header"); ?>
+<?php Template::templatePart("global", "header"); ?>
 
-<?php TemplateHelpers::getTemplatePart("global", "navigation"); ?>
+<?php Template::templatePart("global", "navigation"); ?>
 
-<?php TemplateHelpers::getTemplatePart(
+<?php Template::templatePart(
     "hero",
     "page",
-    TemplateHelpers::prepareHeroData(get_the_ID())
+    Data::prepareHero(get_the_ID())
 ); ?>
 
     <main>
-        <?php (new BlocksController(get_the_ID()))->printBlocks(); ?>
+        <?php (new BlocksController(get_the_ID()))->output(); ?>
     </main>
 
-<?php TemplateHelpers::getTemplatePart("global", "footer"); ?>
+<?php Template::templatePart("global", "footer"); ?>
