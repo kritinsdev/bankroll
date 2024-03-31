@@ -1,22 +1,40 @@
 .hero {
     padding:var(--spacing-block) 0;
 
-    .hero-wrap {
+    &__wrap {
         @extend .container;
-        border-radius: var(--border-radius);
+        gap:var(--spacing-default);
         display: flex;
         flex-direction: column;
     }
 
-    .hero-information {
+    &__main {
+        display: flex;
+        flex-direction: column;
+
+        @include mq('tablet') {
+            flex-direction: row;
+        }
     }
 
-    .hero-title {
+    &__info {
+        @include mq('tablet') {
+            width: 66.66%;
+        }
+    }
+
+    &__title {
         font-size: 38px;
         line-height: 38px;
     }
     
-    .hero-text {
+    &__text {
         line-height: 24px;
+    }
+
+    &__extra {
+        flex:1;
+        display: flex;
+        justify-content: center;
     }
 }
