@@ -22,13 +22,16 @@ class Init
         // AjaxFunctions::get_instance();
         // DisablePosts::get_instance();
 
-        new RegisterMailer();
+//        new RegisterMailer();
         new RegisterBlocks();
 
         $this->setupHooks();
         $this->disableComments();
-    }
 
+        add_action('save_post', [$this, 'onLinkSave'], 10, 2);
+        add_action('manage_affiliate_link_posts_custom_column', [$this, 'customLinkColumnData'], 10, 2);
+        add_filter('manage_affiliate_link_posts_columns', [$this, 'addCustomColumnsForLinks']);
+    }
 
     protected function setupHooks(): void
     {
@@ -124,5 +127,47 @@ class Init
     {
         global $themeSettings;
         $themeSettings = new ThemeSettings();
+    }
+
+    public function onLinkSave(int $id, \WP_Post $post, bool $update)
+    {
+        if ($post->post_type === 'affiliate_link') {
+            $postId = $post->ID;
+            $title = get_field('acf_link_description', $postId);
+
+            $post->post_title = "$title";
+
+            remove_action('save_post', [$this, 'onLinkSave']);
+            wp_update_post($post);
+            add_action('save_post', [$this, 'onLinkSave'], 10, 3);
+        }
+    }
+
+    public function addCustomColumnsForLinks($columns)
+    {
+        unset($columns['date']);
+        unset($columns['title']);
+        $columns['description'] = 'Description';
+        $columns['url'] = 'Url';
+
+        return $columns;
+    }
+
+    public function customLinkColumnData($column, $postId)
+    {
+        $description = !empty(get_field('acf_link_description', $postId)) ? get_field('acf_link_description', $postId) : '-';
+        $url = !empty(get_field('acf_link_url', $postId)) ? get_field('acf_link_url', $postId) : '-';
+        $admin_url = admin_url('post.php?post=' . $postId) . '&action=edit';
+
+        switch ($column) {
+            case 'description':
+                echo "<a class='row-title' href='{$admin_url}'>" . $description . "</a>";
+                break;
+            case 'url':
+                echo "<a href='{$url}'>" . $url . "</a>";
+                break;
+            default:
+                break;
+        }
     }
 }

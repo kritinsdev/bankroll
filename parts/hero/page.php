@@ -4,12 +4,6 @@ use Bankroll\Includes\View\Components;
 
 $hero = $args;
 
-echo '<pre>';
-
-print_r($hero);
-
-echo '</pre>';
-
 ?>
 <div class="hero" style="background-image:url('<?php echo $hero['background_image'][0]; ?>')">
     <div class="hero__wrap">
@@ -26,10 +20,6 @@ echo '</pre>';
             <div class="hero__extra">
                 <?php Components::image($hero['image']); ?>
             </div>
-        </div>
-
-        <div>
-
         </div>
     </div>
 </div>

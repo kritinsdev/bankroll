@@ -27,13 +27,6 @@ function dump(mixed $value, bool $die = false)
     }
 }
 
-function __se(mixed $var)
-{
-    if (isset($var) && !empty($var)) {
-        echo $var;
-    }
-}
-
 if (!function_exists('write_log')) {
 
     function write_log($log)
@@ -47,59 +40,6 @@ if (!function_exists('write_log')) {
         }
     }
 }
-
-// AFFILIATE LINKS CPT FUNCTIONALITY
-//
-//
-function onLinkSave(int $id, \WP_Post $post, bool $update)
-{
-    if ($post->post_type === 'affiliate_link') {
-        $postId = $post->ID;
-        $title = get_field('acf_link_description', $postId);
-
-        $post->post_title = "$title";
-
-        remove_action('save_post', 'onLinkSave');
-        wp_update_post($post);
-        add_action('save_post', 'onLinkSave', 10, 3);
-    }
-}
-add_action('save_post', 'onLinkSave', 10, 3);
-
-function addCustomColumnsForLinks($columns)
-{
-    unset($columns['date']);
-    unset($columns['title']);
-    $columns['description'] = 'Description';
-    $columns['url'] = 'Url';
-
-    return $columns;
-}
-add_filter('manage_affiliate_link_posts_columns', 'addCustomColumnsForLinks');
-
-function customLinkColumnData($column, $postId)
-{
-    $description = !empty(get_field('acf_link_description', $postId)) ? get_field('acf_link_description', $postId) : '-';
-    $url = !empty(get_field('acf_link_url', $postId)) ? get_field('acf_link_url', $postId) : '-';
-    $admin_url = admin_url('post.php?post=' . $postId) . '&action=edit';
-
-    switch ($column) {
-        case 'description':
-            echo "<a class='row-title' href='{$admin_url}'>" . $description . "</a>";
-            break;
-        case 'url':
-            echo "<a href='{$url}'>" . $url . "</a>";
-            break;
-        default:
-            break;
-    }
-}
-add_action('manage_affiliate_link_posts_custom_column', 'customLinkColumnData', 10, 2);
-
-// END AFFILIATE LINKS CPT FUNCTIONALITY
-//
-//
-
 
 // BONUS CPT FUNCTIONALITY
 //
@@ -157,6 +97,10 @@ add_filter('manage_bonus_posts_columns', 'addCustomColumnForBonus');
 function customBonusColumnData($column, $postId)
 {
     $casinoId = get_field('cpt_bonus_for_id', $postId);
+
+    $affiliateLinkIdRaw = get_field('cpt_bonus_link', $postId);
+    $affiliateLinkUrl = !empty($affiliateLinkIdRaw) ? get_field('acf_link_url', $affiliateLinkIdRaw[0]) : null;
+
     $bonusType = !empty(BonusType::fromName(get_field('cpt_bonus_type', $postId))) ?
         BonusType::fromName(get_field('cpt_bonus_type', $postId)) :
         '';
@@ -176,7 +120,7 @@ function customBonusColumnData($column, $postId)
             echo "<a href='{$postUrl}'>{$title}</a>";
             break;
         case 'affiliate_link':
-            echo 'FILL THIS';
+            echo !empty($affiliateLinkUrl) ? $affiliateLinkUrl : '-';
             break;
         case 'bonus_type':
             echo $bonusType;
