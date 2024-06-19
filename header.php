@@ -10,4 +10,3 @@ use Bankroll\Includes\View\Template;
 <?php Template::templatePart('global', 'head'); ?>
 
 <body <?php body_class(); ?>>
-    <?php include_once BANKROLL_DIR . '/svg.php'; ?>

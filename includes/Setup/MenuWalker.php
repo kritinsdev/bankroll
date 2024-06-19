@@ -99,7 +99,7 @@ class MenuWalker extends \Walker_Nav_Menu
         }
 
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '</a><i class="submenu-icon fa-solid fa-angle-down"></i></div>';
+            $item_output .= '</a><i class="fi fi-rr-caret-down"></i></div>';
         } else {
             $item_output .= '</a>';
         }

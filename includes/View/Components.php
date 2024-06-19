@@ -4,34 +4,10 @@ namespace Bankroll\Includes\View;
 
 class Components
 {
-    public static function svgIcon(
-        string $icon,
-        mixed  $width = 20,
-        string $color = '#000',
-        string $class = null
-    ): void
-    {
-        if (empty($icon)) {
-            return;
-        }
-
-        if (!empty($class)) {
-            $class = "<div class='{$class}'>";
-        }
-
-        $iconHtml = !empty($class) ? $class : "<div>";
-        $iconHtml .= "<svg width='{$width}' height='{$width}' color='{$color}'>";
-        $iconHtml .= "<use xlink:href='#{$icon}' />";
-        $iconHtml .= "</svg>";
-        $iconHtml .= "</div>";
-
-        echo $iconHtml;
-    }
-
     public static function imageData(
         ?int $id,
         $size = 'bankroll-image'
-    ): ?array
+    ): array
     {
         if(empty($id)) {
             return [];

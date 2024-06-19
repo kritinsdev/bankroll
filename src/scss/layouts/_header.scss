@@ -21,6 +21,7 @@
     height: var(--header-height);
     display: flex;
     align-items: center;
+    gap:var(--spacing-default);
 }
 
 .header-nav {
@@ -28,12 +29,17 @@
 
     @include mq('desktop') {
         display: flex;
+        height: 100%;
+        gap:var(--spacing-default);
     }
 
     li {
         list-style-type: none;
+        display: flex;
+        align-items: center;
+
         a {
-            padding:var(--spacing-default);
+            display: flex;
             color:var(--color-anchor-header-menu);
         }
     }
@@ -57,7 +63,6 @@
     position: relative;
 
     .trigger {
-        padding:var(--spacing-default);
         display: flex;
         justify-content: space-between;
         align-items: center;

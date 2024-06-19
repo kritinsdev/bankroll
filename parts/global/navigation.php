@@ -26,12 +26,7 @@ global $themeSettings;
         ]);
         ?>
         <div class="header-controls">
-            <?php Components::svgIcon(
-                width: 24,
-                icon: 'magnifyingGlass',
-                class: 'header-controls-search icon icon-bg',
-                color: $themeSettings->color
-            ); ?>
+            <i class="fi fi-rs-search"></i>
         </div>
     </div>
 </header>

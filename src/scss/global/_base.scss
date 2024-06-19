@@ -53,15 +53,8 @@ h6 {
     margin-bottom: var(--spacing-default);
 }
 
-.icon {
-    cursor: pointer;
-
-    &.icon-bg {
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        padding:var(--spacing-sm)
-    }
+i {
+    display: flex;
 }
 
 p {

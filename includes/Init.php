@@ -27,10 +27,6 @@ class Init
 
         $this->setupHooks();
         $this->disableComments();
-
-        add_action('save_post', [$this, 'onLinkSave'], 10, 2);
-        add_action('manage_affiliate_link_posts_custom_column', [$this, 'customLinkColumnData'], 10, 2);
-        add_filter('manage_affiliate_link_posts_columns', [$this, 'addCustomColumnsForLinks']);
     }
 
     protected function setupHooks(): void
@@ -45,6 +41,11 @@ class Init
         add_filter('comments_open', '__return_false', 20, 2);
         add_filter('pings_open', '__return_false', 20, 2);
         add_filter('comments_array', '__return_empty_array', 10, 2);
+
+
+        add_action('save_post', [$this, 'onLinkSave'], 10, 3);
+        add_action('manage_affiliate_link_posts_custom_column', [$this, 'customLinkColumnData'], 10, 2);
+        add_filter('manage_affiliate_link_posts_columns', [$this, 'addCustomColumnsForLinks']);
     }
 
     public function setupTheme(): void
@@ -129,20 +130,6 @@ class Init
         $themeSettings = new ThemeSettings();
     }
 
-    public function onLinkSave(int $id, \WP_Post $post, bool $update)
-    {
-        if ($post->post_type === 'affiliate_link') {
-            $postId = $post->ID;
-            $title = get_field('acf_link_description', $postId);
-
-            $post->post_title = "$title";
-
-            remove_action('save_post', [$this, 'onLinkSave']);
-            wp_update_post($post);
-            add_action('save_post', [$this, 'onLinkSave'], 10, 3);
-        }
-    }
-
     public function addCustomColumnsForLinks($columns)
     {
         unset($columns['date']);
@@ -168,6 +155,20 @@ class Init
                 break;
             default:
                 break;
+        }
+    }
+
+    public function onLinkSave(int $id, \WP_Post $post, bool $update)
+    {
+        if ($post->post_type === 'affiliate_link') {
+            $postId = $post->ID;
+            $title = get_field('acf_link_description', $postId);
+
+            $post->post_title = "$title";
+
+            remove_action('save_post', [$this, 'onLinkSave']);
+            wp_update_post($post);
+            add_action('save_post', [$this, 'onLinkSave'], 10, 3);
         }
     }
 }

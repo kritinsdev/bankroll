@@ -79,6 +79,7 @@ function onBonusPostSave(int $id, \WP_Post $post, bool $update)
         add_action('save_post', 'onBonusPostSave', 10, 3);
     }
 }
+
 add_action('save_post', 'onBonusPostSave', 10, 3);
 
 function addCustomColumnForBonus($columns)
@@ -92,6 +93,7 @@ function addCustomColumnForBonus($columns)
 
     return $columns;
 }
+
 add_filter('manage_bonus_posts_columns', 'addCustomColumnForBonus');
 
 function customBonusColumnData($column, $postId)
@@ -133,6 +135,7 @@ function customBonusColumnData($column, $postId)
             break;
     }
 }
+
 add_action('manage_bonus_posts_custom_column', 'customBonusColumnData', 10, 2);
 // END BONUS CPT FUNCTIONALITY
 //
@@ -148,6 +151,7 @@ function my_acf_fields_relationship_query($args, $field, $post_id)
 
     return $args;
 }
+
 add_filter('acf/fields/relationship/query/name=cpt_casino_related_bonuses', 'my_acf_fields_relationship_query', 10, 3);
 
 // HIDE FIELD FROM BONUS ADMIN PANEL
@@ -160,6 +164,7 @@ function hideBonusFields()
     }
     </style>';
 }
+
 add_action('admin_head', 'hideBonusFields');
 
 function deleteExpiredBonuses()
@@ -186,6 +191,7 @@ function deleteExpiredBonuses()
         }
     }
 }
+
 add_action('init', 'deleteExpiredBonuses');
 
 // LOAD BONUS TYPES
