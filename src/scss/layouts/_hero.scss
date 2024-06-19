@@ -1,4 +1,5 @@
 .hero {
+    background-color: #44066e;
     padding:var(--spacing-block) 0;
 
     &__wrap {
@@ -19,7 +20,7 @@
 
     &__info {
         @include mq('tablet') {
-            width: 66.66%;
+            width: 50%;
         }
     }
 

@@ -11,11 +11,11 @@ class BoardLoadMore {
 
     events() {
         for(const board of this.boards) {
-            board.addEventListener('click', this.loadMorePosts.bind(this));
+            board.addEventListener('click', this.loadMorePosts);
         }
     }
 
-    loadMorePosts(e) {
+    loadMorePosts = (e) => {
         const loadMoreWrap = e.target.closest('#boardLoadMore');
 
         if(loadMoreWrap) {

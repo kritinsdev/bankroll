@@ -5,7 +5,7 @@ use Bankroll\Includes\View\Components;
 $hero = $args;
 
 ?>
-<div class="hero" style="background-image:url('<?php echo $hero['background_image'][0]; ?>')">
+<div class="hero">
     <div class="hero__wrap">
         <div class="hero__main">
             <div class="hero__info">

@@ -2,7 +2,6 @@
 
 use Bankroll\Includes\Resource\ThemeSettings;
 use Bankroll\Includes\Setup\MenuWalker;
-use Bankroll\Includes\View\Components;
 use Bankroll\Includes\View\Template;
 
 /** @var ThemeSettings $themeSettings */
