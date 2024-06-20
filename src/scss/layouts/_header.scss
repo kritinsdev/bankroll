@@ -1,20 +1,25 @@
 :root {
-    --header-height:80px;
+    --header-height:68px;
 }
 
 .header {
     width: 100%;
     position: fixed;
+    background-color: transparent;
     top: 0;
     left: 0;
     z-index: 3;
+    transition: background-color .3s;
+
+    &.active {
+        background-color: #44066e;
+    }
 }
 
 .header-logo {
-
     img {
         max-width: 200px;
-        height: auto;
+        max-height: 36px;
     }
 }
 

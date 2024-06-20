@@ -1,6 +1,6 @@
 .hero {
     background-color: #44066e;
-    padding:var(--spacing-block) 0;
+    padding:100px 0 40px 0;
 
     &__wrap {
         @extend .container;
@@ -12,6 +12,7 @@
     &__main {
         display: flex;
         flex-direction: column;
+        color:var(--color-text-light);
 
         @include mq('tablet') {
             flex-direction: row;

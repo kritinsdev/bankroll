@@ -5,7 +5,6 @@ class MobileMenu {
         this.header = document.querySelector('#header');
         this.menuBtn = header.querySelector('#mobileMenu');
         this.navigation = header.querySelector('#headerNav');
-        this.searchBtn = header.querySelector('#siteSearch');
         this.searchInput = header.querySelector('#siteSearchInput');
         this.submenuParentItem = header.querySelectorAll('.has-submenu');
         this.menuOpen = false;

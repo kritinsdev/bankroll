@@ -14,7 +14,7 @@ class Enqueue
     public function __construct()
     {
         add_action('wp_enqueue_scripts', [$this, 'styles']);
-        // add_action('wp_enqueue_scripts', [$this, 'scripts']);
+         add_action('wp_enqueue_scripts', [$this, 'scripts']);
     }
 
     public function styles()

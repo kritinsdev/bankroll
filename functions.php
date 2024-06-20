@@ -61,6 +61,7 @@ function onBonusPostSave(int $id, \WP_Post $post, bool $update)
         $bonus_type = !empty(BonusType::fromName(get_field('cpt_bonus_type', $post_id))) ?
             BonusType::fromName(get_field('cpt_bonus_type', $post_id)) :
             '';
+
         $title = '';
 
         if (!empty($casino_id)) {
