@@ -6,18 +6,14 @@ $hero = $args;
 ?>
 
 <div class="hero">
-    <div class="hero-wrap">
-        <div class="hero-main">
-            <h1 class="hero-title">
-                <?php echo $hero['title']; ?>
-            </h1>
-            <div class="hero-text">
-                <?php echo $hero['text']; ?>
-            </div>
+    <div class="hero__wrap">
+        <div class="breadcrumbs">
+            <div>Home</div>
+            <div><i class="fi fi-bs-angle-small-right"></i></div>
+            <div>Current Page</div>
         </div>
+        <div class="">
 
-        <div>
-            <?php var_dump($hero['settings']); ?>
         </div>
     </div>
 </div>

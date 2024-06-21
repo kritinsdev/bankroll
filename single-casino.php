@@ -1,21 +1,20 @@
 <?php
 
 use Bankroll\Blocks\BlocksController;
-use Bankroll\Includes\Factory\CasinoFactory;
 use Bankroll\Includes\View\Template;
 
-$blockController = new BlocksController(get_the_ID());
-$casino = CasinoFactory::create(get_the_id());
-?>
+$cassy = \Bankroll\Includes\Factory\CasinoFactory::create(get_the_ID());
+echo '<pre>';
+print_r($cassy);
 
-<?php Template::templatePart("global", "header"); ?>
+Template::templatePart("global", "header");
 
-<?php Template::templatePart("global", "navigation"); ?>
+Template::templatePart("global", "navigation");
 
-<?php Template::templatePart("hero", "casino"); ?>
+Template::templatePart("hero", "casino", []); ?>
 
-<main>
-   <?php $blockController->output(); ?>
-</main>
+    <main>
+        <?php (new BlocksController(get_the_ID()))->output(); ?>
+    </main>
 
 <?php Template::templatePart("global", "footer"); ?>

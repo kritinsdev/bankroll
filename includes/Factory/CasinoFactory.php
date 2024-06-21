@@ -9,6 +9,7 @@ class CasinoFactory
     public static array $fields_map = [
         'setTitle' => '',
         'setPermalink' => '',
+        'setRatings' => '',
         'setImage' => 'cpt_casino_featured_image',
         'setBonuses' => 'cpt_casino_related_bonuses',
     ];

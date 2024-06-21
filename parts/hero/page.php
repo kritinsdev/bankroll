@@ -18,7 +18,9 @@ $hero = $args;
             </div>
 
             <div class="hero__extra">
-                <?php Components::image($hero['image']); ?>
+                <?php if (!empty($hero['image'])) : ?>
+                    <?php Components::image($hero['image']); ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

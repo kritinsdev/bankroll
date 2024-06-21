@@ -16,6 +16,8 @@ class Casino
     public string $title;
     public string $permalink;
     public array $image = [];
+
+    public array $ratings = [];
     public array $bonuses = [];
     public array $main_bonus = [];
     public array $payment_methods = [];
@@ -43,6 +45,15 @@ class Casino
     public function setPermalink()
     {
         $this->permalink = get_the_permalink($this->id);
+    }
+
+    public function setRatings(): void
+    {
+        $keys = ['global', 'trust_fairness', 'bonus_offers', 'games', 'payments'];
+
+        foreach ($keys as $key) {
+            $this->ratings[$key] = get_post_meta($this->id, "cpt_casino_rating_$key", true);
+        }
     }
 
     public function setBonuses(array $bonus_ids): void

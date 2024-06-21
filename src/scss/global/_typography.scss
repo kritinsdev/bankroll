@@ -1,7 +1,7 @@
 body {
   color:var(--text-color-primary);
   font-size: var(--font-size-default);
-  font-family: var(--font-primary);
+  font-family: var(--font-primary),system-ui,-apple-system,"Segoe UI","Roboto","Ubuntu","Cantarell","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 h1, h2, h3, h4, h5, h6 {

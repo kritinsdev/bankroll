@@ -12,7 +12,11 @@
     transition: background-color .3s;
 
     &.active {
-        background-color: #44066e;
+        background-color: var(--color-primary);
+    }
+
+    i {
+        color:var(--color-text-light);
     }
 }
 
@@ -38,7 +42,7 @@
     @include mq('desktop') {
         display: flex;
         height: 100%;
-        gap:var(--spacing-default);
+        gap:calc(var(--spacing-default) * 2);
     }
 
     li {

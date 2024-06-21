@@ -1,6 +1,6 @@
 .hero {
-    background-color: #44066e;
-    padding:100px 0 40px 0;
+    background: var(--color-hero-bg);
+    padding:100px 0;
 
     &__wrap {
         @extend .container;
@@ -26,12 +26,13 @@
     }
 
     &__title {
-        font-size: 38px;
-        line-height: 38px;
+        font-size: 48px;
+        line-height: 48px;
     }
     
     &__text {
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 18px;
     }
 
     &__extra {

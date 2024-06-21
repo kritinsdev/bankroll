@@ -313,19 +313,19 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "min": 1,
+            "max": 5,
             "placeholder": "",
             "step": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_65d53123be17c",
-            "label": "Responsible Gaming",
-            "name": "",
+            "key": "field_6675d3654fbb9",
+            "label": "Rating - Bonus Offers",
+            "name": "cpt_casino_rating_bonus_offers",
             "aria-label": "",
-            "type": "tab",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -334,8 +334,57 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
-            "endpoint": 0
+            "default_value": "",
+            "min": 1,
+            "max": 5,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6675ea9e4fbba",
+            "label": "Rating - Games",
+            "name": "cpt_casino_rating_games",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 5,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6675eab44fbbb",
+            "label": "Rating - Payments",
+            "name": "cpt_casino_rating_payments",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 5,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -356,5 +405,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711230125
+    "modified": 1719004967
 }
