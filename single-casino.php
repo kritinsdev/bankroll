@@ -6,14 +6,14 @@ use Bankroll\Includes\View\Template;
 
 $casino = CasinoFactory::create(get_the_ID());
 
-Template::getTemplate("global", "header");
+Template::get("global", "header");
 
-Template::getTemplate("global", "navigation");
+Template::get("global", "navigation");
 
-Template::getTemplate("hero", "casino", $casino->toArray()); ?>
+Template::get("hero", "casino", $casino->toArray()); ?>
 
     <main>
         <?php (new BlocksController(get_the_ID()))->output(); ?>
     </main>
 
-<?php Template::getTemplate("global", "footer"); ?>
+<?php Template::get("global", "footer"); ?>

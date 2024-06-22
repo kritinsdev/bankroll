@@ -27,9 +27,6 @@ class Enqueue
 
         wp_register_style('main', $this->assets_dir . 'main.css', [], current_time('timestamp'));
         wp_enqueue_style('main');
-
-        wp_register_style('theme-colors', $this->assets_dir . 'theme-' . $this->color_theme . '.css', [], current_time('timestamp'));
-        wp_enqueue_style('theme-colors');
     }
 
     public function scripts()

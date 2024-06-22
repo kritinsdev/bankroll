@@ -27,14 +27,12 @@ class Components
             return;
         }
 
-        $default_class = ['default-image'];
+        $default_class = [];
 
         if(!empty($class_list)) {
             $imageData['class'] = array_merge($default_class, $class_list);
-        } else {
-            $imageData['class'] = $default_class;
         }
 
-        Template::getTemplate('global', 'image', $imageData);
+        Template::get('global', 'image', $imageData);
     }
 }

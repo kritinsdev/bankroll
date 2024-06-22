@@ -18,7 +18,6 @@ class MenuWalker extends \Walker_Nav_Menu
         // Default class.
         $classes = ['submenu'];
 
-
         $class_names = implode(' ', $classes);
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 

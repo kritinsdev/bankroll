@@ -4,11 +4,11 @@ use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\View\Template;
 use Bankroll\Includes\View\Data;
 
-Template::getTemplate("global", "header");
+Template::get("global", "header");
 
-Template::getTemplate("global", "navigation");
+Template::get("global", "navigation");
 
-Template::getTemplate(
+Template::get(
     "hero",
     "page",
     Data::prepareHero(get_the_ID())
@@ -18,4 +18,4 @@ Template::getTemplate(
         <?php (new BlocksController(get_the_ID()))->output(); ?>
     </main>
 
-<?php Template::getTemplate("global", "footer"); ?>
+<?php Template::get("global", "footer"); ?>
