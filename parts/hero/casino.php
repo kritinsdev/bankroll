@@ -2,7 +2,8 @@
 
 use Bankroll\Includes\View\Parts;
 
-$hero = $args;
+$data = $args;
+
 ?>
 
 <div class="hero">

@@ -35,6 +35,6 @@ class Components
             $imageData['class'] = $default_class;
         }
 
-        Template::templatePart('global', 'image', $imageData);
+        Template::getTemplate('global', 'image', $imageData);
     }
 }

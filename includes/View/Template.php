@@ -4,7 +4,7 @@ namespace Bankroll\Includes\View;
 
 class Template
 {
-    public static function templatePart(string $folder, string $part = '', array $data = []): void
+    public static function getTemplate(string $folder, string $part = '', array $data = []): void
     {
         $partial = "parts/{$folder}/" . $part;
 

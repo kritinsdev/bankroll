@@ -11,7 +11,7 @@ global $themeSettings;
 <header id="header" class="header">
     <div class="header-wrap">
         <div class="header-logo">
-            <?php Template::templatePart('global', 'logo', $themeSettings->getSiteLogo()); ?>
+            <?php Template::getTemplate('global', 'logo', $themeSettings->getSiteLogo()); ?>
         </div>
 
         <?php
