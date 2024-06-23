@@ -27,7 +27,7 @@ class Components
             return;
         }
 
-        $default_class = [];
+        $default_class = ['flex'];
 
         if(!empty($class_list)) {
             $imageData['class'] = array_merge($default_class, $class_list);

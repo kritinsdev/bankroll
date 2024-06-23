@@ -4,6 +4,7 @@ namespace Bankroll\Includes\Resource;
 
 use Bankroll\Includes\Helpers;
 use Bankroll\Includes\View\Components;
+use Bankroll\Includes\View\Data;
 
 class ThemeSettings
 {
@@ -21,7 +22,7 @@ class ThemeSettings
     {
         $this->color = "#ebebf2";
 
-        $this->logo = Components::imageData(get_field("{$this->prefix}_logo", 'option'));
+        $this->logo = Data::prepareImage(get_field("{$this->prefix}_logo", 'option'));
     }
 
     public function getSiteLogo(): array
