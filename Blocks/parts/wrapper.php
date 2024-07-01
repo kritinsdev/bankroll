@@ -1,19 +1,15 @@
-<div class="block <?php echo $args['class']; ?>" <?php echo $args['background_color']; ?>>
-    <div class="container-narrow">
+<div class="py-8 block <?php echo $args['class']; ?>" <?php echo $args['background_color']; ?>>
+    <div class="w-full mx-auto max-w-[1240px] px-4 md:px-0">
         <?php if (!empty($args['settings']['block_title'])) : ?>
-            <div class="block-title">
-                <h2>
-                    <?php echo $args['settings']['block_title']; ?>
-                </h2>
-            </div>
+            <h2 class="text-[24px] font-bold">
+                <?php echo $args['settings']['block_title']; ?>
+            </h2>
         <?php endif; ?>
 
         <?php if (!empty($args['settings']['block_subtitle'])) : ?>
-            <div class="block-subtitle">
-                <span>
+                <p class="text-[18px]">
                     <?php echo $args['settings']['block_subtitle']; ?>
-                </span>
-            </div>
+                </p>
         <?php endif; ?>
 
         <?php if (!empty($args['settings']['block_content_before'])) : ?>

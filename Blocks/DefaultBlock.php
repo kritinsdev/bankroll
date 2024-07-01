@@ -7,7 +7,7 @@ use Bankroll\Includes\Traits\RegisterDefaultFields;
 
 abstract class DefaultBlock implements BlockInterface
 {
-    use RegisterDefaultFields;
+//    use RegisterDefaultFields;
 
     protected string $view_folder;
     protected array $prepared_data = [];
@@ -17,7 +17,7 @@ abstract class DefaultBlock implements BlockInterface
     ) {
     }
 
-    abstract public function registerSubFields(): array;
+//    abstract public function registerSubFields(): array;
 
     abstract public function prepareData(array|false $block_data): void;
 
@@ -46,7 +46,7 @@ abstract class DefaultBlock implements BlockInterface
     public function enqueue(): void
     {
         $js_file_path = BANKROLL_DIR . "/dist/{$this->block_key}-js.js";
-        $css_file_path = BANKROLL_DIR . "/dist/{$this->block_key}-css.css";
+//        $css_file_path = BANKROLL_DIR . "/dist/{$this->block_key}-css.css";
 
         if (file_exists($js_file_path)) {
             wp_enqueue_script(
@@ -61,14 +61,14 @@ abstract class DefaultBlock implements BlockInterface
             );
         }
 
-        if (file_exists($css_file_path)) {
-            wp_enqueue_style(
-                "{$this->block_key}-css",
-                BANKROLL_ASSETS_URL . "/{$this->block_key}-css.css",
-                array(),
-                '1.0.0',
-            );
-        }
+//        if (file_exists($css_file_path)) {
+//            wp_enqueue_style(
+//                "{$this->block_key}-css",
+//                BANKROLL_ASSETS_URL . "/{$this->block_key}-css.css",
+//                array(),
+//                '1.0.0',
+//            );
+//        }
     }
 
     public function registerAjax(): void

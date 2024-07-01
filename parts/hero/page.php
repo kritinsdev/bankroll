@@ -5,23 +5,18 @@ use Bankroll\Includes\View\Components;
 $hero = $args;
 
 ?>
-<div class="hero">
-    <div class="hero__wrap">
-        <div class="hero__main">
-            <div class="hero__info">
-                <h1 class="hero__title">
-                    <?php echo $hero['title']; ?>
-                </h1>
-                <div class="hero__text">
-                    <?php echo $hero['text']; ?>
-                </div>
-            </div>
+<div class="py-8 bg-[#1a1a1a]">
+    <div class="w-full mx-auto max-w-[1240px]">
+        <h1 class="text-[48px] font-bold text-white">
+            <?php echo $hero['title']; ?>
+        </h1>
 
-            <div class="hero__extra">
-                <?php if (!empty($hero['image'])) : ?>
-                    <?php Components::image($hero['image']); ?>
-                <?php endif; ?>
-            </div>
+        <div class="text-white">
+            <?php echo $hero['text']; ?>
         </div>
+
+        <?php if (!empty($hero['image'])) : ?>
+            <?php Components::image($hero['image']); ?>
+        <?php endif; ?>
     </div>
 </div>

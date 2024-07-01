@@ -1,7 +1,6 @@
 <?php
 
 use Bankroll\Includes\View\Components;
-
 ?>
 
 <div class="content-block image-<?php echo $args['image_placement']; ?>">

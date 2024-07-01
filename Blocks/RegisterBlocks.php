@@ -13,6 +13,22 @@ class RegisterBlocks
         $this->registerBlocks();
     }
 
+    private function registerLocationForCpts(): array
+    {
+        $supported_cpts = ['page', 'casino', 'payment_method'];
+        $location = [];
+
+        foreach ($supported_cpts as $cpt) {
+            $location[][] = [
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => $cpt
+            ];
+        }
+
+        return $location;
+    }
+
     public function registerBlocks()
     {
         if (!function_exists('acf_add_local_field_group')) {
@@ -56,28 +72,12 @@ class RegisterBlocks
         ));
     }
 
-    private function registerLocationForCpts(): array
-    {
-        $supported_cpts = ['page', 'casino', 'payment_method'];
-        $location = [];
-
-        foreach ($supported_cpts as $cpt) {
-            $location[][] = [
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => $cpt
-            ];
-        }
-
-        return $location;
-    }
-
     private function registerLayouts(): array
     {
         return [
-            (new Board('board'))->register(),
-            (new Toplist('toplist'))->register(),
-            (new Content('content'))->register(),
+//            (new Board('board'))->register(),
+//            (new Toplist('toplist'))->register(),
+//            (new Content('content'))->register(),
         ];
     }
 }

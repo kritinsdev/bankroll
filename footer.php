@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container">
+    <div class="w-full mx-auto max-w-[1240px]">
         <div class="footer-content">
             <div class="footer-menu">
                 <div class="footer-menu__title">Payment Methods</div>

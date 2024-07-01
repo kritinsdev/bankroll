@@ -6,7 +6,8 @@ class BlocksController
 {
     public function __construct(
         public \WP_Post|int $post
-    ) {
+    )
+    {
         $this->setDefaults();
     }
 
@@ -23,14 +24,13 @@ class BlocksController
         }
     }
 
-
     private function resolveBlock(array $data): void
     {
         $block_data = $this->resolveBlockData($data);
-        $class = "Bankroll\Blocks\\{$block_data['layout']['folder']}";
+        $block = "Bankroll\Blocks\\{$block_data['layout']['folder']}";
 
-        if (class_exists($class)) {
-            $class = new $class(
+        if (class_exists($block)) {
+            $class = new $block(
                 $block_data['layout']['block'],
             );
 
@@ -48,8 +48,6 @@ class BlocksController
                 $block_data['layout']['class'],
                 $block_data['block_settings']
             );
-        } else {
-            "$class doesnt exist";
         }
     }
 

@@ -16,7 +16,7 @@ class MenuWalker extends \Walker_Nav_Menu
         $indent = str_repeat($t, $depth);
 
         // Default class.
-        $classes = ['submenu'];
+        $classes = ['submenu hidden'];
 
         $class_names = implode(' ', $classes);
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
@@ -80,9 +80,8 @@ class MenuWalker extends \Walker_Nav_Menu
             $item_output = $args->before;
         }
 
-        // TODO : add menu icons here
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '<div class="trigger js-open-submenu"><a' . $attributes . '>';
+            $item_output .= '<div class="flex items-center gap-2"><a' . $attributes . '>';
         } else {
             $item_output .= '<a' . $attributes . '>';
         }
@@ -98,7 +97,7 @@ class MenuWalker extends \Walker_Nav_Menu
         }
 
         if ( ! empty($args->walker->has_children)) {
-            $item_output .= '</a><i class="fi fi-rr-caret-down"></i></div>';
+            $item_output .= '</a><span class="icon-[material-symbols--keyboard-arrow-down]"></span></div>';
         } else {
             $item_output .= '</a>';
         }
