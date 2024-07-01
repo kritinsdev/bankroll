@@ -3,7 +3,8 @@ const { addDynamicIconSelectors } = require('@iconify/tailwind');
 module.exports = {
     content: [
         "./**/*.php",
-        "./**/**/*.php",
+        "./Blocks/**/*.php",
+        "./Blocks/resources/templates/*.php",
         "./src/**/*.js",
     ],
     theme: {

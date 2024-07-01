@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    .block {
-        ul, ol {
-            list-style: revert;
-        }
+    .block ul, .block ol {
+        list-style: revert;
     }
 }
