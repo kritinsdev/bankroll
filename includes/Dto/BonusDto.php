@@ -7,7 +7,6 @@ use Bankroll\Includes\Traits\ToArray;
 readonly class BonusDto
 {
     use ToArray;
-
     public function __construct(
         public int $id,
         public ?string $bonus_type,
