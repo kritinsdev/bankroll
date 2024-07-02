@@ -6,13 +6,13 @@ $casino = $args;
 
 ?>
 
-<div class="casino-item">
+<div class="flex flex-col gap-4 p-4 border border-[#eeeeeee]">
     <div>
         <?php echo $casino['title']; ?>
     </div>
 
     <div>
-        <?php Components::image($casino['image']); ?>
+        <?php Components::image($casino['image'], ['max-w-[180px]']); ?>
     </div>
 
     <div>

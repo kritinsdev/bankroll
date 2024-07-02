@@ -5,7 +5,7 @@ if (empty($args['items'])) {
 ?>
 
 <div class="board board--<?php echo $args['post_type']; ?>">
-    <div class="<?php echo $args['post_type']; ?>-items">
+    <div class="flex gap-4">
         <?php foreach ($args['items'] as $post) : ?>
             <?php get_template_part(
                 slug: "Blocks/Board/resources/templates/{$args['post_type']}/{$args['post_type']}-template-1",

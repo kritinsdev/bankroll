@@ -2,6 +2,8 @@
 
 namespace Bankroll\Includes\Resource;
 
+use Bankroll\Includes\Factory\CasinoFactory;
+use Bankroll\Includes\Traits\ToArray;
 use Carbon\Carbon;
 use Bankroll\Includes\Dto\BonusDto;
 use Bankroll\Includes\Traits\HasImage;
@@ -11,8 +13,8 @@ use Bankroll\Includes\Helpers;
 class Bonus
 {
     use HasImage;
+    use ToArray;
     use Link;
-
     public int $id;
     public string $bonus_type;
     public ?int $bonus_for_id;
@@ -116,16 +118,16 @@ class Bonus
             $dto = new BonusDto(
                 id: $this->id,
                 bonus_type: $this->bonus_type,
+                first_line: $this->first_line,
                 bonus_for_id: $this->bonus_for_id,
                 affiliate_link: $this->affiliate_link,
-                first_line: $this->first_line,
                 second_line: $this->second_line,
                 bonus_value: $this->bonus_value,
                 free_spins_value: $this->free_spins_value,
                 description: $this->description,
                 promo_code: $this->promo_code,
-                start_date: $this->start_date ? $this->start_date->format('d/m/Y') : null,
-                end_date: $this->end_date ? $this->end_date->format('d/m/Y') : null
+                start_date: $this->start_date?->format('d/m/Y'),
+                end_date: $this->end_date?->format('d/m/Y')
             );
         }
 
