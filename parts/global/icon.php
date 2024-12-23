@@ -1,0 +1,1 @@
+<span class="<?php echo $args['icon']; ?> size-<?php echo $args['size']; ?> <?php echo $args['color']; ?>"></span>

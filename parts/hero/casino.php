@@ -1,7 +1,5 @@
 <?php
 
-use Bankroll\Includes\View\Parts;
-
 $data = $args;
 
 ?>

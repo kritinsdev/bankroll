@@ -1,10 +1,6 @@
 <?php
 
-namespace Bankroll\Blocks;
-
-use Bankroll\Blocks\Board\Board;
-use Bankroll\Blocks\Content\Content;
-use Bankroll\Blocks\Toplist\Toplist;
+namespace unused;
 
 class RegisterBlocks
 {

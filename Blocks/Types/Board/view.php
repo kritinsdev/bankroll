@@ -8,7 +8,7 @@ if (empty($args['items'])) {
     <div class="flex gap-4">
         <?php foreach ($args['items'] as $post) : ?>
             <?php get_template_part(
-                slug: "Blocks/Board/resources/templates/{$args['post_type']}/{$args['post_type']}-template-1",
+                slug: "Blocks/Types/Board/resources/templates/{$args['post_type']}/{$args['post_type']}-template-1",
                 args: $post->toArray()
             ); ?>
         <?php endforeach; ?>

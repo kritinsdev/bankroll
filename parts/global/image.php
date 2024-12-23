@@ -1,27 +1,27 @@
 <?php
-$imageData = $args;
+$data = $args;
 
-if (empty($imageData['src'])) {
+if (empty($data['src'])) {
     return;
 }
 
-$image = "<img src='" . esc_attr($imageData['src'][0]) . "'";
+$image = "<img src='" . esc_attr($data['src'][0]) . "'";
 
-if (!empty($imageData['class'])) {
-    $classes = implode(' ', $imageData['class']);
+if (!empty($data['class'])) {
+    $classes = implode(' ', $data['class']);
     $image .= " class='" . esc_attr($classes) . "'";
 }
 
-if (!empty($imageData['srcset'])) {
-    $image .= " srcset='" . esc_attr($imageData['srcset']) . "'";
+if (!empty($data['srcset'])) {
+    $image .= " srcset='" . esc_attr($data['srcset']) . "'";
 }
 
-if (!empty($imageData['sizes'])) {
-    $image .= " sizes='" . esc_attr($imageData['sizes']) . "'";
+if (!empty($data['sizes'])) {
+    $image .= " sizes='" . esc_attr($data['sizes']) . "'";
 }
 
-if (!empty($imageData['alt'])) {
-    $image .= " alt='" . esc_attr($imageData['alt']) . "' />";
+if (!empty($data['alt'])) {
+    $image .= " alt='" . esc_attr($data['alt']) . "' />";
 } else {
     $image .= "/>";
 }

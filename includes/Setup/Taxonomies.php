@@ -17,6 +17,14 @@ class Taxonomies
         //     'publicly_queryable' => true,
         //     'hierarchical' => true
         // ],
+//         'author' => [
+//             'singular' => 'Author',
+//             'plural' => 'Authors',
+//             'slug' => 'author',
+//             'supports' => ['casino'],
+//             'publicly_queryable' => true,
+//             'hierarchical' => true
+//         ],
     ];
 
     protected function __construct()

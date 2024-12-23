@@ -1,6 +1,6 @@
 <?php
 
-namespace Bankroll\Blocks\Blank;
+namespace unused\Blank;
 
 use Bankroll\Blocks\BlockInterface;
 
@@ -28,7 +28,7 @@ class Blank implements BlockInterface
             );
     }
 
-    public function prepareData(array $block_data): array
+    public function prepareData(array|false $block_data): array
     {
         $prepared_data = [];
 

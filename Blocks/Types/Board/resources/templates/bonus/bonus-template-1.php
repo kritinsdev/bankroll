@@ -1,4 +1,6 @@
 <?php
+
+use Bankroll\Includes\View\Components;
 //[id] => 291
 //[bonus_type] => main_bonus
 //[bonus_for_id] => 61
@@ -15,22 +17,25 @@
 
 <div class="border border-[#eeeeee] p-4">
     <div>
-        <?php echo $args['bonus_type']; ?>
+		<?php Components::image( $args['image'], [ 'w-20' ] ); ?>
+    </div>
+    <div>
+		<?php echo $args['bonus_type']; ?>
     </div>
 
     <div>
-        <?php echo $args['first_line']; ?>
+		<?php echo $args['first_line']; ?>
     </div>
 
     <div>
-        <?php echo $args['second_line']; ?>
+		<?php echo $args['second_line']; ?>
     </div>
 
     <div>
-        <?php echo $args['description']; ?>
+		<?php echo $args['description']; ?>
     </div>
 
     <div>
-        <?php echo $args['promo_code']; ?>
+		<?php echo $args['promo_code']; ?>
     </div>
 </div>

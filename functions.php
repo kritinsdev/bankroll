@@ -7,6 +7,7 @@ use Bankroll\Includes\Factory\CasinoFactory;
 define('BANKROLL_DIR', get_stylesheet_directory());
 define('BANKROLL_DIR_URI', get_stylesheet_directory_uri());
 define('BANKROLL_ASSETS_URL', BANKROLL_DIR_URI . '/dist');
+define('BANKROLL_VER', wp_get_theme()->version);
 
 require_once('vendor/autoload.php');
 
@@ -17,7 +18,7 @@ function _ts($string)
     return $string;
 }
 
-function dump(mixed $value, bool $die = false)
+function brdd(mixed $value, bool $die = false)
 {
     echo "<pre>";
     var_dump($value);
@@ -198,8 +199,7 @@ add_action('init', 'deleteExpiredBonuses');
 // LOAD BONUS TYPES
 function loadBonusTypes($field)
 {
-    $field['choices'] = array();
-
+    $field['choices'] = [];
     $bonus_types = [];
 
     $cases = BonusType::cases();
@@ -222,3 +222,63 @@ function loadBonusTypes($field)
 }
 
 add_filter('acf/load_field/name=cpt_bonus_type', 'loadBonusTypes');
+
+function customize_flexible_content_titles($title, $field, $layout, $i) {
+	$custom_title = get_sub_field('block_settings')['block_title'];
+
+	if ($custom_title) {
+		return sprintf('%s [%s]', $layout['label'], $custom_title);
+	}
+
+	return $title;
+}
+add_filter('acf/fields/flexible_content/layout_title', 'customize_flexible_content_titles', 10, 4);
+
+// Allow SVG
+add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+
+	global $wp_version;
+	if ( $wp_version !== '4.7.1' ) {
+		return $data;
+	}
+
+	$filetype = wp_check_filetype( $filename, $mimes );
+
+	return [
+		'ext'             => $filetype['ext'],
+		'type'            => $filetype['type'],
+		'proper_filename' => $data['proper_filename']
+	];
+
+}, 10, 4 );
+
+// UPLOAD SVG
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+function fix_svg() {
+	echo '<style type="text/css">
+        .attachment-266x266, .thumbnail img {
+             width: 100% !important;
+             height: auto !important;
+        }
+        </style>';
+}
+add_action( 'admin_head', 'fix_svg' );
+
+// POPULATE ACF SELECT WITH ICONS
+add_filter('acf/load_field/name=bankroll_icons', function($field) {
+	$field['choices'] = [
+		'icon-[material-symbols--arrow-drop-down-circle-rounded]' => 'Circle arrow down',
+		'icon-[emojione-v1--crown]' => 'Crown',
+		'icon-[ph--alarm-duotone]' => 'Alarm',
+		'icon-[material-symbols-light--poker-chip-rounded]' => 'Chip',
+		'icon-[ic--baseline-star]' => 'Star',
+		'icon-[teenyicons--star-circle-solid]' => 'Bg Round Star'
+	];
+
+	return $field;
+});

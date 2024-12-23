@@ -18,24 +18,24 @@ class BlocksController
         $blocks = get_field('blocks', $postId);
 
         if (!empty($postId) && !empty($blocks)) {
-            foreach ($blocks as $block_data) {
-                $this->resolveBlock($block_data);
+            foreach ($blocks as $blockData) {
+                $this->resolveBlock($blockData);
             }
         }
     }
 
     private function resolveBlock(array $data): void
     {
-        $block_data = $this->resolveBlockData($data);
-        $block = "Bankroll\Blocks\\{$block_data['layout']['folder']}";
+        $blockData = $this->resolveBlockData($data);
+        $blockClass = "Bankroll\\Blocks\\{$blockData['layout']['folder']}";
 
-        if (class_exists($block)) {
-            $class = new $block(
-                $block_data['layout']['block'],
+        if (class_exists($blockClass)) {
+            $class = new $blockClass(
+                $blockData['layout']['block'],
             );
 
             $class->init();
-            $class->prepareData($block_data['block_data']);
+            $class->prepareData($blockData['block_data']);
 
             ob_start();
 
@@ -45,25 +45,18 @@ class BlocksController
 
             $this->wrapBlock(
                 $template,
-                $block_data['layout']['class'],
-                $block_data['block_settings']
+                $blockData['layout']['class'],
+                $blockData['block_settings']
             );
         }
     }
 
     private function wrapBlock(string $template, string $class, ?array $settings): void
     {
-        $background_color = '';
-
-        if (!empty($settings['block_background_color'])) {
-            $background_color = "style='background-color:{$settings['block_background_color']}'";
-        }
-
         get_template_part('Blocks/parts/wrapper', null, [
             'template' => $template,
             'settings' => $settings,
             'class' => $class,
-            'background_color' => $background_color,
         ]);
     }
 
@@ -72,9 +65,10 @@ class BlocksController
         $resolved_data = [];
 
         $folder = ucfirst(ltrim(strstr($data['acf_fc_layout'], '_'), '_'));
+
         $resolved_data['layout'] = [
             'block' => str_replace('block_', '', $data['acf_fc_layout']),
-            'folder' => "$folder\\$folder",
+            'folder' => "Types\\$folder\\$folder",
             'class' => str_replace('_', '-', $data['acf_fc_layout']),
         ];
 

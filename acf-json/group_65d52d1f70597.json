@@ -1,6 +1,6 @@
 {
     "key": "group_65d52d1f70597",
-    "title": "Casino Details N",
+    "title": "Casino Details",
     "fields": [
         {
             "key": "field_65d52d1f75e33",
@@ -385,6 +385,113 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_668a5e267d0c0",
+            "label": "Pros\/Cons",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_668a5e396cf84",
+            "label": "Casino pros",
+            "name": "cpt_casino_pros",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Pro",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_668a5ef06cf86",
+                    "label": "Pro",
+                    "name": "item",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668a5e396cf84"
+                }
+            ]
+        },
+        {
+            "key": "field_668a5edf6cf85",
+            "label": "Casino cons",
+            "name": "cpt_casino_cons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Con",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_668a5f176cf87",
+                    "label": "Con",
+                    "name": "item",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668a5edf6cf85"
+                }
+            ]
         }
     ],
     "location": [
@@ -405,5 +512,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719004967
+    "modified": 1720349869
 }

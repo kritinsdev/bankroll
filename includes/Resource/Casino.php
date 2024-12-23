@@ -59,7 +59,6 @@ class Casino
     public function setBonuses(array $bonus_ids): void
     {
         if (!empty($bonus_ids)) {
-
             $existing_bonuses = [];
             foreach ($bonus_ids as $id) {
                 if (get_post_status($id)) {

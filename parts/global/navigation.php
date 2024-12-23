@@ -9,9 +9,15 @@ global $themeSettings;
 
 ?>
 
-<header class="bg-[#1a1a1a] flex items-center justify-between h-[72px] border-b border-[#333333] px-4">
+<header class="absolute left-0 w-full transparent flex items-center justify-between h-[72px] px-4">
     <div class="flex gap-8 items-center">
-        <?php Components::image($themeSettings->getSiteLogo(), ['max-h-[36px]']); ?>
+        <a href="/">
+            <?php if (!empty($themeSettings->getSiteLogo())) : ?>
+                <?php Components::image($themeSettings->getSiteLogo(), ['max-h-[36px]']); ?>
+            <?php else : ?>
+                <div class="font-bold text-white text-[36px]">Bank<span class="text-red-500">Roll</span></div>
+            <?php endif; ?>
+        </a>
 
         <?php
         wp_nav_menu([

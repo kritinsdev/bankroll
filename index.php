@@ -2,7 +2,7 @@
 
 use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\View\Template;
-use Bankroll\Includes\View\Data;
+use Bankroll\Includes\View\Helpers;
 
 Template::get("global", "header");
 
@@ -11,7 +11,7 @@ Template::get("global", "navigation");
 Template::get(
     "hero",
     "page",
-    Data::prepareHero(get_the_ID())
+    Helpers::prepareHeroData(get_the_ID())
 ); ?>
 
     <main>

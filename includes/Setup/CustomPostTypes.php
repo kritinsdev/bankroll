@@ -57,13 +57,13 @@ class CustomPostTypes
 //            'has_archive' => false,
 //            'supports' => ['title'],
 //        ],
-//        'payment_method' => [
-//            'singular' => 'Payment Method',
-//            'plural' => 'Payment Methods',
-//            'slug' => 'payment-method',
-//            'supports' => ['title'],
-//            'taxonomies' => []
-//        ],
+        'payment_method' => [
+            'singular' => 'Payment Method',
+            'plural' => 'Payment Methods',
+            'slug' => 'payment-method',
+            'supports' => ['title'],
+            'taxonomies' => []
+        ],
 //        'software' => [
 //            'singular' => 'Software Provider',
 //            'plural' => 'Software Providers',

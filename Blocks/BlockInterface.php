@@ -4,7 +4,7 @@ namespace Bankroll\Blocks;
 
 interface BlockInterface
 {
-    public function registerSubFields(): array;
+//    public function registerSubFields(): array;
 
     public function prepareData(array|false $data): void;
 

@@ -2,9 +2,11 @@
 
 namespace Bankroll\Includes\View;
 
-class Data
+use Bankroll\Includes\Factory\BonusFactory;
+
+class Helpers
 {
-    public static function prepareImage(
+    public static function prepareImageData(
         ?int $id,
              $size = 'bankroll-image'
     ): array
@@ -20,7 +22,7 @@ class Data
 
         return $imageData;
     }
-    public static function prepareHero(int $id, string $type = 'page'): ?array
+    public static function prepareHeroData(int $id, string $type = 'page'): ?array
     {
         if (empty($id)) {
             return null;
@@ -32,15 +34,26 @@ class Data
                     'a' => 'b'
                 ];
             default:
+				$settings = get_field("{$type}_hero_settings", $id);
+				$bonuses = [];
+
+				if(!empty($settings['bonuses'])) {
+					foreach ($settings['bonuses'] as $bonusId) {
+						$bonuses[] = BonusFactory::create($bonusId)->toArray();
+					}
+				}
+
                 return [
-                    'title' => get_field("{$type}_hero_title", $id),
+	                'title' => get_field("{$type}_hero_title", $id),
+	                'headline' => get_field("{$type}_hero_headline", $id),
                     'text' => get_field("{$type}_hero_text", $id),
-                    'settings' => get_field("{$type}_hero_settings", $id),
-                    'image' => Data::prepareImage(get_field("{$type}_hero_settings", $id)['content_image']),
+                    'core_pages' => $settings['core_pages'],
+	                'bonuses' => $bonuses,
+                    'image' => Helpers::prepareImageData(get_field("{$type}_hero_settings", $id)['content_image']),
                     'background_image' => wp_get_attachment_image_src(
                         get_field("{$type}_hero_settings", $id)['background_image'],
                         'bankroll-background'
-                    ),
+                    ), // TODO fix usage
                 ];
         }
     }

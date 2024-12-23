@@ -12,6 +12,7 @@ readonly class BonusDto
         public ?string $bonus_type,
         public ?string $first_line,
         public ?int $bonus_for_id,
+		public array $image = [],
         public ?string $affiliate_link = null,
         public ?string $second_line = null,
         public ?int $bonus_value = null,

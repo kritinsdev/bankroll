@@ -2,11 +2,8 @@
 
 namespace Bankroll\Includes;
 
-use Bankroll\Blocks\RegisterBlocks;
-use Bankroll\Includes\Ajax\AjaxFunctions;
 use Bankroll\Includes\Resource\ThemeSettings;
-use Bankroll\Includes\Setup\{InitACF, CustomPostTypes, Taxonomies, Menus, Enqueue, DisablePosts, RegisterMailer};
-use PHPMailer\PHPMailer\PHPMailer;
+use Bankroll\Includes\Setup\{CustomPostTypes, Enqueue, InitACF, Menus, Taxonomies};
 
 class Init
 {
@@ -36,6 +33,7 @@ class Init
         add_action('init', [$this, 'disableEmojis']);
         add_action('init', [$this, 'removeImageSizes']);
         add_action('init', [$this, 'addBankrollImageSizes']);
+
         add_action('after_setup_theme', [$this, 'setupTheme']);
         add_filter('use_block_editor_for_post', '__return_false', 10);
         add_filter('comments_open', '__return_false', 20, 2);
