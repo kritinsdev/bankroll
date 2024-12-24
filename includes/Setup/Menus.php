@@ -21,11 +21,11 @@ class Menus
     public function registerMenus()
     {
         register_nav_menus([
-            'primary-menu' => 'Primary Menu',
-            'footer-1'     => 'First Footer Menu',
-            'footer-2'     => 'Second Footer Menu',
-            'footer-3'     => 'Third Footer Menu',
-            'footer-4'     => 'Fourth Footer Menu',
+            'primary_menu' => 'Primary Menu',
+            'footer_1'     => 'First Footer Menu',
+            'footer_2'     => 'Second Footer Menu',
+            'footer_3'     => 'Third Footer Menu',
+            'footer_4'     => 'Fourth Footer Menu',
         ]);
     }
 }

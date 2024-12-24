@@ -21,11 +21,11 @@ global $themeSettings;
 
         <?php
         wp_nav_menu([
-            'menu' => 'primary-menu',
+            'menu' => 'primary_menu',
             'container' => 'ul',
             'menu_class' => 'flex gap-4 text-white hidden md:flex',
             'menu_id' => null,
-            'theme_location' => 'primary-menu',
+            'theme_location' => 'primary_menu',
             'walker' => new MenuWalker(),
         ]);
         ?>

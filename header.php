@@ -1,12 +1,12 @@
 <?php
 
-use Bankroll\Includes\View\Template;
+use Bankroll\Includes\View\Helpers;
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#" data-theme="default">
 
-<?php Template::get('global', 'head'); ?>
+<?php Helpers::getTemplate('global', 'head'); ?>
 
 <body <?php body_class(); ?>>

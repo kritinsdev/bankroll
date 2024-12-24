@@ -1,14 +1,13 @@
 <?php
 
 use Bankroll\Blocks\BlocksController;
-use Bankroll\Includes\View\Template;
 use Bankroll\Includes\View\Helpers;
 
-Template::get("global", "header");
+Helpers::getTemplate("global", "header");
 
-Template::get("global", "navigation");
+Helpers::getTemplate("global", "navigation");
 
-Template::get(
+Helpers::getTemplate(
     "hero",
     "page",
     Helpers::prepareHeroData(get_the_ID())
@@ -18,4 +17,4 @@ Template::get(
         <?php (new BlocksController(get_the_ID()))->output(); ?>
     </main>
 
-<?php Template::get("global", "footer"); ?>
+<?php Helpers::getTemplate("global", "footer"); ?>

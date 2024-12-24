@@ -26,7 +26,7 @@ $faqs = [
 			<div
 				@click="open = !open"
 				class="flex justify-between items-center py-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
-				:aria-expanded="open"
+                aria-expanded="open"
 				role="button"
 			>
 				<h3 class="text-lg font-medium text-gray-900">

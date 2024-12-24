@@ -31,11 +31,11 @@ class Components {
 			$data['class'] = array_merge( $class, $classes );
 		}
 
-		Template::get( 'global', 'image', $data );
+		Helpers::getTemplate( 'global', 'image', $data );
 	}
 
 	public static function icon( string $icon, int $size = 10, string $color = 'text-white' ) {
-		Template::get( 'global', 'icon', [
+		Helpers::getTemplate( 'global', 'icon', [
 			'icon'  => $icon,
 			'size'  => $size,
 			'color' => $color,
