@@ -16,23 +16,25 @@ class CasinoFactory
 
     public static function create(\WP_Post|int $post): Casino
     {
-        $resource = new Casino();
+        $casino = new Casino();
         $id = (is_int($post)) ? $post : $post->ID;
-        $resource->setId($id);
+        $casino->setId($id);
 
         foreach (self::$fields_map as $action => $field_data) {
-            if (method_exists($resource, $action)) {
+            if (method_exists($casino, $action)) {
                 $value = !empty(get_field($field_data, $id)) ? get_field($field_data, $id) : null;
 
                 if (!empty($value)) {
-                    $resource->$action($value);
+                    $casino->$action($value);
                 } else {
-                    $resource->$action();
+                    $casino->$action();
                 }
             }
         }
 
 
-        return $resource;
+//		$casino->getBonuses();
+
+        return $casino;
     }
 }

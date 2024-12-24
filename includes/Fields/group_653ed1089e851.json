@@ -1,0 +1,123 @@
+{
+    "key": "group_653ed1089e851",
+    "title": "Details - TOPLIST",
+    "fields": [
+        {
+            "key": "field_653ed108ab242",
+            "label": "Select casinos",
+            "name": "toplist_items",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_676b3806d452c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "casino"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_676b3806d452c",
+            "label": "Select specific bonus type",
+            "name": "toplist_specific_type",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_676b2a3a41557",
+            "label": "Bonus type",
+            "name": "toplist_bonus_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_676b3806d452c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "main_bonus": "Main bonus",
+                "welcome_bonus": "Welcome bonus",
+                "first_deposit_bonus": "First deposit bonus",
+                "no_deposit_bonus": "No deposit bonus",
+                "cashback_bonus": "Cashback bonus",
+                "free_spins_bonus": "Free spins bonus",
+                "reload_bonus": "Reload bonus",
+                "wagering_bonus": "Wagering bonus",
+                "custom_bonus": "Custom bonus"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "toplist"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1735080221
+}

@@ -8,12 +8,12 @@ use Bankroll\Includes\View\Helpers;
 use Carbon\Carbon;
 use Bankroll\Includes\Dto\BonusDto;
 use Bankroll\Includes\Traits\HasImage;
-use Bankroll\Includes\Traits\Link;
+use Bankroll\Includes\Traits\HasLink;
 
 class Bonus {
 	use HasImage;
 	use ToArray;
-	use Link;
+	use HasLink;
 
 	public int $id;
 	public string $bonus_type;
@@ -27,10 +27,12 @@ class Bonus {
 	public ?int $bonus_value;
 	public ?int $free_spins_value;
 	public array $image = [];
+	public ?string $tncText;
+	public ?string $tncLink;
 	public ?Carbon $start_date = null;
 	public ?Carbon $end_date = null;
 
-	public function setId( int $id ) {
+	public function setId( int $id ): void {
 		$this->id = $id;
 	}
 
@@ -39,8 +41,8 @@ class Bonus {
 	}
 
 	public function setImage(): void {
-		$imageData = get_field('cpt_casino_featured_image', $this->bonus_for_id);
-		$this->image = Components::imageData($imageData);
+		$imageData   = get_field( 'cpt_casino_featured_image', $this->bonus_for_id );
+		$this->image = Components::imageData( $imageData );
 	}
 
 	public function setBonusForId( ?int $id = null ): void {
@@ -73,6 +75,16 @@ class Bonus {
 
 	public function setPromoCode( ?string $promo_code = null ): void {
 		$this->promo_code = $promo_code;
+	}
+
+	public function setTncText(?string $text = null): void
+	{
+		$this->tncText = $text;
+	}
+
+	public function setTncLink(?string $link = null): void
+	{
+		$this->tncLink = $link;
 	}
 
 	public function setStartDate( string $start_date = null ): void {
@@ -122,7 +134,9 @@ class Bonus {
 				description: $this->description,
 				promo_code: $this->promo_code,
 				start_date: $this->start_date?->format( 'd/m/Y' ),
-				end_date: $this->end_date?->format( 'd/m/Y' )
+				end_date: $this->end_date?->format( 'd/m/Y' ),
+				tncText: $this->tncText,
+				tncLink: $this->tncLink,
 			);
 		}
 

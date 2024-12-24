@@ -99,6 +99,26 @@
             "new_lines": ""
         },
         {
+            "key": "field_676aaad818752",
+            "label": "Small text",
+            "name": "footer_small_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_676a947807ded",
             "label": "Footer images",
             "name": "footer_images",
@@ -167,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735039891
+    "modified": 1735043821
 }

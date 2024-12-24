@@ -22,6 +22,8 @@ readonly class BonusDto
         public ?string $promo_code = null,
         public ?string $start_date = null,
         public ?string $end_date = null,
+	    public ?string $tncText = '',
+	    public ?string $tncLink = '',
     ) {
     }
 }

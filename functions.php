@@ -269,16 +269,30 @@ function fix_svg() {
 }
 add_action( 'admin_head', 'fix_svg' );
 
-// POPULATE ACF SELECT WITH ICONS
+// POPULATE toplist_bonus_type field with choices
+add_filter('acf/load_field/name=toplist_bonus_type', function($field) {
+	$field['choices'] = BonusType::populateBonusChoices();
+
+	return $field;
+});
+
+// POPULATE ICONS ACF SELECT WITH ICONS
 add_filter('acf/load_field/name=bankroll_icons', function($field) {
 	$field['choices'] = [
-		'icon-[material-symbols--arrow-drop-down-circle-rounded]' => 'Circle arrow down',
 		'icon-[emojione-v1--crown]' => 'Crown',
-		'icon-[ph--alarm-duotone]' => 'Alarm',
 		'icon-[material-symbols-light--poker-chip-rounded]' => 'Chip',
 		'icon-[ic--baseline-star]' => 'Star',
-		'icon-[teenyicons--star-circle-solid]' => 'Bg Round Star'
+		'icon-[noto-v1--baseball]' => 'Baseball',
+		'icon-[fluent-emoji--soccer-ball]' => 'Football',
+		'icon-[noto--american-football]' => 'American football',
+		'icon-[noto-v1--game-die]' => 'Dice',
+		'icon-[streamline-emojis--basketball]' => 'Basketball',
 	];
 
 	return $field;
 });
+
+function fieldsSaveFolder( $path ) {
+	return BANKROLL_DIR . '/Includes/Fields';
+}
+add_filter( 'acf/settings/save_json', 'fieldsSaveFolder' );

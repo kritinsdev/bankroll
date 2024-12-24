@@ -2,7 +2,7 @@
 
 namespace Bankroll\Includes\Traits;
 
-trait Link
+trait HasLink
 {
     public function getLink(int $id): string
     {

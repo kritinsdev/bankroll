@@ -12,19 +12,44 @@ class Toplist extends AbstractBlock
         parent::__construct($block_key);
     }
 
-    public function prepareData(array|false $block_data): void
+    public function prepareData(array|false $data): void
     {
-        if (empty($block_data)) {
+        if (empty($data)) {
             return;
         }
 
-        $resource_id = $block_data['block_toplist'][0];
-        $items = get_field('toplist_items', $resource_id);
+        $resourceId = $data['block_toplist'][0];
+        $items = get_field('toplist_items', $resourceId);
+		$specificEnabled = get_field('toplist_specific_type', $resourceId);
 
-        if (!empty($items)) {
+        if (!$specificEnabled && !empty($items)) {
             foreach ($items as $id) {
-                $this->preparedData['toplist_items'][] = CasinoFactory::create($id);
+				$casino = CasinoFactory::create($id);
+
+                $this->preparedData['toplist_items'][] = $casino;
             }
         }
+
+		if($specificEnabled) {
+			$allCasinos = get_posts([
+				'fields'          => 'ids',
+				'posts_per_page'  => -1,
+				'post_type' => 'casino'
+			]);
+
+			$bonusType = get_field('toplist_bonus_type', $resourceId);
+
+			$this->preparedData['bonus_type'] = $bonusType;
+
+			foreach ($allCasinos as $id) {
+				$casino = CasinoFactory::create($id);
+
+				$bonuses = $casino->getBonuses();
+
+				if(array_key_exists($bonusType, $bonuses)) {
+					$this->preparedData['toplist_items'][] = $casino;
+				}
+			}
+		}
     }
 }

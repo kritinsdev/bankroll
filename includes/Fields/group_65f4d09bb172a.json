@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_65f4d09c8e992",
-            "label": "Hero",
+            "label": "Main information",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -81,7 +81,7 @@
         },
         {
             "key": "field_6766a62cdf48e",
-            "label": "Other",
+            "label": "Additional information",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -196,14 +196,15 @@
                                 "icon-[ph--alarm-duotone]": "Alarm",
                                 "icon-[material-symbols-light--poker-chip-rounded]": "Chip",
                                 "icon-[ic--baseline-star]": "Star",
-                                "icon-[teenyicons--star-circle-solid]": "Bg Round Star"
+                                "icon-[teenyicons--star-circle-solid]": "Bg Round Star",
+                                "icon-[noto-v1--baseball]": "Baseball"
                             },
                             "default_value": false,
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
-                            "ui": 0,
-                            "ajax": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "placeholder": "",
                             "parent_repeater": "field_6766bf2b0b2d8"
                         },
@@ -333,5 +334,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734991890
+    "modified": 1735044774
 }
