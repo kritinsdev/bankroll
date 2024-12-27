@@ -13,7 +13,7 @@ Helpers::getTemplate(
     Helpers::prepareHeroData(get_the_ID())
 ); ?>
 
-    <main>
+    <main class="site-content">
         <?php (new BlocksController(get_the_ID()))->output(); ?>
     </main>
 

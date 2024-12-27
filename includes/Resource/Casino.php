@@ -15,10 +15,10 @@ class Casino {
 	public string $title;
 	public string $permalink;
 	public array $image = [];
-
 	public array $ratings = [];
 	public array $bonuses = [];
-	public array $main_bonus = [];
+	public array $pros = [];
+	public array $cons = [];
 	public array $payment_methods = [];
 
 	public function __construct() {
@@ -49,7 +49,17 @@ class Casino {
 		}
 	}
 
-	public function setBonuses( array $bonus_ids ): void {
+	public function setPros( array $pros = [] ) : void
+	{
+		$this->pros = array_column($pros, 'item');
+	}
+
+	public function setCons( array $cons = [] ) : void
+	{
+		$this->cons = array_column($cons, 'item');
+	}
+
+	public function setBonuses( array $bonus_ids = [] ): void {
 		if ( ! empty( $bonus_ids ) ) {
 			$existing_bonuses = [];
 			foreach ( $bonus_ids as $id ) {
@@ -61,10 +71,6 @@ class Casino {
 			foreach ( $existing_bonuses as $id ) {
 				$bonus = BonusFactory::create( $id );
 
-				if ( $bonus->bonus_type == BonusType::MainBonus->key() ) {
-					$this->setMainBonus( $bonus );
-				}
-
 				$this->bonuses[$bonus->bonus_type] = $bonus->data();
 			}
 		}
@@ -72,10 +78,6 @@ class Casino {
 
 	public function getBonuses(): array {
 		return $this->bonuses;
-	}
-
-	public function setMainBonus( Bonus $bonus ): void {
-		$this->main_bonus = $bonus->data();
 	}
 
 	public function setPaymentMethods(): void {

@@ -1,5 +1,5 @@
 <div class="py-8 block <?php echo $args['class']; ?>">
-    <div class="w-full mx-auto max-w-[1240px] px-4 md:px-0">
+    <div class="w-full mx-auto max-w-[958px] px-4 md:px-0">
         <?php if (!empty($args['settings']['block_title'])) : ?>
             <h2 class="text-[32px] leading-none mb-1 font-bold">
                 <?php echo $args['settings']['block_title']; ?>

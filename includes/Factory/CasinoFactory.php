@@ -12,6 +12,8 @@ class CasinoFactory
         'setRatings' => '',
         'setImage' => 'cpt_casino_featured_image',
         'setBonuses' => 'cpt_casino_related_bonuses',
+	    'setPros' => 'cpt_casino_pros',
+	    'setCons' => 'cpt_casino_cons',
     ];
 
     public static function create(\WP_Post|int $post): Casino
@@ -31,9 +33,6 @@ class CasinoFactory
                 }
             }
         }
-
-
-//		$casino->getBonuses();
 
         return $casino;
     }

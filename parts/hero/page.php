@@ -30,28 +30,15 @@ $data = $args;
 
             <div class="flex flex-1 flex-col gap-2">
                 <?php foreach ($data['bonuses'] as $bonus) : ?>
-                    <div class="border border-[#eeeeee] p-4">
-                        <div>
-			                <?php Components::image( $bonus['image'], [ 'w-20' ] ); ?>
-                        </div>
-                        <div>
-			                <?php echo $bonus['bonus_type']; ?>
-                        </div>
+                    <div class="bg-indigo-400 p-2 rounded-[10px]">
+                        <div class="flex gap-4">
+                            <div>
+		                        <?php Components::image( $bonus['image'], [ 'w-14', 'rounded-[10px]' ] ); ?>
+                            </div>
 
-                        <div>
-			                <?php echo $bonus['first_line']; ?>
-                        </div>
-
-                        <div>
-			                <?php echo $bonus['second_line']; ?>
-                        </div>
-
-                        <div>
-			                <?php echo $bonus['description']; ?>
-                        </div>
-
-                        <div>
-			                <?php echo $bonus['promo_code']; ?>
+                            <div>
+		                        <?php echo $bonus['first_line']; ?>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

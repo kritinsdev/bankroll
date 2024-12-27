@@ -540,7 +540,7 @@
                                     ],
                                     "return_format": "id",
                                     "min": "",
-                                    "max": "",
+                                    "max": 1,
                                     "elements": "",
                                     "bidirectional": 0,
                                     "bidirectional_target": []
@@ -930,5 +930,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734993703
+    "modified": 1735128930
 }

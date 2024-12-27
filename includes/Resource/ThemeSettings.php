@@ -65,7 +65,7 @@ class ThemeSettings {
 						'parent' => $item->menu_item_parent,
 					];
 				}
-				$navigations[ $location ] = $menuItems;
+				$navigations[ $name ] = $menuItems;
 			}
 		}
 

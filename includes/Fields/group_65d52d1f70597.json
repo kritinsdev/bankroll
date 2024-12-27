@@ -282,7 +282,7 @@
             "name": "cpt_casino_rating_global",
             "aria-label": "",
             "type": "number",
-            "instructions": "",
+            "instructions": "Will be calculated automatically based on other ratings.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -292,7 +292,7 @@
             },
             "default_value": "",
             "min": "",
-            "max": "",
+            "max": 5,
             "placeholder": "",
             "step": "",
             "prepend": "",
@@ -308,7 +308,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -316,7 +316,7 @@
             "min": 1,
             "max": 5,
             "placeholder": "",
-            "step": "",
+            "step": "0.1",
             "prepend": "",
             "append": ""
         },
@@ -330,7 +330,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -338,7 +338,7 @@
             "min": 1,
             "max": 5,
             "placeholder": "",
-            "step": "",
+            "step": "0.1",
             "prepend": "",
             "append": ""
         },
@@ -352,7 +352,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -360,7 +360,7 @@
             "min": 1,
             "max": 5,
             "placeholder": "",
-            "step": "",
+            "step": "0.1",
             "prepend": "",
             "append": ""
         },
@@ -374,7 +374,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -382,7 +382,7 @@
             "min": 1,
             "max": 5,
             "placeholder": "",
-            "step": "",
+            "step": "0.1",
             "prepend": "",
             "append": ""
         },
@@ -512,5 +512,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735046761
+    "modified": 1735286322
 }

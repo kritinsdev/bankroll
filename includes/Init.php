@@ -20,7 +20,6 @@ class Init
         // DisablePosts::get_instance();
 
 //        new RegisterMailer();
-//        new RegisterBlocks();
 
         $this->setupHooks();
         $this->disableComments();

@@ -3,6 +3,32 @@
     "title": "Details - AFFILIATE LINK",
     "fields": [
         {
+            "key": "field_676c0651409d9",
+            "label": "Casino",
+            "name": "acf_link_for_casino",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "casino"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_65b653dc59fe8",
             "label": "Description",
             "name": "acf_link_description",
@@ -58,5 +84,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735046772
+    "modified": 1735132825
 }

@@ -2,14 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-
+/* content.css */
+.site-content {
+    @apply text-gray-800 leading-relaxed;
 }
 
-h2 {
-    @apply font-bold text-2xl
+/* Headings */
+.site-content h1 {
+    @apply text-3xl font-bold text-gray-900 mb-6 mt-8;
 }
 
-h3 {
-    @apply font-bold text-xl
+.site-content h2 {
+    @apply text-2xl font-bold text-gray-900 mb-4 mt-8;
+}
+
+.site-content h3 {
+    @apply text-xl font-bold text-gray-900 mb-4 mt-6;
+}
+
+.site-content p {
+    @apply mb-4 text-base;
+}
+
+.site-content ul {
+    @apply mb-6 ml-6 space-y-2 list-disc;
+}
+
+.site-content ol {
+    @apply mb-6 ml-6 space-y-2 list-decimal;
+}
+
+.site-content li {
+    @apply text-base pl-2;
+}
+
+.site-content em {
+    @apply italic text-gray-700;
+}
+
+.site-content strong {
+    @apply font-semibold text-gray-900;
+}
+
+.site-content a {
+    @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.site-content blockquote {
+    @apply pl-4 border-l-4 border-gray-300 italic text-gray-700 my-6;
+}
+
+.site-content pre {
+    @apply bg-gray-100 p-4 rounded-lg mb-6 overflow-x-auto;
+}
+
+.site-content code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.site-content table {
+    @apply w-full mb-6 border-collapse;
+}
+
+.site-content th {
+    @apply bg-gray-100 text-left p-2 border border-gray-300 font-semibold;
+}
+
+.site-content td {
+    @apply p-2 border border-gray-300;
+}
+
+.site-content hr {
+    @apply my-8 border-t border-gray-300;
+}
+
+.site-content > *:first-child {
+    @apply mt-0;
+}
+
+.site-content > *:last-child {
+    @apply mb-0;
+}
+
+.site-content ul + ul,
+.site-content ul + ol,
+.site-content ol + ol,
+.site-content ol + ul {
+    @apply mt-4;
 }

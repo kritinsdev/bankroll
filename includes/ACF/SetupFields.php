@@ -10,6 +10,5 @@ class SetupFields
     {
         new SetupBonus();
         new SetupCasino();
-        new SetupSportsbook();
     }
 }
