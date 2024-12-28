@@ -1,9 +1,9 @@
 {
-    "key": "group_65f4d09bb172a",
-    "title": "Details - PAGE",
+    "key": "group_676fcd8004473",
+    "title": "Details - PAYMENT METHOD",
     "fields": [
         {
-            "key": "field_65f4d09c8e992",
+            "key": "field_676fcd800ad9a",
             "label": "Main information",
             "name": "",
             "aria-label": "",
@@ -20,9 +20,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_65fe0496777e3",
+            "key": "field_676fcd800e9b5",
             "label": "Title",
-            "name": "page_hero_title",
+            "name": "payment_method_hero_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -40,9 +40,9 @@
             "append": ""
         },
         {
-            "key": "field_6766b578b657f",
+            "key": "field_676fcd80123f7",
             "label": "Headline",
-            "name": "page_hero_headline",
+            "name": "payment_method_hero_headline",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -60,9 +60,9 @@
             "append": ""
         },
         {
-            "key": "field_65fe04a7777e4",
+            "key": "field_676fcd8015ebb",
             "label": "Text",
-            "name": "page_hero_text",
+            "name": "payment_method_hero_text",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -80,7 +80,7 @@
             "delay": 0
         },
         {
-            "key": "field_6766a62cdf48e",
+            "key": "field_676fcd8019b4f",
             "label": "Additional information",
             "name": "",
             "aria-label": "",
@@ -97,9 +97,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_65fdf14795215",
+            "key": "field_676fcd801d5f6",
             "label": "Hero Settings",
-            "name": "page_hero_settings",
+            "name": "payment_method_hero_settings",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -113,7 +113,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6766bf2b0b2d8",
+                    "key": "field_676fcd802895b",
                     "label": "Core pages",
                     "name": "core_pages",
                     "aria-label": "",
@@ -135,7 +135,7 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
-                            "key": "field_6766bf4f0b2d9",
+                            "key": "field_676fcd8037961",
                             "label": "Title",
                             "name": "core_page_title",
                             "aria-label": "",
@@ -153,10 +153,10 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "parent_repeater": "field_6766bf2b0b2d8"
+                            "parent_repeater": "field_676fcd802895b"
                         },
                         {
-                            "key": "field_6766bf690b2da",
+                            "key": "field_676fcd803b408",
                             "label": "Subtitle",
                             "name": "core_page_subtitle",
                             "aria-label": "",
@@ -174,10 +174,10 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "parent_repeater": "field_6766bf2b0b2d8"
+                            "parent_repeater": "field_676fcd802895b"
                         },
                         {
-                            "key": "field_6766bf6b0b2db",
+                            "key": "field_676fcd803f2b4",
                             "label": "Icon",
                             "name": "bankroll_icons",
                             "aria-label": "",
@@ -207,10 +207,10 @@
                             "ui": 1,
                             "ajax": 1,
                             "placeholder": "",
-                            "parent_repeater": "field_6766bf2b0b2d8"
+                            "parent_repeater": "field_676fcd802895b"
                         },
                         {
-                            "key": "field_6766bf8a0b2dc",
+                            "key": "field_676fcd8042ec7",
                             "label": "Link",
                             "name": "core_page_link",
                             "aria-label": "",
@@ -224,12 +224,12 @@
                                 "id": ""
                             },
                             "return_format": "url",
-                            "parent_repeater": "field_6766bf2b0b2d8"
+                            "parent_repeater": "field_676fcd802895b"
                         }
                     ]
                 },
                 {
-                    "key": "field_65fdf1aa95217",
+                    "key": "field_676fcd802c566",
                     "label": "Bonuses",
                     "name": "bonuses",
                     "aria-label": "",
@@ -265,7 +265,7 @@
                     "bidirectional_target": []
                 },
                 {
-                    "key": "field_65ffeda55854a",
+                    "key": "field_676fcd8030262",
                     "label": "Background Image",
                     "name": "background_image",
                     "aria-label": "",
@@ -290,7 +290,7 @@
                     "preview_size": "medium"
                 },
                 {
-                    "key": "field_66002caf5854b",
+                    "key": "field_676fcd8033ce4",
                     "label": "Image",
                     "name": "content_image",
                     "aria-label": "",
@@ -322,7 +322,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
+                "value": "payment_method"
             }
         ]
     ],
@@ -335,5 +335,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735380346
+    "modified": 1735381989
 }

@@ -919,6 +919,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "payment_method"
+            }
         ]
     ],
     "menu_order": 0,
@@ -930,5 +937,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735128930
+    "modified": 1735382133
 }

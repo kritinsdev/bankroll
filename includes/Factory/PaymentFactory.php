@@ -4,20 +4,10 @@ namespace Bankroll\Includes\Factory;
 
 use Bankroll\Includes\Resource\Casino;
 
-class CasinoFactory
+class PaymentFactory
 {
     public static array $fields_map = [
         'setTitle' => '',
-        'setPermalink' => '',
-        'setRatings' => '',
-        'setImage' => 'cpt_casino_featured_image',
-        'setBonuses' => 'cpt_casino_related_bonuses',
-	    'setPros' => 'cpt_casino_pros',
-	    'setCons' => 'cpt_casino_cons',
-        'setLicenses' => 'cpt_casino_licenses',
-        'setGames' => 'cpt_casino_games',
-        'setCurrencies' => 'cpt_casino_currencies',
-        'setLanguages' => 'cpt_casino_languages',
     ];
 
     public static function create(\WP_Post|int $post): Casino

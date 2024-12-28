@@ -34,11 +34,13 @@ class Helpers
 
         return $imageData;
     }
-    public static function prepareHeroData(int $id, string $type = 'page'): ?array
+    public static function prepareHeroData(int $id): ?array
     {
         if (empty($id)) {
-            return null;
+            return [];
         }
+
+		$type = get_post_type($id);
 
         switch ($type) {
             case 'casino':
@@ -69,4 +71,16 @@ class Helpers
                 ];
         }
     }
+
+	public static function resolveHeroPart(int $id): string
+	{
+		$type = get_post_type($id);
+
+		switch ($type) {
+			case 'casino':
+				return 'casino';
+			default:
+				return 'default';
+		}
+	}
 }

@@ -3,18 +3,20 @@
 use Bankroll\Blocks\BlocksController;
 use Bankroll\Includes\View\Helpers;
 
-Helpers::getTemplate("global", "header");
+$id = get_the_ID();
 
-Helpers::getTemplate("global", "navigation");
+Helpers::getTemplate( "global", "header" );
+
+Helpers::getTemplate( "global", "navigation" );
 
 Helpers::getTemplate(
-    "hero",
-    "page",
-    Helpers::prepareHeroData(get_the_ID())
+	"hero",
+	Helpers::resolveHeroPart( $id ),
+	Helpers::prepareHeroData( $id )
 ); ?>
 
     <main class="site-content">
-        <?php (new BlocksController(get_the_ID()))->output(); ?>
+		<?php ( new BlocksController( $id ) )->output(); ?>
     </main>
 
-<?php Helpers::getTemplate("global", "footer"); ?>
+<?php Helpers::getTemplate( "global", "footer" ); ?>

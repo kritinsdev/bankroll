@@ -7,24 +7,43 @@ use Bankroll\Includes\Singleton;
 class Taxonomies
 {
     use Singleton;
-
     protected array $taxonomies = [
-        // 'feature' => [
-        //     'singular' => 'Feature',
-        //     'plural' => 'Features',
-        //     'slug' => 'feature',
-        //     'supports' => ['slot'],
-        //     'publicly_queryable' => true,
-        //     'hierarchical' => true
-        // ],
-//         'author' => [
-//             'singular' => 'Author',
-//             'plural' => 'Authors',
-//             'slug' => 'author',
-//             'supports' => ['casino'],
-//             'publicly_queryable' => true,
-//             'hierarchical' => true
-//         ],
+         'license' => [
+             'singular' => 'License',
+             'plural' => 'Licenses',
+             'slug' => 'license',
+             'supports' => ['casino'],
+             'publicly_queryable' => false,
+             'hierarchical' => false,
+	         'with_front' => false,
+         ],
+         'game' => [
+	         'singular' => 'Game',
+	         'plural' => 'Games',
+	         'slug' => 'game',
+	         'supports' => ['casino'],
+	         'publicly_queryable' => false,
+	         'hierarchical' => false,
+	         'with_front' => false,
+         ],
+         'currency' => [
+	         'singular' => 'Currency',
+	         'plural' => 'Currencies',
+	         'slug' => 'currency',
+	         'supports' => ['casino'],
+	         'publicly_queryable' => false,
+	         'hierarchical' => false,
+	         'with_front' => false,
+         ],
+         'language' => [
+	         'singular' => 'Language',
+	         'plural' => 'Languages',
+	         'slug' => 'currency',
+	         'supports' => ['casino'],
+	         'publicly_queryable' => false,
+	         'hierarchical' => false,
+	         'with_front' => false,
+         ],
     ];
 
     protected function __construct()
@@ -60,9 +79,10 @@ class Taxonomies
                 'show_admin_column' => true,
                 'query_var' => true,
                 'show_in_rest' => false,
+				'meta_box_cb' => false,
                 'rewrite' => [
                     'slug' => $taxonomyData['slug'],
-                    'with_front' => true,
+                    'with_front' => $taxonomyData['with_front'],
                     'hierarchical' => false,
                 ],
             ]);

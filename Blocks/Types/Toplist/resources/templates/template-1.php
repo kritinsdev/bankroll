@@ -10,28 +10,28 @@ $data = $args['data'];
 
     <div class="flex gap-2 w-[200px]">
 	    <?php if ( isset( $args['bonus_type'] ) ) : ?>
-            <div class="flex flex-1 flex-col gap-2 bg-gray-400">
+            <div class="flex flex-1 flex-col gap-2 bg-gray-400 p-2 rounded-[10px]">
                 <div class="font-bold">
 				    <?php echo $data['bonuses'][ $args['bonus_type'] ]['bonus_value'] ?>
                 </div>
-                <span>Bonus</span>
+                <span class="text-xs">Bonus</span>
             </div>
 
-            <div class="flex flex-1 flex-col gap-2 bg-gray-400">
+            <div class="flex flex-1 flex-col gap-2 bg-gray-400 p-2 rounded-[10px]">
                 <div class="font-bold">
 				    <?php echo $data['bonuses'][ $args['bonus_type'] ]['free_spins_value'] ?>
                 </div>
                 <span class="text-xs">Free spins</span>
             </div>
 	    <?php else : ?>
-            <div class="flex flex-1 flex-col gap-2 bg-gray-400">
+            <div class="flex flex-1 flex-col gap-2 bg-gray-400 p-2 rounded-[10px]">
                 <div class="font-bold">
 				    <?php echo $data['bonuses']['main_bonus']['bonus_value'] ?>
                 </div>
-                <span>Bonus</span>
+                <span class="text-xs">Bonus</span>
             </div>
 
-            <div class="flex flex-1 flex-col gap-2 bg-gray-400">
+            <div class="flex flex-1 flex-col gap-2 bg-gray-400 p-2 rounded-[10px]">
                 <div class="font-bold">
 				    <?php echo $data['bonuses']['main_bonus']['free_spins_value'] ?>
                 </div>

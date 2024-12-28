@@ -2,10 +2,10 @@
 
 namespace Bankroll\Includes\Resource;
 
-use Bankroll\Includes\Enums\BonusType;
 use Bankroll\Includes\Factory\BonusFactory;
 use Bankroll\Includes\Traits\HasImage;
 use Bankroll\Includes\Traits\ToArray;
+use Bankroll\Includes\View\Helpers;
 
 class Casino {
 	use HasImage;
@@ -20,6 +20,10 @@ class Casino {
 	public array $pros = [];
 	public array $cons = [];
 	public array $payment_methods = [];
+	public array $licenses = [];
+	public array $games = [];
+	public array $currencies = [];
+	public array $languages = [];
 
 	public function __construct() {
 		return $this;
@@ -49,14 +53,12 @@ class Casino {
 		}
 	}
 
-	public function setPros( array $pros = [] ) : void
-	{
-		$this->pros = array_column($pros, 'item');
+	public function setPros( array $pros = [] ): void {
+		$this->pros = array_column( $pros, 'item' );
 	}
 
-	public function setCons( array $cons = [] ) : void
-	{
-		$this->cons = array_column($cons, 'item');
+	public function setCons( array $cons = [] ): void {
+		$this->cons = array_column( $cons, 'item' );
 	}
 
 	public function setBonuses( array $bonus_ids = [] ): void {
@@ -71,7 +73,7 @@ class Casino {
 			foreach ( $existing_bonuses as $id ) {
 				$bonus = BonusFactory::create( $id );
 
-				$this->bonuses[$bonus->bonus_type] = $bonus->data();
+				$this->bonuses[ $bonus->bonus_type ] = $bonus->data();
 			}
 		}
 	}
@@ -81,5 +83,69 @@ class Casino {
 	}
 
 	public function setPaymentMethods(): void {
+	}
+
+	public function setLicenses(array $ids = []): void {
+		$data = array_map(function($id) {
+			$term = get_term($id, '', 'ARRAY_A');
+			$taxId = $term['taxonomy'] . '_' . $term['term_id'];
+			$image = Helpers::prepareImageData(get_field('casino_tax_featured_image', $taxId));
+
+			return [
+				'term_id' => $term['term_id'],
+				'name' => $term['name'],
+				'image' => $image
+			];
+		}, $ids);
+
+		$this->licenses = $data;
+	}
+
+	public function setGames(array $ids = []): void {
+		$data = array_map(function($id) {
+			$term = get_term($id, '', 'ARRAY_A');
+			$taxId = $term['taxonomy'] . '_' . $term['term_id'];
+			$image = Helpers::prepareImageData(get_field('casino_tax_featured_image', $taxId));
+
+			return [
+				'term_id' => $term['term_id'],
+				'name' => $term['name'],
+				'image' => $image
+			];
+		}, $ids);
+
+		$this->games = $data;
+	}
+
+	public function setCurrencies(array $ids = []): void {
+		$data = array_map(function($id) {
+			$term = get_term($id, '', 'ARRAY_A');
+			$taxId = $term['taxonomy'] . '_' . $term['term_id'];
+			$image = Helpers::prepareImageData(get_field('casino_tax_featured_image', $taxId));
+
+			return [
+				'term_id' => $term['term_id'],
+				'name' => $term['name'],
+				'image' => $image
+			];
+		}, $ids);
+
+		$this->currencies = $data;
+	}
+
+	public function setLanguages(array $ids = []): void {
+		$data = array_map(function($id) {
+			$term = get_term($id, '', 'ARRAY_A');
+			$taxId = $term['taxonomy'] . '_' . $term['term_id'];
+			$image = Helpers::prepareImageData(get_field('casino_tax_featured_image', $taxId));
+
+			return [
+				'term_id' => $term['term_id'],
+				'name' => $term['name'],
+				'image' => $image
+			];
+		}, $ids);
+
+		$this->languages = $data;
 	}
 }
